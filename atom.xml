@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-04T09:41:26.000Z</updated>
+  <updated>2016-07-04T13:54:43.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>接受</title>
+    <title>我的第一篇文档</title>
     <link href="http://yoursite.com/2016/07/04/%E6%9D%A8%E8%B7%83%E8%BE%89/"/>
     <id>http://yoursite.com/2016/07/04/杨跃辉/</id>
     <published>2016-07-04T09:10:01.000Z</published>
-    <updated>2016-07-04T09:41:26.000Z</updated>
+    <updated>2016-07-04T13:54:43.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;my-new-test&quot;&gt;&lt;a href=&quot;#my-new-test&quot; class=&quot;headerlink&quot; title=&quot;my new test&quot;&gt;&lt;/a&gt;my new test&lt;/h1&gt;&lt;h2 id=&quot;河西&quot;&gt;&lt;a href=&quot;#河西&quot; class=&quot;headerlink&quot; title=&quot;河西&quot;&gt;&lt;/a&gt;河西&lt;/h2&gt;&lt;h3 id=&quot;多好地方&quot;&gt;&lt;a href=&quot;#多好地方&quot; class=&quot;headerlink&quot; title=&quot;多好地方&quot;&gt;&lt;/a&gt;多好地方&lt;/h3&gt;&lt;hr&gt;
 &lt;p&gt;得分很低&lt;/p&gt;
