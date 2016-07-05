@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/07/06/math-and-uml/</loc>
+    
+    <lastmod>2016-07-05T16:16:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/07/04/About/</loc>
     
-    <lastmod>2016-07-04T14:58:13.000Z</lastmod>
+    <lastmod>2016-07-05T16:11:34.000Z</lastmod>
     
   </url>
   
