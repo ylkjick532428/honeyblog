@@ -47,17 +47,17 @@
     <link href="http://yoursite.com/2016/07/06/math-and-uml/"/>
     <id>http://yoursite.com/2016/07/06/math-and-uml/</id>
     <published>2016-07-05T16:05:45.000Z</published>
-    <updated>2016-07-14T14:12:59.000Z</updated>
+    <updated>2016-07-14T14:31:45.000Z</updated>
     
     <content type="html">&lt;p&gt;$$E=mc^2$$&lt;/p&gt;
 &lt;p&gt;$$\sum_{i=1}^n a_i=0$$&lt;br&gt;$$\sum ^ {j-1}{k=0}{\widehat{\gamma} {kj} z k } $$&lt;/p&gt;
 &lt;p&gt;$$&lt;br&gt;\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.&lt;br&gt;$$&lt;/p&gt;
-&lt;div style=&quot;text-align:center;&quot;&gt;&lt;script type=&quot;text/jumly+sequence&quot;&gt;
+&lt;script type=&quot;text/jumly+sequence&quot;&gt;
 @found &quot;You&quot;, -&gt;
   @message &quot;Think&quot;, -&gt;
     @message &quot;Write your idea&quot;, &quot;JUMLY&quot;, -&gt;
       @create &quot;Diagram&quot;
-&lt;/script&gt;&lt;/div&gt;
+&lt;/script&gt;
 </content>
     
     <summary type="html">
