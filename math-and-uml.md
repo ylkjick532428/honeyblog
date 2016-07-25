@@ -16,6 +16,9 @@ $$
 $$
 
 ```sequence
-  @found "You", -\>
-    @message "get", "JUMLY"
+@found "You", ->
+  @message "Think", ->
+    @message "Write your idea", "JUMLY", ->
+      @create "Diagram"
 ```
+
