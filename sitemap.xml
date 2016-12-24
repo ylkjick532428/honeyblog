@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/07/06/math-and-uml/</loc>
+    
+    <lastmod>2016-12-24T03:27:43.254Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/07/14/markdown-images/</loc>
     
     <lastmod>2016-12-24T03:21:00.393Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/2016/07/28/cherrypy/</loc>
     
     <lastmod>2016-12-24T03:07:39.783Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/07/06/math-and-uml/</loc>
-    
-    <lastmod>2016-07-14T14:31:46.000Z</lastmod>
     
   </url>
   

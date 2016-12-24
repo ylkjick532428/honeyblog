@@ -346,9 +346,11 @@ $ hexo &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&qu
     <link href="http://yoursite.com/2016/07/06/math-and-uml/"/>
     <id>http://yoursite.com/2016/07/06/math-and-uml/</id>
     <published>2016-07-05T16:05:45.000Z</published>
-    <updated>2016-07-14T14:31:46.000Z</updated>
+    <updated>2016-12-24T03:27:43.254Z</updated>
     
-    <content type="html">&lt;p&gt;$$E=mc^2$$&lt;/p&gt;
+    <content type="html">&lt;img src=&quot;/2016/07/06/math-and-uml/enable_math.png&quot; alt=&quot;image1&quot; title=&quot;image1&quot;&gt;
+&lt;img src=&quot;/2016/07/06/math-and-uml/enable_math2.png&quot; alt=&quot;image2&quot; title=&quot;image2&quot;&gt;
+&lt;p&gt;$$E=mc^2$$&lt;/p&gt;
 &lt;p&gt;$$\sum_{i=1}^n a_i=0$$&lt;br&gt;$$\sum ^ {j-1}{k=0}{\widehat{\gamma} {kj} z k } $$&lt;/p&gt;
 &lt;p&gt;$$&lt;br&gt;\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.&lt;br&gt;$$&lt;/p&gt;
 &lt;script type=&quot;text/jumly+sequence&quot;&gt;
@@ -361,9 +363,8 @@ $ hexo &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&qu
     
     <summary type="html">
     
-      &lt;p&gt;$$E=mc^2$$&lt;/p&gt;
-&lt;p&gt;$$\sum_{i=1}^n a_i=0$$&lt;br&gt;$$\sum ^ {j-1}{k=0}{\widehat{\gamma} {kj} z k } $$&lt;/p&gt;
-&lt;p&gt;$$&lt;br&gt;\Gamma(z) = \int_0^\infty t^{
+      &lt;img src=&quot;/2016/07/06/math-and-uml/enable_math.png&quot; alt=&quot;image1&quot; title=&quot;image1&quot;&gt;
+&lt;img src=&quot;/2016/07/06/math-and-uml/enable_math2.png&quot; alt=&quot;i
     
     </summary>
     
