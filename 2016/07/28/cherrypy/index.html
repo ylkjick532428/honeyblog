@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  
+  <meta name="description" content="# -*- coding：utf-8 -*-
+# json数据编辑功能
+import cherrypy
+import json
+import sys
+import os
+import urllib.request
+import time
+import re
+import codecs
+import " />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>cherrypy | honeybee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="# -*- coding：utf-8 -*-
+# json数据编辑功能
+import cherrypy
+import json
+import sys
+import os
+import urllib.request
+import time
+import re
+import codecs
+import json
+sys.path.append(&quot;../&quot;)
+
+from mako.template i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cherrypy">
+<meta property="og:url" content="http://yoursite.com/2016/07/28/cherrypy/index.html">
+<meta property="og:site_name" content="honeybee">
+<meta property="og:description" content="# -*- coding：utf-8 -*-
+# json数据编辑功能
+import cherrypy
+import json
+import sys
+import os
+import urllib.request
+import time
+import re
+import codecs
+import json
+sys.path.append(&quot;../&quot;)
+
+from mako.template i">
+<meta property="og:image" content="http://yoursite.com/2016/07/28/cherrypy/QQ图片20160808104037.png">
+<meta property="og:image" content="http://yoursite.com/2016/07/28/cherrypy/QQ图片20160808104054.png">
+<meta property="og:image" content="http://yoursite.com/2016/07/28/cherrypy/QQ图片20160808104058.png">
+<meta property="og:updated_time" content="2016-12-24T03:07:39.783Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cherrypy">
+<meta name="twitter:description" content="# -*- coding：utf-8 -*-
+# json数据编辑功能
+import cherrypy
+import json
+import sys
+import os
+import urllib.request
+import time
+import re
+import codecs
+import json
+sys.path.append(&quot;../&quot;)
+
+from mako.template i">
+<meta name="twitter:image" content="http://yoursite.com/2016/07/28/cherrypy/QQ图片20160808104037.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="../../../../css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+  
+</head>
+
+<body class="home blog custom-background custom-font-enabled single-author">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="../../../../index.html" title="honeybee" rel="home">honeybee</a>
+      </h1>
+      
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../../../../index.html">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../../../../archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../../../../2016/07/04/About/">About</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-cherrypy" class="post-cherrypy post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      cherrypy
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="http://yoursite.com/2016/07/28/cherrypy/" data-id="cix2nh7q70002dkwr3r13yhhr" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <pre><code class="python">
+<span class="comment"># -*- coding：utf-8 -*-</span>
+<span class="comment"># json数据编辑功能</span>
+<span class="keyword">import</span> cherrypy
+<span class="keyword">import</span> json
+<span class="keyword">import</span> sys
+<span class="keyword">import</span> os
+<span class="keyword">import</span> urllib.request
+<span class="keyword">import</span> time
+<span class="keyword">import</span> re
+<span class="keyword">import</span> codecs
+<span class="keyword">import</span> json
+sys.path.append(<span class="string">"../"</span>)
+
+<span class="keyword">from</span> mako.template <span class="keyword">import</span> Template
+<span class="keyword">from</span> mako.lookup <span class="keyword">import</span> TemplateLookup
+<span class="keyword">from</span> cherrypy.lib <span class="keyword">import</span> auth_basic
+
+output_dir = <span class="string">"work_path"</span>
+lookup = TemplateLookup(directories=[<span class="string">'static'</span>], input_encoding=<span class="string">'utf-8'</span>)
+USERS = &#123;<span class="string">'vastio'</span>:<span class="string">'vastio'</span>&#125;
+
+<span class="comment">#===============================================================================</span>
+<span class="comment"># save_json : 保存</span>
+<span class="comment">#===============================================================================</span>
+<span class="function"><span class="keyword">def</span> <span class="title">save_json</span><span class="params">(data, file_name)</span>:</span>
+    <span class="keyword">if</span> data:
+        output_file = codecs.open(<span class="string">"%s/%s"</span> % (output_dir, file_name), <span class="string">"w"</span>, <span class="string">"utf8"</span>)
+        text = json.dumps(data, indent=<span class="number">1</span>, sort_keys=<span class="keyword">True</span>, ensure_ascii=<span class="keyword">False</span>)
+        output_file.write(text)
+        output_file.close()
+    
+<span class="comment">#===============================================================================</span>
+<span class="comment"># get_json : 读取</span>
+<span class="comment">#===============================================================================</span>
+<span class="function"><span class="keyword">def</span> <span class="title">get_json</span><span class="params">(file_name)</span>:</span>
+    input_file = codecs.open(<span class="string">"%s/%s"</span> % (output_dir, file_name), <span class="string">"r"</span>, <span class="string">"utf8"</span>)
+    text = input_file.read()
+    data = json.loads(text)
+    input_file.close()
+    <span class="keyword">return</span> data
+
+<span class="comment">#===========================================================================</span>
+<span class="comment"># get_crontab</span>
+<span class="comment">#===========================================================================</span>
+<span class="function"><span class="keyword">def</span> <span class="title">get_crontab</span><span class="params">()</span>:</span>
+    crontab = get_json(<span class="string">"crontab.json"</span>)
+    <span class="keyword">return</span> crontab
+
+<span class="comment">#===============================================================================</span>
+<span class="comment"># save_crontab</span>
+<span class="comment">#===============================================================================</span>
+<span class="function"><span class="keyword">def</span> <span class="title">save_crontab</span><span class="params">(crontab)</span>:</span>
+    save_json(crontab, <span class="string">"crontab.json"</span>)
+
+<span class="comment">#===============================================================================</span>
+<span class="comment"># error_page_404 : 404 error</span>
+<span class="comment">#===============================================================================</span>
+<span class="function"><span class="keyword">def</span> <span class="title">error_page_404</span><span class="params">(status, message, traceback, version)</span>:</span>
+    <span class="keyword">return</span> <span class="string">"404 Error!"</span>
+    
+<span class="comment">#===============================================================================</span>
+<span class="comment"># error_page_401 : 401 error</span>
+<span class="comment">#===============================================================================</span>
+<span class="function"><span class="keyword">def</span> <span class="title">error_page_401</span><span class="params">(status, message, traceback, version)</span>:</span>
+    <span class="keyword">return</span> <span class="string">"login error 401 Error!"</span>
+
+<span class="comment">#===============================================================================</span>
+<span class="comment"># validate_password : basic 认证</span>
+<span class="comment">#===============================================================================</span>
+<span class="function"><span class="keyword">def</span> <span class="title">validate_password</span><span class="params">(realm, username, password)</span>:</span>
+    <span class="keyword">return</span> <span class="keyword">True</span>
+    <span class="keyword">if</span> username <span class="keyword">in</span> USERS <span class="keyword">and</span> USERS[username] == password:
+        <span class="keyword">return</span> <span class="keyword">True</span> 
+    <span class="keyword">return</span> <span class="keyword">False</span>
+    
+cherrypy.config.update(&#123;<span class="string">'server.socket_port'</span>:<span class="number">8080</span>, <span class="string">"server.socket_host"</span>: <span class="string">"0.0.0.0"</span>, <span class="string">"engine.autoreload_on"</span>: <span class="keyword">True</span>&#125;)
+cherrypy.config.update(&#123;<span class="string">'error_page.404'</span>: error_page_404&#125;)
+cherrypy.config.update(&#123;<span class="string">'error_page.401'</span>: error_page_401&#125;)
+
+<span class="comment">#===============================================================================</span>
+<span class="comment"># OverviewController</span>
+<span class="comment">#===============================================================================</span>
+<span class="class"><span class="keyword">class</span> <span class="title">OverviewController</span><span class="params">()</span>:</span>
+    <span class="comment">#===========================================================================</span>
+    <span class="comment"># get_zrqk : 昨日情况</span>
+    <span class="comment">#===========================================================================</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">get_zrqk</span><span class="params">(self)</span>:</span>
+        key_list = [<span class="string">"110呼入"</span>,<span class="string">"有效报警"</span>,<span class="string">"CK"</span>,<span class="string">"移车警情"</span>,<span class="string">"直处"</span>,<span class="string">"下发"</span>,<span class="string">"违法犯罪"</span>,<span class="string">"交通"</span>,<span class="string">"求助"</span>,<span class="string">"举报"</span>,<span class="string">"纠纷"</span>]
+        old_data = get_json(<span class="string">"zrqk.json"</span>)
+        value_list = []
+        <span class="keyword">for</span> key <span class="keyword">in</span> key_list:
+            <span class="keyword">if</span> key <span class="keyword">in</span> old_data:
+                value_list.append(old_data[key])
+            <span class="keyword">else</span>:
+                value_list.append(<span class="number">0</span>)
+        <span class="keyword">return</span> key_list, value_list
+    
+    <span class="comment">#===========================================================================</span>
+    <span class="comment"># get_zrqk : 盘查入所拘留</span>
+    <span class="comment">#===========================================================================</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">get_pc_rs_jl</span><span class="params">(self)</span>:</span>
+        key_list = [<span class="string">"今日盘查"</span>,<span class="string">"今日入所"</span>,<span class="string">"今日拘留"</span>,<span class="string">"今日取保"</span>,<span class="string">"今日逮捕"</span>]
+        old_data = get_json(<span class="string">"pc_rs_jl.json"</span>)
+        value_list = []
+        <span class="keyword">for</span> key <span class="keyword">in</span> key_list:
+            <span class="keyword">if</span> key <span class="keyword">in</span> old_data:
+                value_list.append(old_data[key])
+            <span class="keyword">else</span>:
+                value_list.append(<span class="number">0</span>)
+        <span class="keyword">return</span> key_list, value_list
+    
+    <span class="comment">#===========================================================================</span>
+    <span class="comment"># get_jq_category : 警情分类</span>
+    <span class="comment">#===========================================================================</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">get_jq_category</span><span class="params">(self)</span>:</span>
+        key_list = [<span class="string">"交通类警情"</span>,<span class="string">"处警量"</span>,<span class="string">"接警量"</span>,<span class="string">"求助类警情"</span>,<span class="string">"违法犯罪警情"</span>]
+        old_data = get_json(<span class="string">"jq_category.json"</span>)
+        zr_value_list = []
+        tq_value_list = []
+        <span class="keyword">for</span> key <span class="keyword">in</span> key_list:
+            <span class="keyword">if</span> key <span class="keyword">in</span> old_data[<span class="string">"同期"</span>]:
+                tq_value_list.append(old_data[<span class="string">"同期"</span>][key])
+            <span class="keyword">else</span>:
+                tq_value_list.append(<span class="number">0</span>)
+            
+            <span class="keyword">if</span> key <span class="keyword">in</span> old_data[<span class="string">"昨日"</span>]:
+                zr_value_list.append(old_data[<span class="string">"昨日"</span>][key])
+            <span class="keyword">else</span>:
+                zr_value_list.append(<span class="number">0</span>)
+        <span class="keyword">return</span> key_list, zr_value_list, tq_value_list
+    
+    <span class="comment">#===========================================================================</span>
+    <span class="comment"># get_crontab</span>
+    <span class="comment">#===========================================================================</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">get_crontab</span><span class="params">(self)</span>:</span>
+        <span class="keyword">try</span>:
+            crontab = get_crontab()
+        <span class="keyword">except</span>:
+            crontab = &#123;&#125;
+        crontab_list = [<span class="string">"zrqk_crontab"</span>, <span class="string">"jq_category_crontab"</span>, <span class="string">"pc_rs_jl_crontab"</span>]
+        result = []
+        <span class="keyword">for</span> key <span class="keyword">in</span> crontab_list:
+            <span class="keyword">if</span> key <span class="keyword">not</span> <span class="keyword">in</span> crontab:
+                result.append(<span class="keyword">False</span>)
+            <span class="keyword">else</span>:
+                result.append(crontab[key])
+        <span class="keyword">return</span> result
+    
+    <span class="comment">#===========================================================================</span>
+    <span class="comment"># save_crontab</span>
+    <span class="comment">#===========================================================================</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">save_crontab</span><span class="params">(self, key, value)</span>:</span>
+        crontab = get_crontab()
+        <span class="keyword">if</span> value <span class="keyword">in</span> [<span class="keyword">True</span>, <span class="string">"1"</span>, <span class="string">"true"</span>, <span class="string">"True"</span>, <span class="string">"TRUE"</span>, <span class="string">"yes"</span>, <span class="string">"YES"</span>, <span class="string">"Yes"</span>, <span class="number">1</span>]:
+            tmp_value = <span class="keyword">True</span>
+        <span class="keyword">else</span>:
+            tmp_value = <span class="keyword">False</span>
+        
+        crontab[key] = tmp_value
+        save_crontab(crontab)
+        
+    <span class="comment">#===========================================================================</span>
+    <span class="comment"># index</span>
+    <span class="comment">#===========================================================================</span>
+<span class="meta">    @cherrypy.expose</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(self)</span>:</span>
+        zrqk_key_list, zrqk_value_list = self.get_zrqk()
+        pc_rs_jl_key_list, pc_rs_jl_value_list = self.get_pc_rs_jl()
+        jq_category_key_list, zr_value_list, tq_value_list = self.get_jq_category()
+        tmpl = lookup.get_template(<span class="string">"index_table.html"</span>)
+        zrqk_crontab, jq_category_crontab, pc_rs_jl_crontab = self.get_crontab()
+        <span class="keyword">print</span> (zrqk_crontab, jq_category_crontab, pc_rs_jl_crontab)
+        <span class="keyword">return</span> tmpl.render(TATLE_TEMPLATE_TEXT=<span class="string">"吴江大屏"</span>, zrqk_key_list=zrqk_key_list, zrqk_value_list=zrqk_value_list,
+                           pc_rs_jl_key_list=pc_rs_jl_key_list, pc_rs_jl_value_list=pc_rs_jl_value_list,
+                           jq_category_key_list=jq_category_key_list, zr_value_list=zr_value_list, tq_value_list=tq_value_list,
+                           zrqk_crontab=zrqk_crontab, jq_category_crontab=jq_category_crontab, pc_rs_jl_crontab=pc_rs_jl_crontab)
+
+    <span class="comment">#===========================================================================</span>
+    <span class="comment"># poi 取得</span>
+    <span class="comment">#===========================================================================</span>
+<span class="meta">    @cherrypy.expose</span>
+<span class="meta">    @cherrypy.tools.json_in()</span>
+<span class="meta">    @cherrypy.tools.json_out()</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">update</span><span class="params">(self, name = None, **kwargs)</span>:</span>
+        result = &#123;&#125;
+        <span class="keyword">if</span> name == <span class="string">"zrqk"</span>:
+            self.save_crontab(<span class="string">"zrqk_crontab"</span>, kwargs[<span class="string">"crontab"</span>])
+            <span class="keyword">del</span> kwargs[<span class="string">"crontab"</span>]
+            
+            save_json(kwargs, <span class="string">"zrqk.json"</span>)
+            result[<span class="string">'data'</span>] = kwargs
+            result[<span class="string">'status'</span>] = <span class="string">"success"</span>
+            result[<span class="string">'code'</span>] = <span class="number">200</span>
+            
+        <span class="keyword">elif</span> name == <span class="string">"pc_rs_jl"</span>:
+            self.save_crontab(<span class="string">"pc_rs_jl_crontab"</span>, kwargs[<span class="string">"crontab"</span>])
+            <span class="keyword">del</span> kwargs[<span class="string">"crontab"</span>]
+
+            save_json(kwargs, <span class="string">"pc_rs_jl.json"</span>)
+            result[<span class="string">'data'</span>] = kwargs
+            result[<span class="string">'status'</span>] = <span class="string">"success"</span>
+            result[<span class="string">'code'</span>] = <span class="number">200</span>
+        <span class="keyword">elif</span> name == <span class="string">"jq_category"</span>:
+            self.save_crontab(<span class="string">"jq_category_crontab"</span>, kwargs[<span class="string">"crontab"</span>])
+            <span class="keyword">del</span> kwargs[<span class="string">"crontab"</span>]
+            
+            tmp_value = &#123;&#125;
+            <span class="keyword">for</span> tmp_key <span class="keyword">in</span> kwargs:
+                key_one, key_two = tmp_key.split(<span class="string">"_"</span>)
+                <span class="keyword">if</span> key_one <span class="keyword">not</span> <span class="keyword">in</span> tmp_value:
+                    tmp_value[key_one] = &#123;&#125;
+                tmp_value[key_one][key_two] = kwargs[tmp_key]
+            save_json(tmp_value, <span class="string">"jq_category.json"</span>)
+            result[<span class="string">'data'</span>] = tmp_value
+            result[<span class="string">'status'</span>] = <span class="string">"success"</span>
+            result[<span class="string">'code'</span>] = <span class="number">200</span>
+        <span class="keyword">else</span>:
+            <span class="keyword">pass</span>
+        <span class="keyword">return</span> result
+        
+    
+overview = OverviewController()
+
+parent_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = parent_dir.replace(<span class="string">"\"</span>, <span class="string">"/"</span>)
+static_dir = <span class="string">"%s/%s"</span> % (parent_dir, <span class="string">'static/'</span>)
+<span class="keyword">print</span> (parent_dir, static_dir)
+conf = &#123;
+        
+        <span class="string">'crime'</span>: &#123;<span class="string">'request.dispatch'</span>: cherrypy.dispatch.RoutesDispatcher(),
+                  
+            &#125;,
+        <span class="string">'/'</span>: &#123;
+                <span class="string">'tools.auth_basic.on'</span>: <span class="keyword">True</span>,
+                <span class="string">'tools.auth_basic.realm'</span>: <span class="string">'wu jiang'</span>,
+                <span class="string">'tools.auth_basic.checkpassword'</span>: validate_password
+            &#125;,
+        <span class="string">'/static'</span>: &#123;
+        <span class="string">'tools.staticdir.on'</span>: <span class="keyword">True</span>,
+        <span class="string">'tools.staticdir.root'</span>: parent_dir,
+        <span class="string">'tools.staticdir.dir'</span>: <span class="string">'static'</span>,
+        <span class="string">'tools.staticdir.index'</span>: <span class="string">'index.html'</span>
+    &#125;
+&#125;
+
+<span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:
+    cherrypy.quickstart(overview, <span class="string">'/'</span>, config=conf)
+</code></pre>
+<img src="/2016/07/28/cherrypy/QQ图片20160808104037.png" alt="image1" title="image1">
+<img src="/2016/07/28/cherrypy/QQ图片20160808104054.png" alt="image2" title="image2">
+<img src="/2016/07/28/cherrypy/QQ图片20160808104058.png" alt="image3" title="image3">
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="">
+    <time datetime="2016-07-28T08:30:03.000Z" class="entry-date">
+        2016-07-28
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/cherrypy/">cherrypy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/python/">python</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+    
+        <span class="nav-next"><a href="../../25/hello-world/" rel="next">Hello World <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="">cherrypy</a>
+          </li>
+        
+          <li>
+            <a href="../../25/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="../../14/markdown-images/">markdown-images</a>
+          </li>
+        
+          <li>
+            <a href="../../06/math-and-uml/">math and uml</a>
+          </li>
+        
+          <li>
+            <a href="../../04/About/">About</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/cherrypy/">cherrypy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/python/">python</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="../../../../tags/cherrypy/" style="font-size: 10px;">cherrypy</a> <a href="../../../../tags/python/" style="font-size: 10px;">python</a>
+    </div>
+  </aside>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">About</h3>
+    <div class="widget">
+      邮箱：ylkjick532428@gmail.com<br />
+      G+: https://plus.google.com/+Yangyuehui <br />
+    </div>
+  </div>
+
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 ylkjick532428
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../../../../js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+<!--<script src="/js/require.js"></script>-->
+<script src="/lib/python.js"></script>
+<script src="/lib/javascript.js"></script>
+<script src="/lib/highlight.js"></script>
+
+
+
+<div id="bg"></div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    }); 
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script src="../../../../js/jquery-2.0.0.min.js"></script>
+<script src="../../../../js/coffee-script.js"></script>
+<script src="../../../../js/jumly.min.js"></script>
+
+<link rel="stylesheet" href="../../../../css/my.css">P p
+<link rel="stylesheet" href="../../../../css/highlight.css">
+<link rel="stylesheet" href="../../../../styles/default.css">
+<!--<script src="../../../../js/bootstrap.min.js"></script>-->
+<!--<link rel="stylesheet" href="../../../../css/bootstrap.css">-->
+<!--<link rel="stylesheet" href="../../../../css/bootstrap-theme.css">-->
+
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

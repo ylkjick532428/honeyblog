@@ -2,23 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/07/28/cherrypy/</loc>
+    
+    <lastmod>2016-12-24T03:07:39.783Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/07/14/markdown-images/</loc>
     
-    <lastmod>2016-07-14T15:27:09.000Z</lastmod>
+    <lastmod>2016-07-25T05:43:24.606Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2016/07/06/math-and-uml/</loc>
     
-    <lastmod>2016-07-14T14:31:45.000Z</lastmod>
+    <lastmod>2016-07-14T14:31:46.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/07/14/hello-world/</loc>
+    <loc>http://yoursite.com/2016/07/25/hello-world/</loc>
     
-    <lastmod>2016-07-14T12:52:51.000Z</lastmod>
+    <lastmod>2016-07-14T12:52:52.000Z</lastmod>
     
   </url>
   

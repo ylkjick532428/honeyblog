@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-14T15:27:09.000Z</updated>
+  <updated>2016-12-24T03:07:39.783Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,37 +16,292 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>markdown-images</title>
-    <link href="http://yoursite.com/2016/07/14/markdown-images/"/>
-    <id>http://yoursite.com/2016/07/14/markdown-images/</id>
-    <published>2016-07-14T14:36:46.000Z</published>
-    <updated>2016-07-14T15:27:09.000Z</updated>
+    <title>cherrypy</title>
+    <link href="http://yoursite.com/2016/07/28/cherrypy/"/>
+    <id>http://yoursite.com/2016/07/28/cherrypy/</id>
+    <published>2016-07-28T08:30:03.000Z</published>
+    <updated>2016-12-24T03:07:39.783Z</updated>
     
-    <content type="html">&lt;img src=&quot;/2016/07/14/markdown-images/qxt.jpg&quot; alt=&quot;image2&quot; title=&quot;image2&quot;&gt;
-&lt;img src=&quot;/2016/07/14/markdown-images/stock-photo-162882249.jpg&quot; alt=&quot;image1&quot; title=&quot;image1&quot;&gt;
-&lt;img src=&quot;/2016/07/14/markdown-images/stock-photo-39732662.jpg&quot; alt=&quot;image2&quot; title=&quot;image2&quot;&gt;
-&lt;img src=&quot;/2016/07/14/markdown-images/20160527_102515.jpg&quot; alt=&quot;image2&quot; title=&quot;image2&quot;&gt;
-</content>
+    <content type="html">&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;
+&lt;span class=&quot;comment&quot;&gt;# -*- coding：utf-8 -*-&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# json数据编辑功能&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; cherrypy
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; json
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; sys
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; os
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; urllib.request
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; time
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; re
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; codecs
+&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; json
+sys.path.append(&lt;span class=&quot;string&quot;&gt;&quot;../&quot;&lt;/span&gt;)
+
+&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; mako.template &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; Template
+&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; mako.lookup &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; TemplateLookup
+&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; cherrypy.lib &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; auth_basic
+
+output_dir = &lt;span class=&quot;string&quot;&gt;&quot;work_path&quot;&lt;/span&gt;
+lookup = TemplateLookup(directories=[&lt;span class=&quot;string&quot;&gt;&#39;static&#39;&lt;/span&gt;], input_encoding=&lt;span class=&quot;string&quot;&gt;&#39;utf-8&#39;&lt;/span&gt;)
+USERS = &amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;vastio&#39;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&#39;vastio&#39;&lt;/span&gt;&amp;#125;
+
+&lt;span class=&quot;comment&quot;&gt;#===============================================================================&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# save_json : 保存&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#===============================================================================&lt;/span&gt;
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;save_json&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(data, file_name)&lt;/span&gt;:&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; data:
+        output_file = codecs.open(&lt;span class=&quot;string&quot;&gt;&quot;%s/%s&quot;&lt;/span&gt; % (output_dir, file_name), &lt;span class=&quot;string&quot;&gt;&quot;w&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;utf8&quot;&lt;/span&gt;)
+        text = json.dumps(data, indent=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, sort_keys=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;, ensure_ascii=&lt;span class=&quot;keyword&quot;&gt;False&lt;/span&gt;)
+        output_file.write(text)
+        output_file.close()
+    
+&lt;span class=&quot;comment&quot;&gt;#===============================================================================&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# get_json : 读取&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#===============================================================================&lt;/span&gt;
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;get_json&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(file_name)&lt;/span&gt;:&lt;/span&gt;
+    input_file = codecs.open(&lt;span class=&quot;string&quot;&gt;&quot;%s/%s&quot;&lt;/span&gt; % (output_dir, file_name), &lt;span class=&quot;string&quot;&gt;&quot;r&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;utf8&quot;&lt;/span&gt;)
+    text = input_file.read()
+    data = json.loads(text)
+    input_file.close()
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; data
+
+&lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# get_crontab&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;get_crontab&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;:&lt;/span&gt;
+    crontab = get_json(&lt;span class=&quot;string&quot;&gt;&quot;crontab.json&quot;&lt;/span&gt;)
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; crontab
+
+&lt;span class=&quot;comment&quot;&gt;#===============================================================================&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# save_crontab&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#===============================================================================&lt;/span&gt;
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;save_crontab&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(crontab)&lt;/span&gt;:&lt;/span&gt;
+    save_json(crontab, &lt;span class=&quot;string&quot;&gt;&quot;crontab.json&quot;&lt;/span&gt;)
+
+&lt;span class=&quot;comment&quot;&gt;#===============================================================================&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# error_page_404 : 404 error&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#===============================================================================&lt;/span&gt;
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;error_page_404&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(status, message, traceback, version)&lt;/span&gt;:&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;404 Error!&quot;&lt;/span&gt;
+    
+&lt;span class=&quot;comment&quot;&gt;#===============================================================================&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# error_page_401 : 401 error&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#===============================================================================&lt;/span&gt;
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;error_page_401&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(status, message, traceback, version)&lt;/span&gt;:&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;login error 401 Error!&quot;&lt;/span&gt;
+
+&lt;span class=&quot;comment&quot;&gt;#===============================================================================&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# validate_password : basic 认证&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#===============================================================================&lt;/span&gt;
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;validate_password&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(realm, username, password)&lt;/span&gt;:&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; username &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; USERS &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; USERS[username] == password:
+        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt; 
+    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;False&lt;/span&gt;
+    
+cherrypy.config.update(&amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;server.socket_port&#39;&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;8080&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;server.socket_host&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;0.0.0.0&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;engine.autoreload_on&quot;&lt;/span&gt;: &lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;&amp;#125;)
+cherrypy.config.update(&amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;error_page.404&#39;&lt;/span&gt;: error_page_404&amp;#125;)
+cherrypy.config.update(&amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;error_page.401&#39;&lt;/span&gt;: error_page_401&amp;#125;)
+
+&lt;span class=&quot;comment&quot;&gt;#===============================================================================&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# OverviewController&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#===============================================================================&lt;/span&gt;
+&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;OverviewController&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;:&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;# get_zrqk : 昨日情况&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;get_zrqk&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(self)&lt;/span&gt;:&lt;/span&gt;
+        key_list = [&lt;span class=&quot;string&quot;&gt;&quot;110呼入&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;有效报警&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;CK&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;移车警情&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;直处&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;下发&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;违法犯罪&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;交通&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;求助&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;举报&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;纠纷&quot;&lt;/span&gt;]
+        old_data = get_json(&lt;span class=&quot;string&quot;&gt;&quot;zrqk.json&quot;&lt;/span&gt;)
+        value_list = []
+        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; key &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; key_list:
+            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; key &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; old_data:
+                value_list.append(old_data[key])
+            &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:
+                value_list.append(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)
+        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; key_list, value_list
+    
+    &lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;# get_zrqk : 盘查入所拘留&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;get_pc_rs_jl&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(self)&lt;/span&gt;:&lt;/span&gt;
+        key_list = [&lt;span class=&quot;string&quot;&gt;&quot;今日盘查&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;今日入所&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;今日拘留&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;今日取保&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;今日逮捕&quot;&lt;/span&gt;]
+        old_data = get_json(&lt;span class=&quot;string&quot;&gt;&quot;pc_rs_jl.json&quot;&lt;/span&gt;)
+        value_list = []
+        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; key &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; key_list:
+            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; key &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; old_data:
+                value_list.append(old_data[key])
+            &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:
+                value_list.append(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)
+        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; key_list, value_list
+    
+    &lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;# get_jq_category : 警情分类&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;get_jq_category&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(self)&lt;/span&gt;:&lt;/span&gt;
+        key_list = [&lt;span class=&quot;string&quot;&gt;&quot;交通类警情&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;处警量&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;接警量&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;求助类警情&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;违法犯罪警情&quot;&lt;/span&gt;]
+        old_data = get_json(&lt;span class=&quot;string&quot;&gt;&quot;jq_category.json&quot;&lt;/span&gt;)
+        zr_value_list = []
+        tq_value_list = []
+        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; key &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; key_list:
+            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; key &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; old_data[&lt;span class=&quot;string&quot;&gt;&quot;同期&quot;&lt;/span&gt;]:
+                tq_value_list.append(old_data[&lt;span class=&quot;string&quot;&gt;&quot;同期&quot;&lt;/span&gt;][key])
+            &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:
+                tq_value_list.append(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)
+            
+            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; key &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; old_data[&lt;span class=&quot;string&quot;&gt;&quot;昨日&quot;&lt;/span&gt;]:
+                zr_value_list.append(old_data[&lt;span class=&quot;string&quot;&gt;&quot;昨日&quot;&lt;/span&gt;][key])
+            &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:
+                zr_value_list.append(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)
+        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; key_list, zr_value_list, tq_value_list
+    
+    &lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;# get_crontab&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;get_crontab&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(self)&lt;/span&gt;:&lt;/span&gt;
+        &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt;:
+            crontab = get_crontab()
+        &lt;span class=&quot;keyword&quot;&gt;except&lt;/span&gt;:
+            crontab = &amp;#123;&amp;#125;
+        crontab_list = [&lt;span class=&quot;string&quot;&gt;&quot;zrqk_crontab&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;jq_category_crontab&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;pc_rs_jl_crontab&quot;&lt;/span&gt;]
+        result = []
+        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; key &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; crontab_list:
+            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; key &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; crontab:
+                result.append(&lt;span class=&quot;keyword&quot;&gt;False&lt;/span&gt;)
+            &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:
+                result.append(crontab[key])
+        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; result
+    
+    &lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;# save_crontab&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;save_crontab&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(self, key, value)&lt;/span&gt;:&lt;/span&gt;
+        crontab = get_crontab()
+        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; value &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; [&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;1&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;true&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;True&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;TRUE&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;yes&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;YES&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;Yes&quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]:
+            tmp_value = &lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;
+        &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:
+            tmp_value = &lt;span class=&quot;keyword&quot;&gt;False&lt;/span&gt;
+        
+        crontab[key] = tmp_value
+        save_crontab(crontab)
+        
+    &lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;# index&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+&lt;span class=&quot;meta&quot;&gt;    @cherrypy.expose&lt;/span&gt;
+    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(self)&lt;/span&gt;:&lt;/span&gt;
+        zrqk_key_list, zrqk_value_list = self.get_zrqk()
+        pc_rs_jl_key_list, pc_rs_jl_value_list = self.get_pc_rs_jl()
+        jq_category_key_list, zr_value_list, tq_value_list = self.get_jq_category()
+        tmpl = lookup.get_template(&lt;span class=&quot;string&quot;&gt;&quot;index_table.html&quot;&lt;/span&gt;)
+        zrqk_crontab, jq_category_crontab, pc_rs_jl_crontab = self.get_crontab()
+        &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; (zrqk_crontab, jq_category_crontab, pc_rs_jl_crontab)
+        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; tmpl.render(TATLE_TEMPLATE_TEXT=&lt;span class=&quot;string&quot;&gt;&quot;吴江大屏&quot;&lt;/span&gt;, zrqk_key_list=zrqk_key_list, zrqk_value_list=zrqk_value_list,
+                           pc_rs_jl_key_list=pc_rs_jl_key_list, pc_rs_jl_value_list=pc_rs_jl_value_list,
+                           jq_category_key_list=jq_category_key_list, zr_value_list=zr_value_list, tq_value_list=tq_value_list,
+                           zrqk_crontab=zrqk_crontab, jq_category_crontab=jq_category_crontab, pc_rs_jl_crontab=pc_rs_jl_crontab)
+
+    &lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;# poi 取得&lt;/span&gt;
+    &lt;span class=&quot;comment&quot;&gt;#===========================================================================&lt;/span&gt;
+&lt;span class=&quot;meta&quot;&gt;    @cherrypy.expose&lt;/span&gt;
+&lt;span class=&quot;meta&quot;&gt;    @cherrypy.tools.json_in()&lt;/span&gt;
+&lt;span class=&quot;meta&quot;&gt;    @cherrypy.tools.json_out()&lt;/span&gt;
+    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(self, name = None, **kwargs)&lt;/span&gt;:&lt;/span&gt;
+        result = &amp;#123;&amp;#125;
+        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; name == &lt;span class=&quot;string&quot;&gt;&quot;zrqk&quot;&lt;/span&gt;:
+            self.save_crontab(&lt;span class=&quot;string&quot;&gt;&quot;zrqk_crontab&quot;&lt;/span&gt;, kwargs[&lt;span class=&quot;string&quot;&gt;&quot;crontab&quot;&lt;/span&gt;])
+            &lt;span class=&quot;keyword&quot;&gt;del&lt;/span&gt; kwargs[&lt;span class=&quot;string&quot;&gt;&quot;crontab&quot;&lt;/span&gt;]
+            
+            save_json(kwargs, &lt;span class=&quot;string&quot;&gt;&quot;zrqk.json&quot;&lt;/span&gt;)
+            result[&lt;span class=&quot;string&quot;&gt;&#39;data&#39;&lt;/span&gt;] = kwargs
+            result[&lt;span class=&quot;string&quot;&gt;&#39;status&#39;&lt;/span&gt;] = &lt;span class=&quot;string&quot;&gt;&quot;success&quot;&lt;/span&gt;
+            result[&lt;span class=&quot;string&quot;&gt;&#39;code&#39;&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;
+            
+        &lt;span class=&quot;keyword&quot;&gt;elif&lt;/span&gt; name == &lt;span class=&quot;string&quot;&gt;&quot;pc_rs_jl&quot;&lt;/span&gt;:
+            self.save_crontab(&lt;span class=&quot;string&quot;&gt;&quot;pc_rs_jl_crontab&quot;&lt;/span&gt;, kwargs[&lt;span class=&quot;string&quot;&gt;&quot;crontab&quot;&lt;/span&gt;])
+            &lt;span class=&quot;keyword&quot;&gt;del&lt;/span&gt; kwargs[&lt;span class=&quot;string&quot;&gt;&quot;crontab&quot;&lt;/span&gt;]
+
+            save_json(kwargs, &lt;span class=&quot;string&quot;&gt;&quot;pc_rs_jl.json&quot;&lt;/span&gt;)
+            result[&lt;span class=&quot;string&quot;&gt;&#39;data&#39;&lt;/span&gt;] = kwargs
+            result[&lt;span class=&quot;string&quot;&gt;&#39;status&#39;&lt;/span&gt;] = &lt;span class=&quot;string&quot;&gt;&quot;success&quot;&lt;/span&gt;
+            result[&lt;span class=&quot;string&quot;&gt;&#39;code&#39;&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;
+        &lt;span class=&quot;keyword&quot;&gt;elif&lt;/span&gt; name == &lt;span class=&quot;string&quot;&gt;&quot;jq_category&quot;&lt;/span&gt;:
+            self.save_crontab(&lt;span class=&quot;string&quot;&gt;&quot;jq_category_crontab&quot;&lt;/span&gt;, kwargs[&lt;span class=&quot;string&quot;&gt;&quot;crontab&quot;&lt;/span&gt;])
+            &lt;span class=&quot;keyword&quot;&gt;del&lt;/span&gt; kwargs[&lt;span class=&quot;string&quot;&gt;&quot;crontab&quot;&lt;/span&gt;]
+            
+            tmp_value = &amp;#123;&amp;#125;
+            &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; tmp_key &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; kwargs:
+                key_one, key_two = tmp_key.split(&lt;span class=&quot;string&quot;&gt;&quot;_&quot;&lt;/span&gt;)
+                &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; key_one &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; tmp_value:
+                    tmp_value[key_one] = &amp;#123;&amp;#125;
+                tmp_value[key_one][key_two] = kwargs[tmp_key]
+            save_json(tmp_value, &lt;span class=&quot;string&quot;&gt;&quot;jq_category.json&quot;&lt;/span&gt;)
+            result[&lt;span class=&quot;string&quot;&gt;&#39;data&#39;&lt;/span&gt;] = tmp_value
+            result[&lt;span class=&quot;string&quot;&gt;&#39;status&#39;&lt;/span&gt;] = &lt;span class=&quot;string&quot;&gt;&quot;success&quot;&lt;/span&gt;
+            result[&lt;span class=&quot;string&quot;&gt;&#39;code&#39;&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;
+        &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:
+            &lt;span class=&quot;keyword&quot;&gt;pass&lt;/span&gt;
+        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; result
+        
+    
+overview = OverviewController()
+
+parent_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = parent_dir.replace(&lt;span class=&quot;string&quot;&gt;&quot;\&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;/&quot;&lt;/span&gt;)
+static_dir = &lt;span class=&quot;string&quot;&gt;&quot;%s/%s&quot;&lt;/span&gt; % (parent_dir, &lt;span class=&quot;string&quot;&gt;&#39;static/&#39;&lt;/span&gt;)
+&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; (parent_dir, static_dir)
+conf = &amp;#123;
+        
+        &lt;span class=&quot;string&quot;&gt;&#39;crime&#39;&lt;/span&gt;: &amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;request.dispatch&#39;&lt;/span&gt;: cherrypy.dispatch.RoutesDispatcher(),
+                  
+            &amp;#125;,
+        &lt;span class=&quot;string&quot;&gt;&#39;/&#39;&lt;/span&gt;: &amp;#123;
+                &lt;span class=&quot;string&quot;&gt;&#39;tools.auth_basic.on&#39;&lt;/span&gt;: &lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;,
+                &lt;span class=&quot;string&quot;&gt;&#39;tools.auth_basic.realm&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;wu jiang&#39;&lt;/span&gt;,
+                &lt;span class=&quot;string&quot;&gt;&#39;tools.auth_basic.checkpassword&#39;&lt;/span&gt;: validate_password
+            &amp;#125;,
+        &lt;span class=&quot;string&quot;&gt;&#39;/static&#39;&lt;/span&gt;: &amp;#123;
+        &lt;span class=&quot;string&quot;&gt;&#39;tools.staticdir.on&#39;&lt;/span&gt;: &lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&#39;tools.staticdir.root&#39;&lt;/span&gt;: parent_dir,
+        &lt;span class=&quot;string&quot;&gt;&#39;tools.staticdir.dir&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;static&#39;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&#39;tools.staticdir.index&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;index.html&#39;&lt;/span&gt;
+    &amp;#125;
+&amp;#125;
+
+&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; __name__==&lt;span class=&quot;string&quot;&gt;&#39;__main__&#39;&lt;/span&gt;:
+    cherrypy.quickstart(overview, &lt;span class=&quot;string&quot;&gt;&#39;/&#39;&lt;/span&gt;, config=conf)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&quot;/2016/07/28/cherrypy/QQ图片20160808104037.png&quot; alt=&quot;image1&quot; title=&quot;image1&quot;&gt;
+&lt;img src=&quot;/2016/07/28/cherrypy/QQ图片20160808104054.png&quot; alt=&quot;image2&quot; title=&quot;image2&quot;&gt;
+&lt;img src=&quot;/2016/07/28/cherrypy/QQ图片20160808104058.png&quot; alt=&quot;image3&quot; title=&quot;image3&quot;&gt;</content>
     
     <summary type="html">
     
-      &lt;img src=&quot;/2016/07/14/markdown-images/qxt.jpg&quot; alt=&quot;image2&quot; title=&quot;image2&quot;&gt;
-&lt;img src=&quot;/2016/07/14/markdown-images/stock-photo-162882249.jpg&quot;
+      &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;
+&lt;span class=&quot;comment&quot;&gt;# -*- coding：utf-8 -*-&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# json数据编辑功能&lt;/span&gt;
+&lt;span class=&quot;keywor
     
     </summary>
     
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="cherrypy" scheme="http://yoursite.com/tags/cherrypy/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2016/07/14/hello-world/"/>
-    <id>http://yoursite.com/2016/07/14/hello-world/</id>
-    <published>2016-07-14T12:52:51.000Z</published>
-    <updated>2016-07-14T12:52:51.000Z</updated>
+    <link href="http://yoursite.com/2016/07/25/hello-world/"/>
+    <id>http://yoursite.com/2016/07/25/hello-world/</id>
+    <published>2016-07-25T03:11:47.504Z</published>
+    <updated>2016-07-14T12:52:52.000Z</updated>
     
     <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;
+$ hexo &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
@@ -66,11 +321,34 @@
   </entry>
   
   <entry>
+    <title>markdown-images</title>
+    <link href="http://yoursite.com/2016/07/14/markdown-images/"/>
+    <id>http://yoursite.com/2016/07/14/markdown-images/</id>
+    <published>2016-07-14T14:36:46.000Z</published>
+    <updated>2016-07-25T05:43:24.606Z</updated>
+    
+    <content type="html">&lt;img src=&quot;/2016/07/14/markdown-images/qxt.jpg&quot; alt=&quot;image2&quot; title=&quot;image2&quot;&gt;
+&lt;img src=&quot;/2016/07/14/markdown-images/stock-photo-162882249.jpg&quot; alt=&quot;image1&quot; title=&quot;image1&quot;&gt;
+&lt;img src=&quot;/2016/07/14/markdown-images/stock-photo-39732662.jpg&quot; alt=&quot;image2&quot; title=&quot;image2&quot;&gt;
+&lt;img src=&quot;/2016/07/14/markdown-images/20160527_102515.jpg&quot; alt=&quot;image2&quot; title=&quot;image2&quot;&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/2016/07/14/markdown-images/qxt.jpg&quot; alt=&quot;image2&quot; title=&quot;image2&quot;&gt;
+&lt;img src=&quot;/2016/07/14/markdown-images/stock-photo-162882249.jpg&quot;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>math and uml</title>
     <link href="http://yoursite.com/2016/07/06/math-and-uml/"/>
     <id>http://yoursite.com/2016/07/06/math-and-uml/</id>
     <published>2016-07-05T16:05:45.000Z</published>
-    <updated>2016-07-14T14:31:45.000Z</updated>
+    <updated>2016-07-14T14:31:46.000Z</updated>
     
     <content type="html">&lt;p&gt;$$E=mc^2$$&lt;/p&gt;
 &lt;p&gt;$$\sum_{i=1}^n a_i=0$$&lt;br&gt;$$\sum ^ {j-1}{k=0}{\widehat{\gamma} {kj} z k } $$&lt;/p&gt;
