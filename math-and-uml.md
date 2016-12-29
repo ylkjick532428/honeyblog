@@ -5,6 +5,10 @@ tags:
 mathjax: true
 jumly: true
 ---
+
+{% asset_img enable_math.png image1 %}
+{% asset_img enable_math2.png image2 %}
+
 $$E=mc^2$$
 
 $$\sum\_{i=1}^n a\_i=0$$
