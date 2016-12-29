@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>honeybee</title>
-  
+  <subtitle>Your like,you hate are offensive you forward momentum.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2016-12-24T03:07:39.783Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://honey.lpai.info/"/>
+  <updated>2016-12-29T04:40:51.385Z</updated>
+  <id>http://honey.lpai.info/</id>
   
   <author>
     <name>ylkjick532428</name>
@@ -16,9 +16,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>oracle_xe</title>
+    <link href="http://honey.lpai.info/2016/12/26/oracle-xe/"/>
+    <id>http://honey.lpai.info/2016/12/26/oracle-xe/</id>
+    <published>2016-12-26T03:00:50.000Z</published>
+    <updated>2016-12-29T04:40:51.385Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;oracle-xe&quot;&gt;&lt;a href=&quot;#oracle-xe&quot; class=&quot;headerlink&quot; title=&quot;oracle xe&quot;&gt;&lt;/a&gt;oracle xe&lt;/h2&gt;&lt;p&gt;Oracle Database 11g Express Edition (Oracle Database XE) is an entry-level, small-footprint database based on the Oracle Database 11g Release 2 code base.  It’s free to develop, deploy, and distribute; fast to download; and simple to administer.&lt;/p&gt;
+&lt;p&gt;This edition suitable for persona, this install package about 300m, supported version win32, win64, linux64.&lt;/p&gt;
+&lt;p&gt;download &lt;a href=&quot;http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I install win64 version&lt;/p&gt;
+&lt;h3 id=&quot;reday-install&quot;&gt;&lt;a href=&quot;#reday-install&quot; class=&quot;headerlink&quot; title=&quot;reday install&quot;&gt;&lt;/a&gt;reday install&lt;/h3&gt;&lt;p&gt;unzip OracleXE112_Win64.zip&lt;/p&gt;
+&lt;h4 id=&quot;installing&quot;&gt;&lt;a href=&quot;#installing&quot; class=&quot;headerlink&quot; title=&quot;installing&quot;&gt;&lt;/a&gt;installing&lt;/h4&gt;&lt;p&gt;cd Disk1&lt;br&gt;run setup.exe as administrator&lt;br&gt;The install Path use ORACLE_HOME&lt;br&gt;and you need set the system user password&lt;/p&gt;
+&lt;h4 id=&quot;finish-install&quot;&gt;&lt;a href=&quot;#finish-install&quot; class=&quot;headerlink&quot; title=&quot;finish install&quot;&gt;&lt;/a&gt;finish install&lt;/h4&gt;&lt;img src=&quot;/2016/12/26/oracle-xe/install_finish.png&quot; alt=&quot;install_finish&quot; title=&quot;install_finish&quot;&gt;
+&lt;img src=&quot;/2016/12/26/oracle-xe/install_finish_service.png&quot; alt=&quot;install_finish_service&quot; title=&quot;install_finish_service&quot;&gt;
+&lt;h4 id=&quot;check-success&quot;&gt;&lt;a href=&quot;#check-success&quot; class=&quot;headerlink&quot; title=&quot;check success?&quot;&gt;&lt;/a&gt;check success?&lt;/h4&gt;&lt;img src=&quot;/2016/12/26/oracle-xe/check_success1.png&quot; alt=&quot;check_success1&quot; title=&quot;check_success1&quot;&gt;
+&lt;img src=&quot;/2016/12/26/oracle-xe/check_success2.png&quot; alt=&quot;check_success2&quot; title=&quot;check_success2&quot;&gt;
+&lt;img src=&quot;/2016/12/26/oracle-xe/finish_all.png&quot; alt=&quot;finish_all&quot; title=&quot;finish_all&quot;&gt;
+&lt;h4 id=&quot;set-system-variable-path&quot;&gt;&lt;a href=&quot;#set-system-variable-path&quot; class=&quot;headerlink&quot; title=&quot;set system variable path&quot;&gt;&lt;/a&gt;set system variable path&lt;/h4&gt;&lt;p&gt;ORACLE_SID=xe&lt;br&gt;ORACLE_HOME=C:\oraclexe\app\oracle\product\11.2.0\server&lt;br&gt;LD_LIBRARY_PATH=%ORACLE_HOME%\lib&lt;br&gt;path=%ORACLE_HOME%\bin;LD_LIBRARY_PATH;&lt;/p&gt;
+&lt;h4 id=&quot;warm&quot;&gt;&lt;a href=&quot;#warm&quot; class=&quot;headerlink&quot; title=&quot;warm&quot;&gt;&lt;/a&gt;warm&lt;/h4&gt;&lt;p&gt;if you change the default install path, oracle xe maybe install failure&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;oracle-xe&quot;&gt;&lt;a href=&quot;#oracle-xe&quot; class=&quot;headerlink&quot; title=&quot;oracle xe&quot;&gt;&lt;/a&gt;oracle xe&lt;/h2&gt;&lt;p&gt;Oracle Database 11g Express Edition (Oracl
+    
+    </summary>
+    
+    
+      <category term="oracle" scheme="http://honey.lpai.info/tags/oracle/"/>
+    
+  </entry>
+  
+  <entry>
     <title>cherrypy</title>
-    <link href="http://yoursite.com/2016/07/28/cherrypy/"/>
-    <id>http://yoursite.com/2016/07/28/cherrypy/</id>
+    <link href="http://honey.lpai.info/2016/07/28/cherrypy/"/>
+    <id>http://honey.lpai.info/2016/07/28/cherrypy/</id>
     <published>2016-07-28T08:30:03.000Z</published>
     <updated>2016-12-24T03:07:39.783Z</updated>
     
@@ -285,16 +318,16 @@ conf = &amp;#123;
     </summary>
     
     
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+      <category term="python" scheme="http://honey.lpai.info/tags/python/"/>
     
-      <category term="cherrypy" scheme="http://yoursite.com/tags/cherrypy/"/>
+      <category term="cherrypy" scheme="http://honey.lpai.info/tags/cherrypy/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2016/07/25/hello-world/"/>
-    <id>http://yoursite.com/2016/07/25/hello-world/</id>
+    <link href="http://honey.lpai.info/2016/07/25/hello-world/"/>
+    <id>http://honey.lpai.info/2016/07/25/hello-world/</id>
     <published>2016-07-25T03:11:47.504Z</published>
     <updated>2016-07-14T12:52:52.000Z</updated>
     
@@ -322,8 +355,8 @@ $ hexo &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&qu
   
   <entry>
     <title>markdown-images</title>
-    <link href="http://yoursite.com/2016/07/14/markdown-images/"/>
-    <id>http://yoursite.com/2016/07/14/markdown-images/</id>
+    <link href="http://honey.lpai.info/2016/07/14/markdown-images/"/>
+    <id>http://honey.lpai.info/2016/07/14/markdown-images/</id>
     <published>2016-07-14T14:36:46.000Z</published>
     <updated>2016-12-24T03:21:00.393Z</updated>
     
@@ -343,8 +376,8 @@ $ hexo &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&qu
   
   <entry>
     <title>math and uml</title>
-    <link href="http://yoursite.com/2016/07/06/math-and-uml/"/>
-    <id>http://yoursite.com/2016/07/06/math-and-uml/</id>
+    <link href="http://honey.lpai.info/2016/07/06/math-and-uml/"/>
+    <id>http://honey.lpai.info/2016/07/06/math-and-uml/</id>
     <published>2016-07-05T16:05:45.000Z</published>
     <updated>2016-12-24T03:27:43.254Z</updated>
     
@@ -373,8 +406,8 @@ $ hexo &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&qu
   
   <entry>
     <title>About</title>
-    <link href="http://yoursite.com/2016/07/04/About/"/>
-    <id>http://yoursite.com/2016/07/04/About/</id>
+    <link href="http://honey.lpai.info/2016/07/04/About/"/>
+    <id>http://honey.lpai.info/2016/07/04/About/</id>
     <published>2016-07-04T14:56:57.000Z</published>
     <updated>2016-07-05T16:11:34.000Z</updated>
     
@@ -394,17 +427,17 @@ $ hexo &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&qu
   
   <entry>
     <title>README</title>
-    <link href="http://yoursite.com/2016/07/04/README/"/>
-    <id>http://yoursite.com/2016/07/04/README/</id>
+    <link href="http://honey.lpai.info/2016/07/04/README/"/>
+    <id>http://honey.lpai.info/2016/07/04/README/</id>
     <published>2016-07-04T14:27:35.000Z</published>
-    <updated>2016-07-04T14:27:44.000Z</updated>
+    <updated>2016-12-26T03:34:22.109Z</updated>
     
-    <content type="html">&lt;p&gt;文章源码&lt;br&gt;网站:&lt;a href=&quot;http://blog.lpai.info&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.lpai.info&lt;/a&gt;&lt;br&gt;网站备份:&lt;a href=&quot;http://ylkjick532428.github.io/honeyblog/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://ylkjick532428.github.io/honeyblog/&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;site source&lt;br&gt;another domain:&lt;a href=&quot;http://blog.lpai.info&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.lpai.info&lt;/a&gt;&lt;br&gt;github backup site:&lt;a href=&quot;http://ylkjick532428.github.io/honeyblog/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://ylkjick532428.github.io/honeyblog/&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;文章源码&lt;br&gt;网站:&lt;a href=&quot;http://blog.lpai.info&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.lpai.info&lt;/a&gt;&lt;br&gt;网站备份:&lt;a href=&quot;http://ylkjick532428
+      &lt;p&gt;site source&lt;br&gt;another domain:&lt;a href=&quot;http://blog.lpai.info&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.lpai.info&lt;/a&gt;&lt;br&gt;github backup s
     
     </summary>
     
