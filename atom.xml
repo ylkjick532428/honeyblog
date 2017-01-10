@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://honey.lpai.info/"/>
-  <updated>2016-12-29T04:40:51.385Z</updated>
+  <updated>2017-01-08T14:12:46.704Z</updated>
   <id>http://honey.lpai.info/</id>
   
   <author>
@@ -20,21 +20,21 @@
     <link href="http://honey.lpai.info/2016/12/26/oracle-xe/"/>
     <id>http://honey.lpai.info/2016/12/26/oracle-xe/</id>
     <published>2016-12-26T03:00:50.000Z</published>
-    <updated>2016-12-29T04:40:51.385Z</updated>
+    <updated>2017-01-08T14:12:46.704Z</updated>
     
     <content type="html">&lt;h2 id=&quot;oracle-xe&quot;&gt;&lt;a href=&quot;#oracle-xe&quot; class=&quot;headerlink&quot; title=&quot;oracle xe&quot;&gt;&lt;/a&gt;oracle xe&lt;/h2&gt;&lt;p&gt;Oracle Database 11g Express Edition (Oracle Database XE) is an entry-level, small-footprint database based on the Oracle Database 11g Release 2 code base.  It’s free to develop, deploy, and distribute; fast to download; and simple to administer.&lt;/p&gt;
 &lt;p&gt;This edition suitable for persona, this install package about 300m, supported version win32, win64, linux64.&lt;/p&gt;
 &lt;p&gt;download &lt;a href=&quot;http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I install win64 version&lt;/p&gt;
-&lt;h3 id=&quot;reday-install&quot;&gt;&lt;a href=&quot;#reday-install&quot; class=&quot;headerlink&quot; title=&quot;reday install&quot;&gt;&lt;/a&gt;reday install&lt;/h3&gt;&lt;p&gt;unzip OracleXE112_Win64.zip&lt;/p&gt;
-&lt;h4 id=&quot;installing&quot;&gt;&lt;a href=&quot;#installing&quot; class=&quot;headerlink&quot; title=&quot;installing&quot;&gt;&lt;/a&gt;installing&lt;/h4&gt;&lt;p&gt;cd Disk1&lt;br&gt;run setup.exe as administrator&lt;br&gt;The install Path use ORACLE_HOME&lt;br&gt;and you need set the system user password&lt;/p&gt;
-&lt;h4 id=&quot;finish-install&quot;&gt;&lt;a href=&quot;#finish-install&quot; class=&quot;headerlink&quot; title=&quot;finish install&quot;&gt;&lt;/a&gt;finish install&lt;/h4&gt;&lt;img src=&quot;/2016/12/26/oracle-xe/install_finish.png&quot; alt=&quot;install_finish&quot; title=&quot;install_finish&quot;&gt;
+&lt;h4 id=&quot;1-reday-install&quot;&gt;&lt;a href=&quot;#1-reday-install&quot; class=&quot;headerlink&quot; title=&quot;1. reday install&quot;&gt;&lt;/a&gt;1. reday install&lt;/h4&gt;&lt;p&gt;unzip OracleXE112_Win64.zip&lt;/p&gt;
+&lt;h4 id=&quot;2-installing&quot;&gt;&lt;a href=&quot;#2-installing&quot; class=&quot;headerlink&quot; title=&quot;2. installing&quot;&gt;&lt;/a&gt;2. installing&lt;/h4&gt;&lt;p&gt;cd Disk1&lt;br&gt;run setup.exe as administrator&lt;br&gt;The install Path use ORACLE_HOME&lt;br&gt;and you need set the system user password&lt;/p&gt;
+&lt;h4 id=&quot;3-finish-install&quot;&gt;&lt;a href=&quot;#3-finish-install&quot; class=&quot;headerlink&quot; title=&quot;3. finish install&quot;&gt;&lt;/a&gt;3. finish install&lt;/h4&gt;&lt;img src=&quot;/2016/12/26/oracle-xe/install_finish.png&quot; alt=&quot;install_finish&quot; title=&quot;install_finish&quot;&gt;
 &lt;img src=&quot;/2016/12/26/oracle-xe/install_finish_service.png&quot; alt=&quot;install_finish_service&quot; title=&quot;install_finish_service&quot;&gt;
-&lt;h4 id=&quot;check-success&quot;&gt;&lt;a href=&quot;#check-success&quot; class=&quot;headerlink&quot; title=&quot;check success?&quot;&gt;&lt;/a&gt;check success?&lt;/h4&gt;&lt;img src=&quot;/2016/12/26/oracle-xe/check_success1.png&quot; alt=&quot;check_success1&quot; title=&quot;check_success1&quot;&gt;
+&lt;h4 id=&quot;4-check-success&quot;&gt;&lt;a href=&quot;#4-check-success&quot; class=&quot;headerlink&quot; title=&quot;4. check success?&quot;&gt;&lt;/a&gt;4. check success?&lt;/h4&gt;&lt;img src=&quot;/2016/12/26/oracle-xe/check_success1.png&quot; alt=&quot;check_success1&quot; title=&quot;check_success1&quot;&gt;
 &lt;img src=&quot;/2016/12/26/oracle-xe/check_success2.png&quot; alt=&quot;check_success2&quot; title=&quot;check_success2&quot;&gt;
 &lt;img src=&quot;/2016/12/26/oracle-xe/finish_all.png&quot; alt=&quot;finish_all&quot; title=&quot;finish_all&quot;&gt;
-&lt;h4 id=&quot;set-system-variable-path&quot;&gt;&lt;a href=&quot;#set-system-variable-path&quot; class=&quot;headerlink&quot; title=&quot;set system variable path&quot;&gt;&lt;/a&gt;set system variable path&lt;/h4&gt;&lt;p&gt;ORACLE_SID=xe&lt;br&gt;ORACLE_HOME=C:\oraclexe\app\oracle\product\11.2.0\server&lt;br&gt;LD_LIBRARY_PATH=%ORACLE_HOME%\lib&lt;br&gt;path=%ORACLE_HOME%\bin;LD_LIBRARY_PATH;&lt;/p&gt;
-&lt;h4 id=&quot;warm&quot;&gt;&lt;a href=&quot;#warm&quot; class=&quot;headerlink&quot; title=&quot;warm&quot;&gt;&lt;/a&gt;warm&lt;/h4&gt;&lt;p&gt;if you change the default install path, oracle xe maybe install failure&lt;/p&gt;
+&lt;h4 id=&quot;5-set-system-variable-path&quot;&gt;&lt;a href=&quot;#5-set-system-variable-path&quot; class=&quot;headerlink&quot; title=&quot;5. set system variable path&quot;&gt;&lt;/a&gt;5. set system variable path&lt;/h4&gt;&lt;p&gt;ORACLE_SID=xe&lt;br&gt;ORACLE_HOME=C:\oraclexe\app\oracle\product\11.2.0\server&lt;br&gt;LD_LIBRARY_PATH=%ORACLE_HOME%\lib&lt;br&gt;path=%ORACLE_HOME%\bin;LD_LIBRARY_PATH;&lt;/p&gt;
+&lt;h4 id=&quot;6-restart-system&quot;&gt;&lt;a href=&quot;#6-restart-system&quot; class=&quot;headerlink&quot; title=&quot;6. restart system&quot;&gt;&lt;/a&gt;6. restart system&lt;/h4&gt;&lt;p&gt;you need to restart system after you installed oracle-xe&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -329,14 +329,14 @@ conf = &amp;#123;
     <link href="http://honey.lpai.info/2016/07/25/hello-world/"/>
     <id>http://honey.lpai.info/2016/07/25/hello-world/</id>
     <published>2016-07-25T03:11:47.504Z</published>
-    <updated>2016-07-14T12:52:52.000Z</updated>
+    <updated>2017-01-08T08:46:42.793Z</updated>
     
     <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;
 $ hexo &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Run-serverP&quot;&gt;&lt;a href=&quot;#Run-serverP&quot; class=&quot;headerlink&quot; title=&quot;Run serverP&quot;&gt;&lt;/a&gt;Run serverP&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo generate&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
@@ -358,7 +358,7 @@ $ hexo &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&qu
     <link href="http://honey.lpai.info/2016/07/14/markdown-images/"/>
     <id>http://honey.lpai.info/2016/07/14/markdown-images/</id>
     <published>2016-07-14T14:36:46.000Z</published>
-    <updated>2016-12-29T04:50:23.444Z</updated>
+    <updated>2017-01-03T06:40:19.651Z</updated>
     
     <content type="html">&lt;img src=&quot;/2016/07/14/markdown-images/qxt.jpg&quot; alt=&quot;qxt&quot; title=&quot;qxt&quot;&gt;
 &lt;img src=&quot;/2016/07/14/markdown-images/gaoxiong.jpg&quot; alt=&quot;gaoxinong&quot; title=&quot;gaoxinong&quot;&gt;
@@ -409,7 +409,7 @@ $ hexo &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&qu
     <link href="http://honey.lpai.info/2016/07/04/About/"/>
     <id>http://honey.lpai.info/2016/07/04/About/</id>
     <published>2016-07-04T14:56:57.000Z</published>
-    <updated>2016-07-05T16:11:34.000Z</updated>
+    <updated>2017-01-08T01:58:23.225Z</updated>
     
     <content type="html">&lt;p&gt;G+: &lt;a href=&quot;https://plus.google.com/u/0/+Yangyuehui&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://plus.google.com/u/0/+Yangyuehui&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;GitHub: &lt;a href=&quot;https://github.com/ylkjick532428&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/ylkjick532428&lt;/a&gt;&lt;/p&gt;
