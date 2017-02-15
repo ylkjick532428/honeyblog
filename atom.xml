@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://honey.lpai.info/"/>
-  <updated>2017-01-08T14:12:46.704Z</updated>
+  <updated>2017-02-15T09:02:54.561Z</updated>
   <id>http://honey.lpai.info/</id>
   
   <author>
@@ -16,11 +16,357 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>oracle-install-linux</title>
+    <link href="http://honey.lpai.info/2017/02/15/oracle-install-linux/"/>
+    <id>http://honey.lpai.info/2017/02/15/oracle-install-linux/</id>
+    <published>2017-02-15T09:01:25.000Z</published>
+    <updated>2017-02-15T09:02:54.561Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;linux-oracle���ݿ���ͼ�ν��氲װ&quot;&gt;&lt;a href=&quot;#linux-oracle���ݿ���ͼ�ν��氲װ&quot; class=&quot;headerlink&quot; title=&quot;linux oracle���ݿ���ͼ�ν��氲װ&quot;&gt;&lt;/a&gt;linux oracle���ݿ���ͼ�ν��氲װ&lt;/h2&gt;&lt;h3 id=&quot;1-׼����װ·�����u�&quot;&gt;&lt;a href=&quot;#1-׼����װ·�����u�&quot; class=&quot;headerlink&quot; title=&quot;1 ׼����װ·�����û�&quot;&gt;&lt;/a&gt;1 ׼����װ·�����û�&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;/usr/sbin/groupadd oinstall&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/usr/sbin/groupadd dba&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/usr/sbin/useradd -g oinstall -G dba oracle&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mkdir -p /opt/oracle&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;chown -R oracle:oinstall /opt/oracle&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;chmod -R 775 /opt/oracle&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mkdir -p /opt/oraInventory&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;chown oracle:oinstall /opt/oraInventory&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;chmod -R 775 /opt/oraInventory&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mkdir  /oradata&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;chown oracle:oinstall /oradata&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;chmod 775 /oradata&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mkdir /recovery_area&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;chown oracle:oinstall /recovery_area&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;chmod 775 /recovery_area&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;2-����linuxϵͳ����&quot;&gt;&lt;a href=&quot;#2-����linuxϵͳ����&quot; class=&quot;headerlink&quot; title=&quot;2 ����linuxϵͳ����&quot;&gt;&lt;/a&gt;2 ����linuxϵͳ����&lt;/h3&gt;&lt;h4 id=&quot;root�u����޸�-etc-sysctl-conf-�l����������²���&quot;&gt;&lt;a href=&quot;#root�u����޸�-etc-sysctl-conf-�l����������²���&quot; class=&quot;headerlink&quot; title=&quot;root�û����޸� /etc/sysctl.conf �ļ����������²���&quot;&gt;&lt;/a&gt;root�û����޸� /etc/sysctl.conf �ļ����������²���&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;fs.aio-max-nr = 1048576&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;fs.file-max = 6815744&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;kernel.shmall = 2097152&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;kernel.shmmax = 536870912&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;kernel.shmmni = 4096&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;kernel.sem = 250 32000 100 128&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;net.ipv4.ip_local_port_range = 9000 65500&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;net.core.rmem_default = 262144&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;net.core.rmem_max = 4194304&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;net.core.wmem_default = 262144&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;net.core.wmem_max = 1048586&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Ϊʹ����������Ч��������ϵͳ��ִ����������&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/sbin/sysctl -p&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;�޸��u�����root�u����޸�-etc-security-limits-conf-�l������������Ĳ���&quot;&gt;&lt;a href=&quot;#�޸��u�����root�u����޸�-etc-security-limits-conf-�l������������Ĳ���&quot; class=&quot;headerlink&quot; title=&quot;�޸��û�����root�û����޸� /etc/security/limits.conf �ļ������������Ĳ���&quot;&gt;&lt;/a&gt;�޸��û�����root�û����޸� /etc/security/limits.conf �ļ������������Ĳ���&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;oracle           soft    nproc   2047&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;oracle           hard    nproc   16384&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;oracle           soft    nofile  1024&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;oracle           hard    nofile  65536&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;�޸��u���֤ѡ��root�u��£��޸�-etc-pam-d-login�l��������²���&quot;&gt;&lt;a href=&quot;#�޸��u���֤ѡ��root�u��£��޸�-etc-pam-d-login�l��������²���&quot; class=&quot;headerlink&quot; title=&quot;�޸��û���֤ѡ��root�û��£��޸�/etc/pam.d/login�ļ��������²���&quot;&gt;&lt;/a&gt;�޸��û���֤ѡ��root�û��£��޸�/etc/pam.d/login�ļ��������²���&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;session    required     pam_limits.so&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;�޸��u������l�root�u��£��޸�-etc-profile�l��������²�����&quot;&gt;&lt;a href=&quot;#�޸��u������l�root�u��£��޸�-etc-profile�l��������²�����&quot; class=&quot;headerlink&quot; title=&quot;�޸��û������ļ�root�û��£��޸�/etc/profile�ļ��������²�����&quot;&gt;&lt;/a&gt;�޸��û������ļ�root�û��£��޸�/etc/profile�ļ��������²�����&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;if [ $USER = &amp;quot;oracle&amp;quot; ]; then&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        if [ $SHELL = &amp;quot;/bin/ksh&amp;quot; ]; then&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;              ulimit -p 16384&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;              ulimit -n 65536&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        else&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;              ulimit -u 16384 -n 65536&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        fi&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;fi&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;��װ������&quot;&gt;&lt;a href=&quot;#��װ������&quot; class=&quot;headerlink&quot; title=&quot;��װ������&quot;&gt;&lt;/a&gt;��װ������&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;yum -y install binutils compat-libcap1 compat-libstdc++ gcc gcc-c++ glibc glibc-devel ksh libgcc libstdc++ libstdc++-devel libaio sysstat libaio-devel elfutils-libelf-devel unixODBC unixODBC-devel, compat-libstdc++-33&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;3-���ؽ�ѹ��װ�l�&quot;&gt;&lt;a href=&quot;#3-���ؽ�ѹ��װ�l�&quot; class=&quot;headerlink&quot; title=&quot;3 ���ؽ�ѹ��װ�ļ�&quot;&gt;&lt;/a&gt;3 ���ؽ�ѹ��װ�ļ�&lt;/h3&gt;&lt;p&gt;oralce���ص�ַ: &lt;a href=&quot;http://10.35.252.214/oracle&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://10.35.252.214/oracle&lt;/a&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;su - oracle&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;cd /opt/oracle&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;unzip linux.x64_11gR2_database_1of2.zip&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;unzip linux.x64_11gR2_database_2of2.zip&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mv database/* ./&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;rm �Crf database&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;4-��װ&quot;&gt;&lt;a href=&quot;#4-��װ&quot; class=&quot;headerlink&quot; title=&quot;4 ��װ&quot;&gt;&lt;/a&gt;4 ��װ&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;���ذ�װ��Ӧ�ļ�&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;�޸�db.rsp&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;oracle.install.db.config.starterdb.password.ALL=system      system����&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;oracle.install.db.config.starterdb.characterSet=ZHS16GBK   �����ַ���&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;oracle.install.db.config.starterdb.SID=ORCL			        ORACLE_SID&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;��װ&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;./runInstaller -silent -responseFile /opt/database/db.rsp -ignorePrereq&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;oracle�������ռ�&quot;&gt;&lt;a href=&quot;#oracle�������ռ�&quot; class=&quot;headerlink&quot; title=&quot;oracle�������ռ�&quot;&gt;&lt;/a&gt;oracle�������ռ�&lt;/h2&gt;&lt;h3 id=&quot;��1����������ʱ���ռ�&quot;&gt;&lt;a href=&quot;#��1����������ʱ���ռ�&quot; class=&quot;headerlink&quot; title=&quot;��1����������ʱ���ռ�&quot;&gt;&lt;/a&gt;��1����������ʱ���ռ�&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;create temporary tablespace user_temp &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tempfile &amp;apos;D:\oracle\oradata\Oracle9i\user_temp.dbf&amp;apos; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;size 50m &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;autoextend on &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;next 50m maxsize 20480m &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;extent management local;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;��2�����������ݱ��ռ�&quot;&gt;&lt;a href=&quot;#��2�����������ݱ��ռ�&quot; class=&quot;headerlink&quot; title=&quot;��2�����������ݱ��ռ�&quot;&gt;&lt;/a&gt;��2�����������ݱ��ռ�&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;create tablespace user_data &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;logging &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;datafile &amp;apos;D:\oracle\oradata\Oracle9i\user_data.dbf&amp;apos; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;size 50m &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;autoextend on &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;next 50m maxsize 20480m &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;extent management local;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;��3���������u���ָ�����ռ�&quot;&gt;&lt;a href=&quot;#��3���������u���ָ�����ռ�&quot; class=&quot;headerlink&quot; title=&quot;��3���������û���ָ�����ռ�&quot;&gt;&lt;/a&gt;��3���������û���ָ�����ռ�&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;create user username identified by password &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;default tablespace user_data &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;temporary tablespace user_temp;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;��4�������u�����E��&quot;&gt;&lt;a href=&quot;#��4�������u�����E��&quot; class=&quot;headerlink&quot; title=&quot;��4�������û�����Ȩ��&quot;&gt;&lt;/a&gt;��4�������û�����Ȩ��&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;grant connect,resource,dba to username;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;grant create view to username;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;�򵥴����u�-��Ҫ�����ϻ���ʹ��&quot;&gt;&lt;a href=&quot;#�򵥴����u�-��Ҫ�����ϻ���ʹ��&quot; class=&quot;headerlink&quot; title=&quot;�򵥴����û�(��Ҫ�����ϻ���ʹ��)&quot;&gt;&lt;/a&gt;�򵥴����û�(��Ҫ�����ϻ���ʹ��)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;create user username identified by password;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;grant connect, resource, dba to username;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;grant create view to username;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;oracle-����&quot;&gt;&lt;a href=&quot;#oracle-����&quot; class=&quot;headerlink&quot; title=&quot;oracle ����&quot;&gt;&lt;/a&gt;oracle ����&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ssh ��½oracl������&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;�л���oracle��װ�û�: su oracle&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;����oracle��̨      : sqlplus / as sysdba&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;�ر����ݿ�          : shutdown immediate;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;�������ݿ�          : startup mount;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;�޸����ݿ�״̬����  : alter database open;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;�޸�����������������: ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;��װ�е�����&quot;&gt;&lt;a href=&quot;#��װ�е�����&quot; class=&quot;headerlink&quot; title=&quot;��װ�е�����&quot;&gt;&lt;/a&gt;��װ�е�����&lt;/h2&gt;&lt;h3 id=&quot;�����ռ�Ϊ0&quot;&gt;&lt;a href=&quot;#�����ռ�Ϊ0&quot; class=&quot;headerlink&quot; title=&quot;�����ռ�Ϊ0&quot;&gt;&lt;/a&gt;�����ռ�Ϊ0&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;cd /&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dd  if=/dev/zero  of=swapfile  bs=1024  count=1000000&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mkswap swapfile&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;swapon  swapfile&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;db-rsp�l�&quot;&gt;&lt;a href=&quot;#db-rsp�l�&quot; class=&quot;headerlink&quot; title=&quot;db.rsp�ļ�&quot;&gt;&lt;/a&gt;db.rsp�ļ�&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Do not change the following system generated value. &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.responseFileVersion=/oracle/install/rspfmt_dbinstall_response_schema_v11_2_0
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# The installation option can be one of the following&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# 1. INSTALL_DB_SWONLY&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# 2. INSTALL_DB_AND_CONFIG&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# 3. UPGRADE_DB&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.option=INSTALL_DB_AND_CONFIG
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# This variable holds the hostname of the system as set by the user. &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# It can be used to force the installation to use an alternative   &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# hostname rather than using the first hostname found on the system&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# (e.g., for systems with multiple hostnames and network interfaces).&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+ORACLE_HOSTNAME=localhost
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Unix group to be set for the inventory directory.  &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+UNIX_GROUP_NAME=oinstall
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Inventory location.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+INVENTORY_LOCATION=/opt/oraInventory
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Specify the languages in which the components will be installed.             &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# en   : English                  ja   : Japanese                  &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# fr   : French                   ko   : Korean                    &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# ar   : Arabic                   es   : Latin American Spanish    &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# bn   : Bengali                  lv   : Latvian                   &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# pt_BR: Brazilian Portuguese     lt   : Lithuanian                &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# bg   : Bulgarian                ms   : Malay                     &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# fr_CA: Canadian French          es_MX: Mexican Spanish           &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# ca   : Catalan                  no   : Norwegian                 &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# hr   : Croatian                 pl   : Polish                    &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# cs   : Czech                    pt   : Portuguese                &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# da   : Danish                   ro   : Romanian                  &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# nl   : Dutch                    ru   : Russian                   &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# ar_EG: Egyptian                 zh_CN: Simplified Chinese        &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# en_GB: English (Great Britain)  sk   : Slovak                    &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# et   : Estonian                 sl   : Slovenian                 &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# fi   : Finnish                  es_ES: Spanish                   &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# de   : German                   sv   : Swedish                   &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# el   : Greek                    th   : Thai                      &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# iw   : Hebrew                   zh_TW: Traditional Chinese       &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# hu   : Hungarian                tr   : Turkish                   &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# is   : Icelandic                uk   : Ukrainian                 &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# in   : Indonesian               vi   : Vietnamese                &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# it   : Italian                                                   &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Example : SELECTED_LANGUAGES=en,fr,ja&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+SELECTED_LANGUAGES=en,zh_CN
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Complete path of the Oracle Home  &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+ORACLE_HOME=/opt/oracle/product/&lt;span class=&quot;number&quot;&gt;11.2&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.0&lt;/span&gt;/dbhome_1
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Complete path of the Oracle Base. &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+ORACLE_BASE=/opt/oracle
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Installation Edition of the component.                        &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#                                                             &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# The value should contain only one of these choices.        &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# EE     : Enterprise Edition                                &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# SE     : Standard Edition                                  &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# SEONE  : Standard Edition One&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# PE     : Personal Edition (WINDOWS ONLY)&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.InstallEdition=EE
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# This property is considered only if InstallEdition is EE.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# true  : Components mentioned as part of &#39;customComponents&#39; property&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#         are considered for install.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# false : Value for &#39;customComponents&#39; is not considered.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.isCustomInstall=false
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# This property is considered only if &#39;IsCustomInstall&#39; is set to true &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Description: List of Enterprise Edition Options you would like to install.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#              The following choices are available. You may specify any&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#              combination of these choices.  The components you choose should&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#              be specified in the form &quot;internal-component-name:version&quot;&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#              Below is a list of components you may specify to install.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#        &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#              oracle.oraolap:11.2.0.0.2 - Oracle OLAP&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#              oracle.rdbms.dm:11.2.0.0.2 - Oracle Data Mining RDBMS Files&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#              oracle.rdbms.dv:11.2.0.0.2 - Oracle Database Vault option&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#              oracle.rdbms.lbac:11.2.0.0.2 - Oracle Label Security&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#              oracle.rdbms.partitioning:11.2.0.0.2 - Oracle Partitioning&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#              oracle.rdbms.rat:11.2.0.0.2 - Oracle Real Application Testing&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#              oracle.clrintg.ode_net:11.2.0.0.2 - Oracle Database Extensions for .NET 1.x (Windows)&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#              oracle.clrintg.ode_net_2:11.2.0.0.2 - Oracle Database Extensions for .NET 2.0 (Windows)&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.customComponents=
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.DBA_GROUP=dba
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.OPER_GROUP=oinstall
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# This variable represents the cluster node names selected by the .  &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# user for installation                                      &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.CLUSTER_NODES=
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# One of the following&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# - GENERAL_PURPOSE                              &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# - TRANSACTION_PROCESSING                       &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# - DATAWAREHOUSE                                &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.type=GENERAL_PURPOSE
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Global Database Name &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.globalDBName=xfdsj
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# The Starter Database SID &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.SID=
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Database character set&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#                                               &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#  One of the following&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#  AL32UTF8, WE8ISO8859P15, WE8MSWIN1252, EE8ISO8859P2,&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#  EE8MSWIN1250, NE8ISO8859P10, NEE8ISO8859P4, BLT8MSWIN1257,&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#  BLT8ISO8859P13, CL8ISO8859P5, CL8MSWIN1251, AR8ISO8859P6,&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#  AR8MSWIN1256, EL8ISO8859P7, EL8MSWIN1253, IW8ISO8859P8,&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#  IW8MSWIN1255, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE,&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#  KO16MSWIN949, ZHS16GBK, TH8TISASCII, ZHT32EUC, ZHT16MSWIN950,&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#  ZHT16HKSCS, WE8ISO8859P9, TR8MSWIN1254, VN8MSWIN1258&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.characterSet=
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Specify the total memory allocation for the database. (in MB)&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Value should be at least 256 MB, and should not exceed the  &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# total physical memory available on the system.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Example: oracle.install.db.config.starterdb.memoryLimit=40&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.memoryLimit=&lt;span class=&quot;number&quot;&gt;738&lt;/span&gt;
+oracle.install.db.config.starterdb.memoryOption=true
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# This variable controls whether to load Example Schemas onto&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# the starter database or not.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.installExampleSchemas=false
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# This include enabling audit settings, configuring password  &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# profiles and revoking some grants to public. These settings &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# are provided by default.  You may choose to disable all.    &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.enableSecuritySettings=true
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.password.ALL=
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.password.SYS=
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.password.SYSTEM=
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.password.SYSMAN=
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.password.DBSNMP=
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Can be one of the following &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# 1. GRID_CONTROL&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# 2. DB_CONTROL&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# &lt;/span&gt;
+oracle.install.db.config.starterdb.control=DB_CONTROL
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Determines the Management Service to use if Grid Control   &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# is selected to manage the database.      &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.gridcontrol.gridControlServiceURL=
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Determines whether to receive email notification for       &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# critical alerts when using DB control.   &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.dbcontrol.enableEmailNotification=false
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.dbcontrol.emailAddress=
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.dbcontrol.SMTPServer=
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.automatedBackup.enable=false
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.automatedBackup.osuid=
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.automatedBackup.ospwd=
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Can be one of the following&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# - FILE_SYSTEM_STORAGE&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# - ASM_STORAGE&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.storageType=FILE_SYSTEM_STORAGE
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Database file location:                  &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# directory for datafiles, control files, redo logs.         &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Applicable only when oracle.install.db.config.starterdb.storage=FILE_SYSTEM_STORAGE &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.fileSystemStorage.dataLocation=/opt/oracle/oradata
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Backup and recovery location &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Applicable only when oracle.install.db.config.starterdb.storage=FILE_SYSTEM_STORAGE &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.starterdb.fileSystemStorage.recoveryLocation=
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Name of ASM disk group to be used for storage.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Applicable only when oracle.install.db.config.starterdb.storageType=ASM_STORAGE&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.asm.diskGroup=
+
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Password for ASMSNMP user of the ASM instance.                  &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Applicable only when oracle.install.db.config.starterdb.storage=ASM_STORAGE &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#-------------------------------------------------------------------------------&lt;/span&gt;
+oracle.install.db.config.asm.ASMSNMPPassword=
+
+&lt;span class=&quot;comment&quot;&gt;#------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Specify the My Oracle Support Account Username.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#  Example   : MYORACLESUPPORT_USERNAME=metalink&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#------------------------------------------------------------------------------&lt;/span&gt;
+MYORACLESUPPORT_USERNAME=
+
+&lt;span class=&quot;comment&quot;&gt;#------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Specify the My Oracle Support Account Username password.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Example    : MYORACLESUPPORT_PASSWORD=password&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#------------------------------------------------------------------------------&lt;/span&gt;
+MYORACLESUPPORT_PASSWORD=
+
+&lt;span class=&quot;comment&quot;&gt;#------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Specify whether to enable the user to set the password for&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# My Oracle Support credentials. The value can be either true or false.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# If left blank it will be assumed to be false.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Example    : SECURITY_UPDATES_VIA_MYORACLESUPPORT=true&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#------------------------------------------------------------------------------&lt;/span&gt;
+SECURITY_UPDATES_VIA_MYORACLESUPPORT=false
+
+&lt;span class=&quot;comment&quot;&gt;#------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Specify whether user wants to give any proxy details for connection. &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# The value can be either true or false. If left blank it will be assumed&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# to be false.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Example    : DECLINE_SECURITY_UPDATES=false&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#------------------------------------------------------------------------------&lt;/span&gt;
+DECLINE_SECURITY_UPDATES=true
+
+&lt;span class=&quot;comment&quot;&gt;#------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Specify the Proxy server name. Length should be greater than zero.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Example    : PROXY_HOST=proxy.domain.com &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#------------------------------------------------------------------------------&lt;/span&gt;
+PROXY_HOST=
+
+&lt;span class=&quot;comment&quot;&gt;#------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Specify the proxy port number. Should be Numeric and atleast 2 chars.&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# Example    : PROXY_PORT=25 &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#------------------------------------------------------------------------------&lt;/span&gt;
+PROXY_PORT=
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;linux-oracle���ݿ���ͼ�ν��氲װ&quot;&gt;&lt;a href=&quot;#linux-oracle���ݿ���ͼ�ν��氲װ&quot; class=&quot;headerlink&quot; title=&quot;linux oracle���ݿ���ͼ�ν��氲װ&quot;&gt;&lt;/a&gt;linux or
+    
+    </summary>
+    
+    
+      <category term="oracle��װ" scheme="http://honey.lpai.info/tags/oracle%EF%BF%BD%EF%BF%BD%D7%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>oracle_xe</title>
     <link href="http://honey.lpai.info/2016/12/26/oracle-xe/"/>
     <id>http://honey.lpai.info/2016/12/26/oracle-xe/</id>
     <published>2016-12-26T03:00:50.000Z</published>
-    <updated>2017-01-08T14:12:46.704Z</updated>
+    <updated>2017-02-06T01:32:04.668Z</updated>
     
     <content type="html">&lt;h2 id=&quot;oracle-xe&quot;&gt;&lt;a href=&quot;#oracle-xe&quot; class=&quot;headerlink&quot; title=&quot;oracle xe&quot;&gt;&lt;/a&gt;oracle xe&lt;/h2&gt;&lt;p&gt;Oracle Database 11g Express Edition (Oracle Database XE) is an entry-level, small-footprint database based on the Oracle Database 11g Release 2 code base.  It’s free to develop, deploy, and distribute; fast to download; and simple to administer.&lt;/p&gt;
 &lt;p&gt;This edition suitable for persona, this install package about 300m, supported version win32, win64, linux64.&lt;/p&gt;
@@ -358,7 +704,7 @@ $ hexo &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&qu
     <link href="http://honey.lpai.info/2016/07/14/markdown-images/"/>
     <id>http://honey.lpai.info/2016/07/14/markdown-images/</id>
     <published>2016-07-14T14:36:46.000Z</published>
-    <updated>2017-01-03T06:40:19.651Z</updated>
+    <updated>2017-02-06T02:37:33.254Z</updated>
     
     <content type="html">&lt;img src=&quot;/2016/07/14/markdown-images/qxt.jpg&quot; alt=&quot;qxt&quot; title=&quot;qxt&quot;&gt;
 &lt;img src=&quot;/2016/07/14/markdown-images/gaoxiong.jpg&quot; alt=&quot;gaoxinong&quot; title=&quot;gaoxinong&quot;&gt;
