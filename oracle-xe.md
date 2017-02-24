@@ -12,31 +12,32 @@ This edition suitable for persona, this install package about 300m, supported ve
 download http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html
 
 I install win64 version
-### reday install
+#### 1. reday install
 unzip OracleXE112_Win64.zip
 
-#### installing
+#### 2. installing
 cd Disk1
 run setup.exe as administrator
 The install Path use ORACLE_HOME
 and you need set the system user password
 
-#### finish install
+#### 3. finish install
 {% asset_img install_finish.png install_finish %}
 {% asset_img install_finish_service.png install_finish_service %}
 
 
-#### check success?
+#### 4. check success?
 {% asset_img check_success1.png check_success1 %}
 {% asset_img check_success2.png check_success2 %}
 {% asset_img finish_all.png finish_all %}
 
-#### set system variable path
+#### 5. set system variable path
 ORACLE_SID=xe
 ORACLE_HOME=C:\oraclexe\app\oracle\product\11.2.0\server
 LD_LIBRARY_PATH=%ORACLE_HOME%\lib
 path=%ORACLE_HOME%\bin;LD_LIBRARY_PATH;
 
 
-#### warm
-if you change the default install path, oracle xe maybe install failure
+#### 6. restart system
+you need to restart system after you installed oracle-xe
+

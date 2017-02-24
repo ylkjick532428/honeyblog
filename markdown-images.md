@@ -6,5 +6,5 @@ tags:
 
 {% asset_img qxt.jpg qxt %}
 
-{% asset_img 20160527_102515.jpg 20160527_102515 %}
+{% asset_img gaoxiong.jpg gaoxinong %}
 
