@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qooeo.netAbout/</loc>
+    
+    <lastmod>2017-11-01T06:56:30.706Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netREADME/</loc>
+    
+    <lastmod>2017-11-01T06:56:04.751Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://qooeo.netlinux-install-nginx/</loc>
     
     <lastmod>2017-11-01T06:10:24.500Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>https://qooeo.netyuncai-dev-doc/</loc>
     
     <lastmod>2017-11-01T05:52:12.044Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qooeo.netAbout/</loc>
-    
-    <lastmod>2017-11-01T05:50:55.615Z</lastmod>
     
   </url>
   
@@ -54,13 +61,6 @@
     <loc>https://qooeo.netpydev-template/</loc>
     
     <lastmod>2017-11-01T05:39:42.804Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qooeo.netreadme/</loc>
-    
-    <lastmod>2017-11-01T05:38:09.511Z</lastmod>
     
   </url>
   
@@ -107,23 +107,9 @@
   </url>
   
   <url>
-    <loc>https://qooeo.netoracle-install-linux/</loc>
-    
-    <lastmod>2017-11-01T05:24:53.862Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://qooeo.netdata-input/</loc>
     
     <lastmod>2017-11-01T05:24:53.850Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qooeo.netmarkdown-images/</loc>
-    
-    <lastmod>2017-11-01T05:24:53.837Z</lastmod>
     
   </url>
   
@@ -152,6 +138,48 @@
     <loc>https://qooeo.netjavascript-packages-management/</loc>
     
     <lastmod>2017-11-01T05:24:53.688Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netoracle-install-linux/</loc>
+    
+    <lastmod>2017-02-15T09:09:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netmarkdown-images/</loc>
+    
+    <lastmod>2017-02-06T02:37:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netoracle-xe/</loc>
+    
+    <lastmod>2017-02-06T01:32:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.nethello-world/</loc>
+    
+    <lastmod>2017-01-08T08:46:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netmath-and-uml/</loc>
+    
+    <lastmod>2016-12-24T03:27:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netcherrypy/</loc>
+    
+    <lastmod>2016-12-24T03:07:38.000Z</lastmod>
     
   </url>
   
