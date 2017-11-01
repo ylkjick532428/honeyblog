@@ -2,58 +2,156 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://honey.lpai.info/2017/02/15/oracle-install-linux/</loc>
+    <loc>https://qooeo.netlinux-install-nginx/</loc>
     
-    <lastmod>2017-02-15T09:09:03.742Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://honey.lpai.info/2016/07/14/markdown-images/</loc>
-    
-    <lastmod>2017-02-06T02:37:33.254Z</lastmod>
+    <lastmod>2017-11-01T06:10:24.500Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://honey.lpai.info/2016/12/26/oracle-xe/</loc>
+    <loc>https://qooeo.netprivate-docker-server/</loc>
     
-    <lastmod>2017-02-06T01:32:04.668Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://honey.lpai.info/2016/07/25/hello-world/</loc>
-    
-    <lastmod>2017-01-08T08:46:42.793Z</lastmod>
+    <lastmod>2017-11-01T06:09:59.878Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://honey.lpai.info/2016/07/04/About/</loc>
+    <loc>https://qooeo.netyuncai-dev-doc/</loc>
     
-    <lastmod>2017-01-08T01:58:23.225Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://honey.lpai.info/2016/07/04/README/</loc>
-    
-    <lastmod>2016-12-26T03:34:22.109Z</lastmod>
+    <lastmod>2017-11-01T05:52:12.044Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://honey.lpai.info/2016/07/06/math-and-uml/</loc>
+    <loc>https://qooeo.netAbout/</loc>
     
-    <lastmod>2016-12-24T03:27:43.254Z</lastmod>
+    <lastmod>2017-11-01T05:50:55.615Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://honey.lpai.info/2016/07/28/cherrypy/</loc>
+    <loc>https://qooeo.netcabot-install/</loc>
     
-    <lastmod>2016-12-24T03:07:39.783Z</lastmod>
+    <lastmod>2017-11-01T05:50:27.390Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netcentos-repo/</loc>
+    
+    <lastmod>2017-11-01T05:46:53.138Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netluigi-install/</loc>
+    
+    <lastmod>2017-11-01T05:43:25.483Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netpydev-template/</loc>
+    
+    <lastmod>2017-11-01T05:39:42.804Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netreadme/</loc>
+    
+    <lastmod>2017-11-01T05:38:09.511Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netserver-install/</loc>
+    
+    <lastmod>2017-11-01T05:37:33.234Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netsoftware/</loc>
+    
+    <lastmod>2017-11-01T05:32:05.743Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netlinux-common-comand/</loc>
+    
+    <lastmod>2017-11-01T05:24:54.387Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netinstall-elasticsearch-on-linux/</loc>
+    
+    <lastmod>2017-11-01T05:24:54.383Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netflowchat/</loc>
+    
+    <lastmod>2017-11-01T05:24:53.898Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netmysql-management/</loc>
+    
+    <lastmod>2017-11-01T05:24:53.890Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netoracle-install-linux/</loc>
+    
+    <lastmod>2017-11-01T05:24:53.862Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netdata-input/</loc>
+    
+    <lastmod>2017-11-01T05:24:53.850Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netmarkdown-images/</loc>
+    
+    <lastmod>2017-11-01T05:24:53.837Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netcentos-6-5-install/</loc>
+    
+    <lastmod>2017-11-01T05:24:53.829Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netgraphite-install-on-centos/</loc>
+    
+    <lastmod>2017-11-01T05:24:53.751Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netoracle-management/</loc>
+    
+    <lastmod>2017-11-01T05:24:53.705Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qooeo.netjavascript-packages-management/</loc>
+    
+    <lastmod>2017-11-01T05:24:53.688Z</lastmod>
     
   </url>
   

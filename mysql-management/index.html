@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  
+  <meta name="description" content="mysql 管理linux安装yum install mysql mysql-server mysql-devel mysql-libs
+配置文件/etc/my.ini
+启动service mysqld start|stop|restart
+自动启动chkconfig mysqld on
+管理mys" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>mysql management | Honeybee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="mysql 管理linux安装yum install mysql mysql-server mysql-devel mysql-libs 配置文件/etc/my.ini 启动service mysqld start|stop|restart 自动启动chkconfig mysqld on 管理mysql 设置数据库引擎引擎差异默认为MYISAM, 某些情况下需要修改为InnoDBmysql&amp;gt;">
+<meta name="keywords" content="mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql management">
+<meta property="og:url" content="https://qooeo.net/mysql-management/index.html">
+<meta property="og:site_name" content="Honeybee">
+<meta property="og:description" content="mysql 管理linux安装yum install mysql mysql-server mysql-devel mysql-libs 配置文件/etc/my.ini 启动service mysqld start|stop|restart 自动启动chkconfig mysqld on 管理mysql 设置数据库引擎引擎差异默认为MYISAM, 某些情况下需要修改为InnoDBmysql&amp;gt;">
+<meta property="og:updated_time" content="2017-11-01T05:24:53.890Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mysql management">
+<meta name="twitter:description" content="mysql 管理linux安装yum install mysql mysql-server mysql-devel mysql-libs 配置文件/etc/my.ini 启动service mysqld start|stop|restart 自动启动chkconfig mysqld on 管理mysql 设置数据库引擎引擎差异默认为MYISAM, 某些情况下需要修改为InnoDBmysql&amp;gt;">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="../css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+  
+</head>
+
+<body class="home blog custom-background custom-font-enabled single-author">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="../index.html" title="Honeybee" rel="home">Honeybee</a>
+      </h1>
+      
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../index.html">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../About/">About</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-mysql-management" class="post-mysql-management post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      mysql management
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netmysql-management/" data-id="cj9gngl8i000lxdpkwu18sd6n" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+  <div id="toc" class="toc-article">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql-管理"><span class="toc-text">mysql 管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux"><span class="toc-text">linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件"><span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动启动"><span class="toc-text">自动启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管理"><span class="toc-text">管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置数据库引擎"><span class="toc-text">设置数据库引擎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建用户和授权"><span class="toc-text">创建用户和授权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试"><span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#windows"><span class="toc-text">windows</span></a></li></ol></li></ol>
+  </div>
+
+
+        <h1 id="mysql-管理"><a href="#mysql-管理" class="headerlink" title="mysql 管理"></a>mysql 管理</h1><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><code>yum install mysql mysql-server mysql-devel mysql-libs</code></p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>/etc/my.ini</p>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p><code>service mysqld start|stop|restart</code></p>
+<h3 id="自动启动"><a href="#自动启动" class="headerlink" title="自动启动"></a>自动启动</h3><p>chkconfig mysqld on</p>
+<h3 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h3><p>mysql</p>
+<h3 id="设置数据库引擎"><a href="#设置数据库引擎" class="headerlink" title="设置数据库引擎"></a>设置数据库引擎</h3><p><a href="http://www.cnblogs.com/0201zcr/p/5296843.html 引擎差异" target="_blank" rel="external">引擎差异</a><br>默认为MYISAM, 某些情况下需要修改为InnoDB<br>mysql&gt; <code>SET storage_engine=InnoDB;</code></p>
+<h3 id="创建用户和授权"><a href="#创建用户和授权" class="headerlink" title="创建用户和授权"></a>创建用户和授权</h3><p>用户名: weibo<br>数据库: weibo<br>密码: 3c38f920d8bf11c96c09023fe49c8917<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">create database if not exists weibo default character set utf8;</div><div class="line">GRANT ALL PRIVILEGES ON `weibo`.* TO &apos;weibo&apos;@&apos;%&apos; IDENTIFIED BY &apos;3c38f920d8bf11c96c09023fe49c8917&apos;;</div><div class="line">GRANT ALL PRIVILEGES ON `weibo`.* TO &apos;weibo&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;3c38f920d8bf11c96c09023fe49c8917&apos;;</div><div class="line">SET old_passwords = 0; </div><div class="line">UPDATE mysql.user SET Password = PASSWORD(&apos;3c38f920d8bf11c96c09023fe49c8917&apos;) WHERE User = &apos;weibo&apos; limit 1;</div><div class="line">SELECT LENGTH(Password) FROM mysql.user WHERE User = &apos;weibo&apos;;</div><div class="line"> FLUSH PRIVILEGES;</div></pre></td></tr></table></figure></p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p><code>mysql -uweibo -p3c38f920d8bf11c96c09023fe49c8917</code></p>
+<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mysqld --romve 删除mysql服务</div><div class="line">mysqld --install 安装mysql服务</div><div class="line">mysqld --initialize 一定要初始化</div><div class="line">net start mysql 启动服务</div></pre></td></tr></table></figure>
+<p>my.ini<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">[mysql]</div><div class="line">; 设置mysql客户端默认字符集</div><div class="line">default-character-set=utf8</div><div class="line">[mysqld]</div><div class="line">;设置3306端口</div><div class="line">port = 3306</div><div class="line">; 设置mysql的安装目录</div><div class="line"></div><div class="line">basedir=F:\mysql-5.7.18-winx64</div><div class="line"></div><div class="line">; 设置mysql数据库的数据的存放目录</div><div class="line"></div><div class="line">datadir=F:\mysql-5.7.18-winx64\data</div><div class="line"></div><div class="line">; 允许最大连接数</div><div class="line"></div><div class="line">max_connections=200</div><div class="line"></div><div class="line">; 服务端使用的字符集默认为8比特编码的latin1字符集</div><div class="line"></div><div class="line">character-set-server=utf8</div><div class="line"></div><div class="line">; 创建新表时将使用的默认存储引擎</div><div class="line"></div><div class="line">default-storage-engine=INNODB</div></pre></td></tr></table></figure></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="">
+    <time datetime="2017-03-24T08:48:27.000Z" class="entry-date">
+        2017-03-24
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../tags/mysql/">mysql</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="../oracle-management/" rel="prev"><span class="meta-nav">←</span> oracle management</a></span>
+    
+    
+        <span class="nav-next"><a href="../javascript-packages-management/" rel="next">javascript packages management <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <script type="text/html" id="template-test">
+    
+<li class="item">
+    <a data-link="permalink" class="waves-block waves-effect">
+
+	<div class="title ellipsis" data-title="title" data-content="title"></div>
+	<span data-content="text" data-format="textFormatter"></span>
+	<div class="flex-row flex-middle">
+		<div class="tags ellipsis" data-format="tagsFormatter" data-content="tags">
+			
+		</div>
+		<time class="flex-col time" data-content="date" data-format="dateFormatter"></time>
+	</div>
+	</a>
+</li>
+</script>
+
+
+<script type="text/html" id="template-error">
+<li class="tips"><i class="icon icon-coffee icon-3x"></i><p>没有搜索到结果</p></li>
+</script>
+
+
+
+<aside id="search" class="widget widget_search">
+<div role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" url="https://www.google.com/ncr#newwindow=1&safe=strict&q=">
+    <div>
+        <input type="text" value="" name="s" id="search_text" />
+        <search id="search_submit"></search>
+       
+    </div>
+    <div class="widget search-panel in" id="search-panel">
+			<ul class="search-result" id="search-result">
+			
+			
+			</ul>
+	</div>
+</div>
+</aside>
+
+
+
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="../install-elasticsearch-on-linux/">install elasticsearch on linux</a>
+          </li>
+        
+          <li>
+            <a href="../flowchat/">flowchat</a>
+          </li>
+        
+          <li>
+            <a href="../linux-common-comand/">linux-common-comand</a>
+          </li>
+        
+          <li>
+            <a href="../cabot-install/">cabot install</a>
+          </li>
+        
+          <li>
+            <a href="../luigi-install/">luigi install</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../tags/bower/">bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/cabot/">cabot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/centos/">centos</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/elasticsearch/">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/graphite/">graphite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/grunt/">grunt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/image/">image</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/linux/">linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/linux常用命令/">linux常用命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/luigi/">luigi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/nginx/">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/npm/">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/oracle/">oracle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/oracle安装/">oracle安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/pydev/">pydev</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/readme/">readme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/registry/">registry</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/yum/">yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/公式/">公式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/时序图/">时序图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/服务器/">服务器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/流程图/">流程图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/监控/">监控</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/软件/">软件</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="../tags/bower/" style="font-size: 10px;">bower</a> <a href="../tags/cabot/" style="font-size: 10px;">cabot</a> <a href="../tags/centos/" style="font-size: 15px;">centos</a> <a href="../tags/docker/" style="font-size: 10px;">docker</a> <a href="../tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="../tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="../tags/graphite/" style="font-size: 10px;">graphite</a> <a href="../tags/grunt/" style="font-size: 10px;">grunt</a> <a href="../tags/image/" style="font-size: 10px;">image</a> <a href="../tags/javascript/" style="font-size: 10px;">javascript</a> <a href="../tags/linux/" style="font-size: 20px;">linux</a> <a href="../tags/linux常用命令/" style="font-size: 10px;">linux常用命令</a> <a href="../tags/luigi/" style="font-size: 10px;">luigi</a> <a href="../tags/mysql/" style="font-size: 10px;">mysql</a> <a href="../tags/nginx/" style="font-size: 10px;">nginx</a> <a href="../tags/npm/" style="font-size: 10px;">npm</a> <a href="../tags/oracle/" style="font-size: 15px;">oracle</a> <a href="../tags/oracle安装/" style="font-size: 10px;">oracle安装</a> <a href="../tags/pydev/" style="font-size: 10px;">pydev</a> <a href="../tags/python/" style="font-size: 10px;">python</a> <a href="../tags/readme/" style="font-size: 10px;">readme</a> <a href="../tags/registry/" style="font-size: 10px;">registry</a> <a href="../tags/yum/" style="font-size: 10px;">yum</a> <a href="../tags/公式/" style="font-size: 10px;">公式</a> <a href="../tags/时序图/" style="font-size: 10px;">时序图</a> <a href="../tags/服务器/" style="font-size: 10px;">服务器</a> <a href="../tags/流程图/" style="font-size: 10px;">流程图</a> <a href="../tags/监控/" style="font-size: 20px;">监控</a> <a href="../tags/软件/" style="font-size: 10px;">软件</a>
+    </div>
+  </aside>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">About</h3>
+    <div class="widget">
+      email：<a href="mailto: Yangyuehui <honeybeeyyh@hotmail.com>;">honeybeeyyh@hotmail.com</a></br></br>
+    </div>
+  </div>
+
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2017 honeybeeyyh@hotmail.com
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/lib/jquery.loadTemplate.js"></script>
+
+  <link rel="stylesheet" href="../fancybox/jquery.fancybox.css">
+  <script src="../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../js/script.js"></script>
+
+
+
+<script src="/js/navigation.js"></script>
+<!--<script src="/js/require.js"></script>-->
+<script src="/lib/python.js"></script>
+<script src="/lib/javascript.js"></script>
+<script src="/lib/highlight.js"></script>
+<script src="/lib/my.js"></script>
+<script src="/lib/hexo-local-search.js"></script>
+
+
+
+
+<div id="bg"></div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    }); 
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script src="../js/coffee-script.js"></script>
+<script src="../js/jumly.min.js"></script>
+
+<link rel="stylesheet" href="../css/my.css">
+<link rel="stylesheet" href="../css/highlight.css">
+<link rel="stylesheet" href="../styles/default.css">
+<!--<script src="../js/bootstrap.min.js"></script>-->
+<!--<link rel="stylesheet" href="../css/bootstrap.css">-->
+<!--<link rel="stylesheet" href="../css/bootstrap-theme.css">-->
+
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

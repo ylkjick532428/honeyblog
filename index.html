@@ -4,8 +4,6 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   
-  <meta name="description" content="Your like,you hate are offensive you forward momentum." />
-  
 
   
   
@@ -13,17 +11,14 @@
   
   
   
-  <title>honeybee</title>
+  <title>Honeybee</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Your like,you hate are offensive you forward momentum.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="honeybee">
-<meta property="og:url" content="http://honey.lpai.info/index.html">
-<meta property="og:site_name" content="honeybee">
-<meta property="og:description" content="Your like,you hate are offensive you forward momentum.">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Honeybee">
+<meta property="og:url" content="https://qooeo.net/index.html">
+<meta property="og:site_name" content="Honeybee">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="honeybee">
-<meta name="twitter:description" content="Your like,you hate are offensive you forward momentum.">
+<meta name="twitter:title" content="Honeybee">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -39,12 +34,9 @@
       <header id="masthead" class="site-header" role="banner">
     <hgroup>
       <h1 class="site-title">
-        <a href="index.html" title="honeybee" rel="home">honeybee</a>
+        <a href="index.html" title="Honeybee" rel="home">Honeybee</a>
       </h1>
       
-        <h2 class="site-description">
-          <a href="index.html" id="subtitle">Your like,you hate are offensive you forward momentum.</a>
-        </h2>
       
     </hgroup>
 
@@ -58,7 +50,7 @@
                 
                     <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
                 
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/2016/07/04/About/">About</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/About/">About</a></li>
                 
                 </ul>
             </div>
@@ -68,7 +60,7 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
-    <article id="post-oracle-install-linux" class="post-oracle-install-linux post type-post status-publish format-standard hentry">
+    <article id="post-install-elasticsearch-on-linux" class="post-install-elasticsearch-on-linux post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
@@ -76,358 +68,54 @@
         
   
     <h1 class="entry-title">
-      <a class="article-title" href="2017/02/15/oracle-install-linux/">oracle-install-linux</a>
+      <a class="article-title" href="install-elasticsearch-on-linux/">install elasticsearch on linux</a>
     </h1>
   
 
         
         <div class="comments-link">
             
-            <!--<a href="javascript:void(0);" data-url="http://honey.lpai.info/2017/02/15/oracle-install-linux/" data-id="ciz6qcjpt0005fswrmai7ii74" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netinstall-elasticsearch-on-linux/" data-id="cj9gngl820009xdpkyi53or4z" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
+
+
     <div class="entry-content">
       
-        <h2 id="linux-oracle数据库无图形界面安装"><a href="#linux-oracle数据库无图形界面安装" class="headerlink" title="linux oracle数据库无图形界面安装"></a>linux oracle数据库无图形界面安装</h2><h3 id="1-准备安装路径和用户"><a href="#1-准备安装路径和用户" class="headerlink" title="1 准备安装路径和用户"></a>1 准备安装路径和用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/usr/sbin/groupadd oinstall</div><div class="line">/usr/sbin/groupadd dba</div><div class="line">/usr/sbin/useradd -g oinstall -G dba oracle</div><div class="line"></div><div class="line">mkdir -p /opt/oracle</div><div class="line">chown -R oracle:oinstall /opt/oracle</div><div class="line">chmod -R 775 /opt/oracle</div><div class="line">mkdir -p /opt/oraInventory</div><div class="line">chown oracle:oinstall /opt/oraInventory</div><div class="line">chmod -R 775 /opt/oraInventory</div><div class="line">mkdir  /oradata</div><div class="line">chown oracle:oinstall /oradata</div><div class="line">chmod 775 /oradata</div><div class="line">mkdir /recovery_area</div><div class="line">chown oracle:oinstall /recovery_area</div><div class="line">chmod 775 /recovery_area</div></pre></td></tr></table></figure>
-<h3 id="2-配置linux系统环境"><a href="#2-配置linux系统环境" class="headerlink" title="2 配置linux系统环境"></a>2 配置linux系统环境</h3><h4 id="root用户：修改-etc-sysctl-conf-文件，加上如下参数"><a href="#root用户：修改-etc-sysctl-conf-文件，加上如下参数" class="headerlink" title="root用户：修改 /etc/sysctl.conf 文件，加上如下参数"></a>root用户：修改 /etc/sysctl.conf 文件，加上如下参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">fs.aio-max-nr = 1048576</div><div class="line">fs.file-max = 6815744</div><div class="line">kernel.shmall = 2097152</div><div class="line">kernel.shmmax = 536870912</div><div class="line">kernel.shmmni = 4096</div><div class="line">kernel.sem = 250 32000 100 128</div><div class="line">net.ipv4.ip_local_port_range = 9000 65500</div><div class="line">net.core.rmem_default = 262144</div><div class="line">net.core.rmem_max = 4194304</div><div class="line">net.core.wmem_default = 262144</div><div class="line">net.core.wmem_max = 1048586</div><div class="line"></div><div class="line">为使上述配置生效而不重启系统，执行如下命令</div><div class="line">/sbin/sysctl -p</div></pre></td></tr></table></figure>
-<h4 id="修改用户限制root用户：修改-etc-security-limits-conf-文件，加上下面的参数"><a href="#修改用户限制root用户：修改-etc-security-limits-conf-文件，加上下面的参数" class="headerlink" title="修改用户限制root用户：修改 /etc/security/limits.conf 文件，加上下面的参数"></a>修改用户限制root用户：修改 /etc/security/limits.conf 文件，加上下面的参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">oracle           soft    nproc   2047</div><div class="line">oracle           hard    nproc   16384</div><div class="line">oracle           soft    nofile  1024</div><div class="line">oracle           hard    nofile  65536</div></pre></td></tr></table></figure>
-<h4 id="修改用户验证选项root用户下：修改-etc-pam-d-login文件加上如下参数"><a href="#修改用户验证选项root用户下：修改-etc-pam-d-login文件加上如下参数" class="headerlink" title="修改用户验证选项root用户下：修改/etc/pam.d/login文件加上如下参数"></a>修改用户验证选项root用户下：修改/etc/pam.d/login文件加上如下参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">session    required     pam_limits.so</div></pre></td></tr></table></figure>
-<h4 id="修改用户配置文件root用户下：修改-etc-profile文件加入如下参数："><a href="#修改用户配置文件root用户下：修改-etc-profile文件加入如下参数：" class="headerlink" title="修改用户配置文件root用户下：修改/etc/profile文件加入如下参数："></a>修改用户配置文件root用户下：修改/etc/profile文件加入如下参数：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">if [ $USER = &quot;oracle&quot; ]; then</div><div class="line">        if [ $SHELL = &quot;/bin/ksh&quot; ]; then</div><div class="line">              ulimit -p 16384</div><div class="line">              ulimit -n 65536</div><div class="line">        else</div><div class="line">              ulimit -u 16384 -n 65536</div><div class="line">        fi</div><div class="line">fi</div></pre></td></tr></table></figure>
-<h4 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install binutils compat-libcap1 compat-libstdc++ gcc gcc-c++ glibc glibc-devel ksh libgcc libstdc++ libstdc++-devel libaio sysstat libaio-devel elfutils-libelf-devel unixODBC unixODBC-devel, compat-libstdc++-33</div></pre></td></tr></table></figure>
-<h3 id="3-下载解压安装文件"><a href="#3-下载解压安装文件" class="headerlink" title="3 下载解压安装文件"></a>3 下载解压安装文件</h3><p>oralce下载地址: <a href="http://10.35.252.214/oracle" target="_blank" rel="external">http://10.35.252.214/oracle</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">su - oracle</div><div class="line">cd /opt/oracle</div><div class="line">unzip linux.x64_11gR2_database_1of2.zip</div><div class="line">unzip linux.x64_11gR2_database_2of2.zip</div><div class="line">mv database/* ./</div><div class="line">rm –rf database</div></pre></td></tr></table></figure></p>
-<h3 id="4-安装"><a href="#4-安装" class="headerlink" title="4 安装"></a>4 安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">下载安装响应文件</div><div class="line"></div><div class="line">修改db.rsp</div><div class="line">oracle.install.db.config.starterdb.password.ALL=system      system密码</div><div class="line">oracle.install.db.config.starterdb.characterSet=ZHS16GBK   中文字符集</div><div class="line">oracle.install.db.config.starterdb.SID=ORCL			        ORACLE_SID</div><div class="line"></div><div class="line">安装</div><div class="line">./runInstaller -silent -responseFile /opt/database/db.rsp -ignorePrereq</div></pre></td></tr></table></figure>
-<h2 id="oracle创建表空间"><a href="#oracle创建表空间" class="headerlink" title="oracle创建表空间"></a>oracle创建表空间</h2><h3 id="第1步：创建临时表空间"><a href="#第1步：创建临时表空间" class="headerlink" title="第1步：创建临时表空间"></a>第1步：创建临时表空间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">create temporary tablespace user_temp </div><div class="line">tempfile &apos;D:\oracle\oradata\Oracle9i\user_temp.dbf&apos; </div><div class="line">size 50m </div><div class="line">autoextend on </div><div class="line">next 50m maxsize 20480m </div><div class="line">extent management local;</div></pre></td></tr></table></figure>
-<h3 id="第2步：创建数据表空间"><a href="#第2步：创建数据表空间" class="headerlink" title="第2步：创建数据表空间"></a>第2步：创建数据表空间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">create tablespace user_data </div><div class="line">logging </div><div class="line">datafile &apos;D:\oracle\oradata\Oracle9i\user_data.dbf&apos; </div><div class="line">size 50m </div><div class="line">autoextend on </div><div class="line">next 50m maxsize 20480m </div><div class="line">extent management local;</div></pre></td></tr></table></figure>
-<h3 id="第3步：创建用户并指定表空间"><a href="#第3步：创建用户并指定表空间" class="headerlink" title="第3步：创建用户并指定表空间"></a>第3步：创建用户并指定表空间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">create user username identified by password </div><div class="line">default tablespace user_data </div><div class="line">temporary tablespace user_temp;</div></pre></td></tr></table></figure>
-<h3 id="第4步：给用户授予权限"><a href="#第4步：给用户授予权限" class="headerlink" title="第4步：给用户授予权限"></a>第4步：给用户授予权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">grant connect,resource,dba to username;</div><div class="line">grant create view to username;</div></pre></td></tr></table></figure>
-<h3 id="简单创建用户-不要在线上环境使用"><a href="#简单创建用户-不要在线上环境使用" class="headerlink" title="简单创建用户(不要在线上环境使用)"></a>简单创建用户(不要在线上环境使用)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">create user username identified by password;</div><div class="line">grant connect, resource, dba to username;</div><div class="line">grant create view to username;</div></pre></td></tr></table></figure>
-<h3 id="oracle-管理"><a href="#oracle-管理" class="headerlink" title="oracle 管理"></a>oracle 管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ssh 登陆oracl服务器</div><div class="line"></div><div class="line">切换到oracle安装用户: su oracle</div><div class="line">进入oracle后台      : sqlplus / as sysdba</div><div class="line">关闭数据库          : shutdown immediate;</div><div class="line">启动数据库          : startup mount;</div><div class="line">修改数据库状态打开  : alter database open;</div><div class="line">修改密码策略永不过期: ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;</div></pre></td></tr></table></figure>
-<h2 id="安装中的问题"><a href="#安装中的问题" class="headerlink" title="安装中的问题"></a>安装中的问题</h2><h3 id="交换空间为0"><a href="#交换空间为0" class="headerlink" title="交换空间为0"></a>交换空间为0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd /</div><div class="line">dd  if=/dev/zero  of=swapfile  bs=1024  count=1000000</div><div class="line">mkswap swapfile</div><div class="line">swapon  swapfile</div></pre></td></tr></table></figure>
-<h3 id="db-rsp文件"><a href="#db-rsp文件" class="headerlink" title="db.rsp文件"></a>db.rsp文件</h3><pre><code class="python">
+        
+  <div id="toc" class="toc-article">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux安装elasticsearch"><span class="toc-text">Linux安装elasticsearch</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置好java_home"><span class="toc-text">配置好JAVA_HOME</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es-53"><span class="toc-text">ES 5.3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#yum安装rpm包"><span class="toc-text">yum安装rpm包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件"><span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管理服务"><span class="toc-text">管理服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开机启动"><span class="toc-text">开机启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bin文件安装"><span class="toc-text">bin文件安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#es-145"><span class="toc-text">ES 1.4.5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx配置"><span class="toc-text">nginx配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#test"><span class="toc-text">test</span></a></li></ol></li></ol></li></ol>
+  </div>
 
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Do not change the following system generated value. </span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.responseFileVersion=/oracle/install/rspfmt_dbinstall_response_schema_v11_2_0
 
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># The installation option can be one of the following</span>
-<span class="comment"># 1. INSTALL_DB_SWONLY</span>
-<span class="comment"># 2. INSTALL_DB_AND_CONFIG</span>
-<span class="comment"># 3. UPGRADE_DB</span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.option=INSTALL_DB_AND_CONFIG
+        <h1 id="linux安装elasticsearch"><a href="#Linux安装elasticsearch" class="headerlink" title="Linux安装elasticsearch"></a>Linux安装elasticsearch</h1><p><a href="http://172.16.60.100/tools/elasticsearch/Elasticsearch%E3%80%81Kibana%20%E4%BD%BF%E7%94%A8%E8%80%85%E8%AA%8D%E8%AD%89%E8%A8%AD%E5%AE%9A.html" target="_blank" rel="external">配置参考</a><br>下载<a href="http://172.16.60.100/tools/elasticsearch/" target="_blank" rel="external">http://172.16.60.100/tools/elasticsearch/</a></p>
+<h3 id="配置好java_home"><a href="#配置好JAVA-HOME" class="headerlink" title="配置好JAVA_HOME"></a>配置好JAVA_HOME</h3><p>需要jkd1.7以上版本, 配置好JAVA_HOME</p>
+<h2 id="es-53"><a href="#ES-5-3" class="headerlink" title="ES 5.3"></a>ES 5.3</h2><h3 id="yum安装rpm包"><a href="#yum安装rpm包" class="headerlink" title="yum安装rpm包"></a>yum安装rpm包</h3><p>yum install elasticsearch-5.3.0.rpm<br>yum install kibana-5.3.0-x86_64.rpm</p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>#/etc/elasticsearch/elasticsearch.yml</p>
+<p>network.host: 127.0.0.1<br>http.port: 9200<br>同样的将Kibana 也设为localhost only</p>
+<p>#/etc/kibana/kibana.yml</p>
+<p>server.port: 5601<br>server.host: “127.0.0.1”<br>设定完成后记得重开Kibana 和Elasticsearch 才会生效哦，可以检查一下是否在外网真的无法连线。</p>
+<h3 id="管理服务"><a href="#管理服务" class="headerlink" title="管理服务"></a>管理服务</h3><p>service elasticsearch start|stop|restart<br>service kibana start|stop|restart</p>
+<h3 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h3><p>chkconfig elasticsearch on<br>chkconfig kibana on</p>
+<h3 id="bin文件安装"><a href="#bin文件安装" class="headerlink" title="bin文件安装"></a>bin文件安装</h3><h3 id="es-145"><a href="#ES-1-4-5" class="headerlink" title="ES 1.4.5"></a>ES 1.4.5</h3><p>使用bin文件安装</p>
+<h3 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h3><p>nginx配置<a href="http://localhost:4000/linux-install-nginx/#nginx-basic-认证文件生成" target="_blank" rel="external">http://localhost:4000/linux-install-nginx/#nginx-basic-认证文件生成</a></p>
+<h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3><p>dfhdfi</p>
 
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># This variable holds the hostname of the system as set by the user. </span>
-<span class="comment"># It can be used to force the installation to use an alternative   </span>
-<span class="comment"># hostname rather than using the first hostname found on the system</span>
-<span class="comment"># (e.g., for systems with multiple hostnames and network interfaces).</span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-ORACLE_HOSTNAME=localhost
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Unix group to be set for the inventory directory.  </span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-UNIX_GROUP_NAME=oinstall
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Inventory location.</span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-INVENTORY_LOCATION=/opt/oraInventory
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Specify the languages in which the components will be installed.             </span>
-<span class="comment">#</span>
-<span class="comment"># en   : English                  ja   : Japanese                  </span>
-<span class="comment"># fr   : French                   ko   : Korean                    </span>
-<span class="comment"># ar   : Arabic                   es   : Latin American Spanish    </span>
-<span class="comment"># bn   : Bengali                  lv   : Latvian                   </span>
-<span class="comment"># pt_BR: Brazilian Portuguese     lt   : Lithuanian                </span>
-<span class="comment"># bg   : Bulgarian                ms   : Malay                     </span>
-<span class="comment"># fr_CA: Canadian French          es_MX: Mexican Spanish           </span>
-<span class="comment"># ca   : Catalan                  no   : Norwegian                 </span>
-<span class="comment"># hr   : Croatian                 pl   : Polish                    </span>
-<span class="comment"># cs   : Czech                    pt   : Portuguese                </span>
-<span class="comment"># da   : Danish                   ro   : Romanian                  </span>
-<span class="comment"># nl   : Dutch                    ru   : Russian                   </span>
-<span class="comment"># ar_EG: Egyptian                 zh_CN: Simplified Chinese        </span>
-<span class="comment"># en_GB: English (Great Britain)  sk   : Slovak                    </span>
-<span class="comment"># et   : Estonian                 sl   : Slovenian                 </span>
-<span class="comment"># fi   : Finnish                  es_ES: Spanish                   </span>
-<span class="comment"># de   : German                   sv   : Swedish                   </span>
-<span class="comment"># el   : Greek                    th   : Thai                      </span>
-<span class="comment"># iw   : Hebrew                   zh_TW: Traditional Chinese       </span>
-<span class="comment"># hu   : Hungarian                tr   : Turkish                   </span>
-<span class="comment"># is   : Icelandic                uk   : Ukrainian                 </span>
-<span class="comment"># in   : Indonesian               vi   : Vietnamese                </span>
-<span class="comment"># it   : Italian                                                   </span>
-<span class="comment">#</span>
-<span class="comment"># Example : SELECTED_LANGUAGES=en,fr,ja</span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-SELECTED_LANGUAGES=en,zh_CN
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Complete path of the Oracle Home  </span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-ORACLE_HOME=/opt/oracle/product/<span class="number">11.2</span><span class="number">.0</span>/dbhome_1
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Complete path of the Oracle Base. </span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-ORACLE_BASE=/opt/oracle
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Installation Edition of the component.                        </span>
-<span class="comment">#                                                             </span>
-<span class="comment"># The value should contain only one of these choices.        </span>
-<span class="comment"># EE     : Enterprise Edition                                </span>
-<span class="comment"># SE     : Standard Edition                                  </span>
-<span class="comment"># SEONE  : Standard Edition One</span>
-<span class="comment"># PE     : Personal Edition (WINDOWS ONLY)</span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.InstallEdition=EE
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># This property is considered only if InstallEdition is EE.</span>
-<span class="comment">#</span>
-<span class="comment"># true  : Components mentioned as part of 'customComponents' property</span>
-<span class="comment">#         are considered for install.</span>
-<span class="comment"># false : Value for 'customComponents' is not considered.</span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.isCustomInstall=false
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># This property is considered only if 'IsCustomInstall' is set to true </span>
-<span class="comment">#</span>
-<span class="comment"># Description: List of Enterprise Edition Options you would like to install.</span>
-<span class="comment">#</span>
-<span class="comment">#              The following choices are available. You may specify any</span>
-<span class="comment">#              combination of these choices.  The components you choose should</span>
-<span class="comment">#              be specified in the form "internal-component-name:version"</span>
-<span class="comment">#              Below is a list of components you may specify to install.</span>
-<span class="comment">#        </span>
-<span class="comment">#              oracle.oraolap:11.2.0.0.2 - Oracle OLAP</span>
-<span class="comment">#              oracle.rdbms.dm:11.2.0.0.2 - Oracle Data Mining RDBMS Files</span>
-<span class="comment">#              oracle.rdbms.dv:11.2.0.0.2 - Oracle Database Vault option</span>
-<span class="comment">#              oracle.rdbms.lbac:11.2.0.0.2 - Oracle Label Security</span>
-<span class="comment">#              oracle.rdbms.partitioning:11.2.0.0.2 - Oracle Partitioning</span>
-<span class="comment">#              oracle.rdbms.rat:11.2.0.0.2 - Oracle Real Application Testing</span>
-<span class="comment">#              oracle.clrintg.ode_net:11.2.0.0.2 - Oracle Database Extensions for .NET 1.x (Windows)</span>
-<span class="comment">#              oracle.clrintg.ode_net_2:11.2.0.0.2 - Oracle Database Extensions for .NET 2.0 (Windows)</span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.customComponents=
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.DBA_GROUP=dba
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.OPER_GROUP=oinstall
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># This variable represents the cluster node names selected by the .  </span>
-<span class="comment"># user for installation                                      </span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.CLUSTER_NODES=
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># One of the following</span>
-<span class="comment"># - GENERAL_PURPOSE                              </span>
-<span class="comment"># - TRANSACTION_PROCESSING                       </span>
-<span class="comment"># - DATAWAREHOUSE                                </span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.type=GENERAL_PURPOSE
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Global Database Name </span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.globalDBName=xfdsj
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># The Starter Database SID </span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.SID=
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Database character set</span>
-<span class="comment">#                                               </span>
-<span class="comment">#  One of the following</span>
-<span class="comment">#  AL32UTF8, WE8ISO8859P15, WE8MSWIN1252, EE8ISO8859P2,</span>
-<span class="comment">#  EE8MSWIN1250, NE8ISO8859P10, NEE8ISO8859P4, BLT8MSWIN1257,</span>
-<span class="comment">#  BLT8ISO8859P13, CL8ISO8859P5, CL8MSWIN1251, AR8ISO8859P6,</span>
-<span class="comment">#  AR8MSWIN1256, EL8ISO8859P7, EL8MSWIN1253, IW8ISO8859P8,</span>
-<span class="comment">#  IW8MSWIN1255, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE,</span>
-<span class="comment">#  KO16MSWIN949, ZHS16GBK, TH8TISASCII, ZHT32EUC, ZHT16MSWIN950,</span>
-<span class="comment">#  ZHT16HKSCS, WE8ISO8859P9, TR8MSWIN1254, VN8MSWIN1258</span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.characterSet=
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Specify the total memory allocation for the database. (in MB)</span>
-<span class="comment"># Value should be at least 256 MB, and should not exceed the  </span>
-<span class="comment"># total physical memory available on the system.</span>
-<span class="comment"># Example: oracle.install.db.config.starterdb.memoryLimit=40</span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.memoryLimit=<span class="number">738</span>
-oracle.install.db.config.starterdb.memoryOption=true
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># This variable controls whether to load Example Schemas onto</span>
-<span class="comment"># the starter database or not.</span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.installExampleSchemas=false
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># This include enabling audit settings, configuring password  </span>
-<span class="comment"># profiles and revoking some grants to public. These settings </span>
-<span class="comment"># are provided by default.  You may choose to disable all.    </span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.enableSecuritySettings=true
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.password.ALL=
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.password.SYS=
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.password.SYSTEM=
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.password.SYSMAN=
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.password.DBSNMP=
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Can be one of the following </span>
-<span class="comment"># 1. GRID_CONTROL</span>
-<span class="comment"># 2. DB_CONTROL</span>
-<span class="comment"># </span>
-oracle.install.db.config.starterdb.control=DB_CONTROL
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Determines the Management Service to use if Grid Control   </span>
-<span class="comment"># is selected to manage the database.      </span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.gridcontrol.gridControlServiceURL=
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Determines whether to receive email notification for       </span>
-<span class="comment"># critical alerts when using DB control.   </span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.dbcontrol.enableEmailNotification=false
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.dbcontrol.emailAddress=
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.dbcontrol.SMTPServer=
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.automatedBackup.enable=false
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.automatedBackup.osuid=
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.automatedBackup.ospwd=
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Can be one of the following</span>
-<span class="comment"># - FILE_SYSTEM_STORAGE</span>
-<span class="comment"># - ASM_STORAGE</span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.storageType=FILE_SYSTEM_STORAGE
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Database file location:                  </span>
-<span class="comment"># directory for datafiles, control files, redo logs.         </span>
-<span class="comment">#</span>
-<span class="comment"># Applicable only when oracle.install.db.config.starterdb.storage=FILE_SYSTEM_STORAGE </span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.fileSystemStorage.dataLocation=/opt/oracle/oradata
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Backup and recovery location </span>
-<span class="comment">#</span>
-<span class="comment"># Applicable only when oracle.install.db.config.starterdb.storage=FILE_SYSTEM_STORAGE </span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.starterdb.fileSystemStorage.recoveryLocation=
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Name of ASM disk group to be used for storage.</span>
-<span class="comment">#</span>
-<span class="comment"># Applicable only when oracle.install.db.config.starterdb.storageType=ASM_STORAGE</span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.asm.diskGroup=
-
-<span class="comment">#-------------------------------------------------------------------------------</span>
-<span class="comment"># Password for ASMSNMP user of the ASM instance.                  </span>
-<span class="comment">#</span>
-<span class="comment"># Applicable only when oracle.install.db.config.starterdb.storage=ASM_STORAGE </span>
-<span class="comment">#-------------------------------------------------------------------------------</span>
-oracle.install.db.config.asm.ASMSNMPPassword=
-
-<span class="comment">#------------------------------------------------------------------------------</span>
-<span class="comment"># Specify the My Oracle Support Account Username.</span>
-<span class="comment">#</span>
-<span class="comment">#  Example   : MYORACLESUPPORT_USERNAME=metalink</span>
-<span class="comment">#------------------------------------------------------------------------------</span>
-MYORACLESUPPORT_USERNAME=
-
-<span class="comment">#------------------------------------------------------------------------------</span>
-<span class="comment"># Specify the My Oracle Support Account Username password.</span>
-<span class="comment">#</span>
-<span class="comment"># Example    : MYORACLESUPPORT_PASSWORD=password</span>
-<span class="comment">#------------------------------------------------------------------------------</span>
-MYORACLESUPPORT_PASSWORD=
-
-<span class="comment">#------------------------------------------------------------------------------</span>
-<span class="comment"># Specify whether to enable the user to set the password for</span>
-<span class="comment"># My Oracle Support credentials. The value can be either true or false.</span>
-<span class="comment"># If left blank it will be assumed to be false.</span>
-<span class="comment">#</span>
-<span class="comment"># Example    : SECURITY_UPDATES_VIA_MYORACLESUPPORT=true</span>
-<span class="comment">#------------------------------------------------------------------------------</span>
-SECURITY_UPDATES_VIA_MYORACLESUPPORT=false
-
-<span class="comment">#------------------------------------------------------------------------------</span>
-<span class="comment"># Specify whether user wants to give any proxy details for connection. </span>
-<span class="comment"># The value can be either true or false. If left blank it will be assumed</span>
-<span class="comment"># to be false.</span>
-<span class="comment">#</span>
-<span class="comment"># Example    : DECLINE_SECURITY_UPDATES=false</span>
-<span class="comment">#------------------------------------------------------------------------------</span>
-DECLINE_SECURITY_UPDATES=true
-
-<span class="comment">#------------------------------------------------------------------------------</span>
-<span class="comment"># Specify the Proxy server name. Length should be greater than zero.</span>
-<span class="comment">#</span>
-<span class="comment"># Example    : PROXY_HOST=proxy.domain.com </span>
-<span class="comment">#------------------------------------------------------------------------------</span>
-PROXY_HOST=
-
-<span class="comment">#------------------------------------------------------------------------------</span>
-<span class="comment"># Specify the proxy port number. Should be Numeric and atleast 2 chars.</span>
-<span class="comment">#</span>
-<span class="comment"># Example    : PROXY_PORT=25 </span>
-<span class="comment">#------------------------------------------------------------------------------</span>
-PROXY_PORT=
-</code></pre>
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="2017/02/15/oracle-install-linux/">
-    <time datetime="2017-02-15T07:59:14.000Z" class="entry-date">
-        2017-02-15
+    <a href="install-elasticsearch-on-linux/">
+    <time datetime="2017-04-18T01:57:00.000Z" class="entry-date">
+        2017-04-18
     </time>
 </a>
     
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/oracle/">oracle</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/elasticsearch/">elasticsearch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/linux/">linux</a></li></ul>
 
     </footer>
 </article>
@@ -437,8 +125,12 @@ PROXY_PORT=
 
 
 
+
+
+
+
   
-    <article id="post-oracle-xe" class="post-oracle-xe post type-post status-publish format-standard hentry">
+    <article id="post-flowchat" class="post-flowchat post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
@@ -446,472 +138,25 @@ PROXY_PORT=
         
   
     <h1 class="entry-title">
-      <a class="article-title" href="2016/12/26/oracle-xe/">oracle_xe</a>
+      <a class="article-title" href="flowchat/">flowchat</a>
     </h1>
   
 
         
         <div class="comments-link">
             
-            <!--<a href="javascript:void(0);" data-url="http://honey.lpai.info/2016/12/26/oracle-xe/" data-id="ciz6qcjsd000dfswrv4oe63si" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netflowchat/" data-id="cj9gngl7w0007xdpknamvku2a" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
-    <div class="entry-content">
-      
-        <h2 id="oracle-xe"><a href="#oracle-xe" class="headerlink" title="oracle xe"></a>oracle xe</h2><p>Oracle Database 11g Express Edition (Oracle Database XE) is an entry-level, small-footprint database based on the Oracle Database 11g Release 2 code base.  It’s free to develop, deploy, and distribute; fast to download; and simple to administer.</p>
-<p>This edition suitable for persona, this install package about 300m, supported version win32, win64, linux64.</p>
-<p>download <a href="http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html" target="_blank" rel="external">http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html</a></p>
-<p>I install win64 version</p>
-<h4 id="1-reday-install"><a href="#1-reday-install" class="headerlink" title="1. reday install"></a>1. reday install</h4><p>unzip OracleXE112_Win64.zip</p>
-<h4 id="2-installing"><a href="#2-installing" class="headerlink" title="2. installing"></a>2. installing</h4><p>cd Disk1<br>run setup.exe as administrator<br>The install Path use ORACLE_HOME<br>and you need set the system user password</p>
-<h4 id="3-finish-install"><a href="#3-finish-install" class="headerlink" title="3. finish install"></a>3. finish install</h4><img src="/2016/12/26/oracle-xe/install_finish.png" alt="install_finish" title="install_finish">
-<img src="/2016/12/26/oracle-xe/install_finish_service.png" alt="install_finish_service" title="install_finish_service">
-<h4 id="4-check-success"><a href="#4-check-success" class="headerlink" title="4. check success?"></a>4. check success?</h4><img src="/2016/12/26/oracle-xe/check_success1.png" alt="check_success1" title="check_success1">
-<img src="/2016/12/26/oracle-xe/check_success2.png" alt="check_success2" title="check_success2">
-<img src="/2016/12/26/oracle-xe/finish_all.png" alt="finish_all" title="finish_all">
-<h4 id="5-set-system-variable-path"><a href="#5-set-system-variable-path" class="headerlink" title="5. set system variable path"></a>5. set system variable path</h4><p>ORACLE_SID=xe<br>ORACLE_HOME=C:\oraclexe\app\oracle\product\11.2.0\server<br>LD_LIBRARY_PATH=%ORACLE_HOME%\lib<br>path=%ORACLE_HOME%\bin;LD_LIBRARY_PATH;</p>
-<h4 id="6-restart-system"><a href="#6-restart-system" class="headerlink" title="6. restart system"></a>6. restart system</h4><p>you need to restart system after you installed oracle-xe</p>
 
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="2016/12/26/oracle-xe/">
-    <time datetime="2016-12-26T03:00:50.000Z" class="entry-date">
-        2016-12-26
-    </time>
-</a>
-    
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/oracle/">oracle</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-cherrypy" class="post-cherrypy post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="2016/07/28/cherrypy/">cherrypy</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <!--<a href="javascript:void(0);" data-url="http://honey.lpai.info/2016/07/28/cherrypy/" data-id="ciz6qcjp90001fswror39jduy" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <pre><code class="python">
-<span class="comment"># -*- coding：utf-8 -*-</span>
-<span class="comment"># json数据编辑功能</span>
-<span class="keyword">import</span> cherrypy
-<span class="keyword">import</span> json
-<span class="keyword">import</span> sys
-<span class="keyword">import</span> os
-<span class="keyword">import</span> urllib.request
-<span class="keyword">import</span> time
-<span class="keyword">import</span> re
-<span class="keyword">import</span> codecs
-<span class="keyword">import</span> json
-sys.path.append(<span class="string">"../"</span>)
-
-<span class="keyword">from</span> mako.template <span class="keyword">import</span> Template
-<span class="keyword">from</span> mako.lookup <span class="keyword">import</span> TemplateLookup
-<span class="keyword">from</span> cherrypy.lib <span class="keyword">import</span> auth_basic
-
-output_dir = <span class="string">"work_path"</span>
-lookup = TemplateLookup(directories=[<span class="string">'static'</span>], input_encoding=<span class="string">'utf-8'</span>)
-USERS = &#123;<span class="string">'vastio'</span>:<span class="string">'vastio'</span>&#125;
-
-<span class="comment">#===============================================================================</span>
-<span class="comment"># save_json : 保存</span>
-<span class="comment">#===============================================================================</span>
-<span class="function"><span class="keyword">def</span> <span class="title">save_json</span><span class="params">(data, file_name)</span>:</span>
-    <span class="keyword">if</span> data:
-        output_file = codecs.open(<span class="string">"%s/%s"</span> % (output_dir, file_name), <span class="string">"w"</span>, <span class="string">"utf8"</span>)
-        text = json.dumps(data, indent=<span class="number">1</span>, sort_keys=<span class="keyword">True</span>, ensure_ascii=<span class="keyword">False</span>)
-        output_file.write(text)
-        output_file.close()
-    
-<span class="comment">#===============================================================================</span>
-<span class="comment"># get_json : 读取</span>
-<span class="comment">#===============================================================================</span>
-<span class="function"><span class="keyword">def</span> <span class="title">get_json</span><span class="params">(file_name)</span>:</span>
-    input_file = codecs.open(<span class="string">"%s/%s"</span> % (output_dir, file_name), <span class="string">"r"</span>, <span class="string">"utf8"</span>)
-    text = input_file.read()
-    data = json.loads(text)
-    input_file.close()
-    <span class="keyword">return</span> data
-
-<span class="comment">#===========================================================================</span>
-<span class="comment"># get_crontab</span>
-<span class="comment">#===========================================================================</span>
-<span class="function"><span class="keyword">def</span> <span class="title">get_crontab</span><span class="params">()</span>:</span>
-    crontab = get_json(<span class="string">"crontab.json"</span>)
-    <span class="keyword">return</span> crontab
-
-<span class="comment">#===============================================================================</span>
-<span class="comment"># save_crontab</span>
-<span class="comment">#===============================================================================</span>
-<span class="function"><span class="keyword">def</span> <span class="title">save_crontab</span><span class="params">(crontab)</span>:</span>
-    save_json(crontab, <span class="string">"crontab.json"</span>)
-
-<span class="comment">#===============================================================================</span>
-<span class="comment"># error_page_404 : 404 error</span>
-<span class="comment">#===============================================================================</span>
-<span class="function"><span class="keyword">def</span> <span class="title">error_page_404</span><span class="params">(status, message, traceback, version)</span>:</span>
-    <span class="keyword">return</span> <span class="string">"404 Error!"</span>
-    
-<span class="comment">#===============================================================================</span>
-<span class="comment"># error_page_401 : 401 error</span>
-<span class="comment">#===============================================================================</span>
-<span class="function"><span class="keyword">def</span> <span class="title">error_page_401</span><span class="params">(status, message, traceback, version)</span>:</span>
-    <span class="keyword">return</span> <span class="string">"login error 401 Error!"</span>
-
-<span class="comment">#===============================================================================</span>
-<span class="comment"># validate_password : basic 认证</span>
-<span class="comment">#===============================================================================</span>
-<span class="function"><span class="keyword">def</span> <span class="title">validate_password</span><span class="params">(realm, username, password)</span>:</span>
-    <span class="keyword">return</span> <span class="keyword">True</span>
-    <span class="keyword">if</span> username <span class="keyword">in</span> USERS <span class="keyword">and</span> USERS[username] == password:
-        <span class="keyword">return</span> <span class="keyword">True</span> 
-    <span class="keyword">return</span> <span class="keyword">False</span>
-    
-cherrypy.config.update(&#123;<span class="string">'server.socket_port'</span>:<span class="number">8080</span>, <span class="string">"server.socket_host"</span>: <span class="string">"0.0.0.0"</span>, <span class="string">"engine.autoreload_on"</span>: <span class="keyword">True</span>&#125;)
-cherrypy.config.update(&#123;<span class="string">'error_page.404'</span>: error_page_404&#125;)
-cherrypy.config.update(&#123;<span class="string">'error_page.401'</span>: error_page_401&#125;)
-
-<span class="comment">#===============================================================================</span>
-<span class="comment"># OverviewController</span>
-<span class="comment">#===============================================================================</span>
-<span class="class"><span class="keyword">class</span> <span class="title">OverviewController</span><span class="params">()</span>:</span>
-    <span class="comment">#===========================================================================</span>
-    <span class="comment"># get_zrqk : 昨日情况</span>
-    <span class="comment">#===========================================================================</span>
-    <span class="function"><span class="keyword">def</span> <span class="title">get_zrqk</span><span class="params">(self)</span>:</span>
-        key_list = [<span class="string">"110呼入"</span>,<span class="string">"有效报警"</span>,<span class="string">"CK"</span>,<span class="string">"移车警情"</span>,<span class="string">"直处"</span>,<span class="string">"下发"</span>,<span class="string">"违法犯罪"</span>,<span class="string">"交通"</span>,<span class="string">"求助"</span>,<span class="string">"举报"</span>,<span class="string">"纠纷"</span>]
-        old_data = get_json(<span class="string">"zrqk.json"</span>)
-        value_list = []
-        <span class="keyword">for</span> key <span class="keyword">in</span> key_list:
-            <span class="keyword">if</span> key <span class="keyword">in</span> old_data:
-                value_list.append(old_data[key])
-            <span class="keyword">else</span>:
-                value_list.append(<span class="number">0</span>)
-        <span class="keyword">return</span> key_list, value_list
-    
-    <span class="comment">#===========================================================================</span>
-    <span class="comment"># get_zrqk : 盘查入所拘留</span>
-    <span class="comment">#===========================================================================</span>
-    <span class="function"><span class="keyword">def</span> <span class="title">get_pc_rs_jl</span><span class="params">(self)</span>:</span>
-        key_list = [<span class="string">"今日盘查"</span>,<span class="string">"今日入所"</span>,<span class="string">"今日拘留"</span>,<span class="string">"今日取保"</span>,<span class="string">"今日逮捕"</span>]
-        old_data = get_json(<span class="string">"pc_rs_jl.json"</span>)
-        value_list = []
-        <span class="keyword">for</span> key <span class="keyword">in</span> key_list:
-            <span class="keyword">if</span> key <span class="keyword">in</span> old_data:
-                value_list.append(old_data[key])
-            <span class="keyword">else</span>:
-                value_list.append(<span class="number">0</span>)
-        <span class="keyword">return</span> key_list, value_list
-    
-    <span class="comment">#===========================================================================</span>
-    <span class="comment"># get_jq_category : 警情分类</span>
-    <span class="comment">#===========================================================================</span>
-    <span class="function"><span class="keyword">def</span> <span class="title">get_jq_category</span><span class="params">(self)</span>:</span>
-        key_list = [<span class="string">"交通类警情"</span>,<span class="string">"处警量"</span>,<span class="string">"接警量"</span>,<span class="string">"求助类警情"</span>,<span class="string">"违法犯罪警情"</span>]
-        old_data = get_json(<span class="string">"jq_category.json"</span>)
-        zr_value_list = []
-        tq_value_list = []
-        <span class="keyword">for</span> key <span class="keyword">in</span> key_list:
-            <span class="keyword">if</span> key <span class="keyword">in</span> old_data[<span class="string">"同期"</span>]:
-                tq_value_list.append(old_data[<span class="string">"同期"</span>][key])
-            <span class="keyword">else</span>:
-                tq_value_list.append(<span class="number">0</span>)
-            
-            <span class="keyword">if</span> key <span class="keyword">in</span> old_data[<span class="string">"昨日"</span>]:
-                zr_value_list.append(old_data[<span class="string">"昨日"</span>][key])
-            <span class="keyword">else</span>:
-                zr_value_list.append(<span class="number">0</span>)
-        <span class="keyword">return</span> key_list, zr_value_list, tq_value_list
-    
-    <span class="comment">#===========================================================================</span>
-    <span class="comment"># get_crontab</span>
-    <span class="comment">#===========================================================================</span>
-    <span class="function"><span class="keyword">def</span> <span class="title">get_crontab</span><span class="params">(self)</span>:</span>
-        <span class="keyword">try</span>:
-            crontab = get_crontab()
-        <span class="keyword">except</span>:
-            crontab = &#123;&#125;
-        crontab_list = [<span class="string">"zrqk_crontab"</span>, <span class="string">"jq_category_crontab"</span>, <span class="string">"pc_rs_jl_crontab"</span>]
-        result = []
-        <span class="keyword">for</span> key <span class="keyword">in</span> crontab_list:
-            <span class="keyword">if</span> key <span class="keyword">not</span> <span class="keyword">in</span> crontab:
-                result.append(<span class="keyword">False</span>)
-            <span class="keyword">else</span>:
-                result.append(crontab[key])
-        <span class="keyword">return</span> result
-    
-    <span class="comment">#===========================================================================</span>
-    <span class="comment"># save_crontab</span>
-    <span class="comment">#===========================================================================</span>
-    <span class="function"><span class="keyword">def</span> <span class="title">save_crontab</span><span class="params">(self, key, value)</span>:</span>
-        crontab = get_crontab()
-        <span class="keyword">if</span> value <span class="keyword">in</span> [<span class="keyword">True</span>, <span class="string">"1"</span>, <span class="string">"true"</span>, <span class="string">"True"</span>, <span class="string">"TRUE"</span>, <span class="string">"yes"</span>, <span class="string">"YES"</span>, <span class="string">"Yes"</span>, <span class="number">1</span>]:
-            tmp_value = <span class="keyword">True</span>
-        <span class="keyword">else</span>:
-            tmp_value = <span class="keyword">False</span>
         
-        crontab[key] = tmp_value
-        save_crontab(crontab)
-        
-    <span class="comment">#===========================================================================</span>
-    <span class="comment"># index</span>
-    <span class="comment">#===========================================================================</span>
-<span class="meta">    @cherrypy.expose</span>
-    <span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(self)</span>:</span>
-        zrqk_key_list, zrqk_value_list = self.get_zrqk()
-        pc_rs_jl_key_list, pc_rs_jl_value_list = self.get_pc_rs_jl()
-        jq_category_key_list, zr_value_list, tq_value_list = self.get_jq_category()
-        tmpl = lookup.get_template(<span class="string">"index_table.html"</span>)
-        zrqk_crontab, jq_category_crontab, pc_rs_jl_crontab = self.get_crontab()
-        <span class="keyword">print</span> (zrqk_crontab, jq_category_crontab, pc_rs_jl_crontab)
-        <span class="keyword">return</span> tmpl.render(TATLE_TEMPLATE_TEXT=<span class="string">"吴江大屏"</span>, zrqk_key_list=zrqk_key_list, zrqk_value_list=zrqk_value_list,
-                           pc_rs_jl_key_list=pc_rs_jl_key_list, pc_rs_jl_value_list=pc_rs_jl_value_list,
-                           jq_category_key_list=jq_category_key_list, zr_value_list=zr_value_list, tq_value_list=tq_value_list,
-                           zrqk_crontab=zrqk_crontab, jq_category_crontab=jq_category_crontab, pc_rs_jl_crontab=pc_rs_jl_crontab)
-
-    <span class="comment">#===========================================================================</span>
-    <span class="comment"># poi 取得</span>
-    <span class="comment">#===========================================================================</span>
-<span class="meta">    @cherrypy.expose</span>
-<span class="meta">    @cherrypy.tools.json_in()</span>
-<span class="meta">    @cherrypy.tools.json_out()</span>
-    <span class="function"><span class="keyword">def</span> <span class="title">update</span><span class="params">(self, name = None, **kwargs)</span>:</span>
-        result = &#123;&#125;
-        <span class="keyword">if</span> name == <span class="string">"zrqk"</span>:
-            self.save_crontab(<span class="string">"zrqk_crontab"</span>, kwargs[<span class="string">"crontab"</span>])
-            <span class="keyword">del</span> kwargs[<span class="string">"crontab"</span>]
-            
-            save_json(kwargs, <span class="string">"zrqk.json"</span>)
-            result[<span class="string">'data'</span>] = kwargs
-            result[<span class="string">'status'</span>] = <span class="string">"success"</span>
-            result[<span class="string">'code'</span>] = <span class="number">200</span>
-            
-        <span class="keyword">elif</span> name == <span class="string">"pc_rs_jl"</span>:
-            self.save_crontab(<span class="string">"pc_rs_jl_crontab"</span>, kwargs[<span class="string">"crontab"</span>])
-            <span class="keyword">del</span> kwargs[<span class="string">"crontab"</span>]
-
-            save_json(kwargs, <span class="string">"pc_rs_jl.json"</span>)
-            result[<span class="string">'data'</span>] = kwargs
-            result[<span class="string">'status'</span>] = <span class="string">"success"</span>
-            result[<span class="string">'code'</span>] = <span class="number">200</span>
-        <span class="keyword">elif</span> name == <span class="string">"jq_category"</span>:
-            self.save_crontab(<span class="string">"jq_category_crontab"</span>, kwargs[<span class="string">"crontab"</span>])
-            <span class="keyword">del</span> kwargs[<span class="string">"crontab"</span>]
-            
-            tmp_value = &#123;&#125;
-            <span class="keyword">for</span> tmp_key <span class="keyword">in</span> kwargs:
-                key_one, key_two = tmp_key.split(<span class="string">"_"</span>)
-                <span class="keyword">if</span> key_one <span class="keyword">not</span> <span class="keyword">in</span> tmp_value:
-                    tmp_value[key_one] = &#123;&#125;
-                tmp_value[key_one][key_two] = kwargs[tmp_key]
-            save_json(tmp_value, <span class="string">"jq_category.json"</span>)
-            result[<span class="string">'data'</span>] = tmp_value
-            result[<span class="string">'status'</span>] = <span class="string">"success"</span>
-            result[<span class="string">'code'</span>] = <span class="number">200</span>
-        <span class="keyword">else</span>:
-            <span class="keyword">pass</span>
-        <span class="keyword">return</span> result
-        
-    
-overview = OverviewController()
-
-parent_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = parent_dir.replace(<span class="string">"\"</span>, <span class="string">"/"</span>)
-static_dir = <span class="string">"%s/%s"</span> % (parent_dir, <span class="string">'static/'</span>)
-<span class="keyword">print</span> (parent_dir, static_dir)
-conf = &#123;
-        
-        <span class="string">'crime'</span>: &#123;<span class="string">'request.dispatch'</span>: cherrypy.dispatch.RoutesDispatcher(),
-                  
-            &#125;,
-        <span class="string">'/'</span>: &#123;
-                <span class="string">'tools.auth_basic.on'</span>: <span class="keyword">True</span>,
-                <span class="string">'tools.auth_basic.realm'</span>: <span class="string">'wu jiang'</span>,
-                <span class="string">'tools.auth_basic.checkpassword'</span>: validate_password
-            &#125;,
-        <span class="string">'/static'</span>: &#123;
-        <span class="string">'tools.staticdir.on'</span>: <span class="keyword">True</span>,
-        <span class="string">'tools.staticdir.root'</span>: parent_dir,
-        <span class="string">'tools.staticdir.dir'</span>: <span class="string">'static'</span>,
-        <span class="string">'tools.staticdir.index'</span>: <span class="string">'index.html'</span>
-    &#125;
-&#125;
-
-<span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:
-    cherrypy.quickstart(overview, <span class="string">'/'</span>, config=conf)
-</code></pre>
-<img src="/2016/07/28/cherrypy/QQ图片20160808104037.png" alt="image1" title="image1">
-<img src="/2016/07/28/cherrypy/QQ图片20160808104054.png" alt="image2" title="image2">
-<img src="/2016/07/28/cherrypy/QQ图片20160808104058.png" alt="image3" title="image3">
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="2016/07/28/cherrypy/">
-    <time datetime="2016-07-28T08:30:03.000Z" class="entry-date">
-        2016-07-28
-    </time>
-</a>
-    
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/cherrypy/">cherrypy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/python/">python</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="post-hello-world post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="2016/07/25/hello-world/">Hello World</a>
-    </h1>
-  
 
         
-        <div class="comments-link">
-            
-            <!--<a href="javascript:void(0);" data-url="http://honey.lpai.info/2016/07/25/hello-world/" data-id="ciz6qcjq20008fswrct4vmv46" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
 
-    <div class="entry-content">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="javascript">
-$ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span>
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-serverP"><a href="#Run-serverP" class="headerlink" title="Run serverP"></a>Run serverP</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="2016/07/25/hello-world/">
-    <time datetime="2016-07-25T03:11:47.504Z" class="entry-date">
-        2016-07-25
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-markdown-images" class="post-markdown-images post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="2016/07/14/markdown-images/">markdown-images</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <!--<a href="javascript:void(0);" data-url="http://honey.lpai.info/2016/07/14/markdown-images/" data-id="ciz6qcjpv0007fswrt0mq9ugd" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <img src="/2016/07/14/markdown-images/qxt.jpg" alt="qxt" title="qxt">
-<img src="/2016/07/14/markdown-images/gaoxiong.jpg" alt="gaoxinong" title="gaoxinong">
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="2016/07/14/markdown-images/">
-    <time datetime="2016-07-14T14:36:46.000Z" class="entry-date">
-        2016-07-14
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-math-and-uml" class="post-math-and-uml post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="2016/07/06/math-and-uml/">math and uml</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <!--<a href="javascript:void(0);" data-url="http://honey.lpai.info/2016/07/06/math-and-uml/" data-id="ciz6qcjpr0004fswrdaxi0gj7" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <img src="/2016/07/06/math-and-uml/enable_math.png" alt="image1" title="image1">
-<img src="/2016/07/06/math-and-uml/enable_math2.png" alt="image2" title="image2">
 <p>$$E=mc^2$$</p>
 <p>$$\sum_{i=1}^n a_i=0$$<br>$$\sum ^ {j-1}{k=0}{\widehat{\gamma} {kj} z k } $$</p>
 <p>$$<br>\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.<br>$$</p>
@@ -921,18 +166,27 @@ $ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span
     @message "Write your idea", "JUMLY", ->
       @create "Diagram"
 </script>
+<div id="flowchart-0" class="flow-chart"></div>
+
+
+<div id="flowchart-1" class="flow-chart"></div>
+
+
 
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="2016/07/06/math-and-uml/">
-    <time datetime="2016-07-05T16:05:45.000Z" class="entry-date">
-        2016-07-06
+    <a href="flowchat/">
+    <time datetime="2017-04-12T01:25:46.000Z" class="entry-date">
+        2017-04-12
     </time>
 </a>
     
     
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/公式/">公式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/时序图/">时序图</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/流程图/">流程图</a></li></ul>
+
     </footer>
 </article>
 
@@ -941,8 +195,12 @@ $ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span
 
 
 
+
+
+
+
   
-    <article id="post-About" class="post-About post type-post status-publish format-standard hentry">
+    <article id="post-linux-common-comand" class="post-linux-common-comand post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
@@ -950,33 +208,45 @@ $ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span
         
   
     <h1 class="entry-title">
-      <a class="article-title" href="2016/07/04/About/">About</a>
+      <a class="article-title" href="linux-common-comand/">linux-common-comand</a>
     </h1>
   
 
         
         <div class="comments-link">
             
-            <!--<a href="javascript:void(0);" data-url="http://honey.lpai.info/2016/07/04/About/" data-id="ciz6qcjo40000fswr045rpc7p" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netlinux-common-comand/" data-id="cj9gngl86000exdpk1y5eut16" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
+
+
     <div class="entry-content">
       
-        <p>G+: <a href="https://plus.google.com/u/0/+Yangyuehui" target="_blank" rel="external">https://plus.google.com/u/0/+Yangyuehui</a></p>
-<p>GitHub: <a href="https://github.com/ylkjick532428" target="_blank" rel="external">https://github.com/ylkjick532428</a></p>
+        
+  <div id="toc" class="toc-article">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux-一些命令工具"><span class="toc-text">linux 一些命令工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx-basic-认证文件生成"><span class="toc-text">nginx basic 认证文件生成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串搜索"><span class="toc-text">字符串搜索</span></a></li></ol></li></ol>
+  </div>
+
+
+        <h1 id="linux-一些命令工具"><a href="#linux-一些命令工具" class="headerlink" title="linux 一些命令工具"></a>linux 一些命令工具</h1><h2 id="nginx-basic-认证文件生成"><a href="#nginx-basic-认证文件生成" class="headerlink" title="nginx basic 认证文件生成"></a>nginx basic 认证文件生成</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum install httpd-tools</div><div class="line">htpasswd -c 生成的认证文件名 用户名</div></pre></td></tr></table></figure>
+<h2 id="字符串搜索"><a href="#字符串搜索" class="headerlink" title="字符串搜索"></a>字符串搜索</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">grep -Ril &apos;搜索内容&apos; ./ </div><div class="line">./搜索当前目录</div></pre></td></tr></table></figure>
 
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="2016/07/04/About/">
-    <time datetime="2016-07-04T14:56:57.000Z" class="entry-date">
-        2016-07-04
+    <a href="linux-common-comand/">
+    <time datetime="2017-04-11T02:00:57.000Z" class="entry-date">
+        2017-04-11
     </time>
 </a>
     
     
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/linux常用命令/">linux常用命令</a></li></ul>
+
     </footer>
 </article>
 
@@ -985,8 +255,12 @@ $ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span
 
 
 
+
+
+
+
   
-    <article id="post-README" class="post-README post type-post status-publish format-standard hentry">
+    <article id="post-cabot-install" class="post-cabot-install post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
@@ -994,32 +268,64 @@ $ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span
         
   
     <h1 class="entry-title">
-      <a class="article-title" href="2016/07/04/README/">README</a>
+      <a class="article-title" href="cabot-install/">cabot install</a>
     </h1>
   
 
         
         <div class="comments-link">
             
-            <!--<a href="javascript:void(0);" data-url="http://honey.lpai.info/2016/07/04/README/" data-id="ciz6qcjpd0002fswr7yehhudl" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netcabot-install/" data-id="cj9gngl7i0001xdpky930gsvi" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
+
+
     <div class="entry-content">
       
-        <p>site source<br>another domain:<a href="http://blog.lpai.info" target="_blank" rel="external">http://blog.lpai.info</a><br>github backup site:<a href="http://ylkjick532428.github.io/honeyblog/" target="_blank" rel="external">http://ylkjick532428.github.io/honeyblog/</a></p>
+        
+  <div id="toc" class="toc-article">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#cabot-安装"><span class="toc-text">cabot 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境"><span class="toc-text">环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#python27-安装参考"><span class="toc-text">python2.7 安装参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cabot安装参考"><span class="toc-text">cabot安装参考</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装依赖"><span class="toc-text">安装依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装mysql"><span class="toc-text">安装mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建mysql用户"><span class="toc-text">创建mysql用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试msyql用户"><span class="toc-text">测试msyql用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特别说明"><span class="toc-text">特别说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装依赖-requirementstxt"><span class="toc-text">安装依赖 requirements.txt</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改配置"><span class="toc-text">修改配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#redis配置"><span class="toc-text">redis配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#graphite配置"><span class="toc-text">graphite配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#手动启动"><span class="toc-text">手动启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动启动"><span class="toc-text">自动启动</span></a></li></ol></li></ol></li></ol>
+  </div>
+
+
+        <h1 id="cabot-安装"><a href="#cabot-安装" class="headerlink" title="cabot 安装"></a>cabot 安装</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>centos6.5 64</li>
+<li>python: 2.7</li>
+</ul>
+<h3 id="python27-安装参考"><a href="#python2-7-安装参考" class="headerlink" title="python2.7 安装参考"></a>python2.7 安装参考</h3><p><a href="/graphite-install-on-centos/">graphite-install-on-centos</a></p>
+<h3 id="cabot安装参考"><a href="#cabot安装参考" class="headerlink" title="cabot安装参考"></a>cabot安装参考</h3><p><a href="https://gist.github.com/Gromph/5f4db73b0f38775bc2f0#file-gistfile1-txt-L35" target="_blank" rel="external">https://gist.github.com/Gromph/5f4db73b0f38775bc2f0#file-gistfile1-txt-L35</a><br><a href="http://blog.gaoyuan.xyz/2014/10/01/use-graphite-and-alter-build-monitor-system/" target="_blank" rel="external">http://blog.gaoyuan.xyz/2014/10/01/use-graphite-and-alter-build-monitor-system/</a></p>
+<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><p><code>yum install -y openldap openldap-devel libffi libffi-devel mysql-server mysql-devel</code></p>
+<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a><a href="/mysql-management/">安装mysql</a></h2><h2 id="创建mysql用户"><a href="#创建mysql用户" class="headerlink" title="创建mysql用户"></a>创建mysql用户</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">create database if not exists cabot default character set utf8;</div><div class="line">GRANT ALL PRIVILEGES ON `cabot`.* TO &apos;cabot&apos;@&apos;%&apos; IDENTIFIED BY &apos;cabot&apos;;</div><div class="line"></div><div class="line">SET old_passwords = 0;</div><div class="line"></div><div class="line">UPDATE mysql.user SET Password = PASSWORD(&apos;cabot&apos;) WHERE User = &apos;weibo&apos; limit 1;</div><div class="line"></div><div class="line">SELECT LENGTH(Password) FROM mysql.user WHERE User = &apos;cabot&apos;;</div><div class="line"> FLUSH PRIVILEGES;</div><div class="line"></div><div class="line">GRANT ALL PRIVILEGES ON `cabot`.* TO &apos;cabot&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;cabot&apos;;</div></pre></td></tr></table></figure>
+<h2 id="测试msyql用户"><a href="#测试msyql用户" class="headerlink" title="测试msyql用户"></a>测试msyql用户</h2><p><code>mysql -ucabot -pcabot</code></p>
+<h2 id="特别说明"><a href="#特别说明" class="headerlink" title="特别说明"></a>特别说明</h2><p>foreman命令使用隐藏文件.foreman<br>foreman为ruby的工具,需要安装ruby才能使用<br>用来把不同的配置文件写入环境变量中,可以不使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># vi: set ft=yaml :</div><div class="line"></div><div class="line">procfile: Procfile.dev</div><div class="line">#env: conf/development.env 开发环境</div><div class="line">env: conf/production.env #正式环境</div></pre></td></tr></table></figure></p>
+<p>sh -ac ‘ . ./conf/production.env …<br>是把production.env 写入运行时环境变量,然后运行<br>和foreman同样的意思</p>
+<p>syncdb django 1.9 已经抛弃, 使用migrate<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sh -ac &apos; . ./conf/production.env; python2.7 manage.py migrate&apos;</div><div class="line">sh -ac &apos; . ./conf/production.env; python2.7 manage.py collectstatic --noinput&apos;</div><div class="line">sh -ac &apos; . ./conf/production.env; python2.7 manage.py compress&apos;</div></pre></td></tr></table></figure></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /var/www</div><div class="line">wget http://ip/software_new/cabot.tar</div><div class="line">tar -vxf cabot.tar</div></pre></td></tr></table></figure>
+<p>/var/www/cabot/requir_lib 是python依赖用于离线安装</p>
+<h3 id="安装依赖-requirementstxt"><a href="#安装依赖-requirements-txt" class="headerlink" title="安装依赖 requirements.txt"></a>安装依赖 requirements.txt</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">coverage==4.2</div><div class="line">django_coverage_plugin==1.4.2</div><div class="line">mock==1.0.1</div><div class="line">sqlalchemy==1.1.5</div><div class="line">ipdb</div><div class="line">amqp&lt;2.0</div><div class="line">anyjson==0.3.3</div><div class="line">argparse==1.2.1</div><div class="line">celery[redis]==3.1.23</div><div class="line">dj-database-url==0.4.2</div><div class="line">django-appconf==1.0.2</div><div class="line">django-auth-ldap==1.2.6</div><div class="line">django-celery==3.1.17</div><div class="line">django-compressor==2.1.1</div><div class="line">django-filter==1.0.1</div><div class="line">django-jsonify==0.3.0</div><div class="line">django-mptt==0.6.0</div><div class="line">django-polymorphic==1.1</div><div class="line">Django&gt;=1.9,&lt;1.10</div><div class="line">djangorestframework&gt;=3.5,&lt;3.6</div><div class="line">freezegun==0.3.8</div><div class="line">gevent==1.0.1</div><div class="line">gunicorn==19.6.0</div><div class="line">httplib2==0.7.7</div><div class="line">icalendar==3.2</div><div class="line">Markdown==2.5</div><div class="line">ndg-httpsclient==0.4.2</div><div class="line">psycogreen==1.0</div><div class="line">psycopg2==2.5.1</div><div class="line">pyasn1==0.1.9</div><div class="line">PyJWT==0.1.2</div><div class="line">pyOpenSSL==16.1.0</div><div class="line">python-dateutil==2.1</div><div class="line">pytz==2014.10</div><div class="line">requests==2.7.0</div><div class="line">twilio==3.4.1</div><div class="line">whitenoise==3.3.0</div><div class="line">wsgiref==0.1.2</div><div class="line">cabot_alert_email==1.4.3</div><div class="line">cabot_alert_hipchat==1.8.3</div><div class="line">cabot_alert_twilio==1.3.0</div></pre></td></tr></table></figure>
+<h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /var/www/cabot/conf</div><div class="line">cp production.env.example production.env</div><div class="line">vim /var/www/cabot/conf/production.env</div></pre></td></tr></table></figure>
+<h2 id="redis配置"><a href="#redis配置" class="headerlink" title="redis配置"></a>redis配置</h2><p><a href="https://github.com/judasn/Linux-Tutorial/blob/master/Redis-Install-And-Settings.md" target="_blank" rel="external">redis 安装</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># Django settings</div><div class="line">CELERY_BROKER_URL=redis://:vastio@172.16.60.201:6379/1</div><div class="line">DJANGO_SECRET_KEY=2FL6ORhHwr5eX34pP9mMugnIOd3jzVuT45f7w430Mt5PnEwbcJgma0q8zUXNZ68A</div></pre></td></tr></table></figure></p>
+<h2 id="graphite配置"><a href="#graphite配置" class="headerlink" title="graphite配置"></a>graphite配置</h2><p><a href="/graphite-install-on-centos/">graphite 安装</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">GRAPHITE_API=http://127.0.0.1:81/</div><div class="line">GRAPHITE_USER=vastio</div><div class="line">GRAPHITE_PASS=vastio</div></pre></td></tr></table></figure></p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><h3 id="手动启动"><a href="#手动启动" class="headerlink" title="手动启动"></a>手动启动</h3><p><code>cd /var/www/cabot</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh -ac &apos; . ./conf/production.env; nohup python2.7 manage.py runserver 0.0.0.0:8000 &gt; run.log &amp;&apos;</div></pre></td></tr></table></figure></p>
+<h3 id="自动启动"><a href="#自动启动" class="headerlink" title="自动启动"></a>自动启动</h3><p>start.sh<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">PROJECT_HOME=/var/www/cabot</div><div class="line">cd $PROJECT_HOME</div><div class="line">source /etc/profile</div><div class="line">#依赖数据库,等10s</div><div class="line">sleep 10s</div><div class="line"></div><div class="line">sh -ac &apos; . ./conf/production.env; nohup python2.7 manage.py runserver 0.0.0.0:8000 &gt; run.log &amp;&apos;</div><div class="line">#nohup python2.7 manage.py runserver 0.0.0.0:8000 &gt; run.log &amp;</div></pre></td></tr></table></figure></p>
+<p><code>vim /etc/rc.local</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bash /var/www/cabot/start.sh</div></pre></td></tr></table></figure></p>
 
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="2016/07/04/README/">
-    <time datetime="2016-07-04T14:27:35.000Z" class="entry-date">
-        2016-07-04
+    <a href="cabot-install/">
+    <time datetime="2017-03-29T05:28:59.000Z" class="entry-date">
+        2017-03-29
     </time>
 </a>
     
     
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/cabot/">cabot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/监控/">监控</a></li></ul>
+
     </footer>
 </article>
 
@@ -1028,18 +334,529 @@ $ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span
 
 
 
+
+
+
+
   
+    <article id="post-luigi-install" class="post-luigi-install post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="luigi-install/">luigi install</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netluigi-install/" data-id="cj9gngl8d000hxdpkxh1opesy" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+  <div id="toc" class="toc-article">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#luigi-安装"><span class="toc-text">luigi 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li></ol></li></ol>
+  </div>
+
+
+        <h1 id="luigi-安装"><a href="#luigi-安装" class="headerlink" title="luigi 安装"></a>luigi 安装</h1><p>官方文档: <a href="http://luigi.readthedocs.io/en/latest/" target="_blank" rel="external">http://luigi.readthedocs.io/en/latest/</a><br>中文: <a href="https://github.com/17zuoye/luiti/blob/master/README.zh_CN.markdown" target="_blank" rel="external">https://github.com/17zuoye/luiti/blob/master/README.zh_CN.markdown</a><br>      <a href="http://blog.kissdata.com/2014/05/28/lugi.html#configuration" target="_blank" rel="external">http://blog.kissdata.com/2014/05/28/lugi.html#configuration</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>系统: centos 6.5 64<br>python: 2.7<br>python2.7 安装参考<a href="/graphite-install-on-centos/">graphite-install-on-centos</a></p>
+<p>#启动luigi服务端<br>默认端口: 8082<br><code>/usr/local/python27/bin/luigid --background</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">[root@localhost luigi]# luigid -h</div><div class="line">usage: luigid [-h] [--background] [--pidfile PIDFILE] [--logdir LOGDIR]</div><div class="line">              [--state-path STATE_PATH] [--address ADDRESS]</div><div class="line">              [--unix-socket UNIX_SOCKET] [--port PORT]</div><div class="line"></div><div class="line">Central luigi server</div><div class="line"></div><div class="line">optional arguments:</div><div class="line">  -h, --help            show this help message and exit</div><div class="line">  --background          Run in background mode</div><div class="line">  --pidfile PIDFILE     Write pidfile</div><div class="line">  --logdir LOGDIR       log directory</div><div class="line">  --state-path STATE_PATH</div><div class="line">                        Pickled state file</div><div class="line">  --address ADDRESS     Listening interface</div><div class="line">  --unix-socket UNIX_SOCKET</div><div class="line">                        Unix socket path</div><div class="line">  --port PORT           Listening port</div></pre></td></tr></table></figure>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="luigi-install/">
+    <time datetime="2017-03-29T05:14:37.000Z" class="entry-date">
+        2017-03-29
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/luigi/">luigi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/监控/">监控</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-centos-repo" class="post-centos-repo post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="centos-repo/">centos repo</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netcentos-repo/" data-id="cj9gngl7r0004xdpkoakb0n9x" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+  <div id="toc" class="toc-article">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#公司centos源"><span class="toc-text">公司centos源</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#网路安装服务器1721660203-centos65"><span class="toc-text">网路安装服务器172.16.60.203 centos6.5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#centos6-源"><span class="toc-text">centos6 源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#epel6-源"><span class="toc-text">epel6 源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#centos7-源"><span class="toc-text">centos7 源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hadoop源-ambari"><span class="toc-text">hadoop源 ambari</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yum-使用官方源使用代理加速"><span class="toc-text">yum 使用官方源使用代理加速</span></a></li></ol></li></ol>
+  </div>
+
+
+        <h1 id="公司centos源"><a href="#公司centos源" class="headerlink" title="公司centos源"></a>公司centos源</h1><p>centos源列表(翻墙): <a href="https://www.centos.org/download/mirrors/" target="_blank" rel="external">https://www.centos.org/download/mirrors/</a><br>epel源列表(翻墙): <a href="https://fedoraproject.org/wiki/EPEL" target="_blank" rel="external">https://fedoraproject.org/wiki/EPEL</a><br>163源: <a href="http://mirrors.163.com/.help/centos.html" target="_blank" rel="external">http://mirrors.163.com/.help/centos.html</a></p>
+<h2 id="网路安装服务器1721660203-centos65"><a href="#网路安装服务器172-16-60-203-centos6-5" class="headerlink" title="网路安装服务器172.16.60.203 centos6.5"></a>网路安装服务器172.16.60.203 centos6.5</h2><h2 id="centos6-源"><a href="#centos6-源" class="headerlink" title="centos6 源"></a>centos6 源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[vastio_centos6.5]</div><div class="line">name=install centos6.5</div><div class="line">baseurl=http://172.16.60.203/centos6.5/</div><div class="line">enabled=1</div><div class="line">gpgcheck=0</div></pre></td></tr></table></figure>
+<h2 id="epel6-源"><a href="#epel6-源" class="headerlink" title="epel6 源"></a>epel6 源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[vastio_epel6.8]</div><div class="line">name=install epel6.8</div><div class="line">baseurl=http://172.16.60.100/epel/</div><div class="line">enabled=1</div><div class="line">gpgcheck=0</div></pre></td></tr></table></figure>
+<h2 id="centos7-源"><a href="#centos7-源" class="headerlink" title="centos7 源"></a>centos7 源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[vastio_centos7]</div><div class="line">name=install centos7</div><div class="line">baseurl=http://172.16.60.203/centos7/</div><div class="line">enabled=1</div><div class="line">gpgcheck=0</div></pre></td></tr></table></figure>
+<h2 id="hadoop源-ambari"><a href="#hadoop源-ambari" class="headerlink" title="hadoop源 ambari"></a>hadoop源 ambari</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">[vastio_ambari2.4]</div><div class="line">name=install ambari2.4</div><div class="line">baseurl=http://172.16.60.100/ambari/ambari2.4/AMBARI-2.4.2.0/centos6/2.4.2.0-136/</div><div class="line">enabled=1</div><div class="line">gpgcheck=0</div><div class="line"></div><div class="line">[HDP-2.5]</div><div class="line">name=HDP-2.5</div><div class="line">baseurl=http://172.16.60.100/ambari/ambari2.4/HDP/centos6</div><div class="line">path=/</div><div class="line">enabled=1</div><div class="line">gpgcheck=0</div><div class="line"></div><div class="line">[HDP-UTILS-1.1.0.21]</div><div class="line">name=HDP-UTILS-1.1.0.21</div><div class="line">baseurl=http://172.16.60.100/ambari/ambari2.4/HDP-UTILS-1.1.0.21/repos/centos6</div><div class="line">path=/</div><div class="line">enabled=1</div><div class="line">gpgcheck=0</div></pre></td></tr></table></figure>
+<h2 id="yum-使用官方源使用代理加速"><a href="#yum-使用官方源使用代理加速" class="headerlink" title="yum 使用官方源使用代理加速"></a>yum 使用官方源使用代理加速</h2><p><code>vim /etc/yum.conf</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http_proxy=&quot;http://172.16.60.151:1080&quot;</div></pre></td></tr></table></figure></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="centos-repo/">
+    <time datetime="2017-03-29T04:11:10.000Z" class="entry-date">
+        2017-03-29
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/centos/">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/yum/">yum</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-graphite-install-on-centos" class="post-graphite-install-on-centos post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="graphite-install-on-centos/">graphite install on centos</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netgraphite-install-on-centos/" data-id="cj9gngl800008xdpkqdidn5av" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+  <div id="toc" class="toc-article">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#graphite-安装"><span class="toc-text">graphite 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境"><span class="toc-text">环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装python27"><span class="toc-text">安装python2.7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置环境变量"><span class="toc-text">配置环境变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装graphite"><span class="toc-text">安装graphite</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#批量下载依赖的方法"><span class="toc-text">批量下载依赖的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置graphite"><span class="toc-text">配置graphite</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#storage-schemasconf"><span class="toc-text">storage-schemas.conf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结合nginx-做前置"><span class="toc-text">结合nginx 做前置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动caborn"><span class="toc-text">启动caborn</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开机启动"><span class="toc-text">开机启动</span></a></li></ol></li></ol>
+  </div>
+
+
+        <h1 id="graphite-安装"><a href="#graphite-安装" class="headerlink" title="graphite 安装"></a>graphite 安装</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>centos6.5 64</li>
+<li>python: 2.7<br>公司机器: 172.16.60.139</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>客户端: <a href="https://github.com/daniellawrence/graphitesend" target="_blank" rel="external">graphitesend</a></p>
+<p>中文文档:<br><a href="https://segmentfault.com/search?q=Graphite+%E7%B3%BB%E5%88%97+%235" target="_blank" rel="external">https://segmentfault.com/search?q=Graphite+%E7%B3%BB%E5%88%97+%235</a><br><a href="https://lanjingling.github.io/2016/04/04/graphite-1/" target="_blank" rel="external">https://lanjingling.github.io/2016/04/04/graphite-1/</a><br>官网文档: <a href="http://graphite.readthedocs.io/en/latest/" target="_blank" rel="external">graphite</a></p>
+<h2 id="安装python27"><a href="#安装python2-7" class="headerlink" title="安装python2.7"></a>安装python2.7</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div></pre></td><td class="code"><pre><div class="line">echo &quot;配置yum源&quot;</div><div class="line">cd /etc/yum.repos.d/</div><div class="line">rm -rf *</div><div class="line">wget http://172.16.60.100/vastio6.repo</div><div class="line">wget http://172.16.60.100/CentOS6-Base-163.repo</div><div class="line"></div><div class="line">echo &quot;清空yum缓存&quot;</div><div class="line">yum clean all</div><div class="line"></div><div class="line">echo &quot;安装编译环境&quot;</div><div class="line">mkdir /root/software</div><div class="line">cd /root/software</div><div class="line">rm -rf *</div><div class="line">yum -y install libgfortran</div><div class="line">yum -y install gcc-gfortran</div><div class="line">yum -y install gcc gcc-c++</div><div class="line">yum -y install readline-devel</div><div class="line">yum -y install libXt-devel</div><div class="line">yum -y install openssl openssl-devel pcre pcre-devel</div><div class="line"></div><div class="line">#centos6.5 openssl 有bug 升级</div><div class="line">wget http://172.16.60.100/ambari/openssl-1.0.1e-48.el6_8.4.x86_64.rpm</div><div class="line">wget http://172.16.60.100/ambari/openssl-devel-1.0.1e-48.el6_8.4.x86_64.rpm</div><div class="line">yum install openssl* -y</div><div class="line"></div><div class="line">echo &quot;安装oracle client&quot;</div><div class="line">wget http://172.16.60.100/software_new/pps/oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm</div><div class="line">wget http://172.16.60.100/software_new/oracle-instantclient11.2-devel-11.2.0.3.0-1.x86_64.rpm</div><div class="line">wget http://172.16.60.100/software_new/oracle-instantclient11.2-sqlplus-11.2.0.3.0-1.x86_64.rpm</div><div class="line"></div><div class="line">yum -y install oracle-instantclient11.2-*</div><div class="line"></div><div class="line">echo &quot;编译安装 python2.7&quot;</div><div class="line">wget http://172.16.60.100/tools/python/Python-2.7.13.tgz</div><div class="line"></div><div class="line">tar -vxf Python-2.7.13.tgz</div><div class="line">cd Python-2.7.13</div><div class="line">./configure --prefix=/usr/local/python27 --with-ssl --with-ssl-lib</div><div class="line">make &amp;&amp; make install</div><div class="line"></div><div class="line">echo &quot;安装 pip工具&quot;</div><div class="line">wget http://172.16.60.100/pypi/pip-9.0.1.tar.gz</div><div class="line">tar -vxf pip-9.0.1.tar.gz</div><div class="line">cd pip-9.0.1</div><div class="line"></div><div class="line">/usr/local/python27/bin/python2.7 setup.py install</div><div class="line"></div><div class="line">mkdir -p ~/.pip</div><div class="line">echo &quot;pip 源&quot;</div><div class="line">echo &quot;http://pypi.douban.com/simple/  豆瓣</div><div class="line">http://pypi.hustunique.com/simple/  华中理工大学</div><div class="line">http://pypi.sdutlinux.org/simple/  山东理工大学</div><div class="line">http://pypi.mirrors.ustc.edu.cn/simple/  中国科学技术大学</div><div class="line">http://mirrors.aliyun.com/pypi/simple/ 阿里云</div><div class="line">pip3 install -i http://172.16.60.100/pypi/simple/ --trusted-host=172.16.60.100 cx_Oracle</div><div class="line">pip3 install -i http://pypi.douban.com/simple/ --trusted-host=pypi.douban.com xml</div><div class="line">编辑linux ~/.pip/pip.conf</div><div class="line">window ~/.pip/pip.ini</div><div class="line">&quot;</div><div class="line">echo &quot;[global]</div><div class="line">timeout = 60</div><div class="line">#index-url = http://172.16.60.100/pypi/simple/</div><div class="line">index-url = http://mirrors.aliyun.com/pypi/simple/</div><div class="line">#trusted-host = 172.16.60.100</div><div class="line">trusted-host = mirrors.aliyun.com&quot; &gt; ~/.pip/pip.conf</div><div class="line"></div><div class="line">echo &quot;安装python 常用包&quot;</div><div class="line">/usr/local/python27/bin/pip2.7 install CherryPy</div><div class="line">/usr/local/python27/bin/pip2.7 install Mako</div><div class="line">/usr/local/python27/bin/pip2.7 install MarkupSafe</div><div class="line">/usr/local/python27/bin/pip2.7 install PyMySQL</div><div class="line">/usr/local/python27/bin/pip2.7 install PyYAML</div><div class="line">/usr/local/python27/bin/pip2.7 install Routes</div><div class="line">/usr/local/python27/bin/pip2.7 install SOAPpy</div><div class="line">/usr/local/python27/bin/pip2.7 install SQLAlchemy</div><div class="line">/usr/local/python27/bin/pip2.7 install beautifulsoup4</div><div class="line">/usr/local/python27/bin/pip2.7 install cx_Oracle</div><div class="line">/usr/local/python27/bin/pip2.7 install defusedxml</div><div class="line">/usr/local/python27/bin/pip2.7 install elasticsearch</div><div class="line">/usr/local/python27/bin/pip2.7 install get</div><div class="line">/usr/local/python27/bin/pip2.7 install graphite</div><div class="line">/usr/local/python27/bin/pip2.7 install jieba</div><div class="line">/usr/local/python27/bin/pip2.7 install lxml</div><div class="line">/usr/local/python27/bin/pip2.7 install pygrametl</div><div class="line">/usr/local/python27/bin/pip2.7 install pyhs2</div><div class="line">/usr/local/python27/bin/pip2.7 install pyodbc</div><div class="line">/usr/local/python27/bin/pip2.7 install pyodbc</div><div class="line">/usr/local/python27/bin/pip2.7 install repoze.lru</div><div class="line">/usr/local/python27/bin/pip2.7 install requests</div><div class="line">/usr/local/python27/bin/pip2.7 install rinse</div><div class="line">/usr/local/python27/bin/pip2.7 install router</div><div class="line">/usr/local/python27/bin/pip2.7 install rpy2</div><div class="line">/usr/local/python27/bin/pip2.7 install sasl</div><div class="line">/usr/local/python27/bin/pip2.7 install setuptools</div><div class="line">/usr/local/python27/bin/pip2.7 install six</div><div class="line">/usr/local/python27/bin/pip2.7 install structlog</div><div class="line">/usr/local/python27/bin/pip2.7 install thrift</div><div class="line">/usr/local/python27/bin/pip2.7 install thrift</div><div class="line">/usr/local/python27/bin/pip2.7 install tzlocal</div><div class="line">/usr/local/python27/bin/pip2.7 install urllib3</div><div class="line">/usr/local/python27/bin/pip2.7 install uwsgi</div><div class="line">/usr/local/python27/bin/pip2.7 install wstools</div><div class="line">/usr/local/python27/bin/pip2.7 install xmltodict</div><div class="line">/usr/local/python27/bin/pip2.7 install backports_abc</div><div class="line">/usr/local/python27/bin/pip2.7 install certifi</div><div class="line">/usr/local/python27/bin/pip2.7 install docutils</div><div class="line">/usr/local/python27/bin/pip2.7 install lockfile</div><div class="line">/usr/local/python27/bin/pip2.7 install luigi</div><div class="line">/usr/local/python27/bin/pip2.7 install pbr</div><div class="line">/usr/local/python27/bin/pip2.7 install singledispatch</div><div class="line">/usr/local/python27/bin/pip2.7 install tornado</div><div class="line">/usr/local/python27/bin/pip2.7 install graphitesend</div><div class="line">/usr/local/python27/bin/pip2.7 install python-dateutil</div><div class="line">/usr/local/python27/bin/pip2.7 install simplejson</div><div class="line">/usr/local/python27/bin/pip2.7 install argparse</div><div class="line">/usr/local/python27/bin/pip2.7 install cx_Freeze</div></pre></td></tr></table></figure>
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p><code>vim /etc/profile</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#PYTHON27 环境变量</div><div class="line">export PYTHON_HOME=/usr/local/python27</div><div class="line">export PATH=PYTHON_HOME/bin:PATH</div><div class="line"></div><div class="line">#oralce client 环境变量</div><div class="line">export ORACLE_SID=orcl</div><div class="line">export ORACLE_HOME=/usr/lib/oracle/11.2/client64</div><div class="line">export TNS_ADMIN=/usr/lib/oracle/11.2/client64</div><div class="line">export NLS_LANG=AMERICAN_AMERICA.AL32UTF8</div><div class="line">export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/lib:/usr/local/lib</div><div class="line">export PATH=$PATH:$ORACLE_HOME/bin:$ORACLE_HOME/lib</div></pre></td></tr></table></figure></p>
+<p><code>source /etc/profile</code></p>
+<p><code>/usr/local/python27/bin/pip2.7 install cx_Oracle</code></p>
+<h2 id="安装graphite"><a href="#安装graphite" class="headerlink" title="安装graphite"></a>安装graphite</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd ~</div><div class="line">wget http://172.16.60.100/software_new/graphite_git.tar</div><div class="line">tar -vxf graphite_git.tar</div><div class="line">cd graphite_git</div></pre></td></tr></table></figure>
+<p>安装graphite组件, 按顺序安装<br>ceres<br>whisper<br>carbon<br>graphite-web</p>
+<h3 id="批量下载依赖的方法"><a href="#批量下载依赖的方法" class="headerlink" title="批量下载依赖的方法"></a>批量下载依赖的方法</h3><p>cabot 依赖也是同理<br>无法连接互联网需要手动下载依赖,每个组件都有依赖requirements.txt<br>市局的组件依赖可以使用该办法解决<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mkdir require_lib</div><div class="line">cat carbon/requirements.txt &gt; require_lib/requirements.txt</div><div class="line">cat ceres/test_requirements.txt &gt;&gt; require_lib/requirements.txt</div><div class="line">cat whisper/requirements.txt &gt;&gt; require_lib/requirements.txt</div><div class="line">cat graphite-web/requirements.txt &gt;&gt; require_lib/requirements.txt</div><div class="line">cd require_lib</div><div class="line">pip2.7 download -r requirements.txt</div></pre></td></tr></table></figure></p>
+<h2 id="配置graphite"><a href="#配置graphite" class="headerlink" title="配置graphite"></a>配置graphite</h2><p>graphite 安装目录 /opt/graphite<br>graphite 配置目录 /opt/graphite/conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">cd /opt/graphite/conf</div><div class="line">cp aggregation-rules.conf.example aggregation-rules.conf</div><div class="line">cp blacklist.conf.example blacklist.conf</div><div class="line">cp carbon.amqp.conf.example carbon.amqp.conf</div><div class="line">cp carbon.conf.example carbon.conf</div><div class="line">cp dashboard.conf.example dashboard.conf</div><div class="line">cp graphite.wsgi.example graphite.wsgi</div><div class="line">cp graphTemplates.conf.example graphTemplates.conf</div><div class="line">cp relay-rules.conf.example relay-rules.conf</div><div class="line">cp rewrite-rules.conf.example rewrite-rules.conf</div><div class="line">cp storage-aggregation.conf.example storage-aggregation.conf</div><div class="line">cp storage-schemas.conf.example storage-schemas.conf</div><div class="line">cp whitelist.conf.example whitelist.conf</div></pre></td></tr></table></figure>
+<h2 id="storage-schemasconf"><a href="#storage-schemas-conf" class="headerlink" title="storage-schemas.conf"></a>storage-schemas.conf</h2><p>retentions配置先使用whisper-create.py test.wsp 10s:7d 60s:180d 3600s:360d<br>测试否则可能不正确<br>whisper-info.py test.wsp文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[vastio]</div><div class="line">pattern = ^vastio\.</div><div class="line">retentions = 10s:7d,60s:180d,3600s:360d</div></pre></td></tr></table></figure></p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p><code>vim /opt/graphite/webapp/graphite/settings.py</code><br>主要修改<br>STATIC_ROOT = ‘/opt/graphite/webapp’<br>该目录下有graphite运行的依赖static 或content<br>STATIC_URL = ‘/static/‘<br>TIME_ZONE=’Asia/Shanghai’ 时区</p>
+<p>bash /opt/graphite/webapp/start.sh<br>django-admin.py 需要配置在环境变量中,python2 和python3 请注意不要冲突</p>
+<p><code>bash /opt/graphite/webapp/start.sh</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /opt/graphite/webapp</div><div class="line">export PYTHONPATH=/opt/graphite/webapp/</div><div class="line">nohup django-admin.py runserver --settings=graphite.settings 0.0.0.0:8001 &gt; graphite.log &amp;</div></pre></td></tr></table></figure></p>
+<h2 id="结合nginx-做前置"><a href="#结合nginx-做前置" class="headerlink" title="结合nginx 做前置"></a>结合nginx 做前置</h2><p><a href="/linux-install-nginx/">nginx 安装</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">        listen       81;</div><div class="line">        server_name  localhost;</div><div class="line"></div><div class="line">        #charset koi8-r;</div><div class="line"></div><div class="line">        #access_log  logs/host.access.log  main;</div><div class="line"></div><div class="line">        location / &#123;</div><div class="line">            proxy_pass http://127.0.0.1:8001;</div><div class="line">            proxy_redirect off;</div><div class="line">            proxy_set_header HOST $host;</div><div class="line">            proxy_set_header X-Real-IP $remote_addr;</div><div class="line">            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">            client_max_body_size 10m;</div><div class="line">            client_body_buffer_size 128k;</div><div class="line">            proxy_connect_timeout 90;</div><div class="line">            proxy_send_timeout 90;</div><div class="line">            proxy_read_timeout 90;</div><div class="line">            proxy_buffer_size 4k;</div><div class="line">            proxy_buffers 4 32k;</div><div class="line">            proxy_busy_buffers_size 64k;</div><div class="line">            proxy_temp_file_write_size 64k;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        location /static &#123;</div><div class="line">            root /opt/graphite/webapp;</div><div class="line">        &#125;</div><div class="line">     &#125;</div></pre></td></tr></table></figure></p>
+<h2 id="启动caborn"><a href="#启动caborn" class="headerlink" title="启动caborn"></a>启动caborn</h2><p><code>cd /opt/graphite/bin</code><br><code>python2.7 carbon-cache.py start</code></p>
+<p><code>vim /opt/graphite/bin/start.sh</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /opt/graphite/bin</div><div class="line">/usr/local/python27/bin/python2.7 /opt/graphite/bin/carbon-cache.py start</div></pre></td></tr></table></figure></p>
+<h2 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h2><p><code>vim /etc/rc.local</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#启动carbon</div><div class="line">bash /opt/graphite/bin/start.sh</div><div class="line">#启动graphite-web</div><div class="line">bash /opt/graphite/webapp/start.sh</div></pre></td></tr></table></figure></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="graphite-install-on-centos/">
+    <time datetime="2017-03-29T02:04:21.000Z" class="entry-date">
+        2017-03-29
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/graphite/">graphite</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/监控/">监控</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-linux-install-nginx" class="post-linux-install-nginx post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="linux-install-nginx/">linux install nginx</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netlinux-install-nginx/" data-id="cj9gngl89000gxdpkxmp2kb65" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+  <div id="toc" class="toc-article">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux-安装nginx"><span class="toc-text">linux 安装nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一键安装"><span class="toc-text">一键安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置文件"><span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关闭"><span class="toc-text">关闭</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启"><span class="toc-text">重启</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx-basic-认证文件生成"><span class="toc-text">nginx basic 认证文件生成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动启动脚本nginxautostartup"><span class="toc-text">自动启动脚本nginx.auto.startup</span></a></li></ol></li></ol>
+  </div>
+
+
+        <h1 id="linux-安装nginx"><a href="#linux-安装nginx" class="headerlink" title="linux 安装nginx"></a>linux 安装nginx</h1><h2 id="一键安装"><a href="#一键安装" class="headerlink" title="一键安装"></a>一键安装</h2><pre><code class="javascript">
+wget http:<span class="comment">//ip/tools/nginx/nginx-1.10.2.tar.gz</span>
+tar -vxf nginx<span class="number">-1.10</span><span class="number">.2</span>.tar.gz 
+cd nginx<span class="number">-1.10</span><span class="number">.2</span>
+./configure --prefix=<span class="regexp">/usr/</span>local/nginx
+yum -y install openssl openssl-devel pcre pcre-devel gcc dos2unix
+make &amp;&amp; make install
+cd /etc/init.d/
+curl http:<span class="comment">//ip/tools/nginx/nginx.auto.startup &gt; nginx</span>
+dos2unix nginx
+chmod -R <span class="number">777</span> /etc/init.d/nginx 
+chkconfig nginx on
+service nginx start
+</code></pre>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p><code>/usr/local/nginx/conf/nginx.conf</code></p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p><code>service nginx start</code><br><code>/usr/local/nginx/sbin/nginx</code></p>
+<h2 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h2><p><code>service nginx stop</code><br><code>/usr/local/nginx/sbin/nginx -s stop</code></p>
+<h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><p><code>service nginx restart</code><br><code>/usr/local/nginx/sbin/nginx -s restart</code></p>
+<h2 id="nginx-basic-认证文件生成"><a href="#nginx-basic-认证文件生成" class="headerlink" title="nginx basic 认证文件生成"></a>nginx basic 认证文件生成</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum install httpd-tools</div><div class="line">htpasswd -c 生成的认证文件名 用户名</div></pre></td></tr></table></figure>
+<h2 id="自动启动脚本nginxautostartup"><a href="#自动启动脚本nginx-auto-startup" class="headerlink" title="自动启动脚本nginx.auto.startup"></a>自动启动脚本nginx.auto.startup</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">#</div><div class="line"># nginx - this script starts and stops the nginx daemin</div><div class="line">#</div><div class="line"># chkconfig: - 85 15</div><div class="line"># description: Nginx is an HTTP(S) server, HTTP(S) reverse \</div><div class="line"># proxy and IMAP/POP3 proxy server</div><div class="line"># processname: nginx</div><div class="line"># config: /usr/local/nginx/conf/nginx.conf</div><div class="line"># pidfile: /usr/local/nginx/logs/nginx.pid</div><div class="line"></div><div class="line"># Source function library.</div><div class="line">. /etc/rc.d/init.d/functions</div><div class="line"></div><div class="line"># Source networking configuration.</div><div class="line">. /etc/sysconfig/network</div><div class="line"></div><div class="line"># Check that networking is up.</div><div class="line">[ &quot;$NETWORKING&quot; = &quot;no&quot; ] &amp;&amp; exit 0</div><div class="line"></div><div class="line">nginx=&quot;/usr/local/nginx/sbin/nginx&quot;</div><div class="line">prog=$(basename $nginx)</div><div class="line"></div><div class="line">NGINX_CONF_FILE=&quot;/usr/local/nginx/conf/nginx.conf&quot;</div><div class="line"></div><div class="line">lockfile=/var/lock/subsys/nginx</div><div class="line"></div><div class="line">start() &#123;</div><div class="line">[ -x $nginx ] || exit 5</div><div class="line">[ -f $NGINX_CONF_FILE ] || exit 6</div><div class="line">echo -n $&quot;Starting $prog: &quot;</div><div class="line">daemon $nginx -c $NGINX_CONF_FILE</div><div class="line">retval=$?</div><div class="line">echo</div><div class="line">[ $retval -eq 0 ] &amp;&amp; touch $lockfile</div><div class="line">return $retval</div><div class="line">&#125;</div><div class="line"></div><div class="line">stop() &#123;</div><div class="line">echo -n $&quot;Stopping $prog: &quot;</div><div class="line">killproc $prog -QUIT</div><div class="line">retval=$?</div><div class="line">echo</div><div class="line">[ $retval -eq 0 ] &amp;&amp; rm -f $lockfile</div><div class="line">return $retval</div><div class="line">&#125;</div><div class="line"></div><div class="line">restart() &#123;</div><div class="line">configtest || return $?</div><div class="line">stop</div><div class="line">start</div><div class="line">&#125;</div><div class="line"></div><div class="line">reload() &#123;</div><div class="line">configtest || return $?</div><div class="line">echo -n $&quot;Reloading $prog: &quot;</div><div class="line">killproc $nginx -HUP</div><div class="line">RETVAL=$?</div><div class="line">echo</div><div class="line">&#125;</div><div class="line"></div><div class="line">force_reload() &#123;</div><div class="line">restart</div><div class="line">&#125;</div><div class="line"></div><div class="line">configtest() &#123;</div><div class="line">$nginx -t -c $NGINX_CONF_FILE</div><div class="line">&#125;</div><div class="line"></div><div class="line">rh_status() &#123;</div><div class="line">status $prog</div><div class="line">&#125;</div><div class="line"></div><div class="line">rh_status_q() &#123;</div><div class="line">rh_status &gt;/dev/null 2&gt;&amp;1</div><div class="line">&#125;</div><div class="line"></div><div class="line">case &quot;$1&quot; in</div><div class="line">start)</div><div class="line">rh_status_q &amp;&amp; exit 0</div><div class="line">$1</div><div class="line">;;</div><div class="line">stop)</div><div class="line">rh_status_q || exit 0</div><div class="line">$1</div><div class="line">;;</div><div class="line">restart|configtest)</div><div class="line">$1</div><div class="line">;;</div><div class="line">reload)</div><div class="line">rh_status_q || exit 7</div><div class="line">$1</div><div class="line">;;</div><div class="line">force-reload)</div><div class="line">force_reload</div><div class="line">;;</div><div class="line">status)</div><div class="line">rh_status</div><div class="line">;;</div><div class="line">condrestart|try-restart)</div><div class="line">rh_status_q || exit 0</div><div class="line">;;</div><div class="line">*)</div><div class="line">echo $&quot;Usage: $0 &#123;start|stop|status|restart|condrestart|try-restart|reload|force-reload|configtest&#125;&quot;</div><div class="line">exit 2</div><div class="line">esac</div></pre></td></tr></table></figure>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="linux-install-nginx/">
+    <time datetime="2017-03-27T08:18:41.000Z" class="entry-date">
+        2017-03-27
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/nginx/">nginx</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-private-docker-server" class="post-private-docker-server post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="private-docker-server/">private docker server</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netprivate-docker-server/" data-id="cj9gngl8q000rxdpklugqppuu" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+  <div id="toc" class="toc-article">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#搭建docker私有服务器"><span class="toc-text">搭建docker私有服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#国内镜像使用"><span class="toc-text">国内镜像使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境要求"><span class="toc-text">环境要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#准备"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载"><span class="toc-text">下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新pip"><span class="toc-text">更新pip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置nginx"><span class="toc-text">配置nginx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开机启动"><span class="toc-text">开机启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试"><span class="toc-text">测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载"><span class="toc-text">下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打上自己的tag"><span class="toc-text">打上自己的tag</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传"><span class="toc-text">上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检查"><span class="toc-text">检查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它机器上使用"><span class="toc-text">其它机器上使用</span></a></li></ol></li></ol></li></ol>
+  </div>
+
+
+        <h1 id="搭建docker私有服务器"><a href="#搭建docker私有服务器" class="headerlink" title="搭建docker私有服务器"></a>搭建docker私有服务器</h1><p>公司: 172.16.60.204<br>系统: centos 7 1611版本<br>python: 系统自带2.7.5<br>docker-registry功能增强: <a href="http://1.chaoxu.sinaapp.com/archives/3969" target="_blank" rel="external">Harbor</a></p>
+<h2 id="国内镜像使用"><a href="#国内镜像使用" class="headerlink" title="国内镜像使用"></a>国内镜像使用</h2><p><a href="http://www.cnblogs.com/anliven/p/6218741.html" target="_blank" rel="external">http://www.cnblogs.com/anliven/p/6218741.html</a><br>DaoCloud - Docker加速器<br>阿里云 - 开发者平台<br>微镜像 - 希云cSphere<br>镜像广场 - 时速云<br>灵雀云<br>网易蜂巢</p>
+<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><p>docker 需要linux 3.10的内核,centos7<br>centos6.5内核为2.6.32不再支持<br>docker客户端在centos6.5不支持<br><a href="https://docs.docker.com/engine/installation/linux/centos/#prerequisites" title="docker 环境要求" target="_blank" rel="external">docker 环境要求</a></p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>yum源<br><code>yum install -y gcc python-devel python-pip openssl openssl-devel pcre pcre-devel lzma lzma-devel xz xz-devel swig</code></p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>添加docker用户和目录为了安全起见，我们可以添加一个用户docker，使用这个非root用户来允许docker registry程序，同时指定好docker镜像的存储位置，本处指定为/home/docker_registry目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">useradd docker</div><div class="line">mkdir -p /home/docker_registry</div><div class="line">chown -R docker.docker /home/docker_registry/</div></pre></td></tr></table></figure></p>
+<p>从github克隆最新版本registry, 进入这个目录下的config子目录，从模板复制一个配置文件出来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/docker/docker-registry.git</div><div class="line">cd docker-registry/config</div><div class="line">cp config_sample.yml config.yml</div></pre></td></tr></table></figure></p>
+<p>此时可以修改这个config.yml配置文件，需要注意修改以下的两个地方：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#配置sqlite数据库位置</div><div class="line">sqlalchemy_index_database: _env:SQLALCHEMY_INDEX_DATABASE:sqlite:////home/docker_registry/docker-registry.db</div><div class="line">#配置本地存储位置</div><div class="line">local: &amp;local</div><div class="line">    storage: local</div><div class="line">    storage_path: _env:STORAGE_PATH:/home/docker_registry</div></pre></td></tr></table></figure></p>
+<p>修改依赖文件<br>docker-registry/requirements/main.txt<br>M2Crypto==0.25.1</p>
+<h2 id="更新pip"><a href="#更新pip" class="headerlink" title="更新pip"></a>更新pip</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">echo &quot;安装 pip工具&quot;</div><div class="line">wget pip-9.0.1.tar.gz</div><div class="line">tar -vxf pip-9.0.1.tar.gz</div><div class="line">cd pip-9.0.1</div><div class="line"></div><div class="line">python3 setup.py install</div><div class="line"></div><div class="line">mkdir -p ~/.pip</div><div class="line">echo &quot;pip 源&quot;</div><div class="line">echo &quot;http://pypi.douban.com/simple/  豆瓣</div><div class="line">http://pypi.hustunique.com/simple/  华中理工大学</div><div class="line">http://pypi.sdutlinux.org/simple/  山东理工大学</div><div class="line">http://pypi.mirrors.ustc.edu.cn/simple/  中国科学技术大学</div><div class="line">http://mirrors.aliyun.com/pypi/simple/ 阿里云</div><div class="line">pip3 install -i http://ip/pypi/simple/ --trusted-host=ip cx_Oracle</div><div class="line">pip3 install -i http://pypi.douban.com/simple/ --trusted-host=pypi.douban.com xml</div><div class="line">编辑linux ~/.pip/pip.conf</div><div class="line">window ~/.pip/pip.ini</div><div class="line">&quot;</div><div class="line">echo &quot;[global]</div><div class="line">timeout = 60</div><div class="line">#index-url = http://ip/pypi/simple/</div><div class="line">index-url = http://mirrors.aliyun.com/pypi/simple/</div><div class="line">#trusted-host = ip</div><div class="line">trusted-host = mirrors.aliyun.com&quot; &gt; ~/.pip/pip.conf</div></pre></td></tr></table></figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>cd docker-registry</code><br><code>pip install .</code></p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p><code>mkdir /opt/docker</code><br><code>vim start.sh</code><br>-b 0.0.0.0:5000 使用81端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /opt/docker</div><div class="line"></div><div class="line">nohup gunicorn --access-logfile - --error-logfile - -k gevent -b 0.0.0.0:5000 -w 8 --max-requests 100 docker_registry.wsgi:application &gt; dock.log &amp;</div></pre></td></tr></table></figure></p>
+<h2 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h2><p><a href="/linux-install-nginx/" title="nginx 安装">nginx 安装</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">     listen       80;</div><div class="line">     server_name  localhost;</div><div class="line">     proxy_set_header Host       $http_host;   # required for docker client&apos;s sake</div><div class="line">     proxy_set_header X-Real-IP  $remote_addr; # pass on real client&apos;s IP</div><div class="line"></div><div class="line">     #charset koi8-r;</div><div class="line"></div><div class="line">     #access_log  logs/host.access.log  main;</div><div class="line"></div><div class="line">     location / &#123;</div><div class="line">         proxy_pass http://127.0.0.1:5000;</div><div class="line">         client_max_body_size    1000m; #nginx 文件上次大小限制</div><div class="line">     &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p>关闭防火墙<br>添加端口<code>vi /etc/sysconfig/iptables</code><br>或<br><code>systemctl stop firewalld.service</code></p>
+<h2 id="启动"><a href="#启动-1" class="headerlink" title="启动"></a>启动</h2><p><code>service nginx restart</code><br><code>bash /opt/docker/start.sh</code></p>
+<h2 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h2><p><code>vim /etc/rc.local</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">systemctl stop firewalld.service</div><div class="line">bash /opt/docker/start.sh</div></pre></td></tr></table></figure></p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>web访问<br><a href="http://172.16.60.204" target="_blank" rel="external">http://172.16.60.204</a><br>docker-registry server</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>nginx 为例子 下载公有的nginx镜像上次本地仓库</p>
+<h3 id="下载"><a href="#下载-1" class="headerlink" title="下载"></a>下载</h3><p><code>docker pull hub.c.163.com/public/nginx:1.2.1</code><br><code>docker images</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@localhost docker-dev]# docker images</div><div class="line">REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE</div><div class="line">hub.c.163.com/public/nginx   1.2.1               2dc68ff797db        11 months ago       171.5 MB</div><div class="line">localhost/nginx              latest              2dc68ff797db        11 months ago       171.5 MB</div></pre></td></tr></table></figure>
+<h3 id="打上自己的tag"><a href="#打上自己的tag" class="headerlink" title="打上自己的tag"></a>打上自己的tag</h3><p><code>docker tag 2dc6 172.16.60.204/nginx</code></p>
+<h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><p><code>docker push 172.16.60.204/nginx</code></p>
+<h3 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h3><p><a href="http://172.16.60.204/v1/search" target="_blank" rel="external">http://172.16.60.204/v1/search</a></p>
+<h3 id="其它机器上使用"><a href="#其它机器上使用" class="headerlink" title="其它机器上使用"></a>其它机器上使用</h3><p>docker pull 172.16.60.204/nginx</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="private-docker-server/">
+    <time datetime="2017-03-27T07:40:09.000Z" class="entry-date">
+        2017-03-27
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/docker/">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/registry/">registry</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-javascript-packages-management" class="post-javascript-packages-management post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="javascript-packages-management/">javascript packages management</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netjavascript-packages-management/" data-id="cj9gngl84000cxdpkuq8192gs" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+  <div id="toc" class="toc-article">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#brunch-marionettejs-babeles6-pwa"><span class="toc-text">Brunch + Marionette.js + Babel/ES6 PWA</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#installation"><span class="toc-text">Installation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#getting-started"><span class="toc-text">Getting started</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#progressive-web-apps"><span class="toc-text">Progressive Web Apps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#service-worker"><span class="toc-text">Service Worker</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#service-worker-precache"><span class="toc-text">Service Worker Precache</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web-app-manifest"><span class="toc-text">Web App Manifest</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#how-to-try-it"><span class="toc-text">How to try it?</span></a></li></ol></li></ol>
+  </div>
+
+
+        <h1 id="brunch-marionettejs-babeles6-pwa"><a href="#Brunch-Marionette-js-Babel-ES6-PWA" class="headerlink" title="Brunch + Marionette.js + Babel/ES6 PWA"></a>Brunch + Marionette.js + Babel/ES6 PWA</h1><p>This is a modern Progressive Web App JS skeleton with <a href="http://marionettejs.com/" target="_blank" rel="external">Marionette.js</a> for <a href="http://brunch.io" target="_blank" rel="external">Brunch</a>.</p>
+<h2 id="installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>Clone this repo manually      </p>
+<p><code>git clone https://github.com/denar90/brunch-with-marionettejs &amp;&amp; cd brunch-with-marionettejs</code> </p>
+<p>or use </p>
+<p><code>brunch new dir -s marionettejs</code></p>
+<h2 id="getting-started"><a href="#Getting-started" class="headerlink" title="Getting started"></a>Getting started</h2><ul>
+<li><p>Install (if you don’t have them):</p>
+<ul>
+<li><a href="http://nodejs.org" target="_blank" rel="external">Node.js</a>: <code>brew install node</code> on OS X</li>
+<li><a href="http://brunch.io" target="_blank" rel="external">Brunch</a>: <code>npm install -g brunch</code></li>
+<li><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code> 之后不翻墙使用cnpm代替npm <a href="https://npm.taobao.org" target="_blank" rel="external">淘宝npm</a><br>*</li>
+<li>Brunch plugins and app dependencies: <code>npm install</code></li>
+<li>Brunch plugins and app dependencies: <code>npm install -g bower</code></li>
+<li>bower install</li>
+</ul>
+</li>
+<li><p>Run:</p>
+<ul>
+<li><code>brunch watch --server</code> — watches the project with continuous rebuild.<br>This will also launch HTTP server with <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history" target="_blank" rel="external">pushState</a>.<br>There are also added offline feature using <a href="https://github.com/GoogleChrome/sw-precache" target="_blank" rel="external">sw-precache</a>, <a href="https://github.com/denar90/sw-precache-brunch" target="_blank" rel="external">sw-precache-brunch</a>, which makes skeleton work offline.    </li>
+<li><code>brunch build --production</code> — builds minified project for production</li>
+</ul>
+</li>
+<li>Learn:<ul>
+<li><code>public/</code> dir is fully auto-generated and served by HTTP server.  Write your code in <code>app/</code> dir.</li>
+<li>Place static files you want to be copied from <code>app/assets/</code> to <code>public/</code>.</li>
+<li><a href="http://brunch.io" target="_blank" rel="external">Brunch site</a>, <a href="https://github.com/brunch/brunch-guide#readme" target="_blank" rel="external">Getting started guide</a></li>
+<li><a href="http://marionettejs.com/" target="_blank" rel="external">Marionette.js site</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="progressive-web-apps"><a href="#Progressive-Web-Apps" class="headerlink" title="Progressive Web Apps"></a>Progressive Web Apps</h2><p>Progressive Web Applications take advantage of new technologies to bring the best of mobile sites and native<br>applications to users. They’re reliable, fast, and engaging. <a href="https://developers.google.com/web/progressive-web-apps/" target="_blank" rel="external">More</a><br>​    </p>
+<h2 id="service-worker"><a href="#Service-Worker" class="headerlink" title="Service Worker"></a>Service Worker</h2><p>A service worker is a script that your browser runs in the background, separate from a web page, opening the door to<br>features that don’t need a web page or user interaction. <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers" target="_blank" rel="external">More</a></p>
+<h3 id="service-worker-precache"><a href="#Service-Worker-Precache" class="headerlink" title="Service Worker Precache"></a>Service Worker Precache</h3><p><a href="https://github.com/GoogleChrome/sw-precache" target="_blank" rel="external">sw-precache</a> is a module for generating a service worker that precaches resources.<br>It’s added as part of Brunch plugin <a href="https://github.com/denar90/sw-precache-brunch" target="_blank" rel="external">sw-pracache-brunch</a>.</p>
+<h2 id="web-app-manifest"><a href="#Web-App-Manifest" class="headerlink" title="Web App Manifest"></a>Web App Manifest</h2><p>The Manifest for Web applications is a simple JSON file that gives you, the developer, the ability to control how your<br>app appears to the user in the areas that they would expect to see apps. <a href="https://developers.google.com/web/updates/2014/11/Support-for-installable-web-apps-with-webapp-manifest-in-chrome-38-for-Android?hl=en" target="_blank" rel="external">More</a></p>
+<h2 id="how-to-try-it"><a href="#How-to-try-it" class="headerlink" title="How to try it?"></a>How to try it?</h2><p>It’s hosted on gh-pages - <a href="https://denar90.github.io/brunch-with-marionettejs/" target="_blank" rel="external">https://denar90.github.io/brunch-with-marionettejs/</a></p>
+<blockquote>
+<p>Don’t forget to go offline and see what happens</p>
+</blockquote>
+<p>P.S. Inspired by <a href="https://github.com/jeffposnick" target="_blank" rel="external">@jeffposnick</a> - <a href="https://github.com/jeffposnick/create-react-pwa/blob/master/README.md" target="_blank" rel="external">https://github.com/jeffposnick/create-react-pwa/blob/master/README.md</a></p>
+<p>#问题1: this.$(‘.view-content’).niceScroll({ 错误<br>jquery 版本问题 删除 node_modules\jquery.nicescroll\node_modules\jquery</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="javascript-packages-management/">
+    <time datetime="2017-03-24T09:23:49.000Z" class="entry-date">
+        2017-03-24
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/bower/">bower</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/grunt/">grunt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/npm/">npm</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="pagination">
+      <nav id="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="page-number" href="page/3/">3</a><a class="extend next" rel="next" href="page/2/">Next &raquo;</a>
+      </nav>
+    </nav>
   
 
 </div></div>
         <div id="secondary" class="widget-area" role="complementary">
   
-    <aside id="search" class="widget widget_search"><div role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" url="https://www.google.com/ncr#newwindow=1&safe=strict&q=">
+    <script type="text/html" id="template-test">
+    
+<li class="item">
+    <a data-link="permalink" class="waves-block waves-effect">
+
+	<div class="title ellipsis" data-title="title" data-content="title"></div>
+	<span data-content="text" data-format="textFormatter"></span>
+	<div class="flex-row flex-middle">
+		<div class="tags ellipsis" data-format="tagsFormatter" data-content="tags">
+			
+		</div>
+		<time class="flex-col time" data-content="date" data-format="dateFormatter"></time>
+	</div>
+	</a>
+</li>
+</script>
+
+
+<script type="text/html" id="template-error">
+<li class="tips"><i class="icon icon-coffee icon-3x"></i><p>没有搜索到结果</p></li>
+</script>
+
+
+
+<aside id="search" class="widget widget_search">
+<div role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" url="https://www.google.com/ncr#newwindow=1&safe=strict&q=">
     <div>
         <input type="text" value="" name="s" id="search_text" />
-        <button id="search_submit">search</button>
+        <search id="search_submit"></search>
+       
     </div>
-</div></aside>
+    <div class="widget search-panel in" id="search-panel">
+			<ul class="search-result" id="search-result">
+			
+			
+			</ul>
+	</div>
+</div>
+</aside>
+
+
+
   
     
   
@@ -1052,23 +869,23 @@ $ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span
       <ul>
         
           <li>
-            <a href="2017/02/15/oracle-install-linux/">oracle-install-linux</a>
+            <a href="install-elasticsearch-on-linux/">install elasticsearch on linux</a>
           </li>
         
           <li>
-            <a href="2016/12/26/oracle-xe/">oracle_xe</a>
+            <a href="flowchat/">flowchat</a>
           </li>
         
           <li>
-            <a href="2016/07/28/cherrypy/">cherrypy</a>
+            <a href="linux-common-comand/">linux-common-comand</a>
           </li>
         
           <li>
-            <a href="2016/07/25/hello-world/">Hello World</a>
+            <a href="cabot-install/">cabot install</a>
           </li>
         
           <li>
-            <a href="2016/07/14/markdown-images/">markdown-images</a>
+            <a href="luigi-install/">luigi install</a>
           </li>
         
       </ul>
@@ -1080,7 +897,7 @@ $ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="tags/cherrypy/">cherrypy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/oracle/">oracle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/python/">python</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="tags/bower/">bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/cabot/">cabot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/centos/">centos</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/elasticsearch/">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/graphite/">graphite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/grunt/">grunt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/image/">image</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/linux/">linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/linux常用命令/">linux常用命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/luigi/">luigi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/nginx/">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/npm/">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/oracle/">oracle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/oracle安装/">oracle安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/pydev/">pydev</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/readme/">readme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/registry/">registry</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/yum/">yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/公式/">公式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/时序图/">时序图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/服务器/">服务器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/流程图/">流程图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/监控/">监控</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/软件/">软件</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </aside>
 
@@ -1089,7 +906,7 @@ $ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span
   <aside class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-content tagcloud">
-      <a href="tags/cherrypy/" style="font-size: 10px;">cherrypy</a> <a href="tags/oracle/" style="font-size: 20px;">oracle</a> <a href="tags/python/" style="font-size: 10px;">python</a>
+      <a href="tags/bower/" style="font-size: 10px;">bower</a> <a href="tags/cabot/" style="font-size: 10px;">cabot</a> <a href="tags/centos/" style="font-size: 15px;">centos</a> <a href="tags/docker/" style="font-size: 10px;">docker</a> <a href="tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="tags/graphite/" style="font-size: 10px;">graphite</a> <a href="tags/grunt/" style="font-size: 10px;">grunt</a> <a href="tags/image/" style="font-size: 10px;">image</a> <a href="tags/javascript/" style="font-size: 10px;">javascript</a> <a href="tags/linux/" style="font-size: 20px;">linux</a> <a href="tags/linux常用命令/" style="font-size: 10px;">linux常用命令</a> <a href="tags/luigi/" style="font-size: 10px;">luigi</a> <a href="tags/mysql/" style="font-size: 10px;">mysql</a> <a href="tags/nginx/" style="font-size: 10px;">nginx</a> <a href="tags/npm/" style="font-size: 10px;">npm</a> <a href="tags/oracle/" style="font-size: 15px;">oracle</a> <a href="tags/oracle安装/" style="font-size: 10px;">oracle安装</a> <a href="tags/pydev/" style="font-size: 10px;">pydev</a> <a href="tags/python/" style="font-size: 10px;">python</a> <a href="tags/readme/" style="font-size: 10px;">readme</a> <a href="tags/registry/" style="font-size: 10px;">registry</a> <a href="tags/yum/" style="font-size: 10px;">yum</a> <a href="tags/公式/" style="font-size: 10px;">公式</a> <a href="tags/时序图/" style="font-size: 10px;">时序图</a> <a href="tags/服务器/" style="font-size: 10px;">服务器</a> <a href="tags/流程图/" style="font-size: 10px;">流程图</a> <a href="tags/监控/" style="font-size: 20px;">监控</a> <a href="tags/软件/" style="font-size: 10px;">软件</a>
     </div>
   </aside>
 
@@ -1098,8 +915,7 @@ $ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span
   <div class="widget-wrap">
     <h3 class="widget-title">About</h3>
     <div class="widget">
-      email：<a href="mailto: Yangyuehui <ylkjick532428@gmail.com>;">ylkjick532428@gmail.com</a></br></br>
-      G+:<a href=https://plus.google.com/+Yangyuehui target=_blank >https://plus.google.com/+Yangyuehui</a>
+      email：<a href="mailto: Yangyuehui <honeybeeyyh@hotmail.com>;">honeybeeyyh@hotmail.com</a></br></br>
     </div>
   </div>
 
@@ -1108,13 +924,14 @@ $ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span
 </div>
       </div>
       <footer id="colophon" role="contentinfo">
-    <p>&copy; 2017 ylkjick532428
+    <p>&copy; 2017 honeybeeyyh@hotmail.com
     All rights reserved.</p>
     <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
 </footer>
     
 
 <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/lib/jquery.loadTemplate.js"></script>
 
   <link rel="stylesheet" href="fancybox/jquery.fancybox.css">
   <script src="fancybox/jquery.fancybox.pack.js"></script>
@@ -1122,12 +939,18 @@ $ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span
 
 <script src="js/script.js"></script>
 
+
+
 <script src="/js/navigation.js"></script>
 <!--<script src="/js/require.js"></script>-->
 <script src="/lib/python.js"></script>
 <script src="/lib/javascript.js"></script>
 <script src="/lib/highlight.js"></script>
 <script src="/lib/my.js"></script>
+<script src="/lib/hexo-local-search.js"></script>
+
+
+
 
 <div id="bg"></div>
 <script type="text/x-mathjax-config">
@@ -1148,7 +971,7 @@ $ hexo <span class="keyword">new</span> <span class="string">"My New Post"</span
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
-<script src="js/jquery-2.0.0.min.js"></script>
+
 <script src="js/coffee-script.js"></script>
 <script src="js/jumly.min.js"></script>
 

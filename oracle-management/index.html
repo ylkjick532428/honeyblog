@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  
+  <meta name="description" content="oracle 常用管理命令环境变量12345export ORACLE_HOME=/opt/oracle/product/11.2.0/dbhome_1export ORACLE_SID=orcl#export NLS_LANG=AMERICAN_AMERICA.AL32UTF8export LD_" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>oracle management | Honeybee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="oracle 常用管理命令环境变量12345export ORACLE_HOME=/opt/oracle/product/11.2.0/dbhome_1export ORACLE_SID=orcl#export NLS_LANG=AMERICAN_AMERICA.AL32UTF8export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/lib:/usr/local/">
+<meta name="keywords" content="oracle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="oracle management">
+<meta property="og:url" content="https://qooeo.net/oracle-management/index.html">
+<meta property="og:site_name" content="Honeybee">
+<meta property="og:description" content="oracle 常用管理命令环境变量12345export ORACLE_HOME=/opt/oracle/product/11.2.0/dbhome_1export ORACLE_SID=orcl#export NLS_LANG=AMERICAN_AMERICA.AL32UTF8export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/lib:/usr/local/">
+<meta property="og:updated_time" content="2017-11-01T05:24:53.705Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="oracle management">
+<meta name="twitter:description" content="oracle 常用管理命令环境变量12345export ORACLE_HOME=/opt/oracle/product/11.2.0/dbhome_1export ORACLE_SID=orcl#export NLS_LANG=AMERICAN_AMERICA.AL32UTF8export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/lib:/usr/local/">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="../css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+  
+</head>
+
+<body class="home blog custom-background custom-font-enabled single-author">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="../index.html" title="Honeybee" rel="home">Honeybee</a>
+      </h1>
+      
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../index.html">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../About/">About</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-oracle-management" class="post-oracle-management post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      oracle management
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netoracle-management/" data-id="cj9gngl8o000pxdpkm61ru7xo" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+  <div id="toc" class="toc-article">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#oracle-常用管理命令"><span class="toc-text">oracle 常用管理命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量"><span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进入管理员"><span class="toc-text">进入管理员</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#密码有效期"><span class="toc-text">密码有效期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查看指定概要文件如default的密码有效期设置"><span class="toc-text">查看指定概要文件（如default）的密码有效期设置：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将密码有效期由默认的180天修改成无限制"><span class="toc-text">将密码有效期由默认的180天修改成“无限制”：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户管理"><span class="toc-text">用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建用户"><span class="toc-text">创建用户</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简单创建用户"><span class="toc-text">简单创建用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建用户指定表空间和临时空间"><span class="toc-text">创建用户指定表空间和临时空间</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#授权"><span class="toc-text">授权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除数据文件"><span class="toc-text">删除数据文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除用户"><span class="toc-text">删除用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除表空间和数据文件"><span class="toc-text">删除表空间和数据文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#空间管理"><span class="toc-text">空间管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建临时空间"><span class="toc-text">创建临时空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表空间"><span class="toc-text">创建表空间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#导入导出"><span class="toc-text">导入导出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#导出"><span class="toc-text">导出</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#本机导出"><span class="toc-text">本机导出:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#导出其它机器上的数据库"><span class="toc-text">导出其它机器上的数据库:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入"><span class="toc-text">导入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接管理"><span class="toc-text">连接管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#归档"><span class="toc-text">归档</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#打开归档"><span class="toc-text">打开归档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#归档日志查看"><span class="toc-text">归档日志查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关闭oracle实例"><span class="toc-text">关闭Oracle实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将oracle节点启动到-mount状态"><span class="toc-text">将Oracle节点启动到 mount状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改归档模式"><span class="toc-text">修改归档模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#并将数据库置于open状态"><span class="toc-text">并将数据库置于open状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指定归档目标"><span class="toc-text">指定归档目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#归档日志定时删除"><span class="toc-text">归档日志定时删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#windows-使用计划任务"><span class="toc-text">windows 使用计划任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#linux-使用crontab"><span class="toc-text">linux 使用crontab</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动启动"><span class="toc-text">自动启动</span></a></li></ol></li></ol>
+  </div>
+
+
+        <h1 id="oracle-常用管理命令"><a href="#oracle-常用管理命令" class="headerlink" title="oracle 常用管理命令"></a>oracle 常用管理命令</h1><h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">export ORACLE_HOME=/opt/oracle/product/11.2.0/dbhome_1</div><div class="line">export ORACLE_SID=orcl</div><div class="line">#export NLS_LANG=AMERICAN_AMERICA.AL32UTF8</div><div class="line">export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/lib:/usr/local/lib</div><div class="line">export PATH=$PATH:$ORACLE_HOME/bin:$ORACLE_HOME/lib</div></pre></td></tr></table></figure>
+<h2 id="进入管理员"><a href="#进入管理员" class="headerlink" title="进入管理员"></a>进入管理员</h2><p><code>su oracle</code><br><code>sqlplus / as sysdba</code></p>
+<h2 id="密码有效期"><a href="#密码有效期" class="headerlink" title="密码有效期"></a>密码有效期</h2><h3 id="查看指定概要文件如default的密码有效期设置"><a href="#查看指定概要文件（如default）的密码有效期设置：" class="headerlink" title="查看指定概要文件（如default）的密码有效期设置："></a>查看指定概要文件（如default）的密码有效期设置：</h3><p>sql&gt; <code>SELECT * FROM dba_profiles s WHERE s.profile=&#39;DEFAULT&#39; AND resource_name=&#39;PASSWORD_LIFE_TIME&#39;;</code></p>
+<h3 id="将密码有效期由默认的180天修改成无限制"><a href="#将密码有效期由默认的180天修改成“无限制”：" class="headerlink" title="将密码有效期由默认的180天修改成“无限制”："></a>将密码有效期由默认的180天修改成“无限制”：</h3><p>sql&gt; <code>ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;</code></p>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><h3 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h3><h4 id="简单创建用户"><a href="#简单创建用户" class="headerlink" title="简单创建用户"></a>简单创建用户</h4><p>sql&gt; <code>create user 用户名大写 identified by 密码;</code></p>
+<h4 id="创建用户指定表空间和临时空间"><a href="#创建用户指定表空间和临时空间" class="headerlink" title="创建用户指定表空间和临时空间"></a>创建用户指定表空间和临时空间</h4><p>请结合 创建表空间 看<br>create user 用户名大写 identified by 密码<br>default tablespace 空间名称<br>temporary tablespace 临时空间名称;</p>
+<h3 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h3><p>sql&gt; <code>grant connect, resource, dba to 用户名大写;</code><br>sql&gt; <code>grant create view to 用户名大写;</code></p>
+<h3 id="删除数据文件"><a href="#删除数据文件" class="headerlink" title="删除数据文件"></a>删除数据文件</h3><p>sql&gt; <code>alter database datafile &#39;c:\database\oradata\orcl\cdbwklw.dbf&#39; offline drop;</code></p>
+<h3 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h3><p>sql&gt; <code>drop user 用户名 cascade</code></p>
+<h3 id="删除表空间和数据文件"><a href="#删除表空间和数据文件" class="headerlink" title="删除表空间和数据文件"></a>删除表空间和数据文件</h3><p>sql&gt; <code>DROP TABLESPACE 表空间名称 INCLUDING CONTENTS AND DATAFILES;</code></p>
+<h2 id="空间管理"><a href="#空间管理" class="headerlink" title="空间管理"></a>空间管理</h2><p>oracle空间管理文档<a href="https://docs.oracle.com/cd/B28359_01/server.111/b28310/tspaces.htm#i1010516" title="空间管理" target="_blank" rel="external">https://docs.oracle.com/cd/B28359_01/server.111/b28310/tspaces.htm#i1010516</a></p>
+<h3 id="创建临时空间"><a href="#创建临时空间" class="headerlink" title="创建临时空间"></a>创建临时空间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">create temporary tablespace TEMP_YCDBA</div><div class="line">tempfile &apos;TEMP_YCDBA.dbf&apos; size 5m autoextend on;</div></pre></td></tr></table></figure>
+<h3 id="创建表空间"><a href="#创建表空间" class="headerlink" title="创建表空间"></a>创建表空间</h3><p>默认空间最大32G<br>超过需要使用BIGFILE<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">create BIGFILE tablespace 空间名称 </div><div class="line">logging </div><div class="line">datafile &apos;/home/oracle/yc/YCDBA&apos; </div><div class="line">size 512m </div><div class="line">autoextend on </div><div class="line">next 512m maxsize unlimited</div><div class="line">extent management local;</div><div class="line"></div><div class="line">create temporary tablespace 临时空间名称</div><div class="line">tempfile &apos;TEMP_YCDBA.dbf&apos; size 5m autoextend on;</div><div class="line"></div><div class="line">create user 用户名大写 identified by 密码 </div><div class="line">default tablespace 空间名称 </div><div class="line">temporary tablespace 临时空间名称;</div></pre></td></tr></table></figure></p>
+<h2 id="导入导出"><a href="#导入导出" class="headerlink" title="导入导出"></a>导入导出</h2><p>导出权限:EXP_FULL_DATABASE<br>导入权限:IMP_FULL_DATABASE</p>
+<h3 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h3><p>将数据库zxcc完全导出，用户名user 密码passwd 导出到D:\zxcc.dmp中</p>
+<h4 id="本机导出"><a href="#本机导出" class="headerlink" title="本机导出:"></a>本机导出:</h4><p><code>exp user/passwd@service_name file=d:\zxcc.dmp full=y</code></p>
+<h4 id="导出其它机器上的数据库"><a href="#导出其它机器上的数据库" class="headerlink" title="导出其它机器上的数据库:"></a>导出其它机器上的数据库:</h4><p><code>exp user/password@host:port/service_name file=d:\zxcc.dmp full=y</code></p>
+<p>full=y 表示全库导出。full总共有2个可选项yes(y)/no(n)，缺省情况下full=no，这时只会将该用户下的对象导出。</p>
+<h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3><p><code>imp user/passwd@service_name file=... FULL=Y</code><br><code>imp user/password@host:port/service_name file=... FULL=Y</code></p>
+<p>导入更换用户空间, 需要DBA权限<br><code>imp user/password@host:port/service_name file=... fromuser=%s touser=%s</code></p>
+<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>查看会话<br><code>SELECT * from v$SESSION</code></p>
+<h2 id="归档"><a href="#归档" class="headerlink" title="归档"></a>归档</h2><h3 id="打开归档"><a href="#打开归档" class="headerlink" title="打开归档"></a>打开归档</h3><h3 id="归档日志查看"><a href="#归档日志查看" class="headerlink" title="归档日志查看"></a>归档日志查看</h3><p>sql&gt; <code>archive log list;</code></p>
+<h3 id="关闭oracle实例"><a href="#关闭Oracle实例" class="headerlink" title="关闭Oracle实例"></a>关闭Oracle实例</h3><p>sql&gt; <code>shutdown immediate;</code></p>
+<h3 id="将oracle节点启动到-mount状态"><a href="#将Oracle节点启动到-mount状态" class="headerlink" title="将Oracle节点启动到 mount状态"></a>将Oracle节点启动到 mount状态</h3><p>sql&gt; <code>startup nomount;</code><br>ORACLE instance started.<br>Total System Global Area  281018368 bytes<br>Fixed Size                  1267044 bytes<br>Variable Size             113248924 bytes<br>Database Buffers          163577856 bytes<br>Redo Buffers                2924544 bytes<br>sql&gt; <code>alter database mount;</code><br>Database altered.</p>
+<h3 id="修改归档模式"><a href="#修改归档模式" class="headerlink" title="修改归档模式"></a>修改归档模式</h3><p>sql&gt; <code>alter database archivelog;</code><br>Database altered.</p>
+<h3 id="并将数据库置于open状态"><a href="#并将数据库置于open状态" class="headerlink" title="并将数据库置于open状态"></a>并将数据库置于open状态</h3><p>sql&gt; <code>alter database open;</code><br>Database altered.</p>
+<h3 id="指定归档目标"><a href="#指定归档目标" class="headerlink" title="指定归档目标"></a>指定归档目标</h3><p>sql&gt; <code>alter system set LOG_ARCHIVE_DEST_1=’LOCATION=/archive’;</code><br>System altered.</p>
+<h3 id="归档日志定时删除"><a href="#归档日志定时删除" class="headerlink" title="归档日志定时删除"></a>归档日志定时删除</h3><p>需要在数据库机器上运行<br>dellog.log<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">connect target 用户名/密码</div><div class="line">run&#123;</div><div class="line">delete noprompt archivelog all completed before &apos;sysdate-7&apos;;</div><div class="line">crosscheck archivelog all;</div><div class="line">delete expired archivelog all;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="windows-使用计划任务"><a href="#windows-使用计划任务" class="headerlink" title="windows 使用计划任务"></a>windows 使用计划任务</h4><p>dellog.bat<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rman cmdfile=E:\delete_archive_log\dellog.txt &gt; log.log</div></pre></td></tr></table></figure></p>
+<h4 id="linux-使用crontab"><a href="#linux-使用crontab" class="headerlink" title="linux 使用crontab"></a>linux 使用crontab</h4><p>dellog.sh<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rman cmdfile=/delete_archive_log/dellog.txt &gt; log.log</div></pre></td></tr></table></figure></p>
+<h2 id="自动启动"><a href="#自动启动" class="headerlink" title="自动启动"></a>自动启动</h2><p>vim /etc/oratab<br>orcl:/opt/oracle/product/11.2.0/dbhome_1:Y</p>
+<p>vim /etc/init.d/dbora 添加以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line"># chkconfig: 345 99 10</div><div class="line"># description: Oracle auto start-stop script.</div><div class="line">#</div><div class="line"># Set ORA_HOME to be equivalent to the $ORACLE_HOME</div><div class="line"># from which you wish to execute dbstart and dbshut;</div><div class="line">#</div><div class="line"># Set ORA_OWNER to the user id of the owner of the </div><div class="line"># Oracle database in ORA_HOME.</div><div class="line"></div><div class="line">ORA_HOME=/opt/oracle/product/11.2.0/dbhome_1</div><div class="line">ORA_OWNER=oracle</div><div class="line">export ORACLE_UNQNAME=orcl</div><div class="line"></div><div class="line">if [ ! -f $ORA_HOME/bin/dbstart ]</div><div class="line">then</div><div class="line">    echo &quot;Oracle startup: cannot start&quot;</div><div class="line">    exit</div><div class="line">fi</div><div class="line"></div><div class="line">case &quot;$1&quot; in</div><div class="line">    &apos;start&apos;)</div><div class="line">        # Start the Oracle databases:</div><div class="line">        # The following command assumes that the oracle login </div><div class="line">        # will not prompt the user for any values</div><div class="line">        # Remove &quot;&amp;&quot; if you don&apos;t want startup as a background process.</div><div class="line">        su $ORA_OWNER -c &quot;$ORA_HOME/bin/dbstart $ORA_HOME&quot;</div><div class="line">        sleep 5s</div><div class="line">        su $ORA_OWNER -c &quot;$ORA_HOME/bin/lsnrctl start&quot;</div><div class="line">        touch /var/lock/subsys/dbora</div><div class="line">        echo &quot;启动成功, 请检查&quot;</div><div class="line">        ;;</div><div class="line">    &apos;stop&apos;)</div><div class="line">        # Stop the Oracle databases:</div><div class="line">        # The following command assumes that the oracle login </div><div class="line">        # will not prompt the user for any values</div><div class="line">        su $ORA_OWNER -c &quot;$ORA_HOME/bin/dbshut $ORA_HOME&quot;</div><div class="line">        su $ORA_OWNER -c &quot;$ORA_HOME/bin/lsnrctl stop&quot;</div><div class="line">        rm -f /var/lock/subsys/dbora</div><div class="line">        ;;</div><div class="line">esac</div><div class="line">~~~~~</div></pre></td></tr></table></figure></p>
+<p>授权<br><code>chmod 777 /etc/init.d/dbora</code><br>配置启动<br><code>chkconfig dbora on</code><br>测试<br><code>service dbora restart</code></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="">
+    <time datetime="2017-03-23T08:51:24.000Z" class="entry-date">
+        2017-03-23
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../tags/oracle/">oracle</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="../centos-6-5-install/" rel="prev"><span class="meta-nav">←</span> centos 6.5 install</a></span>
+    
+    
+        <span class="nav-next"><a href="../mysql-management/" rel="next">mysql management <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <script type="text/html" id="template-test">
+    
+<li class="item">
+    <a data-link="permalink" class="waves-block waves-effect">
+
+	<div class="title ellipsis" data-title="title" data-content="title"></div>
+	<span data-content="text" data-format="textFormatter"></span>
+	<div class="flex-row flex-middle">
+		<div class="tags ellipsis" data-format="tagsFormatter" data-content="tags">
+			
+		</div>
+		<time class="flex-col time" data-content="date" data-format="dateFormatter"></time>
+	</div>
+	</a>
+</li>
+</script>
+
+
+<script type="text/html" id="template-error">
+<li class="tips"><i class="icon icon-coffee icon-3x"></i><p>没有搜索到结果</p></li>
+</script>
+
+
+
+<aside id="search" class="widget widget_search">
+<div role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" url="https://www.google.com/ncr#newwindow=1&safe=strict&q=">
+    <div>
+        <input type="text" value="" name="s" id="search_text" />
+        <search id="search_submit"></search>
+       
+    </div>
+    <div class="widget search-panel in" id="search-panel">
+			<ul class="search-result" id="search-result">
+			
+			
+			</ul>
+	</div>
+</div>
+</aside>
+
+
+
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="../install-elasticsearch-on-linux/">install elasticsearch on linux</a>
+          </li>
+        
+          <li>
+            <a href="../flowchat/">flowchat</a>
+          </li>
+        
+          <li>
+            <a href="../linux-common-comand/">linux-common-comand</a>
+          </li>
+        
+          <li>
+            <a href="../cabot-install/">cabot install</a>
+          </li>
+        
+          <li>
+            <a href="../luigi-install/">luigi install</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../tags/bower/">bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/cabot/">cabot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/centos/">centos</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/elasticsearch/">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/graphite/">graphite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/grunt/">grunt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/image/">image</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/linux/">linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/linux常用命令/">linux常用命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/luigi/">luigi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/nginx/">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/npm/">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/oracle/">oracle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/oracle安装/">oracle安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/pydev/">pydev</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/readme/">readme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/registry/">registry</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/yum/">yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/公式/">公式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/时序图/">时序图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/服务器/">服务器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/流程图/">流程图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/监控/">监控</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../tags/软件/">软件</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="../tags/bower/" style="font-size: 10px;">bower</a> <a href="../tags/cabot/" style="font-size: 10px;">cabot</a> <a href="../tags/centos/" style="font-size: 15px;">centos</a> <a href="../tags/docker/" style="font-size: 10px;">docker</a> <a href="../tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="../tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="../tags/graphite/" style="font-size: 10px;">graphite</a> <a href="../tags/grunt/" style="font-size: 10px;">grunt</a> <a href="../tags/image/" style="font-size: 10px;">image</a> <a href="../tags/javascript/" style="font-size: 10px;">javascript</a> <a href="../tags/linux/" style="font-size: 20px;">linux</a> <a href="../tags/linux常用命令/" style="font-size: 10px;">linux常用命令</a> <a href="../tags/luigi/" style="font-size: 10px;">luigi</a> <a href="../tags/mysql/" style="font-size: 10px;">mysql</a> <a href="../tags/nginx/" style="font-size: 10px;">nginx</a> <a href="../tags/npm/" style="font-size: 10px;">npm</a> <a href="../tags/oracle/" style="font-size: 15px;">oracle</a> <a href="../tags/oracle安装/" style="font-size: 10px;">oracle安装</a> <a href="../tags/pydev/" style="font-size: 10px;">pydev</a> <a href="../tags/python/" style="font-size: 10px;">python</a> <a href="../tags/readme/" style="font-size: 10px;">readme</a> <a href="../tags/registry/" style="font-size: 10px;">registry</a> <a href="../tags/yum/" style="font-size: 10px;">yum</a> <a href="../tags/公式/" style="font-size: 10px;">公式</a> <a href="../tags/时序图/" style="font-size: 10px;">时序图</a> <a href="../tags/服务器/" style="font-size: 10px;">服务器</a> <a href="../tags/流程图/" style="font-size: 10px;">流程图</a> <a href="../tags/监控/" style="font-size: 20px;">监控</a> <a href="../tags/软件/" style="font-size: 10px;">软件</a>
+    </div>
+  </aside>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">About</h3>
+    <div class="widget">
+      email：<a href="mailto: Yangyuehui <honeybeeyyh@hotmail.com>;">honeybeeyyh@hotmail.com</a></br></br>
+    </div>
+  </div>
+
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2017 honeybeeyyh@hotmail.com
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/lib/jquery.loadTemplate.js"></script>
+
+  <link rel="stylesheet" href="../fancybox/jquery.fancybox.css">
+  <script src="../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../js/script.js"></script>
+
+
+
+<script src="/js/navigation.js"></script>
+<!--<script src="/js/require.js"></script>-->
+<script src="/lib/python.js"></script>
+<script src="/lib/javascript.js"></script>
+<script src="/lib/highlight.js"></script>
+<script src="/lib/my.js"></script>
+<script src="/lib/hexo-local-search.js"></script>
+
+
+
+
+<div id="bg"></div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    }); 
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script src="../js/coffee-script.js"></script>
+<script src="../js/jumly.min.js"></script>
+
+<link rel="stylesheet" href="../css/my.css">
+<link rel="stylesheet" href="../css/highlight.css">
+<link rel="stylesheet" href="../styles/default.css">
+<!--<script src="../js/bootstrap.min.js"></script>-->
+<!--<link rel="stylesheet" href="../css/bootstrap.css">-->
+<!--<link rel="stylesheet" href="../css/bootstrap-theme.css">-->
+
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

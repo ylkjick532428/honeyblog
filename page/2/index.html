@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  
+
+  
+  
+  
+  
+  
+  
+  <title>Honeybee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Honeybee">
+<meta property="og:url" content="https://qooeo.net/page/2/index.html">
+<meta property="og:site_name" content="Honeybee">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Honeybee">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="../../css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+  
+</head>
+
+<body class="home blog custom-background custom-font-enabled single-author">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="../../index.html" title="Honeybee" rel="home">Honeybee</a>
+      </h1>
+      
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../../index.html">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../../archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../../About/">About</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main">
+  
+    <article id="post-mysql-management" class="post-mysql-management post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="../../mysql-management/">mysql management</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netmysql-management/" data-id="cj9gngl8i000lxdpkwu18sd6n" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+  <div id="toc" class="toc-article">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql-管理"><span class="toc-text">mysql 管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux"><span class="toc-text">linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件"><span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动启动"><span class="toc-text">自动启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管理"><span class="toc-text">管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置数据库引擎"><span class="toc-text">设置数据库引擎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建用户和授权"><span class="toc-text">创建用户和授权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试"><span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#windows"><span class="toc-text">windows</span></a></li></ol></li></ol>
+  </div>
+
+
+        <h1 id="mysql-管理"><a href="#mysql-管理" class="headerlink" title="mysql 管理"></a>mysql 管理</h1><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><code>yum install mysql mysql-server mysql-devel mysql-libs</code></p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>/etc/my.ini</p>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p><code>service mysqld start|stop|restart</code></p>
+<h3 id="自动启动"><a href="#自动启动" class="headerlink" title="自动启动"></a>自动启动</h3><p>chkconfig mysqld on</p>
+<h3 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h3><p>mysql</p>
+<h3 id="设置数据库引擎"><a href="#设置数据库引擎" class="headerlink" title="设置数据库引擎"></a>设置数据库引擎</h3><p><a href="http://www.cnblogs.com/0201zcr/p/5296843.html 引擎差异" target="_blank" rel="external">引擎差异</a><br>默认为MYISAM, 某些情况下需要修改为InnoDB<br>mysql&gt; <code>SET storage_engine=InnoDB;</code></p>
+<h3 id="创建用户和授权"><a href="#创建用户和授权" class="headerlink" title="创建用户和授权"></a>创建用户和授权</h3><p>用户名: weibo<br>数据库: weibo<br>密码: 3c38f920d8bf11c96c09023fe49c8917<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">create database if not exists weibo default character set utf8;</div><div class="line">GRANT ALL PRIVILEGES ON `weibo`.* TO &apos;weibo&apos;@&apos;%&apos; IDENTIFIED BY &apos;3c38f920d8bf11c96c09023fe49c8917&apos;;</div><div class="line">GRANT ALL PRIVILEGES ON `weibo`.* TO &apos;weibo&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;3c38f920d8bf11c96c09023fe49c8917&apos;;</div><div class="line">SET old_passwords = 0; </div><div class="line">UPDATE mysql.user SET Password = PASSWORD(&apos;3c38f920d8bf11c96c09023fe49c8917&apos;) WHERE User = &apos;weibo&apos; limit 1;</div><div class="line">SELECT LENGTH(Password) FROM mysql.user WHERE User = &apos;weibo&apos;;</div><div class="line"> FLUSH PRIVILEGES;</div></pre></td></tr></table></figure></p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p><code>mysql -uweibo -p3c38f920d8bf11c96c09023fe49c8917</code></p>
+<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mysqld --romve 删除mysql服务</div><div class="line">mysqld --install 安装mysql服务</div><div class="line">mysqld --initialize 一定要初始化</div><div class="line">net start mysql 启动服务</div></pre></td></tr></table></figure>
+<p>my.ini<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">[mysql]</div><div class="line">; 设置mysql客户端默认字符集</div><div class="line">default-character-set=utf8</div><div class="line">[mysqld]</div><div class="line">;设置3306端口</div><div class="line">port = 3306</div><div class="line">; 设置mysql的安装目录</div><div class="line"></div><div class="line">basedir=F:\mysql-5.7.18-winx64</div><div class="line"></div><div class="line">; 设置mysql数据库的数据的存放目录</div><div class="line"></div><div class="line">datadir=F:\mysql-5.7.18-winx64\data</div><div class="line"></div><div class="line">; 允许最大连接数</div><div class="line"></div><div class="line">max_connections=200</div><div class="line"></div><div class="line">; 服务端使用的字符集默认为8比特编码的latin1字符集</div><div class="line"></div><div class="line">character-set-server=utf8</div><div class="line"></div><div class="line">; 创建新表时将使用的默认存储引擎</div><div class="line"></div><div class="line">default-storage-engine=INNODB</div></pre></td></tr></table></figure></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="../../mysql-management/">
+    <time datetime="2017-03-24T08:48:27.000Z" class="entry-date">
+        2017-03-24
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/mysql/">mysql</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-oracle-management" class="post-oracle-management post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="../../oracle-management/">oracle management</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netoracle-management/" data-id="cj9gngl8o000pxdpkm61ru7xo" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+  <div id="toc" class="toc-article">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#oracle-常用管理命令"><span class="toc-text">oracle 常用管理命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量"><span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进入管理员"><span class="toc-text">进入管理员</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#密码有效期"><span class="toc-text">密码有效期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查看指定概要文件如default的密码有效期设置"><span class="toc-text">查看指定概要文件（如default）的密码有效期设置：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将密码有效期由默认的180天修改成无限制"><span class="toc-text">将密码有效期由默认的180天修改成“无限制”：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户管理"><span class="toc-text">用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建用户"><span class="toc-text">创建用户</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简单创建用户"><span class="toc-text">简单创建用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建用户指定表空间和临时空间"><span class="toc-text">创建用户指定表空间和临时空间</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#授权"><span class="toc-text">授权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除数据文件"><span class="toc-text">删除数据文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除用户"><span class="toc-text">删除用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除表空间和数据文件"><span class="toc-text">删除表空间和数据文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#空间管理"><span class="toc-text">空间管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建临时空间"><span class="toc-text">创建临时空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表空间"><span class="toc-text">创建表空间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#导入导出"><span class="toc-text">导入导出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#导出"><span class="toc-text">导出</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#本机导出"><span class="toc-text">本机导出:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#导出其它机器上的数据库"><span class="toc-text">导出其它机器上的数据库:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入"><span class="toc-text">导入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接管理"><span class="toc-text">连接管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#归档"><span class="toc-text">归档</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#打开归档"><span class="toc-text">打开归档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#归档日志查看"><span class="toc-text">归档日志查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关闭oracle实例"><span class="toc-text">关闭Oracle实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将oracle节点启动到-mount状态"><span class="toc-text">将Oracle节点启动到 mount状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改归档模式"><span class="toc-text">修改归档模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#并将数据库置于open状态"><span class="toc-text">并将数据库置于open状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指定归档目标"><span class="toc-text">指定归档目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#归档日志定时删除"><span class="toc-text">归档日志定时删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#windows-使用计划任务"><span class="toc-text">windows 使用计划任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#linux-使用crontab"><span class="toc-text">linux 使用crontab</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动启动"><span class="toc-text">自动启动</span></a></li></ol></li></ol>
+  </div>
+
+
+        <h1 id="oracle-常用管理命令"><a href="#oracle-常用管理命令" class="headerlink" title="oracle 常用管理命令"></a>oracle 常用管理命令</h1><h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">export ORACLE_HOME=/opt/oracle/product/11.2.0/dbhome_1</div><div class="line">export ORACLE_SID=orcl</div><div class="line">#export NLS_LANG=AMERICAN_AMERICA.AL32UTF8</div><div class="line">export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/lib:/usr/local/lib</div><div class="line">export PATH=$PATH:$ORACLE_HOME/bin:$ORACLE_HOME/lib</div></pre></td></tr></table></figure>
+<h2 id="进入管理员"><a href="#进入管理员" class="headerlink" title="进入管理员"></a>进入管理员</h2><p><code>su oracle</code><br><code>sqlplus / as sysdba</code></p>
+<h2 id="密码有效期"><a href="#密码有效期" class="headerlink" title="密码有效期"></a>密码有效期</h2><h3 id="查看指定概要文件如default的密码有效期设置"><a href="#查看指定概要文件（如default）的密码有效期设置：" class="headerlink" title="查看指定概要文件（如default）的密码有效期设置："></a>查看指定概要文件（如default）的密码有效期设置：</h3><p>sql&gt; <code>SELECT * FROM dba_profiles s WHERE s.profile=&#39;DEFAULT&#39; AND resource_name=&#39;PASSWORD_LIFE_TIME&#39;;</code></p>
+<h3 id="将密码有效期由默认的180天修改成无限制"><a href="#将密码有效期由默认的180天修改成“无限制”：" class="headerlink" title="将密码有效期由默认的180天修改成“无限制”："></a>将密码有效期由默认的180天修改成“无限制”：</h3><p>sql&gt; <code>ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;</code></p>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><h3 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h3><h4 id="简单创建用户"><a href="#简单创建用户" class="headerlink" title="简单创建用户"></a>简单创建用户</h4><p>sql&gt; <code>create user 用户名大写 identified by 密码;</code></p>
+<h4 id="创建用户指定表空间和临时空间"><a href="#创建用户指定表空间和临时空间" class="headerlink" title="创建用户指定表空间和临时空间"></a>创建用户指定表空间和临时空间</h4><p>请结合 创建表空间 看<br>create user 用户名大写 identified by 密码<br>default tablespace 空间名称<br>temporary tablespace 临时空间名称;</p>
+<h3 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h3><p>sql&gt; <code>grant connect, resource, dba to 用户名大写;</code><br>sql&gt; <code>grant create view to 用户名大写;</code></p>
+<h3 id="删除数据文件"><a href="#删除数据文件" class="headerlink" title="删除数据文件"></a>删除数据文件</h3><p>sql&gt; <code>alter database datafile &#39;c:\database\oradata\orcl\cdbwklw.dbf&#39; offline drop;</code></p>
+<h3 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h3><p>sql&gt; <code>drop user 用户名 cascade</code></p>
+<h3 id="删除表空间和数据文件"><a href="#删除表空间和数据文件" class="headerlink" title="删除表空间和数据文件"></a>删除表空间和数据文件</h3><p>sql&gt; <code>DROP TABLESPACE 表空间名称 INCLUDING CONTENTS AND DATAFILES;</code></p>
+<h2 id="空间管理"><a href="#空间管理" class="headerlink" title="空间管理"></a>空间管理</h2><p>oracle空间管理文档<a href="https://docs.oracle.com/cd/B28359_01/server.111/b28310/tspaces.htm#i1010516" title="空间管理" target="_blank" rel="external">https://docs.oracle.com/cd/B28359_01/server.111/b28310/tspaces.htm#i1010516</a></p>
+<h3 id="创建临时空间"><a href="#创建临时空间" class="headerlink" title="创建临时空间"></a>创建临时空间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">create temporary tablespace TEMP_YCDBA</div><div class="line">tempfile &apos;TEMP_YCDBA.dbf&apos; size 5m autoextend on;</div></pre></td></tr></table></figure>
+<h3 id="创建表空间"><a href="#创建表空间" class="headerlink" title="创建表空间"></a>创建表空间</h3><p>默认空间最大32G<br>超过需要使用BIGFILE<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">create BIGFILE tablespace 空间名称 </div><div class="line">logging </div><div class="line">datafile &apos;/home/oracle/yc/YCDBA&apos; </div><div class="line">size 512m </div><div class="line">autoextend on </div><div class="line">next 512m maxsize unlimited</div><div class="line">extent management local;</div><div class="line"></div><div class="line">create temporary tablespace 临时空间名称</div><div class="line">tempfile &apos;TEMP_YCDBA.dbf&apos; size 5m autoextend on;</div><div class="line"></div><div class="line">create user 用户名大写 identified by 密码 </div><div class="line">default tablespace 空间名称 </div><div class="line">temporary tablespace 临时空间名称;</div></pre></td></tr></table></figure></p>
+<h2 id="导入导出"><a href="#导入导出" class="headerlink" title="导入导出"></a>导入导出</h2><p>导出权限:EXP_FULL_DATABASE<br>导入权限:IMP_FULL_DATABASE</p>
+<h3 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h3><p>将数据库zxcc完全导出，用户名user 密码passwd 导出到D:\zxcc.dmp中</p>
+<h4 id="本机导出"><a href="#本机导出" class="headerlink" title="本机导出:"></a>本机导出:</h4><p><code>exp user/passwd@service_name file=d:\zxcc.dmp full=y</code></p>
+<h4 id="导出其它机器上的数据库"><a href="#导出其它机器上的数据库" class="headerlink" title="导出其它机器上的数据库:"></a>导出其它机器上的数据库:</h4><p><code>exp user/password@host:port/service_name file=d:\zxcc.dmp full=y</code></p>
+<p>full=y 表示全库导出。full总共有2个可选项yes(y)/no(n)，缺省情况下full=no，这时只会将该用户下的对象导出。</p>
+<h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3><p><code>imp user/passwd@service_name file=... FULL=Y</code><br><code>imp user/password@host:port/service_name file=... FULL=Y</code></p>
+<p>导入更换用户空间, 需要DBA权限<br><code>imp user/password@host:port/service_name file=... fromuser=%s touser=%s</code></p>
+<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>查看会话<br><code>SELECT * from v$SESSION</code></p>
+<h2 id="归档"><a href="#归档" class="headerlink" title="归档"></a>归档</h2><h3 id="打开归档"><a href="#打开归档" class="headerlink" title="打开归档"></a>打开归档</h3><h3 id="归档日志查看"><a href="#归档日志查看" class="headerlink" title="归档日志查看"></a>归档日志查看</h3><p>sql&gt; <code>archive log list;</code></p>
+<h3 id="关闭oracle实例"><a href="#关闭Oracle实例" class="headerlink" title="关闭Oracle实例"></a>关闭Oracle实例</h3><p>sql&gt; <code>shutdown immediate;</code></p>
+<h3 id="将oracle节点启动到-mount状态"><a href="#将Oracle节点启动到-mount状态" class="headerlink" title="将Oracle节点启动到 mount状态"></a>将Oracle节点启动到 mount状态</h3><p>sql&gt; <code>startup nomount;</code><br>ORACLE instance started.<br>Total System Global Area  281018368 bytes<br>Fixed Size                  1267044 bytes<br>Variable Size             113248924 bytes<br>Database Buffers          163577856 bytes<br>Redo Buffers                2924544 bytes<br>sql&gt; <code>alter database mount;</code><br>Database altered.</p>
+<h3 id="修改归档模式"><a href="#修改归档模式" class="headerlink" title="修改归档模式"></a>修改归档模式</h3><p>sql&gt; <code>alter database archivelog;</code><br>Database altered.</p>
+<h3 id="并将数据库置于open状态"><a href="#并将数据库置于open状态" class="headerlink" title="并将数据库置于open状态"></a>并将数据库置于open状态</h3><p>sql&gt; <code>alter database open;</code><br>Database altered.</p>
+<h3 id="指定归档目标"><a href="#指定归档目标" class="headerlink" title="指定归档目标"></a>指定归档目标</h3><p>sql&gt; <code>alter system set LOG_ARCHIVE_DEST_1=’LOCATION=/archive’;</code><br>System altered.</p>
+<h3 id="归档日志定时删除"><a href="#归档日志定时删除" class="headerlink" title="归档日志定时删除"></a>归档日志定时删除</h3><p>需要在数据库机器上运行<br>dellog.log<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">connect target 用户名/密码</div><div class="line">run&#123;</div><div class="line">delete noprompt archivelog all completed before &apos;sysdate-7&apos;;</div><div class="line">crosscheck archivelog all;</div><div class="line">delete expired archivelog all;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="windows-使用计划任务"><a href="#windows-使用计划任务" class="headerlink" title="windows 使用计划任务"></a>windows 使用计划任务</h4><p>dellog.bat<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rman cmdfile=E:\delete_archive_log\dellog.txt &gt; log.log</div></pre></td></tr></table></figure></p>
+<h4 id="linux-使用crontab"><a href="#linux-使用crontab" class="headerlink" title="linux 使用crontab"></a>linux 使用crontab</h4><p>dellog.sh<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rman cmdfile=/delete_archive_log/dellog.txt &gt; log.log</div></pre></td></tr></table></figure></p>
+<h2 id="自动启动"><a href="#自动启动" class="headerlink" title="自动启动"></a>自动启动</h2><p>vim /etc/oratab<br>orcl:/opt/oracle/product/11.2.0/dbhome_1:Y</p>
+<p>vim /etc/init.d/dbora 添加以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line"># chkconfig: 345 99 10</div><div class="line"># description: Oracle auto start-stop script.</div><div class="line">#</div><div class="line"># Set ORA_HOME to be equivalent to the $ORACLE_HOME</div><div class="line"># from which you wish to execute dbstart and dbshut;</div><div class="line">#</div><div class="line"># Set ORA_OWNER to the user id of the owner of the </div><div class="line"># Oracle database in ORA_HOME.</div><div class="line"></div><div class="line">ORA_HOME=/opt/oracle/product/11.2.0/dbhome_1</div><div class="line">ORA_OWNER=oracle</div><div class="line">export ORACLE_UNQNAME=orcl</div><div class="line"></div><div class="line">if [ ! -f $ORA_HOME/bin/dbstart ]</div><div class="line">then</div><div class="line">    echo &quot;Oracle startup: cannot start&quot;</div><div class="line">    exit</div><div class="line">fi</div><div class="line"></div><div class="line">case &quot;$1&quot; in</div><div class="line">    &apos;start&apos;)</div><div class="line">        # Start the Oracle databases:</div><div class="line">        # The following command assumes that the oracle login </div><div class="line">        # will not prompt the user for any values</div><div class="line">        # Remove &quot;&amp;&quot; if you don&apos;t want startup as a background process.</div><div class="line">        su $ORA_OWNER -c &quot;$ORA_HOME/bin/dbstart $ORA_HOME&quot;</div><div class="line">        sleep 5s</div><div class="line">        su $ORA_OWNER -c &quot;$ORA_HOME/bin/lsnrctl start&quot;</div><div class="line">        touch /var/lock/subsys/dbora</div><div class="line">        echo &quot;启动成功, 请检查&quot;</div><div class="line">        ;;</div><div class="line">    &apos;stop&apos;)</div><div class="line">        # Stop the Oracle databases:</div><div class="line">        # The following command assumes that the oracle login </div><div class="line">        # will not prompt the user for any values</div><div class="line">        su $ORA_OWNER -c &quot;$ORA_HOME/bin/dbshut $ORA_HOME&quot;</div><div class="line">        su $ORA_OWNER -c &quot;$ORA_HOME/bin/lsnrctl stop&quot;</div><div class="line">        rm -f /var/lock/subsys/dbora</div><div class="line">        ;;</div><div class="line">esac</div><div class="line">~~~~~</div></pre></td></tr></table></figure></p>
+<p>授权<br><code>chmod 777 /etc/init.d/dbora</code><br>配置启动<br><code>chkconfig dbora on</code><br>测试<br><code>service dbora restart</code></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="../../oracle-management/">
+    <time datetime="2017-03-23T08:51:24.000Z" class="entry-date">
+        2017-03-23
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/oracle/">oracle</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-centos-6-5-install" class="post-centos-6-5-install post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="../../centos-6-5-install/">centos 6.5 install</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netcentos-6-5-install/" data-id="cj9gngl7l0002xdpkliw83vzf" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+  <div id="toc" class="toc-article">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#centos-65-安装"><span class="toc-text">centos 6.5 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#无图形界面"><span class="toc-text">无图形界面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#base-system"><span class="toc-text">base system</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#servers"><span class="toc-text">servers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#system-management"><span class="toc-text">system management</span></a></li></ol></li></ol>
+  </div>
+
+
+        <h1 id="centos-65-安装"><a href="#centos-6-5-安装" class="headerlink" title="centos 6.5 安装"></a>centos 6.5 安装</h1><p>核心配置<br>上台集群换成Linux<br>系统版本: centos6.5 64位<br>硬盘分配: /home 50G<br>                Swap  8g<br>                剩余的给分给根目录/<br>组件:最小安装,不要图形界面<br>语言:英文<br>时区:上海</p>
+<img src="/centos-6-5-install/1.png" alt="1.png" title="">
+<img src="/centos-6-5-install/2.png" alt="2.png" title="">
+<img src="/centos-6-5-install/3.png" alt="3.png" title="">
+<img src="/centos-6-5-install/4.png" alt="4.png" title="">
+<img src="/centos-6-5-install/5.png" alt="5.png" title="">
+<img src="/centos-6-5-install/6.png" alt="6.png" title="">
+<img src="/centos-6-5-install/7.png" alt="7.png" title="">
+<img src="/centos-6-5-install/8.png" alt="8.png" title="">
+<img src="/centos-6-5-install/9.png" alt="9.png" title="">
+<img src="/centos-6-5-install/10.png" alt="10.png" title="">
+<img src="/centos-6-5-install/11.png" alt="11.png" title="">
+<h2 id="无图形界面"><a href="#无图形界面" class="headerlink" title="无图形界面"></a>无图形界面</h2><img src="/centos-6-5-install/12.png" alt="Minimal" title="Minimal">
+<h2 id="base-system"><a href="#base-system" class="headerlink" title="base system"></a>base system</h2><img src="/centos-6-5-install/13.png" alt="base system" title="base system">
+<h2 id="servers"><a href="#servers" class="headerlink" title="servers"></a>servers</h2><img src="/centos-6-5-install/14.png" alt="servers" title="servers">
+<h2 id="system-management"><a href="#system-management" class="headerlink" title="system management"></a>system management</h2><img src="/centos-6-5-install/15.png" alt="system management" title="system management">
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="../../centos-6-5-install/">
+    <time datetime="2017-03-23T08:30:46.000Z" class="entry-date">
+        2017-03-23
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/centos/">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/linux/">linux</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-pydev-template" class="post-pydev-template post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="../../pydev-template/">pydev template</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netpydev-template/" data-id="cj9gngl8s000txdpkkxpnrx5g" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+
+        <h1 id="pydev-使用模板新建代码"><a href="#pydev-使用模板新建代码" class="headerlink" title="pydev 使用模板新建代码"></a>pydev 使用模板新建代码</h1><h2 id="新建模板"><a href="#新建模板" class="headerlink" title="新建模板"></a>新建模板</h2><img src="/pydev-template/1.png" alt="1" title="1">
+<img src="/pydev-template/2.png" alt="2" title="2">
+<img src="/pydev-template/3.png" alt="3" title="3">
+<h2 id="使用模板创建文件"><a href="#使用模板创建文件" class="headerlink" title="使用模板创建文件"></a>使用模板创建文件</h2><img src="/pydev-template/4.png" alt="4" title="4">
+<img src="/pydev-template/5.png" alt="5" title="5">
+<img src="/pydev-template/6.png" alt="6" title="6">
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子:"></a>例子:</h2><h3 id="接受命令行参数-my-argparse"><a href="#接受命令行参数-my-argparse" class="headerlink" title="接受命令行参数: my argparse"></a>接受命令行参数: my argparse</h3><pre><code class="python">
+<span class="comment"># -*- coding: utf-8 -*-</span>
+<span class="string">'''
+$&#123;module&#125; -- $&#123;shortdesc&#125;
+
+$&#123;module&#125; -- $&#123;description&#125; 
+
+@author:    user name
+@copyright: .com All rights reserved.
+@contact:   @email.com
+@created:   $&#123;date&#125;
+'''</span>
+
+<span class="keyword">import</span> sys
+<span class="keyword">import</span> os
+<span class="keyword">import</span> re
+<span class="keyword">import</span> json
+<span class="keyword">import</span> argparse
+<span class="keyword">import</span> platform
+
+<span class="comment">#===============================================================================</span>
+<span class="comment"># get_args : 获得命令行参数</span>
+<span class="comment">#===============================================================================</span>
+<span class="function"><span class="keyword">def</span> <span class="title">get_args</span><span class="params">()</span>:</span>
+    <span class="keyword">if</span> len(sys.argv) == <span class="number">1</span>:
+        <span class="keyword">print</span> (<span class="string">"place use:npython3 %s -h"</span> % sys.argv[<span class="number">0</span>])
+        <span class="comment">#sys.exit(0)</span>
+        
+    parser = argparse.ArgumentParser(description=<span class="string">u''</span>)
+    parser.add_argument(<span class="string">'--init'</span>, help=<span class="string">u"init default=False"</span>, default=<span class="string">"False"</span>, choices=[<span class="string">"True"</span>, <span class="string">"False"</span>], required=<span class="keyword">True</span>)
+    args = parser.parse_args()
+    args.init = <span class="keyword">True</span> <span class="keyword">if</span> args.init == <span class="string">"True"</span> <span class="keyword">else</span> <span class="keyword">False</span>
+    <span class="keyword">return</span> args
+
+<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
+    args = get_args()
+</code></pre>
+<h3 id="类-module-class"><a href="#类-Module-Class" class="headerlink" title="类: Module: Class"></a>类: Module: Class</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line">'''</div><div class="line">$&#123;module&#125; -- $&#123;shortdesc&#125;</div><div class="line"></div><div class="line">$&#123;module&#125; -- $&#123;description&#125; </div><div class="line"></div><div class="line">@author:    user name</div><div class="line">@copyright: .com All rights reserved.</div><div class="line">@contact:   @email.com</div><div class="line">@created:   $&#123;date&#125;</div><div class="line">'''</div><div class="line"></div><div class="line">import sys</div><div class="line">import os</div><div class="line">import json</div><div class="line"></div><div class="line">class $&#123;MyClass&#125;($&#123;object&#125;):</div><div class="line">    '''</div><div class="line">    $&#123;classdocs&#125;</div><div class="line">    '''</div><div class="line">    def __init__(self, $&#123;params&#125;):</div><div class="line">        '''</div><div class="line">        $&#123;Constructor&#125;</div><div class="line">        '''</div><div class="line">        $&#123;cursor&#125;</div></pre></td></tr></table></figure>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="../../pydev-template/">
+    <time datetime="2017-03-10T01:22:05.000Z" class="entry-date">
+        2017-03-10
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/eclipse/">eclipse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/pydev/">pydev</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/python/">python</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-oracle-install-linux" class="post-oracle-install-linux post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="../../oracle-install-linux/">oracle-install-linux</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netoracle-install-linux/" data-id="cj9gngl8m000oxdpknb2bbfvx" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+  <div id="toc" class="toc-article">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux-oracle数据库无图形界面安装"><span class="toc-text">linux oracle数据库无图形界面安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-准备安装路径和用户"><span class="toc-text">1 准备安装路径和用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-配置linux系统环境"><span class="toc-text">2 配置linux系统环境</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#root用户修改-etcsysctlconf-文件加上如下参数"><span class="toc-text">root用户：修改 /etc/sysctl.conf 文件，加上如下参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改用户限制root用户修改-etcsecuritylimitsconf-文件加上下面的参数"><span class="toc-text">修改用户限制root用户：修改 /etc/security/limits.conf 文件，加上下面的参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改用户验证选项root用户下修改etcpamdlogin文件加上如下参数"><span class="toc-text">修改用户验证选项root用户下：修改/etc/pam.d/login文件加上如下参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改用户配置文件root用户下修改etcprofile文件加入如下参数"><span class="toc-text">修改用户配置文件root用户下：修改/etc/profile文件加入如下参数：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装依赖包"><span class="toc-text">安装依赖包</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-下载解压安装文件"><span class="toc-text">3 下载解压安装文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-安装"><span class="toc-text">4 安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#oracle创建表空间"><span class="toc-text">oracle创建表空间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第1步创建临时表空间"><span class="toc-text">第1步：创建临时表空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第2步创建数据表空间"><span class="toc-text">第2步：创建数据表空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第3步创建用户并指定表空间"><span class="toc-text">第3步：创建用户并指定表空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第4步给用户授予权限"><span class="toc-text">第4步：给用户授予权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单创建用户不要在线上环境使用"><span class="toc-text">简单创建用户(不要在线上环境使用)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#oracle-管理"><span class="toc-text">oracle 管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装中的问题"><span class="toc-text">安装中的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#交换空间为0"><span class="toc-text">交换空间为0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#防火墙"><span class="toc-text">防火墙</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动启动"><span class="toc-text">自动启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dbrsp文件"><span class="toc-text">db.rsp文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装中的问题"><span class="toc-text">安装中的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#initorclora-找不到"><span class="toc-text">initorcl.ora 找不到</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令说明需要图形界面"><span class="toc-text">命令说明(需要图形界面)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#netca-创建管理监听"><span class="toc-text">netca 创建/管理监听</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dbca-创建管理数据库"><span class="toc-text">dbca 创建/管理数据库</span></a></li></ol></li></ol></li></ol>
+  </div>
+
+
+        <h2 id="linux-oracle数据库无图形界面安装"><a href="#linux-oracle数据库无图形界面安装" class="headerlink" title="linux oracle数据库无图形界面安装"></a>linux oracle数据库无图形界面安装</h2><h3 id="1-准备安装路径和用户"><a href="#1-准备安装路径和用户" class="headerlink" title="1 准备安装路径和用户"></a>1 准备安装路径和用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/usr/sbin/groupadd oinstall</div><div class="line">/usr/sbin/groupadd dba</div><div class="line">/usr/sbin/useradd -g oinstall -G dba oracle</div><div class="line"></div><div class="line">mkdir -p /opt/oracle</div><div class="line">chown -R oracle:oinstall /opt/oracle</div><div class="line">chmod -R 775 /opt/oracle</div><div class="line">mkdir -p /opt/oraInventory</div><div class="line">chown oracle:oinstall /opt/oraInventory</div><div class="line">chmod -R 775 /opt/oraInventory</div><div class="line">mkdir  /oradata</div><div class="line">chown oracle:oinstall /oradata</div><div class="line">chmod 775 /oradata</div><div class="line">mkdir /recovery_area</div><div class="line">chown oracle:oinstall /recovery_area</div><div class="line">chmod 775 /recovery_area</div></pre></td></tr></table></figure>
+<h3 id="2-配置linux系统环境"><a href="#2-配置linux系统环境" class="headerlink" title="2 配置linux系统环境"></a>2 配置linux系统环境</h3><h4 id="root用户修改-etcsysctlconf-文件加上如下参数"><a href="#root用户：修改-etc-sysctl-conf-文件，加上如下参数" class="headerlink" title="root用户：修改 /etc/sysctl.conf 文件，加上如下参数"></a>root用户：修改 /etc/sysctl.conf 文件，加上如下参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">fs.aio-max-nr = 1048576</div><div class="line">fs.file-max = 6815744</div><div class="line">kernel.shmall = 2097152</div><div class="line">kernel.shmmax = 536870912</div><div class="line">kernel.shmmni = 4096</div><div class="line">kernel.sem = 250 32000 100 128</div><div class="line">net.ipv4.ip_local_port_range = 9000 65500</div><div class="line">net.core.rmem_default = 262144</div><div class="line">net.core.rmem_max = 4194304</div><div class="line">net.core.wmem_default = 262144</div><div class="line">net.core.wmem_max = 1048586</div><div class="line"></div><div class="line">为使上述配置生效而不重启系统，执行如下命令</div><div class="line">/sbin/sysctl -p</div></pre></td></tr></table></figure>
+<h4 id="修改用户限制root用户修改-etcsecuritylimitsconf-文件加上下面的参数"><a href="#修改用户限制root用户：修改-etc-security-limits-conf-文件，加上下面的参数" class="headerlink" title="修改用户限制root用户：修改 /etc/security/limits.conf 文件，加上下面的参数"></a>修改用户限制root用户：修改 /etc/security/limits.conf 文件，加上下面的参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">oracle           soft    nproc   2047</div><div class="line">oracle           hard    nproc   16384</div><div class="line">oracle           soft    nofile  1024</div><div class="line">oracle           hard    nofile  65536</div></pre></td></tr></table></figure>
+<h4 id="修改用户验证选项root用户下修改etcpamdlogin文件加上如下参数"><a href="#修改用户验证选项root用户下：修改-etc-pam-d-login文件加上如下参数" class="headerlink" title="修改用户验证选项root用户下：修改/etc/pam.d/login文件加上如下参数"></a>修改用户验证选项root用户下：修改/etc/pam.d/login文件加上如下参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">session    required     pam_limits.so</div></pre></td></tr></table></figure>
+<h4 id="修改用户配置文件root用户下修改etcprofile文件加入如下参数"><a href="#修改用户配置文件root用户下：修改-etc-profile文件加入如下参数：" class="headerlink" title="修改用户配置文件root用户下：修改/etc/profile文件加入如下参数："></a>修改用户配置文件root用户下：修改/etc/profile文件加入如下参数：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">if [ $USER = &quot;oracle&quot; ]; then</div><div class="line">        if [ $SHELL = &quot;/bin/ksh&quot; ]; then</div><div class="line">              ulimit -p 16384</div><div class="line">              ulimit -n 65536</div><div class="line">        else</div><div class="line">              ulimit -u 16384 -n 65536</div><div class="line">        fi</div><div class="line">fi</div></pre></td></tr></table></figure>
+<h4 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install binutils compat-libcap1 compat-libstdc++ gcc gcc-c++ glibc glibc-devel ksh libgcc libstdc++ libstdc++-devel libaio sysstat libaio-devel elfutils-libelf-devel unixODBC unixODBC-devel compat-libstdc++-33</div></pre></td></tr></table></figure>
+<h3 id="3-下载解压安装文件"><a href="#3-下载解压安装文件" class="headerlink" title="3 下载解压安装文件"></a>3 下载解压安装文件</h3><p>oralce下载地址: <a href="http://10.35.252.214/oracle" target="_blank" rel="external">http://10.35.252.214/oracle</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">su - oracle</div><div class="line">cd /opt/oracle</div><div class="line">unzip linux.x64_11gR2_database_1of2.zip</div><div class="line">unzip linux.x64_11gR2_database_2of2.zip</div><div class="line">mv database/* ./</div><div class="line">rm –rf database</div></pre></td></tr></table></figure></p>
+<h3 id="4-安装"><a href="#4-安装" class="headerlink" title="4 安装"></a>4 安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">下载安装响应文件</div><div class="line"></div><div class="line">修改db.rsp</div><div class="line">oracle.install.db.config.starterdb.password.ALL=system 	system密码</div><div class="line">oracle.install.db.config.starterdb.characterSet=ZHS16GBK	中文字符集</div><div class="line">oracle.install.db.config.starterdb.SID=ORCL 	ORACLE_SID</div><div class="line">oracle.install.db.config.starterdb.globalDBName=ORCL 	和SID一致</div><div class="line">oracle.install.option=INSTALL_DB_AND_CONFIG            安装并配置数据库,可以先安装数据库软件,再配置监听,在创建数据库实例</div><div class="line"></div><div class="line">安装</div><div class="line">./runInstaller -silent -responseFile /opt/database/db.rsp -ignorePrereq</div></pre></td></tr></table></figure>
+<h2 id="oracle创建表空间"><a href="#oracle创建表空间" class="headerlink" title="oracle创建表空间"></a>oracle创建表空间</h2><h3 id="第1步创建临时表空间"><a href="#第1步：创建临时表空间" class="headerlink" title="第1步：创建临时表空间"></a>第1步：创建临时表空间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">create temporary tablespace user_temp </div><div class="line">tempfile &apos;D:\oracle\oradata\Oracle9i\user_temp.dbf&apos; </div><div class="line">size 50m </div><div class="line">autoextend on </div><div class="line">next 50m maxsize 20480m </div><div class="line">extent management local;</div></pre></td></tr></table></figure>
+<h3 id="第2步创建数据表空间"><a href="#第2步：创建数据表空间" class="headerlink" title="第2步：创建数据表空间"></a>第2步：创建数据表空间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">create tablespace user_data </div><div class="line">logging </div><div class="line">datafile &apos;D:\oracle\oradata\Oracle9i\user_data.dbf&apos; </div><div class="line">size 50m </div><div class="line">autoextend on </div><div class="line">next 50m maxsize 20480m </div><div class="line">extent management local;</div></pre></td></tr></table></figure>
+<h3 id="第3步创建用户并指定表空间"><a href="#第3步：创建用户并指定表空间" class="headerlink" title="第3步：创建用户并指定表空间"></a>第3步：创建用户并指定表空间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">create user username identified by password </div><div class="line">default tablespace user_data </div><div class="line">temporary tablespace user_temp;</div></pre></td></tr></table></figure>
+<h3 id="第4步给用户授予权限"><a href="#第4步：给用户授予权限" class="headerlink" title="第4步：给用户授予权限"></a>第4步：给用户授予权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">grant connect,resource,dba to username;</div><div class="line">grant create view to username;</div></pre></td></tr></table></figure>
+<h3 id="简单创建用户不要在线上环境使用"><a href="#简单创建用户-不要在线上环境使用" class="headerlink" title="简单创建用户(不要在线上环境使用)"></a>简单创建用户(不要在线上环境使用)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">create user username identified by password;</div><div class="line">grant connect, resource, dba to username;</div><div class="line">grant create view to username;</div></pre></td></tr></table></figure>
+<h3 id="oracle-管理"><a href="#oracle-管理" class="headerlink" title="oracle 管理"></a>oracle 管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ssh 登陆oracl服务器</div><div class="line"></div><div class="line">切换到oracle安装用户: su oracle</div><div class="line">进入oracle后台      : sqlplus / as sysdba</div><div class="line">关闭数据库          : shutdown immediate;</div><div class="line">启动数据库          : startup mount;</div><div class="line">修改数据库状态打开  : alter database open;</div><div class="line">修改密码策略永不过期: ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;</div></pre></td></tr></table></figure>
+<h2 id="安装中的问题"><a href="#安装中的问题" class="headerlink" title="安装中的问题"></a>安装中的问题</h2><h3 id="交换空间为0"><a href="#交换空间为0" class="headerlink" title="交换空间为0"></a>交换空间为0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd /</div><div class="line">dd  if=/dev/zero  of=swapfile  bs=1024  count=1000000</div><div class="line">mkswap swapfile</div><div class="line">swapon  swapfile</div></pre></td></tr></table></figure>
+<h3 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">vim /etc/sysconfig/iptables</div><div class="line">添加</div><div class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 1521 -j ACCEPT</div><div class="line">重启防火墙</div><div class="line">service iptables restart</div></pre></td></tr></table></figure>
+<h3 id="自动启动"><a href="#自动启动" class="headerlink" title="自动启动"></a>自动启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">vim /etc/oratab</div><div class="line">orcl:/opt/oracle/product/11.2.0/dbhome_1:Y</div><div class="line"></div><div class="line">vim /etc/init.d/dbora</div><div class="line">#!/bin/sh</div><div class="line"># chkconfig: 345 99 10</div><div class="line"># description: Oracle auto start-stop script.</div><div class="line">#</div><div class="line"># Set ORA_HOME to be equivalent to the $ORACLE_HOME</div><div class="line"># from which you wish to execute dbstart and dbshut;</div><div class="line">#</div><div class="line"># Set ORA_OWNER to the user id of the owner of the </div><div class="line"># Oracle database in ORA_HOME.</div><div class="line"></div><div class="line">ORA_HOME=/opt/oracle/product/11.2.0/dbhome_1</div><div class="line">ORA_OWNER=oracle</div><div class="line">export ORACLE_UNQNAME=orcl</div><div class="line"></div><div class="line">if [ ! -f $ORA_HOME/bin/dbstart ]</div><div class="line">then</div><div class="line">    echo &quot;Oracle startup: cannot start&quot;</div><div class="line">    exit</div><div class="line">fi</div><div class="line"></div><div class="line">case &quot;$1&quot; in</div><div class="line">    &apos;start&apos;)</div><div class="line">        # Start the Oracle databases:</div><div class="line">        # The following command assumes that the oracle login </div><div class="line">        # will not prompt the user for any values</div><div class="line">        # Remove &quot;&amp;&quot; if you don&apos;t want startup as a background process.</div><div class="line">        su $ORA_OWNER -c &quot;$ORA_HOME/bin/dbstart $ORA_HOME&quot;</div><div class="line">        sleep 5s</div><div class="line">        su $ORA_OWNER -c &quot;$ORA_HOME/bin/lsnrctl start&quot;</div><div class="line">        touch /var/lock/subsys/dbora</div><div class="line">        echo &quot;启动成功, 请检查&quot;</div><div class="line">        ;;</div><div class="line">    &apos;stop&apos;)</div><div class="line">        # Stop the Oracle databases:</div><div class="line">        # The following command assumes that the oracle login </div><div class="line">        # will not prompt the user for any values</div><div class="line">        su $ORA_OWNER -c &quot;$ORA_HOME/bin/dbshut $ORA_HOME&quot;</div><div class="line">        su $ORA_OWNER -c &quot;$ORA_HOME/bin/lsnrctl stop&quot;</div><div class="line">        rm -f /var/lock/subsys/dbora</div><div class="line">        ;;</div><div class="line">esac</div><div class="line"></div><div class="line"></div><div class="line">授权</div><div class="line">chmod 777 /etc/init.d/dbora</div><div class="line">配置启动</div><div class="line">chkconfig dbora on</div><div class="line">测试</div><div class="line">service dbora restart</div></pre></td></tr></table></figure>
+<h3 id="dbrsp文件"><a href="#db-rsp文件" class="headerlink" title="db.rsp文件"></a>db.rsp文件</h3><pre><code class="python">
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Do not change the following system generated value. </span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.responseFileVersion=/oracle/install/rspfmt_dbinstall_response_schema_v11_2_0
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># The installation option can be one of the following</span>
+<span class="comment"># 1. INSTALL_DB_SWONLY</span>
+<span class="comment"># 2. INSTALL_DB_AND_CONFIG</span>
+<span class="comment"># 3. UPGRADE_DB</span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.option=INSTALL_DB_AND_CONFIG
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># This variable holds the hostname of the system as set by the user. </span>
+<span class="comment"># It can be used to force the installation to use an alternative   </span>
+<span class="comment"># hostname rather than using the first hostname found on the system</span>
+<span class="comment"># (e.g., for systems with multiple hostnames and network interfaces).</span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+ORACLE_HOSTNAME=localhost
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Unix group to be set for the inventory directory.  </span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+UNIX_GROUP_NAME=oinstall
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Inventory location.</span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+INVENTORY_LOCATION=/opt/oraInventory
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Specify the languages in which the components will be installed.             </span>
+<span class="comment">#</span>
+<span class="comment"># en   : English                  ja   : Japanese                  </span>
+<span class="comment"># fr   : French                   ko   : Korean                    </span>
+<span class="comment"># ar   : Arabic                   es   : Latin American Spanish    </span>
+<span class="comment"># bn   : Bengali                  lv   : Latvian                   </span>
+<span class="comment"># pt_BR: Brazilian Portuguese     lt   : Lithuanian                </span>
+<span class="comment"># bg   : Bulgarian                ms   : Malay                     </span>
+<span class="comment"># fr_CA: Canadian French          es_MX: Mexican Spanish           </span>
+<span class="comment"># ca   : Catalan                  no   : Norwegian                 </span>
+<span class="comment"># hr   : Croatian                 pl   : Polish                    </span>
+<span class="comment"># cs   : Czech                    pt   : Portuguese                </span>
+<span class="comment"># da   : Danish                   ro   : Romanian                  </span>
+<span class="comment"># nl   : Dutch                    ru   : Russian                   </span>
+<span class="comment"># ar_EG: Egyptian                 zh_CN: Simplified Chinese        </span>
+<span class="comment"># en_GB: English (Great Britain)  sk   : Slovak                    </span>
+<span class="comment"># et   : Estonian                 sl   : Slovenian                 </span>
+<span class="comment"># fi   : Finnish                  es_ES: Spanish                   </span>
+<span class="comment"># de   : German                   sv   : Swedish                   </span>
+<span class="comment"># el   : Greek                    th   : Thai                      </span>
+<span class="comment"># iw   : Hebrew                   zh_TW: Traditional Chinese       </span>
+<span class="comment"># hu   : Hungarian                tr   : Turkish                   </span>
+<span class="comment"># is   : Icelandic                uk   : Ukrainian                 </span>
+<span class="comment"># in   : Indonesian               vi   : Vietnamese                </span>
+<span class="comment"># it   : Italian                                                   </span>
+<span class="comment">#</span>
+<span class="comment"># Example : SELECTED_LANGUAGES=en,fr,ja</span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+SELECTED_LANGUAGES=en,zh_CN
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Complete path of the Oracle Home  </span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+ORACLE_HOME=/opt/oracle/product/<span class="number">11.2</span><span class="number">.0</span>/dbhome_1
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Complete path of the Oracle Base. </span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+ORACLE_BASE=/opt/oracle
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Installation Edition of the component.                        </span>
+<span class="comment">#                                                             </span>
+<span class="comment"># The value should contain only one of these choices.        </span>
+<span class="comment"># EE     : Enterprise Edition                                </span>
+<span class="comment"># SE     : Standard Edition                                  </span>
+<span class="comment"># SEONE  : Standard Edition One</span>
+<span class="comment"># PE     : Personal Edition (WINDOWS ONLY)</span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.InstallEdition=EE
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># This property is considered only if InstallEdition is EE.</span>
+<span class="comment">#</span>
+<span class="comment"># true  : Components mentioned as part of 'customComponents' property</span>
+<span class="comment">#         are considered for install.</span>
+<span class="comment"># false : Value for 'customComponents' is not considered.</span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.isCustomInstall=false
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># This property is considered only if 'IsCustomInstall' is set to true </span>
+<span class="comment">#</span>
+<span class="comment"># Description: List of Enterprise Edition Options you would like to install.</span>
+<span class="comment">#</span>
+<span class="comment">#              The following choices are available. You may specify any</span>
+<span class="comment">#              combination of these choices.  The components you choose should</span>
+<span class="comment">#              be specified in the form "internal-component-name:version"</span>
+<span class="comment">#              Below is a list of components you may specify to install.</span>
+<span class="comment">#        </span>
+<span class="comment">#              oracle.oraolap:11.2.0.0.2 - Oracle OLAP</span>
+<span class="comment">#              oracle.rdbms.dm:11.2.0.0.2 - Oracle Data Mining RDBMS Files</span>
+<span class="comment">#              oracle.rdbms.dv:11.2.0.0.2 - Oracle Database Vault option</span>
+<span class="comment">#              oracle.rdbms.lbac:11.2.0.0.2 - Oracle Label Security</span>
+<span class="comment">#              oracle.rdbms.partitioning:11.2.0.0.2 - Oracle Partitioning</span>
+<span class="comment">#              oracle.rdbms.rat:11.2.0.0.2 - Oracle Real Application Testing</span>
+<span class="comment">#              oracle.clrintg.ode_net:11.2.0.0.2 - Oracle Database Extensions for .NET 1.x (Windows)</span>
+<span class="comment">#              oracle.clrintg.ode_net_2:11.2.0.0.2 - Oracle Database Extensions for .NET 2.0 (Windows)</span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.customComponents=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.DBA_GROUP=dba
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.OPER_GROUP=oinstall
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># This variable represents the cluster node names selected by the .  </span>
+<span class="comment"># user for installation                                      </span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.CLUSTER_NODES=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># One of the following</span>
+<span class="comment"># - GENERAL_PURPOSE                              </span>
+<span class="comment"># - TRANSACTION_PROCESSING                       </span>
+<span class="comment"># - DATAWAREHOUSE                                </span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.type=GENERAL_PURPOSE
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Global Database Name </span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.globalDBName=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># The Starter Database SID </span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.SID=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Database character set</span>
+<span class="comment">#                                               </span>
+<span class="comment">#  One of the following</span>
+<span class="comment">#  AL32UTF8, WE8ISO8859P15, WE8MSWIN1252, EE8ISO8859P2,</span>
+<span class="comment">#  EE8MSWIN1250, NE8ISO8859P10, NEE8ISO8859P4, BLT8MSWIN1257,</span>
+<span class="comment">#  BLT8ISO8859P13, CL8ISO8859P5, CL8MSWIN1251, AR8ISO8859P6,</span>
+<span class="comment">#  AR8MSWIN1256, EL8ISO8859P7, EL8MSWIN1253, IW8ISO8859P8,</span>
+<span class="comment">#  IW8MSWIN1255, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE,</span>
+<span class="comment">#  KO16MSWIN949, ZHS16GBK, TH8TISASCII, ZHT32EUC, ZHT16MSWIN950,</span>
+<span class="comment">#  ZHT16HKSCS, WE8ISO8859P9, TR8MSWIN1254, VN8MSWIN1258</span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.characterSet=
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Specify the total memory allocation for the database. (in MB)</span>
+<span class="comment"># Value should be at least 256 MB, and should not exceed the  </span>
+<span class="comment"># total physical memory available on the system.</span>
+<span class="comment"># Example: oracle.install.db.config.starterdb.memoryLimit=40</span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.memoryLimit=<span class="number">738</span>
+oracle.install.db.config.starterdb.memoryOption=true
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># This variable controls whether to load Example Schemas onto</span>
+<span class="comment"># the starter database or not.</span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.installExampleSchemas=false
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># This include enabling audit settings, configuring password  </span>
+<span class="comment"># profiles and revoking some grants to public. These settings </span>
+<span class="comment"># are provided by default.  You may choose to disable all.    </span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.enableSecuritySettings=true
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.password.ALL=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.password.SYS=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.password.SYSTEM=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.password.SYSMAN=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.password.DBSNMP=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Can be one of the following </span>
+<span class="comment"># 1. GRID_CONTROL</span>
+<span class="comment"># 2. DB_CONTROL</span>
+<span class="comment"># </span>
+oracle.install.db.config.starterdb.control=DB_CONTROL
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Determines the Management Service to use if Grid Control   </span>
+<span class="comment"># is selected to manage the database.      </span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.gridcontrol.gridControlServiceURL=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Determines whether to receive email notification for       </span>
+<span class="comment"># critical alerts when using DB control.   </span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.dbcontrol.enableEmailNotification=false
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.dbcontrol.emailAddress=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.dbcontrol.SMTPServer=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.automatedBackup.enable=false
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.automatedBackup.osuid=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.automatedBackup.ospwd=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Can be one of the following</span>
+<span class="comment"># - FILE_SYSTEM_STORAGE</span>
+<span class="comment"># - ASM_STORAGE</span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.storageType=FILE_SYSTEM_STORAGE
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Database file location:                  </span>
+<span class="comment"># directory for datafiles, control files, redo logs.         </span>
+<span class="comment">#</span>
+<span class="comment"># Applicable only when oracle.install.db.config.starterdb.storage=FILE_SYSTEM_STORAGE </span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.fileSystemStorage.dataLocation=/opt/oracle/oradata
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Backup and recovery location </span>
+<span class="comment">#</span>
+<span class="comment"># Applicable only when oracle.install.db.config.starterdb.storage=FILE_SYSTEM_STORAGE </span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.starterdb.fileSystemStorage.recoveryLocation=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Name of ASM disk group to be used for storage.</span>
+<span class="comment">#</span>
+<span class="comment"># Applicable only when oracle.install.db.config.starterdb.storageType=ASM_STORAGE</span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.asm.diskGroup=
+
+<span class="comment">#-------------------------------------------------------------------------------</span>
+<span class="comment"># Password for ASMSNMP user of the ASM instance.                  </span>
+<span class="comment">#</span>
+<span class="comment"># Applicable only when oracle.install.db.config.starterdb.storage=ASM_STORAGE </span>
+<span class="comment">#-------------------------------------------------------------------------------</span>
+oracle.install.db.config.asm.ASMSNMPPassword=
+
+<span class="comment">#------------------------------------------------------------------------------</span>
+<span class="comment"># Specify the My Oracle Support Account Username.</span>
+<span class="comment">#</span>
+<span class="comment">#  Example   : MYORACLESUPPORT_USERNAME=metalink</span>
+<span class="comment">#------------------------------------------------------------------------------</span>
+MYORACLESUPPORT_USERNAME=
+
+<span class="comment">#------------------------------------------------------------------------------</span>
+<span class="comment"># Specify the My Oracle Support Account Username password.</span>
+<span class="comment">#</span>
+<span class="comment"># Example    : MYORACLESUPPORT_PASSWORD=password</span>
+<span class="comment">#------------------------------------------------------------------------------</span>
+MYORACLESUPPORT_PASSWORD=
+
+<span class="comment">#------------------------------------------------------------------------------</span>
+<span class="comment"># Specify whether to enable the user to set the password for</span>
+<span class="comment"># My Oracle Support credentials. The value can be either true or false.</span>
+<span class="comment"># If left blank it will be assumed to be false.</span>
+<span class="comment">#</span>
+<span class="comment"># Example    : SECURITY_UPDATES_VIA_MYORACLESUPPORT=true</span>
+<span class="comment">#------------------------------------------------------------------------------</span>
+SECURITY_UPDATES_VIA_MYORACLESUPPORT=false
+
+<span class="comment">#------------------------------------------------------------------------------</span>
+<span class="comment"># Specify whether user wants to give any proxy details for connection. </span>
+<span class="comment"># The value can be either true or false. If left blank it will be assumed</span>
+<span class="comment"># to be false.</span>
+<span class="comment">#</span>
+<span class="comment"># Example    : DECLINE_SECURITY_UPDATES=false</span>
+<span class="comment">#------------------------------------------------------------------------------</span>
+DECLINE_SECURITY_UPDATES=true
+
+<span class="comment">#------------------------------------------------------------------------------</span>
+<span class="comment"># Specify the Proxy server name. Length should be greater than zero.</span>
+<span class="comment">#</span>
+<span class="comment"># Example    : PROXY_HOST=proxy.domain.com </span>
+<span class="comment">#------------------------------------------------------------------------------</span>
+PROXY_HOST=
+
+<span class="comment">#------------------------------------------------------------------------------</span>
+<span class="comment"># Specify the proxy port number. Should be Numeric and atleast 2 chars.</span>
+<span class="comment">#</span>
+<span class="comment"># Example    : PROXY_PORT=25 </span>
+<span class="comment">#------------------------------------------------------------------------------</span>
+PROXY_PORT=
+</code></pre>
+<h3 id="安装中的问题"><a href="#安装中的问题-1" class="headerlink" title="安装中的问题"></a>安装中的问题</h3><h4 id="initorclora-找不到"><a href="#initorcl-ora-找不到" class="headerlink" title="initorcl.ora 找不到"></a>initorcl.ora 找不到</h4><p>因为数据库名称,实例名称或服务名不一样造成的<br>orcl和ORCL是不一样的</p>
+<p>The LRM-00109 often happens:</p>
+<ol>
+<li><p>If the database name, instance name or service name are different . . . </p>
+</li>
+<li><p>If you don’t specify the pfile location in the startup command:<br>startup pfile=$ORACLE_HOME/admin/xxx/pfile/<pfile_name></pfile_name></p>
+</li>
+</ol>
+<p>The Oracle documentation has the following to say about LRM-00109:</p>
+<p>“LRM-00109: could not open parameter file “string”<br>Cause: The parameter file does not exist.<br>Action: Create an appropriate parameter file.”</p>
+<h3 id="命令说明需要图形界面"><a href="#命令说明-需要图形界面" class="headerlink" title="命令说明(需要图形界面)"></a>命令说明(需要图形界面)</h3><p>可以使用xmanage passvie<br>export DISPLAY=IP:0.0</p>
+<h4 id="netca-创建管理监听"><a href="#netca-创建-管理监听" class="headerlink" title="netca 创建/管理监听"></a>netca 创建/管理监听</h4><h4 id="dbca-创建管理数据库"><a href="#dbca-创建-管理数据库" class="headerlink" title="dbca 创建/管理数据库"></a>dbca 创建/管理数据库</h4>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="../../oracle-install-linux/">
+    <time datetime="2017-02-15T07:59:14.000Z" class="entry-date">
+        2017-02-15
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/oracle安装/">oracle安装</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-yuncai-dev-doc" class="post-yuncai-dev-doc post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="../../yuncai-dev-doc/">yuncai-dev-doc</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netyuncai-dev-doc/" data-id="cj9gngl900010xdpkr041aeia" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+
+        <p>oracle 创建大数据空间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">create BIGFILE tablespace YCDBA </div><div class="line">logging </div><div class="line">datafile &apos;/home/oracle/yc/YCDBA&apos; </div><div class="line">size 512m </div><div class="line">autoextend on </div><div class="line">next 512m maxsize unlimited</div><div class="line">extent management local;</div><div class="line"></div><div class="line">create temporary tablespace TEMP_YCDBA</div><div class="line">tempfile &apos;TEMP_YCDBA.dbf&apos; size 5m autoextend on;</div><div class="line"></div><div class="line"></div><div class="line">create BIGFILE tablespace YCDATA </div><div class="line">logging </div><div class="line">datafile &apos;/home/oracle/yc/YCDATA&apos; </div><div class="line">size 512m </div><div class="line">autoextend on </div><div class="line">next 512m maxsize unlimited</div><div class="line">extent management local;</div><div class="line"></div><div class="line">create temporary tablespace TEMP_YCDATA</div><div class="line">tempfile &apos;TEMP_YCDATA.dbf&apos; size 5m autoextend on;</div><div class="line"></div><div class="line"></div><div class="line">create user YCDBA identified by YCDBA </div><div class="line">default tablespace YCDBA </div><div class="line">temporary tablespace TEMP_YCDBA;</div><div class="line"></div><div class="line">create user YCDATA identified by password </div><div class="line">default tablespace YCDATA </div><div class="line">temporary tablespace TEMP_YCDATA;</div></pre></td></tr></table></figure>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="../../yuncai-dev-doc/">
+    <time datetime="2017-02-15T06:49:25.000Z" class="entry-date">
+        2017-02-15
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/oracle/">oracle</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-About" class="post-About post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="../../About/">About</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netAbout/" data-id="cj9gngl7c0000xdpk4wjv6o92" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+
+        
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="../../About/">
+    <time datetime="2017-02-15T03:11:17.000Z" class="entry-date">
+        2017-02-15
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-software" class="post-software post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="../../software/">software</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netsoftware/" data-id="cj9gngl8x000yxdpk28omnoia" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+
+        <h1 id="1-准备"><a href="#1-准备" class="headerlink" title="1. 准备"></a>1. 准备</h1><pre><code>1. windows推荐装win10 64位 VOL专业版/企业版 系统下载http://msdn.itellyou.cn/
+</code></pre><p>ed2k://|file|cn_windows_10_multiple_editions_version_1607_updated_jul_2016_x64_dvd_9056935.iso|4347183104|35EA5DB0F3BB714F5CE0740FB89D82D1|/</p>
+<pre><code>2. windows上开发环境推荐使用32位, x86为32位
+3. linux系统使用64位,x64为64位
+</code></pre><h1 id="2-工具"><a href="#2-工具" class="headerlink" title="2. 工具"></a>2. 工具</h1><pre><code>1. xshell ssh工具
+
+    1. 官网 https://www.netsarang.com/products/xsh_overview.html
+
+2. xftp ftp工具
+
+    1. 官网 https://www.netsarang.com/products/xfp_overview.html
+
+3. sshfs 把linux机器映射为网络硬盘,方便在windows上操作
+
+    1. 使用文档 http://igikorn.com/sshfs-windows-8/
+
+4. navicate 数据库工具
+
+    1. 官网 https://www.navicat.com/
+    2. 文档 https://www.navicat.com.cn/manual/pdf_manual/cn/navicat/win_manual/navicat_cs.pdf
+    3. 快捷键
+
+        1. Ctrl + q 打开查询窗口
+        2. Ctrl + r 执行sql
+        3. F5刷新
+
+    4. 其他
+
+        1. 表名的修改没用确认按钮,取消ESC
+        2. 有些物视是看不到的,当时可以通过sql查询出数据
+        3. 写sql时默认是查询用户下的表,其他模式要带所在的模式
+
+5. sublime 文本编辑器
+
+    1. 官网 https://www.sublimetext.com/
+    2. 文档 http://lucida.me/blog/sublime-text-complete-guide/
+
+6. RegexBuddy 正则表达式
+
+    1. 官网 https://www.regexbuddy.com/
+    2. 文档 http://www.cnblogs.com/Zjmainstay/p/regex-tool-regexbuddy.html
+
+7. window系统知识
+
+    1. 命令行 cmd/powershell
+
+        1. 查看本机网卡的配置 ipconfig
+        2. 清空域名缓存 ipconfig /flushdns
+        3. win10 redstore 更新可以在cmd中使用linux命令, 必须为win10专业版和企业版
+
+            1. wget
+            2. curl
+
+        4. bat 命令行下可运行的文件,编写bat文件要注意
+
+            1. bat文件换行必须使用\r\n,也叫CR+LF
+            2. 必须要进入然工作目录,cmd 默认是C盘,如要进入d:\nginx 要进行两步
+
+                1. cd d:\nginx
+                2. d:
+
+        5. 其他 cmd命令行输出的编码是gbk编码,所以utf8编码的中文内容会乱码
+
+    2. 注册表 regedit
+    3. 服务 services.msc
+
+        1. windows禁用自动更新
+
+    4. 计划任务
+
+        1. 开机自动启动nginx
+
+    5. 防火墙
+
+        1. 端口 HTTP 80，FTP 20/21，Telnet 23，SMTP 25，DNS 53
+
+8. linux系统知识, 防火墙,网络
+
+    1. 网络
+
+        1. 域名 www.vastio.com  二级域名.一级域名.顶级域名
+        2. 域名服务器 8.8.8.8/114.114.114/路由器ip
+        3. ip
+
+            1. 公网地址
+            2. 私网地址
+
+        4. 子网掩码
+            1. 255.255.0.0
+
+        5. 路由
+
+            1. 路由表
+
+    2. 防火墙
+
+        1. 进/出
+        2. 转发
+
+9. 代码风格
+
+    1. 谷歌代码规范 http://zh-google-styleguide.readthedocs.io/en/latest/contents/
+    2. 文件编码 utf8
+    3. 换行使用Unix风格\n也就是LF
+
+10. markdown
+
+    1. markdown风格 https://docs.gitlab.com/ee/user/markdown.html
+
+11. Git 版本管理
+
+    1. 官网 https://git-scm.com/
+    2. 文档 https://git-scm.com/book/zh/v2
+    3. pull 和fetch的区别 : https://www.oschina.net/translate/git-fetch-and-merge
+
+12. TortoiseGit/SourceTree Git gui工具
+
+    1. 官网 https://tortoisegit.org/
+    2. 文档 http://www.cnblogs.com/qiantuwuliang/archive/2010/12/29/1920723.html
+    3. TortoiseGit 解决冲突 http://blog.csdn.net/jerome_s/article/details/44992745
+    4. SourceTree mac推荐使用,需要注册账号
+
+13. winmerge 文件/文件夹比较
+
+    1. 官网 http://winmerge.org/?lang=en
+    2. 合并后会生成备份文件,在Options-&gt;backup files 取消Append .bak -extension
+
+14. docker+Kitematic  本机开发环境配置(需要路由器翻墙,公司wifi V-Guest),公安网环境下目前还无法使用
+
+    1. docker
+
+        1. 官网 https://www.docker.com/
+        2. docker 优势介绍 http://dockone.io/article/389
+        3. 文档 https://github.com/yeasy/docker_practice
+
+    2. kitematic 提供图像界面管理docker
+
+        1. 官网 https://kitematic.com/
+        2. 使用需要创建账号 https://hub.docker.com/
+
+15. 其他重型IDE
+
+    1. eclipse
+
+        1. pydev 开发
+        2. startexplorer http://basti1302.github.io/startexplorer/ 在eclipse中快速打开文件夹和cmd
+        3. eclipse theme http://www.eclipsecolorthemes.org eclipse主题插件
+
+    2. jetbrains https://www.jetbrains.com
+        1. PyCharm python 开发
+        2. WebStorm web开发
+        3. PhpStorm php web开发
+
+    3. aptana http://www.aptana.com/
+        1. python web 开发
+
+    4. atom https://atom.io/
+    5. visual studio
+
+16. 文档管理
+
+    1. Evernot
+    2. 有道云笔记
+
+17. chrome 插件
+
+    1. 插件离线下载 http://chrome-extension-downloader.com/
+    2. 插件离线安装 http://www.cnplugins.com/zhuanti/how-to-make-crx-install.html
+    3. sense ElasticSearch快速调试 https://chrome.google.com/webstore/detail/sense-beta/lhjgkmllcaadmopgmanpapmpjgmfcfig?utm_source=chrome-app-launcher-info-dialog
+    4. JSONView  友好查看json数据 https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?utm_source=chrome-app-launcher-info-dialog
+    5. 谷歌翻译 划词翻译 https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb?utm_source=chrome-app-launcher-info-dialog
+    6. ColorZilla ccs调试,颜色选择 https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?utm_source=chrome-app-launcher-info-dialog
+    7. Axure 扩展 https://chrome.google.com/webstore/detail/axure-rp-extension-for-ch/dogkpdfcklifaemcdfbildhcofnopogp?utm_source=chrome-app-launcher-info-dialog
+    8. Advanced REST client  api请求调试 https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo?utm_source=chrome-app-launcher-info-dialog
+    9. ad block 屏蔽广告 https://chrome.google.com/webstore/detail/gighmmpiobklfepjocnamgkkbiglidom?utm_source=chrome-app-launcher-info-dialog
+    10. 印象笔记插件 https://chrome.google.com/webstore/detail/pioclpoplcdbaefihamjohnefbikjilc?utm_source=chrome-app-launcher-info-dialog
+</code></pre>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="../../software/">
+    <time datetime="2017-02-13T02:58:55.000Z" class="entry-date">
+        2017-02-13
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/软件/">软件</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-server-install" class="post-server-install post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="../../server-install/">server_install</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netserver-install/" data-id="cj9gngl8v000vxdpko4leklof" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+
+        <h3 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">一 nginx</div><div class="line">    nginx需要从源码编译</div><div class="line">    安装目录/usr/local/nginx</div><div class="line">    cd /root/</div><div class="line">    wget http://software.vastio.com/nginx-1.7.9.rar</div><div class="line">    tar -xf nginx-1.7.9.rar</div><div class="line">    cd nginx</div><div class="line">    yum -y install gcc pcre-devel openssl openssl-devel</div><div class="line">    ./configure --prefix=/usr/local/nginx</div><div class="line">    make</div><div class="line">    make install</div><div class="line">    </div><div class="line">    安装后路径/usr/local/nginx/sbin/nginx </div><div class="line">    nginx 重启 nginx -s reload</div><div class="line">    </div><div class="line">二 tomcate</div><div class="line">    目录/opt/</div><div class="line">    cd /opt</div><div class="line">    wget http://software.vastio.com/tomcat-7.0.27.tar</div><div class="line">    jdk1.7 下oracle数据库连接经常启动不了</div><div class="line">    配置 tomcate 下的 conf/env.properties</div><div class="line">    db.url=jdbc:oracle:thin:@ip:1521:服务名</div><div class="line">    db.username=用户名</div><div class="line">    db.password=密码  </div><div class="line">    </div><div class="line">    关闭bash bin/shutdown.sh</div><div class="line">    启动bash bin/startup.sh</div><div class="line"></div><div class="line">三 设置无密码登陆</div><div class="line">    ssh-keygen -t rsa</div><div class="line">    cd ~/.ssh</div><div class="line">    拷贝公钥到其它机器(为了实现能互相无密码登陆)</div><div class="line">    scp id_rsa root@pps_*_*_*:~/.ssh/</div><div class="line">    scp id_rsa.pub root@pps_*_*_*:~/.ssh/</div><div class="line">    在所有机器上执行(包括本机器)</div><div class="line">    cd ~/.ssh</div><div class="line">    cat id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</div><div class="line">    chmod 700 -R ~/.ssh</div><div class="line">    chmod 600 authorized_keys</div></pre></td></tr></table></figure>
+<h3 id="其它工具"><a href="#其它工具" class="headerlink" title="其它工具"></a>其它工具</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">一 yum</div><div class="line">    cd /etc/yum.repos.d</div><div class="line"></div><div class="line">二 oracle 11g </div><div class="line">    数据库密码默认180天</div><div class="line">    ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;</div><div class="line">    </div><div class="line">三 oracle 数据库连接客户端</div><div class="line">    1. navicat 创建表时候表名使用名空间加双引号,并且表名大写</div><div class="line">    2. oracle client</div><div class="line">    3. plsql, 不要 plsql执行大量的 sql语句,运行不起来</div><div class="line">    </div><div class="line">四 文本编辑器</div><div class="line">    1. notepad++</div><div class="line">    2. sublime</div><div class="line">    </div><div class="line">五 web服务器</div><div class="line">    1. nginx  </div><div class="line">    2. tomcate</div><div class="line">    </div><div class="line">六 Linux 连接客户端</div><div class="line">    1. xshell</div><div class="line">    2. xftp</div><div class="line">    </div><div class="line">七 git客户端(windows)</div><div class="line">    0. git windows环境 https://git-scm.com/</div><div class="line">    1. sourcetree https://www.sourcetreeapp.com/</div><div class="line">    2. tortoisegit https://tortoisegit.org/download/</div><div class="line"></div><div class="line">八 代理相关</div><div class="line">    yum 使用代理 /etc/yum.conf</div><div class="line">    proxy=http://ip:port/</div><div class="line">    wget 使用代理</div><div class="line">    export http_proxy=http://ip:port</div><div class="line">    </div><div class="line">九 mount 命令</div><div class="line">    mount -t cifs -o username=root,password= //10.15.100.151/centos /root/centos</div></pre></td></tr></table></figure>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="../../server-install/">
+    <time datetime="2017-02-06T03:12:37.000Z" class="entry-date">
+        2017-02-06
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/服务器/">服务器</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-data-input" class="post-data-input post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="../../data-input/">data_input</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <!--<a href="javascript:void(0);" data-url="https://qooeo.netdata-input/" data-id="cj9gngl7u0005xdpk4zoax196" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+
+
+    <div class="entry-content">
+      
+        
+
+        
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="../../data-input/">
+    <time datetime="2017-02-06T03:09:50.000Z" class="entry-date">
+        2017-02-06
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="pagination">
+      <nav id="page-nav">
+        <a class="extend prev" rel="prev" href="../../index.html">&laquo; Prev</a><a class="page-number" href="../../index.html">1</a><span class="page-number current">2</span><a class="page-number" href="../3/">3</a><a class="extend next" rel="next" href="../3/">Next &raquo;</a>
+      </nav>
+    </nav>
+  
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <script type="text/html" id="template-test">
+    
+<li class="item">
+    <a data-link="permalink" class="waves-block waves-effect">
+
+	<div class="title ellipsis" data-title="title" data-content="title"></div>
+	<span data-content="text" data-format="textFormatter"></span>
+	<div class="flex-row flex-middle">
+		<div class="tags ellipsis" data-format="tagsFormatter" data-content="tags">
+			
+		</div>
+		<time class="flex-col time" data-content="date" data-format="dateFormatter"></time>
+	</div>
+	</a>
+</li>
+</script>
+
+
+<script type="text/html" id="template-error">
+<li class="tips"><i class="icon icon-coffee icon-3x"></i><p>没有搜索到结果</p></li>
+</script>
+
+
+
+<aside id="search" class="widget widget_search">
+<div role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" url="https://www.google.com/ncr#newwindow=1&safe=strict&q=">
+    <div>
+        <input type="text" value="" name="s" id="search_text" />
+        <search id="search_submit"></search>
+       
+    </div>
+    <div class="widget search-panel in" id="search-panel">
+			<ul class="search-result" id="search-result">
+			
+			
+			</ul>
+	</div>
+</div>
+</aside>
+
+
+
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="../../install-elasticsearch-on-linux/">install elasticsearch on linux</a>
+          </li>
+        
+          <li>
+            <a href="../../flowchat/">flowchat</a>
+          </li>
+        
+          <li>
+            <a href="../../linux-common-comand/">linux-common-comand</a>
+          </li>
+        
+          <li>
+            <a href="../../cabot-install/">cabot install</a>
+          </li>
+        
+          <li>
+            <a href="../../luigi-install/">luigi install</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/bower/">bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/cabot/">cabot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/centos/">centos</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/elasticsearch/">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/graphite/">graphite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/grunt/">grunt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/image/">image</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/linux/">linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/linux常用命令/">linux常用命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/luigi/">luigi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/nginx/">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/npm/">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/oracle/">oracle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/oracle安装/">oracle安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/pydev/">pydev</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/readme/">readme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/registry/">registry</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/yum/">yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/公式/">公式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/时序图/">时序图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/服务器/">服务器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/流程图/">流程图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/监控/">监控</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/软件/">软件</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="../../tags/bower/" style="font-size: 10px;">bower</a> <a href="../../tags/cabot/" style="font-size: 10px;">cabot</a> <a href="../../tags/centos/" style="font-size: 15px;">centos</a> <a href="../../tags/docker/" style="font-size: 10px;">docker</a> <a href="../../tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="../../tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="../../tags/graphite/" style="font-size: 10px;">graphite</a> <a href="../../tags/grunt/" style="font-size: 10px;">grunt</a> <a href="../../tags/image/" style="font-size: 10px;">image</a> <a href="../../tags/javascript/" style="font-size: 10px;">javascript</a> <a href="../../tags/linux/" style="font-size: 20px;">linux</a> <a href="../../tags/linux常用命令/" style="font-size: 10px;">linux常用命令</a> <a href="../../tags/luigi/" style="font-size: 10px;">luigi</a> <a href="../../tags/mysql/" style="font-size: 10px;">mysql</a> <a href="../../tags/nginx/" style="font-size: 10px;">nginx</a> <a href="../../tags/npm/" style="font-size: 10px;">npm</a> <a href="../../tags/oracle/" style="font-size: 15px;">oracle</a> <a href="../../tags/oracle安装/" style="font-size: 10px;">oracle安装</a> <a href="../../tags/pydev/" style="font-size: 10px;">pydev</a> <a href="../../tags/python/" style="font-size: 10px;">python</a> <a href="../../tags/readme/" style="font-size: 10px;">readme</a> <a href="../../tags/registry/" style="font-size: 10px;">registry</a> <a href="../../tags/yum/" style="font-size: 10px;">yum</a> <a href="../../tags/公式/" style="font-size: 10px;">公式</a> <a href="../../tags/时序图/" style="font-size: 10px;">时序图</a> <a href="../../tags/服务器/" style="font-size: 10px;">服务器</a> <a href="../../tags/流程图/" style="font-size: 10px;">流程图</a> <a href="../../tags/监控/" style="font-size: 20px;">监控</a> <a href="../../tags/软件/" style="font-size: 10px;">软件</a>
+    </div>
+  </aside>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">About</h3>
+    <div class="widget">
+      email：<a href="mailto: Yangyuehui <honeybeeyyh@hotmail.com>;">honeybeeyyh@hotmail.com</a></br></br>
+    </div>
+  </div>
+
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2017 honeybeeyyh@hotmail.com
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/lib/jquery.loadTemplate.js"></script>
+
+  <link rel="stylesheet" href="../../fancybox/jquery.fancybox.css">
+  <script src="../../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../../js/script.js"></script>
+
+
+
+<script src="/js/navigation.js"></script>
+<!--<script src="/js/require.js"></script>-->
+<script src="/lib/python.js"></script>
+<script src="/lib/javascript.js"></script>
+<script src="/lib/highlight.js"></script>
+<script src="/lib/my.js"></script>
+<script src="/lib/hexo-local-search.js"></script>
+
+
+
+
+<div id="bg"></div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    }); 
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script src="../../js/coffee-script.js"></script>
+<script src="../../js/jumly.min.js"></script>
+
+<link rel="stylesheet" href="../../css/my.css">
+<link rel="stylesheet" href="../../css/highlight.css">
+<link rel="stylesheet" href="../../styles/default.css">
+<!--<script src="../../js/bootstrap.min.js"></script>-->
+<!--<link rel="stylesheet" href="../../css/bootstrap.css">-->
+<!--<link rel="stylesheet" href="../../css/bootstrap-theme.css">-->
+
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
