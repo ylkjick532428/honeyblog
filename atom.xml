@@ -17,8 +17,8 @@
   
   <entry>
     <title>install elasticsearch on linux</title>
-    <link href="https://qooeo.net//install-elasticsearch-on-linux/"/>
-    <id>https://qooeo.net//install-elasticsearch-on-linux/</id>
+    <link href="https://qooeo.net/%5Cinstall-elasticsearch-on-linux/"/>
+    <id>https://qooeo.net/\install-elasticsearch-on-linux/</id>
     <published>2017-04-18T01:57:00.000Z</published>
     <updated>2017-11-01T05:24:54.383Z</updated>
     
@@ -51,8 +51,8 @@
   
   <entry>
     <title>flowchat</title>
-    <link href="https://qooeo.net//flowchat/"/>
-    <id>https://qooeo.net//flowchat/</id>
+    <link href="https://qooeo.net/%5Cflowchat/"/>
+    <id>https://qooeo.net/\flowchat/</id>
     <published>2017-04-12T01:25:46.000Z</published>
     <updated>2017-11-01T05:24:53.898Z</updated>
     
@@ -96,8 +96,8 @@
   
   <entry>
     <title>linux-common-comand</title>
-    <link href="https://qooeo.net//linux-common-comand/"/>
-    <id>https://qooeo.net//linux-common-comand/</id>
+    <link href="https://qooeo.net/%5Clinux-common-comand/"/>
+    <id>https://qooeo.net/\linux-common-comand/</id>
     <published>2017-04-11T02:00:57.000Z</published>
     <updated>2017-11-01T05:24:54.387Z</updated>
     
@@ -118,8 +118,8 @@
   
   <entry>
     <title>cabot install</title>
-    <link href="https://qooeo.net//cabot-install/"/>
-    <id>https://qooeo.net//cabot-install/</id>
+    <link href="https://qooeo.net/%5Ccabot-install/"/>
+    <id>https://qooeo.net/\cabot-install/</id>
     <published>2017-03-29T05:28:59.000Z</published>
     <updated>2017-11-01T05:50:27.390Z</updated>
     
@@ -161,8 +161,8 @@
   
   <entry>
     <title>luigi install</title>
-    <link href="https://qooeo.net//luigi-install/"/>
-    <id>https://qooeo.net//luigi-install/</id>
+    <link href="https://qooeo.net/%5Cluigi-install/"/>
+    <id>https://qooeo.net/\luigi-install/</id>
     <published>2017-03-29T05:14:37.000Z</published>
     <updated>2017-11-01T05:43:25.483Z</updated>
     
@@ -187,8 +187,8 @@
   
   <entry>
     <title>centos repo</title>
-    <link href="https://qooeo.net//centos-repo/"/>
-    <id>https://qooeo.net//centos-repo/</id>
+    <link href="https://qooeo.net/%5Ccentos-repo/"/>
+    <id>https://qooeo.net/\centos-repo/</id>
     <published>2017-03-29T04:11:10.000Z</published>
     <updated>2017-11-01T05:46:53.138Z</updated>
     
@@ -215,8 +215,8 @@
   
   <entry>
     <title>graphite install on centos</title>
-    <link href="https://qooeo.net//graphite-install-on-centos/"/>
-    <id>https://qooeo.net//graphite-install-on-centos/</id>
+    <link href="https://qooeo.net/%5Cgraphite-install-on-centos/"/>
+    <id>https://qooeo.net/\graphite-install-on-centos/</id>
     <published>2017-03-29T02:04:21.000Z</published>
     <updated>2017-11-01T05:24:53.751Z</updated>
     
@@ -260,8 +260,8 @@
   
   <entry>
     <title>linux install nginx</title>
-    <link href="https://qooeo.net//linux-install-nginx/"/>
-    <id>https://qooeo.net//linux-install-nginx/</id>
+    <link href="https://qooeo.net/%5Clinux-install-nginx/"/>
+    <id>https://qooeo.net/\linux-install-nginx/</id>
     <published>2017-03-27T08:18:41.000Z</published>
     <updated>2017-11-01T06:10:24.500Z</updated>
     
@@ -302,8 +302,8 @@ service nginx start
   
   <entry>
     <title>private docker server</title>
-    <link href="https://qooeo.net//private-docker-server/"/>
-    <id>https://qooeo.net//private-docker-server/</id>
+    <link href="https://qooeo.net/%5Cprivate-docker-server/"/>
+    <id>https://qooeo.net/\private-docker-server/</id>
     <published>2017-03-27T07:40:09.000Z</published>
     <updated>2017-11-01T06:09:59.878Z</updated>
     
@@ -348,8 +348,8 @@ service nginx start
   
   <entry>
     <title>javascript packages management</title>
-    <link href="https://qooeo.net//javascript-packages-management/"/>
-    <id>https://qooeo.net//javascript-packages-management/</id>
+    <link href="https://qooeo.net/%5Cjavascript-packages-management/"/>
+    <id>https://qooeo.net/\javascript-packages-management/</id>
     <published>2017-03-24T09:23:49.000Z</published>
     <updated>2017-11-01T05:24:53.688Z</updated>
     
@@ -414,8 +414,8 @@ service nginx start
   
   <entry>
     <title>mysql management</title>
-    <link href="https://qooeo.net//mysql-management/"/>
-    <id>https://qooeo.net//mysql-management/</id>
+    <link href="https://qooeo.net/%5Cmysql-management/"/>
+    <id>https://qooeo.net/\mysql-management/</id>
     <published>2017-03-24T08:48:27.000Z</published>
     <updated>2017-11-01T05:24:53.890Z</updated>
     
@@ -444,8 +444,8 @@ service nginx start
   
   <entry>
     <title>oracle management</title>
-    <link href="https://qooeo.net//oracle-management/"/>
-    <id>https://qooeo.net//oracle-management/</id>
+    <link href="https://qooeo.net/%5Coracle-management/"/>
+    <id>https://qooeo.net/\oracle-management/</id>
     <published>2017-03-23T08:51:24.000Z</published>
     <updated>2017-11-01T05:24:53.705Z</updated>
     
@@ -497,8 +497,8 @@ service nginx start
   
   <entry>
     <title>centos 6.5 install</title>
-    <link href="https://qooeo.net//centos-6-5-install/"/>
-    <id>https://qooeo.net//centos-6-5-install/</id>
+    <link href="https://qooeo.net/%5Ccentos-6-5-install/"/>
+    <id>https://qooeo.net/\centos-6-5-install/</id>
     <published>2017-03-23T08:30:46.000Z</published>
     <updated>2017-11-01T05:24:53.829Z</updated>
     
@@ -534,8 +534,8 @@ service nginx start
   
   <entry>
     <title>pydev template</title>
-    <link href="https://qooeo.net//pydev-template/"/>
-    <id>https://qooeo.net//pydev-template/</id>
+    <link href="https://qooeo.net/%5Cpydev-template/"/>
+    <id>https://qooeo.net/\pydev-template/</id>
     <published>2017-03-10T01:22:05.000Z</published>
     <updated>2017-11-01T05:39:42.804Z</updated>
     
@@ -601,8 +601,8 @@ $&amp;#123;module&amp;#125; -- $&amp;#123;description&amp;#125;
   
   <entry>
     <title>oracle-install-linux</title>
-    <link href="https://qooeo.net//oracle-install-linux/"/>
-    <id>https://qooeo.net//oracle-install-linux/</id>
+    <link href="https://qooeo.net/%5Coracle-install-linux/"/>
+    <id>https://qooeo.net/\oracle-install-linux/</id>
     <published>2017-02-15T07:59:14.000Z</published>
     <updated>2017-02-15T09:09:02.000Z</updated>
     
@@ -946,8 +946,8 @@ PROXY_PORT=
   
   <entry>
     <title>yuncai-dev-doc</title>
-    <link href="https://qooeo.net//yuncai-dev-doc/"/>
-    <id>https://qooeo.net//yuncai-dev-doc/</id>
+    <link href="https://qooeo.net/%5Cyuncai-dev-doc/"/>
+    <id>https://qooeo.net/\yuncai-dev-doc/</id>
     <published>2017-02-15T06:49:25.000Z</published>
     <updated>2017-11-01T05:52:12.044Z</updated>
     
@@ -968,8 +968,8 @@ PROXY_PORT=
   
   <entry>
     <title>software</title>
-    <link href="https://qooeo.net//software/"/>
-    <id>https://qooeo.net//software/</id>
+    <link href="https://qooeo.net/%5Csoftware/"/>
+    <id>https://qooeo.net/\software/</id>
     <published>2017-02-13T02:58:55.000Z</published>
     <updated>2017-11-01T05:32:05.743Z</updated>
     
@@ -1164,8 +1164,8 @@ PROXY_PORT=
   
   <entry>
     <title>server_install</title>
-    <link href="https://qooeo.net//server-install/"/>
-    <id>https://qooeo.net//server-install/</id>
+    <link href="https://qooeo.net/%5Cserver-install/"/>
+    <id>https://qooeo.net/\server-install/</id>
     <published>2017-02-06T03:12:37.000Z</published>
     <updated>2017-11-01T05:37:33.234Z</updated>
     
@@ -1186,8 +1186,8 @@ PROXY_PORT=
   
   <entry>
     <title>data_input</title>
-    <link href="https://qooeo.net//data-input/"/>
-    <id>https://qooeo.net//data-input/</id>
+    <link href="https://qooeo.net/%5Cdata-input/"/>
+    <id>https://qooeo.net/\data-input/</id>
     <published>2017-02-06T03:09:50.000Z</published>
     <updated>2017-11-01T05:24:53.850Z</updated>
     
@@ -1202,8 +1202,8 @@ PROXY_PORT=
   
   <entry>
     <title>Hello World</title>
-    <link href="https://qooeo.net//hello-world/"/>
-    <id>https://qooeo.net//hello-world/</id>
+    <link href="https://qooeo.net/%5Chello-world/"/>
+    <id>https://qooeo.net/\hello-world/</id>
     <published>2017-01-08T08:46:42.000Z</published>
     <updated>2017-01-08T08:46:42.000Z</updated>
     
