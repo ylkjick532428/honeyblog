@@ -1,0 +1,1265 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      Jack Yang
+    
+  </title>
+  <meta name="author" content="ylkjick532428@gmail.com">
+  <meta name="keywords" content>
+  <meta name="description" content>
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/zh-CN/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/zh-CN/css/Annie.css">
+  
+  <!-- jquery -->
+  <script src="/zh-CN/js/jquery.min.js"></script>
+  <script src="/zh-CN/js/lodash.min.js"></script>
+  <script src="/zh-CN/js/coffee-script.js"></script>
+  <script src="/zh-CN/js/raphael.min.js"></script>
+  <script src="/zh-CN/js/diagram-grammar.js"></script>
+  <!-- <script src="/zh-CN/js/jumly.min.js"></script> -->
+
+  
+  
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/zh-CN/js/leancloud.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+	<body>
+		<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="random" data-normal-src="/zh-CN/img/mylove.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/zh-CN/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/zh-CN/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/zh-CN/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/zh-CN/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/zh-CN/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/zh-CN/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/zh-CN/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+		<li class="menu-english">
+			<a href="https://www.qooeo.com/" class="menu-item-english">english</a>
+		</li>
+	
+		<li class="menu-简体">
+			<a href="https://www.qooeo.com/zh-CN" class="menu-item-简体">简体</a>
+		</li>
+	
+		<li class="menu-繁体">
+			<a href="https://www.qooeo.com/zh-TW" class="menu-item-繁体">繁体</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+
+			
+				<script src="//widget.time.is/zh.js"></script>
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<!-- <script type="text/javascript" src="https://rf.revolvermaps.com/0/0/5.js?i=5mfy00et1a3&amp;m=0&amp;c=ff0000&amp;cr1=ffffff" async="async"></!--> -->
+
+<style type="text/css">
+  .header-date {
+    font-size: 1.6rem;
+    color: #000000;
+    position: absolute;
+    bottom: 5px;
+    right: 1rem;
+    writing-mode: tb-rl;
+  }
+
+  .header-date a {
+    border-bottom: none;
+  }
+
+  @media only screen and (max-width: 768) {
+    .header-date {
+      font-size: 1rem;
+    }
+  }
+</style>
+<div class="header-date" id="beijingtime">
+  <a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+  <span id="Beijing_z43d"></span>
+</div>
+
+<!-- <script src="//widget.time.is/zh.js"></script>
+<script src="//widget.time.is/en.js"></script> -->
+
+<script>
+  var getPathname = function getPathname() {
+    var reg = /(\w+-\w+)\/(.*)/;
+    var result = [];
+    var tmpPathname = reg.exec(window.location.pathname);
+    tmpPathname && tmpPathname[1]
+      ? result.push(tmpPathname[1])
+      : result.push("en");
+    return result[0];
+  };
+  var currentLang = getPathname();
+  if (currentLang === "en") {
+    time_is_widget.init({
+		Beijing_z43d: {
+        template: "DATE",
+		date_format: "dayname, monthname dnum, year, week",
+      }
+    });
+  } else {
+    time_is_widget.init({
+      Beijing_z43d: {
+		template: "DATE",
+        date_format: "year年 monthname dnum日"
+      }
+    });
+  }
+</script>
+
+<script></script>
+
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			主页
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>导航</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/zh-CN/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/zh-CN/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/zh-CN/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/zh-CN/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/zh-CN/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/zh-CN/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+		<li class="menu-english">
+			<a href="https://www.qooeo.com/" class="menu-item-english">english</a>
+		</li>
+	
+		<li class="menu-简体">
+			<a href="https://www.qooeo.com/zh-CN" class="menu-item-简体">简体</a>
+		</li>
+	
+		<li class="menu-繁体">
+			<a href="https://www.qooeo.com/zh-TW" class="menu-item-繁体">繁体</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/ylkjick532428" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://weibo.com/ylkjick532428" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/zh-CN/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			
+
+
+
+	<!--pure style-->
+	<div class="layout-pure">
+	<div id="layout-pure">	
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-CN/hello-world/" itemprop="url">
+		Hello World
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new "My New Post"
+
+More info: Writing
+Run serverP1$ hexo server
+
+M...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-CN/hello-world/" itemprop="url">
+		<time datetime="2019-08-15T07:30:56.588Z" itemprop="datePublished">
+	  		2019-08-15
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-CN/hello-world/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-CN/install-elasticsearch-on-linux/" itemprop="url">
+		install elasticsearch on linux
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						Linux安装elasticsearch配置参考下载http://172.16.60.100/tools/elasticsearch/
+配置好JAVA_HOME需要jkd1.7以上版本, 配置好JAVA_HOME
+ES 5.3yum安装rpm包yum install elasticsearch-5.3.0.rpmyum install kibana-5.3.0-x86_64.rpm
+配置文件#/etc/elasticsearch/elasticsearch.yml
+network.host: 127.0.0.1http.port: 9200同样的将Kibana 也设为localhost ...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-CN/install-elasticsearch-on-linux/" itemprop="url">
+		<time datetime="2017-04-18T01:57:00.000Z" itemprop="datePublished">
+	  		2017-04-18
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-CN/install-elasticsearch-on-linux/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-CN/flowchat/" itemprop="url">
+		flowchat
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						
+
+
+$$E=mc^2$$
+$$\sum_{i=1}^n a_i=0$$$$\sum ^ {j-1}{k=0}{\widehat{\gamma} {kj} z k } $$
+$$\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt,.$$
+
+
+
+hellost=>start: Start|past:>http://www.google.com[blank]
+e=>end: End:>http://www.google.com
+op1=>operation: My Operation|past
+op2=>operation: Stuff|current
+sub...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-CN/flowchat/" itemprop="url">
+		<time datetime="2017-04-12T01:25:46.000Z" itemprop="datePublished">
+	  		2017-04-12
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-CN/flowchat/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-CN/linux-common-comand/" itemprop="url">
+		linux-common-comand
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						linux 一些命令工具nginx basic 认证文件生成12yum install httpd-toolshtpasswd -c 生成的认证文件名 用户名
+
+字符串搜索12grep -Ril &apos;搜索内容&apos; ./ ./搜索当前目录
+
+
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-CN/linux-common-comand/" itemprop="url">
+		<time datetime="2017-04-11T02:00:57.000Z" itemprop="datePublished">
+	  		2017-04-11
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-CN/linux-common-comand/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-CN/cabot-install/" itemprop="url">
+		cabot install
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						cabot 安装环境
+centos6.5 64
+python: 2.7
+
+python2.7 安装参考graphite-install-on-centos
+cabot安装参考https://gist.github.com/Gromph/5f4db73b0f38775bc2f0#file-gistfile1-txt-L35http://blog.gaoyuan.xyz/2014/10/01/use-graphite-and-alter-build-monitor-system/
+安装依赖yum install -y openldap openldap-devel libffi libffi...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-CN/cabot-install/" itemprop="url">
+		<time datetime="2017-03-29T05:28:59.000Z" itemprop="datePublished">
+	  		2017-03-29
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-CN/cabot-install/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-CN/luigi-install/" itemprop="url">
+		luigi install
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						luigi 安装官方文档: http://luigi.readthedocs.io/en/latest/中文: https://github.com/17zuoye/luiti/blob/master/README.zh_CN.markdown      http://blog.kissdata.com/2014/05/28/lugi.html#configuration
+安装系统: centos 6.5 64python: 2.7python2.7 安装参考graphite-install-on-centos
+#启动luigi服务端默认端口: 8082/usr/local/python...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-CN/luigi-install/" itemprop="url">
+		<time datetime="2017-03-29T05:14:37.000Z" itemprop="datePublished">
+	  		2017-03-29
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-CN/luigi-install/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-CN/centos-repo/" itemprop="url">
+		centos repo
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						公司centos源centos源列表(翻墙): https://www.centos.org/download/mirrors/epel源列表(翻墙): https://fedoraproject.org/wiki/EPEL163源: http://mirrors.163.com/.help/centos.html
+网路安装服务器172.16.60.203 centos6.5centos6 源12345[vastio_centos6.5]name=install centos6.5baseurl=http://172.16.60.203/centos6.5/enabled=1gpgche...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-CN/centos-repo/" itemprop="url">
+		<time datetime="2017-03-29T04:11:10.000Z" itemprop="datePublished">
+	  		2017-03-29
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-CN/centos-repo/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-CN/graphite-install-on-centos/" itemprop="url">
+		graphite install on centos
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						graphite 安装环境
+centos6.5 64
+python: 2.7公司机器: 172.16.60.139
+
+参考客户端: graphitesend
+中文文档:https://segmentfault.com/search?q=Graphite+%E7%B3%BB%E5%88%97+%235https://lanjingling.github.io/2016/04/04/graphite-1/官网文档: graphite
+安装python2.7123456789101112131415161718192021222324252627282930313233343536373839...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-CN/graphite-install-on-centos/" itemprop="url">
+		<time datetime="2017-03-29T02:04:21.000Z" itemprop="datePublished">
+	  		2017-03-29
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-CN/graphite-install-on-centos/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-CN/linux-install-nginx/" itemprop="url">
+		linux install nginx
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						linux 安装nginx一键安装123456789101112wget http://ip/tools/nginx/nginx-1.10.2.tar.gztar -vxf nginx-1.10.2.tar.gz cd nginx-1.10.2./configure --prefix=/usr/local/nginxyum -y install openssl openssl-devel pcre pcre-devel gcc dos2unixmake &amp;&amp; make installcd /etc/init.d/curl http://ip/tools/nginx/ngi...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-CN/linux-install-nginx/" itemprop="url">
+		<time datetime="2017-03-27T08:18:41.000Z" itemprop="datePublished">
+	  		2017-03-27
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-CN/linux-install-nginx/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-CN/private-docker-server/" itemprop="url">
+		private docker server
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						搭建docker私有服务器公司: 172.16.60.204系统: centos 7 1611版本python: 系统自带2.7.5docker-registry功能增强: Harbor
+国内镜像使用http://www.cnblogs.com/anliven/p/6218741.htmlDaoCloud - Docker加速器阿里云 - 开发者平台微镜像 - 希云cSphere镜像广场 - 时速云灵雀云网易蜂巢
+环境要求docker 需要linux 3.10的内核,centos7centos6.5内核为2.6.32不再支持docker客户端在centos6.5不支持docker 环境要...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-CN/private-docker-server/" itemprop="url">
+		<time datetime="2017-03-27T07:40:09.000Z" itemprop="datePublished">
+	  		2017-03-27
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-CN/private-docker-server/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+	</div>
+
+	
+	<div id="pagination">
+		
+			<a href="/zh-CN/page/2/" data-title="加载更多" data-status="没有了">加载更多</a>
+		
+	</div>
+
+	
+
+</div>
+
+
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/ylkjick532428" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://weibo.com/ylkjick532428" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/zh-CN/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2019, content by ylkjick532428@gmail.com. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<span id='transLangTool'>
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a>
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+			</span>
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/zh-CN/plugin/chinese/chinese.js"></script>
+	<script src="/zh-CN/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/zh-CN/plugin/search/ziploader.js"></script>
+<script src="/zh-CN/plugin/search/search.js"></script>
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/zh-CN/search.zip',
+		version_Path = '/zh-CN/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+<!-- love effect -->
+
+	<script src="/zh-CN/plugin/love/love.js"></script>
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/zh-CN/plugin/vibrant/vibrant.js"></script>
+<script src="/zh-CN/plugin/chinese/chinese.js"></script>
+<script src="/zh-CN/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/zh-CN/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/zh-CN/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/zh-CN/js/resizediv.js"></script>
+<script src="/zh-CN/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+	</body>	
+</html>

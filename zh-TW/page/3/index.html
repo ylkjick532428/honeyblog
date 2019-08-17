@@ -1,0 +1,863 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      Jack Yang
+    
+  </title>
+  <meta name="author" content="ylkjick532428@gmail.com">
+  <meta name="keywords" content>
+  <meta name="description" content>
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/zh-TW/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/zh-TW/css/Annie.css">
+  
+  <!-- jquery -->
+  <script src="/zh-TW/js/jquery.min.js"></script>
+  <script src="/zh-TW/js/lodash.min.js"></script>
+  <script src="/zh-TW/js/coffee-script.js"></script>
+  <script src="/zh-TW/js/raphael.min.js"></script>
+  <script src="/zh-TW/js/diagram-grammar.js"></script>
+  <!-- <script src="/zh-TW/js/jumly.min.js"></script> -->
+
+  
+  
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/zh-TW/js/leancloud.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+	<body>
+		<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="random" data-normal-src="/zh-TW/img/mylove.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/zh-TW/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/zh-TW/" class="menu-item-home">主頁</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/zh-TW/archives" class="menu-item-archive">彙整</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/zh-TW/categories" class="menu-item-categories">分類</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/zh-TW/tags" class="menu-item-tags">標籤</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/zh-TW/about" class="menu-item-about">關於</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/zh-TW/gallery" class="menu-item-gallery">相冊</a>
+		</li>
+	
+		<li class="menu-english">
+			<a href="https://www.qooeo.com/" class="menu-item-english">english</a>
+		</li>
+	
+		<li class="menu-简体">
+			<a href="https://www.qooeo.com/zh-CN" class="menu-item-简体">简体</a>
+		</li>
+	
+		<li class="menu-繁体">
+			<a href="https://www.qooeo.com/zh-TW" class="menu-item-繁体">繁体</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜尋</a>
+		</li>
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+
+			
+				<script src="//widget.time.is/zh.js"></script>
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<!-- <script type="text/javascript" src="https://rf.revolvermaps.com/0/0/5.js?i=5mfy00et1a3&amp;m=0&amp;c=ff0000&amp;cr1=ffffff" async="async"></!--> -->
+
+<style type="text/css">
+  .header-date {
+    font-size: 1.6rem;
+    color: #000000;
+    position: absolute;
+    bottom: 5px;
+    right: 1rem;
+    writing-mode: tb-rl;
+  }
+
+  .header-date a {
+    border-bottom: none;
+  }
+
+  @media only screen and (max-width: 768) {
+    .header-date {
+      font-size: 1rem;
+    }
+  }
+</style>
+<div class="header-date" id="beijingtime">
+  <a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+  <span id="Beijing_z43d"></span>
+</div>
+
+<!-- <script src="//widget.time.is/zh.js"></script>
+<script src="//widget.time.is/en.js"></script> -->
+
+<script>
+  var getPathname = function getPathname() {
+    var reg = /(\w+-\w+)\/(.*)/;
+    var result = [];
+    var tmpPathname = reg.exec(window.location.pathname);
+    tmpPathname && tmpPathname[1]
+      ? result.push(tmpPathname[1])
+      : result.push("en");
+    return result[0];
+  };
+  var currentLang = getPathname();
+  if (currentLang === "en") {
+    time_is_widget.init({
+		Beijing_z43d: {
+        template: "DATE",
+		date_format: "dayname, monthname dnum, year, week",
+      }
+    });
+  } else {
+    time_is_widget.init({
+      Beijing_z43d: {
+		template: "DATE",
+        date_format: "year年 monthname dnum日"
+      }
+    });
+  }
+</script>
+
+<script></script>
+
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目錄</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			主頁
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>導航</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/zh-TW/" class="menu-item-home">主頁</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/zh-TW/archives" class="menu-item-archive">彙整</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/zh-TW/categories" class="menu-item-categories">分類</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/zh-TW/tags" class="menu-item-tags">標籤</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/zh-TW/about" class="menu-item-about">關於</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/zh-TW/gallery" class="menu-item-gallery">相冊</a>
+		</li>
+	
+		<li class="menu-english">
+			<a href="https://www.qooeo.com/" class="menu-item-english">english</a>
+		</li>
+	
+		<li class="menu-简体">
+			<a href="https://www.qooeo.com/zh-CN" class="menu-item-简体">简体</a>
+		</li>
+	
+		<li class="menu-繁体">
+			<a href="https://www.qooeo.com/zh-TW" class="menu-item-繁体">繁体</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜尋</a>
+		</li>
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/ylkjick532428" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://weibo.com/ylkjick532428" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/zh-TW/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			
+
+
+
+	<!--pure style-->
+	<div class="layout-pure">
+	<div id="layout-pure">	
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-TW/oracle-xe/" itemprop="url">
+		oracle_xe
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						oracle xeOracle Database 11g Express Edition (Oracle Database XE) is an entry-level, small-footprint database based on the Oracle Database 11g Release 2 code base.  It’s free to develop, deploy, and distribute; fast to download; and simple to administer.
+This edition suitable for persona, this in...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						發佈於
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-TW/oracle-xe/" itemprop="url">
+		<time datetime="2016-12-26T03:00:50.000Z" itemprop="datePublished">
+	  		2016-12-26
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-TW/oracle-xe/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-TW/cherrypy/" itemprop="url">
+		cherrypy
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						發佈於
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-TW/cherrypy/" itemprop="url">
+		<time datetime="2016-07-28T08:30:03.000Z" itemprop="datePublished">
+	  		2016-07-28
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-TW/cherrypy/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-TW/markdown-images/" itemprop="url">
+		markdown-images
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						
+
+
+
+
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						發佈於
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-TW/markdown-images/" itemprop="url">
+		<time datetime="2016-07-14T14:36:46.000Z" itemprop="datePublished">
+	  		2016-07-14
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-TW/markdown-images/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-TW/math-and-uml/" itemprop="url">
+		math and uml
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						
+
+
+$$E=mc^2$$
+$$\sum_{i=1}^n a_i=0$$$$\sum ^ {j-1}{k=0}{\widehat{\gamma} {kj} z k } $$
+$$\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt,.$$
+Alice->Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob-->Alice: I am good thanks!{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						發佈於
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-TW/math-and-uml/" itemprop="url">
+		<time datetime="2016-07-05T16:05:45.000Z" itemprop="datePublished">
+	  		2016-07-06
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-TW/math-and-uml/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-TW/README/" itemprop="url">
+		README
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						site sourceanother domain:https://qooeo.netgithub backup site:http://ylkjick532428.github.io/honeyblog/GitHub: https://github.com/ylkjick532428
+
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						發佈於
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-TW/README/" itemprop="url">
+		<time datetime="2016-07-04T14:27:35.000Z" itemprop="datePublished">
+	  		2016-07-04
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-TW/README/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+	</div>
+
+	
+	<div id="pagination">
+		
+	</div>
+
+	
+
+</div>
+
+
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/ylkjick532428" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://weibo.com/ylkjick532428" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/zh-TW/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2019, content by ylkjick532428@gmail.com. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<span id='transLangTool'>
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a>
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+			</span>
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/zh-TW/plugin/chinese/chinese.js"></script>
+	<script src="/zh-TW/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/zh-TW/plugin/search/ziploader.js"></script>
+<script src="/zh-TW/plugin/search/search.js"></script>
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/zh-TW/search.zip',
+		version_Path = '/zh-TW/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+<!-- love effect -->
+
+	<script src="/zh-TW/plugin/love/love.js"></script>
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/zh-TW/plugin/vibrant/vibrant.js"></script>
+<script src="/zh-TW/plugin/chinese/chinese.js"></script>
+<script src="/zh-TW/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/zh-TW/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/zh-TW/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/zh-TW/js/resizediv.js"></script>
+<script src="/zh-TW/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+	</body>	
+</html>

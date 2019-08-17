@@ -1,0 +1,1055 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      pydev template | Jack Yang
+    
+  </title>
+  <meta name="author" content="ylkjick532428@gmail.com">
+  <meta name="keywords" content>
+  <meta name="description" content>
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/zh-CN/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/zh-CN/css/Annie.css">
+  
+  <!-- jquery -->
+  <script src="/zh-CN/js/jquery.min.js"></script>
+  <script src="/zh-CN/js/lodash.min.js"></script>
+  <script src="/zh-CN/js/coffee-script.js"></script>
+  <script src="/zh-CN/js/raphael.min.js"></script>
+  <script src="/zh-CN/js/diagram-grammar.js"></script>
+  <!-- <script src="/zh-CN/js/jumly.min.js"></script> -->
+
+  
+  
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/zh-CN/js/leancloud.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+	<body>
+		<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="random" data-normal-src="/zh-CN/img/mylove.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/zh-CN/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/zh-CN/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/zh-CN/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/zh-CN/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/zh-CN/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/zh-CN/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/zh-CN/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+		<li class="menu-english">
+			<a href="https://www.qooeo.com/" class="menu-item-english">english</a>
+		</li>
+	
+		<li class="menu-简体">
+			<a href="https://www.qooeo.com/zh-CN" class="menu-item-简体">简体</a>
+		</li>
+	
+		<li class="menu-繁体">
+			<a href="https://www.qooeo.com/zh-TW" class="menu-item-繁体">繁体</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+
+			
+				<script src="//widget.time.is/zh.js"></script>
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<!-- <script type="text/javascript" src="https://rf.revolvermaps.com/0/0/5.js?i=5mfy00et1a3&amp;m=0&amp;c=ff0000&amp;cr1=ffffff" async="async"></!--> -->
+
+<style type="text/css">
+  .header-date {
+    font-size: 1.6rem;
+    color: #000000;
+    position: absolute;
+    bottom: 5px;
+    right: 1rem;
+    writing-mode: tb-rl;
+  }
+
+  .header-date a {
+    border-bottom: none;
+  }
+
+  @media only screen and (max-width: 768) {
+    .header-date {
+      font-size: 1rem;
+    }
+  }
+</style>
+<div class="header-date" id="beijingtime">
+  <a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+  <span id="Beijing_z43d"></span>
+</div>
+
+<!-- <script src="//widget.time.is/zh.js"></script>
+<script src="//widget.time.is/en.js"></script> -->
+
+<script>
+  var getPathname = function getPathname() {
+    var reg = /(\w+-\w+)\/(.*)/;
+    var result = [];
+    var tmpPathname = reg.exec(window.location.pathname);
+    tmpPathname && tmpPathname[1]
+      ? result.push(tmpPathname[1])
+      : result.push("en");
+    return result[0];
+  };
+  var currentLang = getPathname();
+  if (currentLang === "en") {
+    time_is_widget.init({
+		Beijing_z43d: {
+        template: "DATE",
+		date_format: "dayname, monthname dnum, year, week",
+      }
+    });
+  } else {
+    time_is_widget.init({
+      Beijing_z43d: {
+		template: "DATE",
+        date_format: "year年 monthname dnum日"
+      }
+    });
+  }
+</script>
+
+<script></script>
+
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			当前文章&nbsp;:&nbsp;《pydev template》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>导航</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/zh-CN/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/zh-CN/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/zh-CN/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/zh-CN/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/zh-CN/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/zh-CN/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+		<li class="menu-english">
+			<a href="https://www.qooeo.com/" class="menu-item-english">english</a>
+		</li>
+	
+		<li class="menu-简体">
+			<a href="https://www.qooeo.com/zh-CN" class="menu-item-简体">简体</a>
+		</li>
+	
+		<li class="menu-繁体">
+			<a href="https://www.qooeo.com/zh-TW" class="menu-item-繁体">繁体</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/ylkjick532428" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://weibo.com/ylkjick532428" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/zh-CN/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/zh-CN/plugin/toc/katelog.min.js"></script>
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	<a href="/zh-CN/pydev-template/" itemprop="url">
+		pydev template
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	发布于
+
+	<a href="/zh-CN/pydev-template/" itemprop="url">
+		<time datetime="2017-03-10T01:22:05.000Z" itemprop="datePublished">
+	  		2017-03-10
+	  </time>
+	</a>
+	&nbsp;
+
+
+
+
+
+			
+
+
+
+
+	更新于
+
+	<a href="/zh-CN/pydev-template/" itemprop="url">
+		<time datetime="2017-03-10T01:22:05.000Z" itemprop="dateUpdated">
+	  		2019-08-15
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+			
+	
+		<a href="/zh-CN/tags/python/" class=" ">
+			python
+		</a>
+	
+		<a href="/zh-CN/tags/pydev/" class=" ">
+			pydev
+		</a>
+	
+		<a href="/zh-CN/tags/eclipse/" class=" ">
+			eclipse
+		</a>
+	
+		
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<h1><span id="pydev-使用模板新建代码">pydev 使用模板新建代码</span></h1><h2><span id="新建模板">新建模板</span></h2><img src="/zh-CN/pydev-template/1.png" width="1">
+<img src="/zh-CN/pydev-template/2.png" width="2">
+<img src="/zh-CN/pydev-template/3.png" width="3">
+
+<h2><span id="使用模板创建文件">使用模板创建文件</span></h2><img src="/zh-CN/pydev-template/4.png" width="4">
+<img src="/zh-CN/pydev-template/5.png" width="5">
+<img src="/zh-CN/pydev-template/6.png" width="6">
+
+<h2><span id="例子">例子:</span></h2><h3><span id="接受命令行参数-my-argparse">接受命令行参数: my argparse</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">$&#123;module&#125; -- $&#123;shortdesc&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">$&#123;module&#125; -- $&#123;description&#125; </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">@author:    user name</span></span><br><span class="line"><span class="string">@copyright: .com All rights reserved.</span></span><br><span class="line"><span class="string">@contact:   @email.com</span></span><br><span class="line"><span class="string">@created:   $&#123;date&#125;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"><span class="keyword">import</span> platform</span><br><span class="line"></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="comment"># get_args : 获得命令行参数</span></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_args</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(sys.argv) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">"place use:\npython3 %s -h"</span> % sys.argv[<span class="number">0</span>])</span><br><span class="line">        <span class="comment">#sys.exit(0)</span></span><br><span class="line">        </span><br><span class="line">    parser = argparse.ArgumentParser(description=<span class="string">u''</span>)</span><br><span class="line">    parser.add_argument(<span class="string">'--init'</span>, help=<span class="string">u"init default=False"</span>, default=<span class="string">"False"</span>, choices=[<span class="string">"True"</span>, <span class="string">"False"</span>], required=<span class="literal">True</span>)</span><br><span class="line">    args = parser.parse_args()</span><br><span class="line">    args.init = <span class="literal">True</span> <span class="keyword">if</span> args.init == <span class="string">"True"</span> <span class="keyword">else</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> args</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    args = get_args()</span><br></pre></td></tr></table></figure>
+
+<h3><span id="类-module-class">类: Module: Class</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">$&#123;module&#125; -- $&#123;shortdesc&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">$&#123;module&#125; -- $&#123;description&#125; </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">@author:    user name</span></span><br><span class="line"><span class="string">@copyright: .com All rights reserved.</span></span><br><span class="line"><span class="string">@contact:   @email.com</span></span><br><span class="line"><span class="string">@created:   $&#123;date&#125;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">class $&#123;MyClass&#125;($&#123;object&#125;):</span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    $&#123;classdocs&#125;</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, $&#123;params&#125;)</span>:</span></span><br><span class="line">        <span class="string">'''</span></span><br><span class="line"><span class="string">        $&#123;Constructor&#125;</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        $&#123;cursor&#125;</span><br></pre></td></tr></table></figure>	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/zh-CN/img/body.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相关文章</div>
+				<div>评论</div>
+				<div>分享</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+			<a href="/zh-CN/centos-6-5-install/" title="centos 6.5 install" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/zh-CN/oracle-install-linux/" title="oracle-install-linux" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-CN/cherrypy/" title="cherrypy">
+								cherrypy			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								七月 28日, 2016				
+							</p>
+							<p class="relate-post-content">
+								123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-CN/cherrypy/" title="cherrypy">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="cherrypy"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-CN/hello-world/" title="Hello World">
+								Hello World			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								八月 15日, 2019				
+							</p>
+							<p class="relate-post-content">
+								Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-CN/hello-world/" title="Hello World">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="Hello World"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-CN/install-elasticsearch-on-linux/" title="install elasticsearch on linux">
+								install elasticsearch on linux			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 18日, 2017				
+							</p>
+							<p class="relate-post-content">
+								Linux安装elasticsearch配置参考下载http://172.16.60.100/tools/elasticsearch/
+配置好JAVA_HOME需要jkd1.7以上版本, 配置好JAVA_HOME
+ES 5.3yum安...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-CN/install-elasticsearch-on-linux/" title="install elasticsearch on linux">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="install elasticsearch on linux"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-CN/flowchat/" title="flowchat">
+								flowchat			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 12日, 2017				
+							</p>
+							<p class="relate-post-content">
+								
+
+
+$$E=mc^2$$
+$$\sum_{i=1}^n a_i=0$$$$\sum ^ {j-1}{k=0}{\widehat{\gamma} {kj} z k } $$
+$$\Gamma(z) = \int_0^\infty t^...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-CN/flowchat/" title="flowchat">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="flowchat"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-CN/linux-common-comand/" title="linux-common-comand">
+								linux-common-comand			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 11日, 2017				
+							</p>
+							<p class="relate-post-content">
+								linux 一些命令工具nginx basic 认证文件生成12yum install httpd-toolshtpasswd -c 生成的认证文件名 用户名
+
+字符串搜索12grep -Ril &apos;搜索内容&apos; ./...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-CN/linux-common-comand/" title="linux-common-comand">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="linux-common-comand"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-CN/cabot-install/" title="cabot install">
+								cabot install			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 29日, 2017				
+							</p>
+							<p class="relate-post-content">
+								cabot 安装环境
+centos6.5 64
+python: 2.7
+
+python2.7 安装参考graphite-install-on-centos
+cabot安装参考https://gist.github.com/Gromph...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-CN/cabot-install/" title="cabot install">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="cabot install"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-CN/luigi-install/" title="luigi install">
+								luigi install			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 29日, 2017				
+							</p>
+							<p class="relate-post-content">
+								luigi 安装官方文档: http://luigi.readthedocs.io/en/latest/中文: https://github.com/17zuoye/luiti/blob/master/README.zh_CN.mar...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-CN/luigi-install/" title="luigi install">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="luigi install"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-CN/centos-repo/" title="centos repo">
+								centos repo			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 29日, 2017				
+							</p>
+							<p class="relate-post-content">
+								公司centos源centos源列表(翻墙): https://www.centos.org/download/mirrors/epel源列表(翻墙): https://fedoraproject.org/wiki/EPEL163源:...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-CN/centos-repo/" title="centos repo">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="centos repo"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-CN/graphite-install-on-centos/" title="graphite install on centos">
+								graphite install on centos			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 29日, 2017				
+							</p>
+							<p class="relate-post-content">
+								graphite 安装环境
+centos6.5 64
+python: 2.7公司机器: 172.16.60.139
+
+参考客户端: graphitesend
+中文文档:https://segmentfault.com/search?q...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-CN/graphite-install-on-centos/" title="graphite install on centos">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="graphite install on centos"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-CN/linux-install-nginx/" title="linux install nginx">
+								linux install nginx			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 27日, 2017				
+							</p>
+							<p class="relate-post-content">
+								linux 安装nginx一键安装123456789101112wget http://ip/tools/nginx/nginx-1.10.2.tar.gztar -vxf nginx-1.10.2.tar.gz cd nginx-1...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-CN/linux-install-nginx/" title="linux install nginx">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="linux install nginx"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+		</ul>
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+
+<!-- show math formula -->
+
+
+<!-- Chart Render -->
+
+<!-- End Chart Render -->
+
+
+
+	 
+	<script src="/zh-CN/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/zh-CN/plugin/fancybox/jquery.fancybox.css">
+<script src="/zh-CN/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/ylkjick532428" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://weibo.com/ylkjick532428" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/zh-CN/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2019, content by ylkjick532428@gmail.com. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<span id='transLangTool'>
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a>
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+			</span>
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/zh-CN/plugin/chinese/chinese.js"></script>
+	<script src="/zh-CN/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/zh-CN/plugin/search/ziploader.js"></script>
+<script src="/zh-CN/plugin/search/search.js"></script>
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/zh-CN/search.zip',
+		version_Path = '/zh-CN/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+<!-- love effect -->
+
+	<script src="/zh-CN/plugin/love/love.js"></script>
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/zh-CN/plugin/vibrant/vibrant.js"></script>
+<script src="/zh-CN/plugin/chinese/chinese.js"></script>
+<script src="/zh-CN/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/zh-CN/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/zh-CN/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/zh-CN/js/resizediv.js"></script>
+<script src="/zh-CN/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+	</body>	
+</html>

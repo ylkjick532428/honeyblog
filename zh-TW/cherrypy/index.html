@@ -1,0 +1,1043 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      cherrypy | Jack Yang
+    
+  </title>
+  <meta name="author" content="ylkjick532428@gmail.com">
+  <meta name="keywords" content>
+  <meta name="description" content>
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/zh-TW/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/zh-TW/css/Annie.css">
+  
+  <!-- jquery -->
+  <script src="/zh-TW/js/jquery.min.js"></script>
+  <script src="/zh-TW/js/lodash.min.js"></script>
+  <script src="/zh-TW/js/coffee-script.js"></script>
+  <script src="/zh-TW/js/raphael.min.js"></script>
+  <script src="/zh-TW/js/diagram-grammar.js"></script>
+  <!-- <script src="/zh-TW/js/jumly.min.js"></script> -->
+
+  
+  
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/zh-TW/js/leancloud.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+	<body>
+		<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="random" data-normal-src="/zh-TW/img/mylove.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/zh-TW/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/zh-TW/" class="menu-item-home">主頁</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/zh-TW/archives" class="menu-item-archive">彙整</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/zh-TW/categories" class="menu-item-categories">分類</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/zh-TW/tags" class="menu-item-tags">標籤</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/zh-TW/about" class="menu-item-about">關於</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/zh-TW/gallery" class="menu-item-gallery">相冊</a>
+		</li>
+	
+		<li class="menu-english">
+			<a href="https://www.qooeo.com/" class="menu-item-english">english</a>
+		</li>
+	
+		<li class="menu-简体">
+			<a href="https://www.qooeo.com/zh-CN" class="menu-item-简体">简体</a>
+		</li>
+	
+		<li class="menu-繁体">
+			<a href="https://www.qooeo.com/zh-TW" class="menu-item-繁体">繁体</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜尋</a>
+		</li>
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+
+			
+				<script src="//widget.time.is/zh.js"></script>
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<!-- <script type="text/javascript" src="https://rf.revolvermaps.com/0/0/5.js?i=5mfy00et1a3&amp;m=0&amp;c=ff0000&amp;cr1=ffffff" async="async"></!--> -->
+
+<style type="text/css">
+  .header-date {
+    font-size: 1.6rem;
+    color: #000000;
+    position: absolute;
+    bottom: 5px;
+    right: 1rem;
+    writing-mode: tb-rl;
+  }
+
+  .header-date a {
+    border-bottom: none;
+  }
+
+  @media only screen and (max-width: 768) {
+    .header-date {
+      font-size: 1rem;
+    }
+  }
+</style>
+<div class="header-date" id="beijingtime">
+  <a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+  <span id="Beijing_z43d"></span>
+</div>
+
+<!-- <script src="//widget.time.is/zh.js"></script>
+<script src="//widget.time.is/en.js"></script> -->
+
+<script>
+  var getPathname = function getPathname() {
+    var reg = /(\w+-\w+)\/(.*)/;
+    var result = [];
+    var tmpPathname = reg.exec(window.location.pathname);
+    tmpPathname && tmpPathname[1]
+      ? result.push(tmpPathname[1])
+      : result.push("en");
+    return result[0];
+  };
+  var currentLang = getPathname();
+  if (currentLang === "en") {
+    time_is_widget.init({
+		Beijing_z43d: {
+        template: "DATE",
+		date_format: "dayname, monthname dnum, year, week",
+      }
+    });
+  } else {
+    time_is_widget.init({
+      Beijing_z43d: {
+		template: "DATE",
+        date_format: "year年 monthname dnum日"
+      }
+    });
+  }
+</script>
+
+<script></script>
+
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目錄</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			當前文章&nbsp;:&nbsp;《cherrypy》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>導航</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/zh-TW/" class="menu-item-home">主頁</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/zh-TW/archives" class="menu-item-archive">彙整</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/zh-TW/categories" class="menu-item-categories">分類</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/zh-TW/tags" class="menu-item-tags">標籤</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/zh-TW/about" class="menu-item-about">關於</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/zh-TW/gallery" class="menu-item-gallery">相冊</a>
+		</li>
+	
+		<li class="menu-english">
+			<a href="https://www.qooeo.com/" class="menu-item-english">english</a>
+		</li>
+	
+		<li class="menu-简体">
+			<a href="https://www.qooeo.com/zh-CN" class="menu-item-简体">简体</a>
+		</li>
+	
+		<li class="menu-繁体">
+			<a href="https://www.qooeo.com/zh-TW" class="menu-item-繁体">繁体</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜尋</a>
+		</li>
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/ylkjick532428" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://weibo.com/ylkjick532428" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/zh-TW/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	<a href="/zh-TW/cherrypy/" itemprop="url">
+		cherrypy
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	發佈於
+
+	<a href="/zh-TW/cherrypy/" itemprop="url">
+		<time datetime="2016-07-28T08:30:03.000Z" itemprop="datePublished">
+	  		2016-07-28
+	  </time>
+	</a>
+	&nbsp;
+
+
+
+
+
+			
+
+
+
+
+	更新於
+
+	<a href="/zh-TW/cherrypy/" itemprop="url">
+		<time datetime="2016-07-28T08:30:03.000Z" itemprop="dateUpdated">
+	  		2019-08-15
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+			
+	
+		<a href="/zh-TW/tags/python/" class=" ">
+			python
+		</a>
+	
+		<a href="/zh-TW/tags/cherrypy/" class=" ">
+			cherrypy
+		</a>
+	
+		
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding：utf-8 -*-</span></span><br><span class="line"><span class="comment"># json数据编辑功能</span></span><br><span class="line"><span class="keyword">import</span> cherrypy</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> codecs</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line">sys.path.append(<span class="string">"../"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> mako.template <span class="keyword">import</span> Template</span><br><span class="line"><span class="keyword">from</span> mako.lookup <span class="keyword">import</span> TemplateLookup</span><br><span class="line"><span class="keyword">from</span> cherrypy.lib <span class="keyword">import</span> auth_basic</span><br><span class="line"></span><br><span class="line">output_dir = <span class="string">"work_path"</span></span><br><span class="line">lookup = TemplateLookup(directories=[<span class="string">'static'</span>], input_encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">USERS = &#123;<span class="string">'vastio'</span>:<span class="string">'vastio'</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="comment"># save_json : 保存</span></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_json</span><span class="params">(data, file_name)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> data:</span><br><span class="line">        output_file = codecs.open(<span class="string">"%s/%s"</span> % (output_dir, file_name), <span class="string">"w"</span>, <span class="string">"utf8"</span>)</span><br><span class="line">        text = json.dumps(data, indent=<span class="number">1</span>, sort_keys=<span class="literal">True</span>, ensure_ascii=<span class="literal">False</span>)</span><br><span class="line">        output_file.write(text)</span><br><span class="line">        output_file.close()</span><br><span class="line">    </span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="comment"># get_json : 读取</span></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_json</span><span class="params">(file_name)</span>:</span></span><br><span class="line">    input_file = codecs.open(<span class="string">"%s/%s"</span> % (output_dir, file_name), <span class="string">"r"</span>, <span class="string">"utf8"</span>)</span><br><span class="line">    text = input_file.read()</span><br><span class="line">    data = json.loads(text)</span><br><span class="line">    input_file.close()</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"><span class="comment">#===========================================================================</span></span><br><span class="line"><span class="comment"># get_crontab</span></span><br><span class="line"><span class="comment">#===========================================================================</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_crontab</span><span class="params">()</span>:</span></span><br><span class="line">    crontab = get_json(<span class="string">"crontab.json"</span>)</span><br><span class="line">    <span class="keyword">return</span> crontab</span><br><span class="line"></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="comment"># save_crontab</span></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_crontab</span><span class="params">(crontab)</span>:</span></span><br><span class="line">    save_json(crontab, <span class="string">"crontab.json"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="comment"># error_page_404 : 404 error</span></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">error_page_404</span><span class="params">(status, message, traceback, version)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"404 Error!"</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="comment"># error_page_401 : 401 error</span></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">error_page_401</span><span class="params">(status, message, traceback, version)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"login error 401 Error!"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="comment"># validate_password : basic 认证</span></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">validate_password</span><span class="params">(realm, username, password)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> username <span class="keyword">in</span> USERS <span class="keyword">and</span> USERS[username] == password:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span> </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    </span><br><span class="line">cherrypy.config.update(&#123;<span class="string">'server.socket_port'</span>:<span class="number">8080</span>, <span class="string">"server.socket_host"</span>: <span class="string">"0.0.0.0"</span>, <span class="string">"engine.autoreload_on"</span>: <span class="literal">True</span>&#125;)</span><br><span class="line">cherrypy.config.update(&#123;<span class="string">'error_page.404'</span>: error_page_404&#125;)</span><br><span class="line">cherrypy.config.update(&#123;<span class="string">'error_page.401'</span>: error_page_401&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="comment"># OverviewController</span></span><br><span class="line"><span class="comment">#===============================================================================</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OverviewController</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line">    <span class="comment"># get_zrqk : 昨日情况</span></span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_zrqk</span><span class="params">(self)</span>:</span></span><br><span class="line">        key_list = [<span class="string">"110呼入"</span>,<span class="string">"有效报警"</span>,<span class="string">"CK"</span>,<span class="string">"移车警情"</span>,<span class="string">"直处"</span>,<span class="string">"下发"</span>,<span class="string">"违法犯罪"</span>,<span class="string">"交通"</span>,<span class="string">"求助"</span>,<span class="string">"举报"</span>,<span class="string">"纠纷"</span>]</span><br><span class="line">        old_data = get_json(<span class="string">"zrqk.json"</span>)</span><br><span class="line">        value_list = []</span><br><span class="line">        <span class="keyword">for</span> key <span class="keyword">in</span> key_list:</span><br><span class="line">            <span class="keyword">if</span> key <span class="keyword">in</span> old_data:</span><br><span class="line">                value_list.append(old_data[key])</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                value_list.append(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> key_list, value_list</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line">    <span class="comment"># get_zrqk : 盘查入所拘留</span></span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_pc_rs_jl</span><span class="params">(self)</span>:</span></span><br><span class="line">        key_list = [<span class="string">"今日盘查"</span>,<span class="string">"今日入所"</span>,<span class="string">"今日拘留"</span>,<span class="string">"今日取保"</span>,<span class="string">"今日逮捕"</span>]</span><br><span class="line">        old_data = get_json(<span class="string">"pc_rs_jl.json"</span>)</span><br><span class="line">        value_list = []</span><br><span class="line">        <span class="keyword">for</span> key <span class="keyword">in</span> key_list:</span><br><span class="line">            <span class="keyword">if</span> key <span class="keyword">in</span> old_data:</span><br><span class="line">                value_list.append(old_data[key])</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                value_list.append(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> key_list, value_list</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line">    <span class="comment"># get_jq_category : 警情分类</span></span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_jq_category</span><span class="params">(self)</span>:</span></span><br><span class="line">        key_list = [<span class="string">"交通类警情"</span>,<span class="string">"处警量"</span>,<span class="string">"接警量"</span>,<span class="string">"求助类警情"</span>,<span class="string">"违法犯罪警情"</span>]</span><br><span class="line">        old_data = get_json(<span class="string">"jq_category.json"</span>)</span><br><span class="line">        zr_value_list = []</span><br><span class="line">        tq_value_list = []</span><br><span class="line">        <span class="keyword">for</span> key <span class="keyword">in</span> key_list:</span><br><span class="line">            <span class="keyword">if</span> key <span class="keyword">in</span> old_data[<span class="string">"同期"</span>]:</span><br><span class="line">                tq_value_list.append(old_data[<span class="string">"同期"</span>][key])</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                tq_value_list.append(<span class="number">0</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> key <span class="keyword">in</span> old_data[<span class="string">"昨日"</span>]:</span><br><span class="line">                zr_value_list.append(old_data[<span class="string">"昨日"</span>][key])</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                zr_value_list.append(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> key_list, zr_value_list, tq_value_list</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line">    <span class="comment"># get_crontab</span></span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_crontab</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            crontab = get_crontab()</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            crontab = &#123;&#125;</span><br><span class="line">        crontab_list = [<span class="string">"zrqk_crontab"</span>, <span class="string">"jq_category_crontab"</span>, <span class="string">"pc_rs_jl_crontab"</span>]</span><br><span class="line">        result = []</span><br><span class="line">        <span class="keyword">for</span> key <span class="keyword">in</span> crontab_list:</span><br><span class="line">            <span class="keyword">if</span> key <span class="keyword">not</span> <span class="keyword">in</span> crontab:</span><br><span class="line">                result.append(<span class="literal">False</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                result.append(crontab[key])</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line">    <span class="comment"># save_crontab</span></span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save_crontab</span><span class="params">(self, key, value)</span>:</span></span><br><span class="line">        crontab = get_crontab()</span><br><span class="line">        <span class="keyword">if</span> value <span class="keyword">in</span> [<span class="literal">True</span>, <span class="string">"1"</span>, <span class="string">"true"</span>, <span class="string">"True"</span>, <span class="string">"TRUE"</span>, <span class="string">"yes"</span>, <span class="string">"YES"</span>, <span class="string">"Yes"</span>, <span class="number">1</span>]:</span><br><span class="line">            tmp_value = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            tmp_value = <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        crontab[key] = tmp_value</span><br><span class="line">        save_crontab(crontab)</span><br><span class="line">        </span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line">    <span class="comment"># index</span></span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line"><span class="meta">    @cherrypy.expose</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(self)</span>:</span></span><br><span class="line">        zrqk_key_list, zrqk_value_list = self.get_zrqk()</span><br><span class="line">        pc_rs_jl_key_list, pc_rs_jl_value_list = self.get_pc_rs_jl()</span><br><span class="line">        jq_category_key_list, zr_value_list, tq_value_list = self.get_jq_category()</span><br><span class="line">        tmpl = lookup.get_template(<span class="string">"index_table.html"</span>)</span><br><span class="line">        zrqk_crontab, jq_category_crontab, pc_rs_jl_crontab = self.get_crontab()</span><br><span class="line">        <span class="keyword">print</span> (zrqk_crontab, jq_category_crontab, pc_rs_jl_crontab)</span><br><span class="line">        <span class="keyword">return</span> tmpl.render(TATLE_TEMPLATE_TEXT=<span class="string">"吴江大屏"</span>, zrqk_key_list=zrqk_key_list, zrqk_value_list=zrqk_value_list,</span><br><span class="line">                           pc_rs_jl_key_list=pc_rs_jl_key_list, pc_rs_jl_value_list=pc_rs_jl_value_list,</span><br><span class="line">                           jq_category_key_list=jq_category_key_list, zr_value_list=zr_value_list, tq_value_list=tq_value_list,</span><br><span class="line">                           zrqk_crontab=zrqk_crontab, jq_category_crontab=jq_category_crontab, pc_rs_jl_crontab=pc_rs_jl_crontab)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line">    <span class="comment"># poi 取得</span></span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line"><span class="meta">    @cherrypy.expose</span></span><br><span class="line"><span class="meta">    @cherrypy.tools.json_in()</span></span><br><span class="line"><span class="meta">    @cherrypy.tools.json_out()</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update</span><span class="params">(self, name = None, **kwargs)</span>:</span></span><br><span class="line">        result = &#123;&#125;</span><br><span class="line">        <span class="keyword">if</span> name == <span class="string">"zrqk"</span>:</span><br><span class="line">            self.save_crontab(<span class="string">"zrqk_crontab"</span>, kwargs[<span class="string">"crontab"</span>])</span><br><span class="line">            <span class="keyword">del</span> kwargs[<span class="string">"crontab"</span>]</span><br><span class="line">            </span><br><span class="line">            save_json(kwargs, <span class="string">"zrqk.json"</span>)</span><br><span class="line">            result[<span class="string">'data'</span>] = kwargs</span><br><span class="line">            result[<span class="string">'status'</span>] = <span class="string">"success"</span></span><br><span class="line">            result[<span class="string">'code'</span>] = <span class="number">200</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">elif</span> name == <span class="string">"pc_rs_jl"</span>:</span><br><span class="line">            self.save_crontab(<span class="string">"pc_rs_jl_crontab"</span>, kwargs[<span class="string">"crontab"</span>])</span><br><span class="line">            <span class="keyword">del</span> kwargs[<span class="string">"crontab"</span>]</span><br><span class="line"></span><br><span class="line">            save_json(kwargs, <span class="string">"pc_rs_jl.json"</span>)</span><br><span class="line">            result[<span class="string">'data'</span>] = kwargs</span><br><span class="line">            result[<span class="string">'status'</span>] = <span class="string">"success"</span></span><br><span class="line">            result[<span class="string">'code'</span>] = <span class="number">200</span></span><br><span class="line">        <span class="keyword">elif</span> name == <span class="string">"jq_category"</span>:</span><br><span class="line">            self.save_crontab(<span class="string">"jq_category_crontab"</span>, kwargs[<span class="string">"crontab"</span>])</span><br><span class="line">            <span class="keyword">del</span> kwargs[<span class="string">"crontab"</span>]</span><br><span class="line">            </span><br><span class="line">            tmp_value = &#123;&#125;</span><br><span class="line">            <span class="keyword">for</span> tmp_key <span class="keyword">in</span> kwargs:</span><br><span class="line">                key_one, key_two = tmp_key.split(<span class="string">"_"</span>)</span><br><span class="line">                <span class="keyword">if</span> key_one <span class="keyword">not</span> <span class="keyword">in</span> tmp_value:</span><br><span class="line">                    tmp_value[key_one] = &#123;&#125;</span><br><span class="line">                tmp_value[key_one][key_two] = kwargs[tmp_key]</span><br><span class="line">            save_json(tmp_value, <span class="string">"jq_category.json"</span>)</span><br><span class="line">            result[<span class="string">'data'</span>] = tmp_value</span><br><span class="line">            result[<span class="string">'status'</span>] = <span class="string">"success"</span></span><br><span class="line">            result[<span class="string">'code'</span>] = <span class="number">200</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">        </span><br><span class="line">    </span><br><span class="line">overview = OverviewController()</span><br><span class="line"></span><br><span class="line">parent_dir = os.path.dirname(os.path.abspath(__file__))</span><br><span class="line">parent_dir = parent_dir.replace(<span class="string">"\\"</span>, <span class="string">"/"</span>)</span><br><span class="line">static_dir = <span class="string">"%s/%s"</span> % (parent_dir, <span class="string">'static/'</span>)</span><br><span class="line"><span class="keyword">print</span> (parent_dir, static_dir)</span><br><span class="line">conf = &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="string">'crime'</span>: &#123;<span class="string">'request.dispatch'</span>: cherrypy.dispatch.RoutesDispatcher(),</span><br><span class="line">                  </span><br><span class="line">            &#125;,</span><br><span class="line">        <span class="string">'/'</span>: &#123;</span><br><span class="line">                <span class="string">'tools.auth_basic.on'</span>: <span class="literal">True</span>,</span><br><span class="line">                <span class="string">'tools.auth_basic.realm'</span>: <span class="string">'wu jiang'</span>,</span><br><span class="line">                <span class="string">'tools.auth_basic.checkpassword'</span>: validate_password</span><br><span class="line">            &#125;,</span><br><span class="line">        <span class="string">'/static'</span>: &#123;</span><br><span class="line">        <span class="string">'tools.staticdir.on'</span>: <span class="literal">True</span>,</span><br><span class="line">        <span class="string">'tools.staticdir.root'</span>: parent_dir,</span><br><span class="line">        <span class="string">'tools.staticdir.dir'</span>: <span class="string">'static'</span>,</span><br><span class="line">        <span class="string">'tools.staticdir.index'</span>: <span class="string">'index.html'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</span><br><span class="line">    cherrypy.quickstart(overview, <span class="string">'/'</span>, config=conf)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/zh-TW/img/body.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相關文章</div>
+				<div>留言</div>
+				<div>分享</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回頂部</a>
+		
+			<a href="/zh-TW/oracle-xe/" title="oracle_xe" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/zh-TW/markdown-images/" title="markdown-images" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-TW/pydev-template/" title="pydev template">
+								pydev template			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 10日, 2017				
+							</p>
+							<p class="relate-post-content">
+								pydev 使用模板新建代码新建模板
+
+
+
+使用模板创建文件
+
+
+
+例子:接受命令行参数: my argparse123456789101112131415161718192021222324252627282930313233343...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-TW/pydev-template/" title="pydev template">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="pydev template"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-TW/hello-world/" title="Hello World">
+								Hello World			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								八月 15日, 2019				
+							</p>
+							<p class="relate-post-content">
+								Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-TW/hello-world/" title="Hello World">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="Hello World"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-TW/install-elasticsearch-on-linux/" title="install elasticsearch on linux">
+								install elasticsearch on linux			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 18日, 2017				
+							</p>
+							<p class="relate-post-content">
+								Linux安装elasticsearch配置参考下载http://172.16.60.100/tools/elasticsearch/
+配置好JAVA_HOME需要jkd1.7以上版本, 配置好JAVA_HOME
+ES 5.3yum安...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-TW/install-elasticsearch-on-linux/" title="install elasticsearch on linux">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="install elasticsearch on linux"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-TW/flowchat/" title="flowchat">
+								flowchat			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 12日, 2017				
+							</p>
+							<p class="relate-post-content">
+								
+
+
+$$E=mc^2$$
+$$\sum_{i=1}^n a_i=0$$$$\sum ^ {j-1}{k=0}{\widehat{\gamma} {kj} z k } $$
+$$\Gamma(z) = \int_0^\infty t^...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-TW/flowchat/" title="flowchat">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="flowchat"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-TW/linux-common-comand/" title="linux-common-comand">
+								linux-common-comand			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 11日, 2017				
+							</p>
+							<p class="relate-post-content">
+								linux 一些命令工具nginx basic 认证文件生成12yum install httpd-toolshtpasswd -c 生成的认证文件名 用户名
+
+字符串搜索12grep -Ril &apos;搜索内容&apos; ./...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-TW/linux-common-comand/" title="linux-common-comand">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="linux-common-comand"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-TW/cabot-install/" title="cabot install">
+								cabot install			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 29日, 2017				
+							</p>
+							<p class="relate-post-content">
+								cabot 安装环境
+centos6.5 64
+python: 2.7
+
+python2.7 安装参考graphite-install-on-centos
+cabot安装参考https://gist.github.com/Gromph...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-TW/cabot-install/" title="cabot install">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="cabot install"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-TW/luigi-install/" title="luigi install">
+								luigi install			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 29日, 2017				
+							</p>
+							<p class="relate-post-content">
+								luigi 安装官方文档: http://luigi.readthedocs.io/en/latest/中文: https://github.com/17zuoye/luiti/blob/master/README.zh_CN.mar...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-TW/luigi-install/" title="luigi install">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="luigi install"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-TW/centos-repo/" title="centos repo">
+								centos repo			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 29日, 2017				
+							</p>
+							<p class="relate-post-content">
+								公司centos源centos源列表(翻墙): https://www.centos.org/download/mirrors/epel源列表(翻墙): https://fedoraproject.org/wiki/EPEL163源:...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-TW/centos-repo/" title="centos repo">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="centos repo"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-TW/graphite-install-on-centos/" title="graphite install on centos">
+								graphite install on centos			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 29日, 2017				
+							</p>
+							<p class="relate-post-content">
+								graphite 安装环境
+centos6.5 64
+python: 2.7公司机器: 172.16.60.139
+
+参考客户端: graphitesend
+中文文档:https://segmentfault.com/search?q...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-TW/graphite-install-on-centos/" title="graphite install on centos">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="graphite install on centos"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/zh-TW/linux-install-nginx/" title="linux install nginx">
+								linux install nginx			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 27日, 2017				
+							</p>
+							<p class="relate-post-content">
+								linux 安装nginx一键安装123456789101112wget http://ip/tools/nginx/nginx-1.10.2.tar.gztar -vxf nginx-1.10.2.tar.gz cd nginx-1...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/zh-TW/linux-install-nginx/" title="linux install nginx">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="linux install nginx"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+		</ul>
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+
+<!-- show math formula -->
+
+
+<!-- Chart Render -->
+
+<!-- End Chart Render -->
+
+
+
+	 
+	<script src="/zh-TW/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/zh-TW/plugin/fancybox/jquery.fancybox.css">
+<script src="/zh-TW/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/ylkjick532428" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://weibo.com/ylkjick532428" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/zh-TW/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2019, content by ylkjick532428@gmail.com. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<span id='transLangTool'>
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a>
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+			</span>
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/zh-TW/plugin/chinese/chinese.js"></script>
+	<script src="/zh-TW/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/zh-TW/plugin/search/ziploader.js"></script>
+<script src="/zh-TW/plugin/search/search.js"></script>
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/zh-TW/search.zip',
+		version_Path = '/zh-TW/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+<!-- love effect -->
+
+	<script src="/zh-TW/plugin/love/love.js"></script>
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/zh-TW/plugin/vibrant/vibrant.js"></script>
+<script src="/zh-TW/plugin/chinese/chinese.js"></script>
+<script src="/zh-TW/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/zh-TW/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/zh-TW/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/zh-TW/js/resizediv.js"></script>
+<script src="/zh-TW/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+	</body>	
+</html>

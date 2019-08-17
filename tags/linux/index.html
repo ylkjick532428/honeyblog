@@ -1,326 +1,1043 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
 <!DOCTYPE html>
-<html>
-<head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+<html class="html-loading">
+		
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      tag: linux | Jack Yang
+    
+  </title>
+  <meta name="author" content="ylkjick532428@gmail.com">
+  <meta name="keywords" content>
+  <meta name="description" content>
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
   
-  
+  <!-- jquery -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/lodash.min.js"></script>
+  <script src="/js/coffee-script.js"></script>
+  <script src="/js/raphael.min.js"></script>
+  <script src="/js/diagram-grammar.js"></script>
+  <!-- <script src="/js/jumly.min.js"></script> -->
 
   
   
-  
-  
-  
-  
-  <title>Tag: linux | Honeybee</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Honeybee">
-<meta property="og:url" content="https://qooeo.net/tags/linux/index.html">
-<meta property="og:site_name" content="Honeybee">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Honeybee">
-  
-  
-    <link rel="icon" href="/css/images/favicon.ico">
-  
-  <link rel="stylesheet" href="../../css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
 
-  
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
+	<body>
+		<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Preloader -->
 
-<body class="home blog custom-background custom-font-enabled single-author">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page" class="hfeed site">
-      <header id="masthead" class="site-header" role="banner">
-    <hgroup>
-      <h1 class="site-title">
-        <a href="../../index.html" title="Honeybee" rel="home">Honeybee</a>
-      </h1>
-      
-      
-    </hgroup>
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
 
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle">菜单</button>
-            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
-            <div class="menu-main-container">
-                <ul id="menu-main" class="nav-menu">
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../../index.html">Home</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../../archives">Archives</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../../About/">About</a></li>
-                
-                </ul>
-            </div>
-    </nav>
-</header>
 
-      <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="../../archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="post type-post status-publish format-standard hentry archive-type-post">
-  <header class="entry-header">
-      
-  
-    <h1 class="entry-title">
-      <a class="archive-article-title" href="../../\install-elasticsearch-on-linux/">install elasticsearch on linux</a>
-    </h1>
-  
+<!-- header -->
+<header class="fixbackground" data-img-mode="random" data-normal-src="/img/mylove.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">Home</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">Archive</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">Category</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">Tag</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">About</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">Gallery</a>
+		</li>
+	
+		<li class="menu-english">
+			<a href="https://www.qooeo.com/" class="menu-item-english">english</a>
+		</li>
+	
+		<li class="menu-简体">
+			<a href="https://www.qooeo.com/zh-CN" class="menu-item-简体">简体</a>
+		</li>
+	
+		<li class="menu-繁体">
+			<a href="https://www.qooeo.com/zh-TW" class="menu-item-繁体">繁体</a>
+		</li>
+	
 
-  </header>
-  <footer class="entry-meta">
-    <a href="../../\install-elasticsearch-on-linux/">
-    <time datetime="2017-04-18T01:57:00.000Z" class="entry-date">
-        2017-04-18
-    </time>
-</a>
-    
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../elasticsearch/">elasticsearch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="">linux</a></li></ul>
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">Search</a>
+		</li>
+	
+</ul>
+			</div>				
+		</div>
 
-    </footer>
-</article>
-  
-    
-    
-    <article class="post type-post status-publish format-standard hentry archive-type-post">
-  <header class="entry-header">
-      
-  
-    <h1 class="entry-title">
-      <a class="archive-article-title" href="../../\linux-install-nginx/">linux install nginx</a>
-    </h1>
-  
-
-  </header>
-  <footer class="entry-meta">
-    <a href="../../\linux-install-nginx/">
-    <time datetime="2017-03-27T08:18:41.000Z" class="entry-date">
-        2017-03-27
-    </time>
-</a>
-    
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../nginx/">nginx</a></li></ul>
-
-    </footer>
-</article>
-  
-    
-    
-    <article class="post type-post status-publish format-standard hentry archive-type-post">
-  <header class="entry-header">
-      
-  
-    <h1 class="entry-title">
-      <a class="archive-article-title" href="../../\centos-6-5-install/">centos 6.5 install</a>
-    </h1>
-  
-
-  </header>
-  <footer class="entry-meta">
-    <a href="../../\centos-6-5-install/">
-    <time datetime="2017-03-23T08:30:46.000Z" class="entry-date">
-        2017-03-23
-    </time>
-</a>
-    
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../centos/">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="">linux</a></li></ul>
-
-    </footer>
-</article>
-  
-  
-    </div></section>
-  
-
-</div></div>
-        <div id="secondary" class="widget-area" role="complementary">
-  
-    <script type="text/html" id="template-test">
-    
-<li class="item">
-    <a data-link="permalink" class="waves-block waves-effect">
-
-	<div class="title ellipsis" data-title="title" data-content="title"></div>
-	<span data-content="text" data-format="textFormatter"></span>
-	<div class="flex-row flex-middle">
-		<div class="tags ellipsis" data-format="tagsFormatter" data-content="tags">
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
 			
 		</div>
-		<time class="flex-col time" data-content="date" data-format="dateFormatter"></time>
-	</div>
-	</a>
-</li>
-</script>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
 
-
-<script type="text/html" id="template-error">
-<li class="tips"><i class="icon icon-coffee icon-3x"></i><p>没有搜索到结果</p></li>
-</script>
-
-
-
-<aside id="search" class="widget widget_search">
-<div role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" url="https://www.google.com/ncr#newwindow=1&safe=strict&q=">
-    <div>
-        <input type="text" value="" name="s" id="search_text" />
-        <search id="search_submit"></search>
-       
-    </div>
-    <div class="widget search-panel in" id="search-panel">
-			<ul class="search-result" id="search-result">
 			
-			
-			</ul>
-	</div>
+				<script src="//widget.time.is/en.js"></script>
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<!-- <script type="text/javascript" src="https://rf.revolvermaps.com/0/0/5.js?i=5mfy00et1a3&amp;m=0&amp;c=ff0000&amp;cr1=ffffff" async="async"></!--> -->
+
+<style type="text/css">
+  .header-date {
+    font-size: 1.6rem;
+    color: #000000;
+    position: absolute;
+    bottom: 5px;
+    right: 1rem;
+    writing-mode: tb-rl;
+  }
+
+  .header-date a {
+    border-bottom: none;
+  }
+
+  @media only screen and (max-width: 768) {
+    .header-date {
+      font-size: 1rem;
+    }
+  }
+</style>
+<div class="header-date" id="beijingtime">
+  <a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+  <span id="Beijing_z43d"></span>
 </div>
-</aside>
 
+<!-- <script src="//widget.time.is/zh.js"></script>
+<script src="//widget.time.is/en.js"></script> -->
 
-
-  
-    
-  
-    
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget-content">
-      <ul>
-        
-          <li>
-            <a href="../../\install-elasticsearch-on-linux/">install elasticsearch on linux</a>
-          </li>
-        
-          <li>
-            <a href="../../\flowchat/">flowchat</a>
-          </li>
-        
-          <li>
-            <a href="../../\linux-common-comand/">linux-common-comand</a>
-          </li>
-        
-          <li>
-            <a href="../../\cabot-install/">cabot install</a>
-          </li>
-        
-          <li>
-            <a href="../../\luigi-install/">luigi install</a>
-          </li>
-        
-      </ul>
-    </div>
-  </aside>
-
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../bower/">bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../cabot/">cabot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../centos/">centos</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../cherrypy/">cherrypy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../elasticsearch/">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../graphite/">graphite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../grunt/">grunt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="">linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../linux常用命令/">linux常用命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../luigi/">luigi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../nginx/">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../npm/">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../oracle/">oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../pydev/">pydev</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../registry/">registry</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../yum/">yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../公式/">公式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../时序图/">时序图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../服务器/">服务器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../流程图/">流程图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../监控/">监控</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../软件/">软件</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </aside>
-
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget-content tagcloud">
-      <a href="../bower/" style="font-size: 10px;">bower</a> <a href="../cabot/" style="font-size: 10px;">cabot</a> <a href="../centos/" style="font-size: 13.33px;">centos</a> <a href="../cherrypy/" style="font-size: 10px;">cherrypy</a> <a href="../docker/" style="font-size: 10px;">docker</a> <a href="../eclipse/" style="font-size: 10px;">eclipse</a> <a href="../elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="../graphite/" style="font-size: 10px;">graphite</a> <a href="../grunt/" style="font-size: 10px;">grunt</a> <a href="../javascript/" style="font-size: 10px;">javascript</a> <a href="" style="font-size: 16.67px;">linux</a> <a href="../linux常用命令/" style="font-size: 10px;">linux常用命令</a> <a href="../luigi/" style="font-size: 10px;">luigi</a> <a href="../mysql/" style="font-size: 10px;">mysql</a> <a href="../nginx/" style="font-size: 10px;">nginx</a> <a href="../npm/" style="font-size: 10px;">npm</a> <a href="../oracle/" style="font-size: 20px;">oracle</a> <a href="../pydev/" style="font-size: 10px;">pydev</a> <a href="../python/" style="font-size: 13.33px;">python</a> <a href="../registry/" style="font-size: 10px;">registry</a> <a href="../yum/" style="font-size: 10px;">yum</a> <a href="../公式/" style="font-size: 10px;">公式</a> <a href="../时序图/" style="font-size: 10px;">时序图</a> <a href="../服务器/" style="font-size: 10px;">服务器</a> <a href="../流程图/" style="font-size: 10px;">流程图</a> <a href="../监控/" style="font-size: 16.67px;">监控</a> <a href="../软件/" style="font-size: 10px;">软件</a>
-    </div>
-  </aside>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">About</h3>
-    <div class="widget">
-      email：<a href="mailto: Yangyuehui <honeybeeyyh@hotmail.com>;">honeybeeyyh@hotmail.com</a></br></br>
-    </div>
-  </div>
-
-
-  
-</div>
-      </div>
-      <footer id="colophon" role="contentinfo">
-    <p>&copy; 2017 honeybeeyyh@hotmail.com
-    All rights reserved.</p>
-    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
-</footer>
-    
-
-<script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/lib/jquery.loadTemplate.js"></script>
-
-  <link rel="stylesheet" href="../../fancybox/jquery.fancybox.css">
-  <script src="../../fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="../../js/script.js"></script>
-
-
-
-<script src="/js/navigation.js"></script>
-<!--<script src="/js/require.js"></script>-->
-<script src="/lib/python.js"></script>
-<script src="/lib/javascript.js"></script>
-<script src="/lib/highlight.js"></script>
-<script src="/lib/my.js"></script>
-<script src="/lib/hexo-local-search.js"></script>
-
-
-
-
-<div id="bg"></div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
-        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
-        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
-        messageStyle: "none"
-    }); 
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
+<script>
+  var getPathname = function getPathname() {
+    var reg = /(\w+-\w+)\/(.*)/;
+    var result = [];
+    var tmpPathname = reg.exec(window.location.pathname);
+    tmpPathname && tmpPathname[1]
+      ? result.push(tmpPathname[1])
+      : result.push("en");
+    return result[0];
+  };
+  var currentLang = getPathname();
+  if (currentLang === "en") {
+    time_is_widget.init({
+		Beijing_z43d: {
+        template: "DATE",
+		date_format: "dayname, monthname dnum, year, week",
+      }
     });
+  } else {
+    time_is_widget.init({
+      Beijing_z43d: {
+		template: "DATE",
+        date_format: "year年 monthname dnum日"
+      }
+    });
+  }
 </script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+
+<script></script>
+
+			
+
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">Catalog</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			Tag
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">Home</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">Archive</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">Category</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">Tag</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">About</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">Gallery</a>
+		</li>
+	
+		<li class="menu-english">
+			<a href="https://www.qooeo.com/" class="menu-item-english">english</a>
+		</li>
+	
+		<li class="menu-简体">
+			<a href="https://www.qooeo.com/zh-CN" class="menu-item-简体">简体</a>
+		</li>
+	
+		<li class="menu-繁体">
+			<a href="https://www.qooeo.com/zh-TW" class="menu-item-繁体">繁体</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">Search</a>
+		</li>
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/ylkjick532428" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://weibo.com/ylkjick532428" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-08
+	描述：The archive module refers to 'https://1984n.win/archives-post/' & 'http://1900.live/one-theme/', include js、css. Relevant rights reserved by them! 
+-->
+<div class="layout-archive">
+    <div class="i-container">
+        <i class="fa fa-book">
+			<!--
+	Post number counter for archive.ejs.  
+-->
+
+		 
+	
+	linux 3 pian
+		
+
+		</i>
+    </div>
+
+    <!-- Archive by year, display in page( archive ) -->
+    <div id="layout-archive-year" style="display: 
+        
+        
+        <ul>
+            
+                <li>
+                    <a href="/hello-world/">
+            			<em year="2019">
+                            08-15
+                        </em>
+        			    <span itemprop="name">
+                            Hello World
+                        </span>
+        			    
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/install-elasticsearch-on-linux/">
+            			<em year="2017">
+                            04-18
+                        </em>
+        			    <span itemprop="name">
+                            install elasticsearch on linux
+                        </span>
+        			    
+                			<a href="/tags/linux/" class="tag">
+                				linux
+                			</a>
+                        
+                			<a href="/tags/elasticsearch/" class="tag">
+                				elasticsearch
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/flowchat/">
+            			<em year="2017">
+                            04-12
+                        </em>
+        			    <span itemprop="name">
+                            flowchat
+                        </span>
+        			    
+                			<a href="/tags/公式/" class="tag">
+                				公式
+                			</a>
+                        
+                			<a href="/tags/时序图/" class="tag">
+                				时序图
+                			</a>
+                        
+                			<a href="/tags/流程图/" class="tag">
+                				流程图
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/linux-common-comand/">
+            			<em year="2017">
+                            04-11
+                        </em>
+        			    <span itemprop="name">
+                            linux-common-comand
+                        </span>
+        			    
+                			<a href="/tags/linux常用命令/" class="tag">
+                				linux常用命令
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/cabot-install/">
+            			<em year="2017">
+                            03-29
+                        </em>
+        			    <span itemprop="name">
+                            cabot install
+                        </span>
+        			    
+                			<a href="/tags/cabot/" class="tag">
+                				cabot
+                			</a>
+                        
+                			<a href="/tags/监控/" class="tag">
+                				监控
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/luigi-install/">
+            			<em year="2017">
+                            03-29
+                        </em>
+        			    <span itemprop="name">
+                            luigi install
+                        </span>
+        			    
+                			<a href="/tags/监控/" class="tag">
+                				监控
+                			</a>
+                        
+                			<a href="/tags/luigi/" class="tag">
+                				luigi
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/centos-repo/">
+            			<em year="2017">
+                            03-29
+                        </em>
+        			    <span itemprop="name">
+                            centos repo
+                        </span>
+        			    
+                			<a href="/tags/centos/" class="tag">
+                				centos
+                			</a>
+                        
+                			<a href="/tags/yum/" class="tag">
+                				yum
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/graphite-install-on-centos/">
+            			<em year="2017">
+                            03-29
+                        </em>
+        			    <span itemprop="name">
+                            graphite install on centos
+                        </span>
+        			    
+                			<a href="/tags/监控/" class="tag">
+                				监控
+                			</a>
+                        
+                			<a href="/tags/graphite/" class="tag">
+                				graphite
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/linux-install-nginx/">
+            			<em year="2017">
+                            03-27
+                        </em>
+        			    <span itemprop="name">
+                            linux install nginx
+                        </span>
+        			    
+                			<a href="/tags/linux/" class="tag">
+                				linux
+                			</a>
+                        
+                			<a href="/tags/nginx/" class="tag">
+                				nginx
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/private-docker-server/">
+            			<em year="2017">
+                            03-27
+                        </em>
+        			    <span itemprop="name">
+                            private docker server
+                        </span>
+        			    
+                			<a href="/tags/docker/" class="tag">
+                				docker
+                			</a>
+                        
+                			<a href="/tags/registry/" class="tag">
+                				registry
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/javascript-packages-management/">
+            			<em year="2017">
+                            03-24
+                        </em>
+        			    <span itemprop="name">
+                            javascript packages management
+                        </span>
+        			    
+                			<a href="/tags/javascript/" class="tag">
+                				javascript
+                			</a>
+                        
+                			<a href="/tags/npm/" class="tag">
+                				npm
+                			</a>
+                        
+                			<a href="/tags/grunt/" class="tag">
+                				grunt
+                			</a>
+                        
+                			<a href="/tags/bower/" class="tag">
+                				bower
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/mysql-management/">
+            			<em year="2017">
+                            03-24
+                        </em>
+        			    <span itemprop="name">
+                            mysql management
+                        </span>
+        			    
+                			<a href="/tags/mysql/" class="tag">
+                				mysql
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/oracle-management/">
+            			<em year="2017">
+                            03-23
+                        </em>
+        			    <span itemprop="name">
+                            oracle management
+                        </span>
+        			    
+                			<a href="/tags/oracle/" class="tag">
+                				oracle
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/centos-6-5-install/">
+            			<em year="2017">
+                            03-23
+                        </em>
+        			    <span itemprop="name">
+                            centos 6.5 install
+                        </span>
+        			    
+                			<a href="/tags/centos/" class="tag">
+                				centos
+                			</a>
+                        
+                			<a href="/tags/linux/" class="tag">
+                				linux
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/pydev-template/">
+            			<em year="2017">
+                            03-10
+                        </em>
+        			    <span itemprop="name">
+                            pydev template
+                        </span>
+        			    
+                			<a href="/tags/python/" class="tag">
+                				python
+                			</a>
+                        
+                			<a href="/tags/pydev/" class="tag">
+                				pydev
+                			</a>
+                        
+                			<a href="/tags/eclipse/" class="tag">
+                				eclipse
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/oracle-install-linux/">
+            			<em year="2017">
+                            02-15
+                        </em>
+        			    <span itemprop="name">
+                            oracle-install-linux
+                        </span>
+        			    
+                			<a href="/tags/oracle/" class="tag">
+                				oracle
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/yuncai-dev-doc/">
+            			<em year="2017">
+                            02-15
+                        </em>
+        			    <span itemprop="name">
+                            yuncai-dev-doc
+                        </span>
+        			    
+                			<a href="/tags/oracle/" class="tag">
+                				oracle
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/software/">
+            			<em year="2017">
+                            02-13
+                        </em>
+        			    <span itemprop="name">
+                            software
+                        </span>
+        			    
+                			<a href="/tags/软件/" class="tag">
+                				软件
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/server-install/">
+            			<em year="2017">
+                            02-06
+                        </em>
+        			    <span itemprop="name">
+                            server_install
+                        </span>
+        			    
+                			<a href="/tags/服务器/" class="tag">
+                				服务器
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/data-input/">
+            			<em year="2017">
+                            02-06
+                        </em>
+        			    <span itemprop="name">
+                            data_input
+                        </span>
+        			    
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/oracle-xe/">
+            			<em year="2016">
+                            12-26
+                        </em>
+        			    <span itemprop="name">
+                            oracle_xe
+                        </span>
+        			    
+                			<a href="/tags/oracle/" class="tag">
+                				oracle
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/cherrypy/">
+            			<em year="2016">
+                            07-28
+                        </em>
+        			    <span itemprop="name">
+                            cherrypy
+                        </span>
+        			    
+                			<a href="/tags/python/" class="tag">
+                				python
+                			</a>
+                        
+                			<a href="/tags/cherrypy/" class="tag">
+                				cherrypy
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/markdown-images/">
+            			<em year="2016">
+                            07-14
+                        </em>
+        			    <span itemprop="name">
+                            markdown-images
+                        </span>
+        			    
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/math-and-uml/">
+            			<em year="2016">
+                            07-06
+                        </em>
+        			    <span itemprop="name">
+                            math and uml
+                        </span>
+        			    
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/README/">
+            			<em year="2016">
+                            07-04
+                        </em>
+        			    <span itemprop="name">
+                            README
+                        </span>
+        			    
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+     <!-- Archive by month, called by page( categories, tags... ) -->
+    <div id="layout-archive-month" style="display: 
+         
+            block"> 
+        
+
+        
+        
+            
+
+            
+                
+                <h3 class="archive-year">
+                    <!-- <a href="/archives/2017/04"> -->
+                    <a>
+                        2017 - 04
+                    </a>
+                </h3>
+            
+
+            <ul>
+                <li>
+                    <a href="/install-elasticsearch-on-linux/">
+                        <em>
+                            04-18
+                        </em>
+                        <span itemprop="name">
+                            install elasticsearch on linux
+                        </span>
+                        
+                            <a href="/tags/linux/" class="tag">
+                                linux
+                            </a>
+                        
+                            <a href="/tags/elasticsearch/" class="tag">
+                                elasticsearch
+                            </a>
+                               
+                    </a>
+                </li>
+            </ul>
+        
+            
+
+            
+                
+                <h3 class="archive-year">
+                    <!-- <a href="/archives/2017/03"> -->
+                    <a>
+                        2017 - 03
+                    </a>
+                </h3>
+            
+
+            <ul>
+                <li>
+                    <a href="/linux-install-nginx/">
+                        <em>
+                            03-27
+                        </em>
+                        <span itemprop="name">
+                            linux install nginx
+                        </span>
+                        
+                            <a href="/tags/linux/" class="tag">
+                                linux
+                            </a>
+                        
+                            <a href="/tags/nginx/" class="tag">
+                                nginx
+                            </a>
+                               
+                    </a>
+                </li>
+            </ul>
+        
+            
+
+            
+
+            <ul>
+                <li>
+                    <a href="/centos-6-5-install/">
+                        <em>
+                            03-23
+                        </em>
+                        <span itemprop="name">
+                            centos 6.5 install
+                        </span>
+                        
+                            <a href="/tags/centos/" class="tag">
+                                centos
+                            </a>
+                        
+                            <a href="/tags/linux/" class="tag">
+                                linux
+                            </a>
+                               
+                    </a>
+                </li>
+            </ul>
+        
+    </div>
+
+    
+        
+	
+
+	
+
+    
+</div>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/ylkjick532428" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://weibo.com/ylkjick532428" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2019, content by ylkjick532428@gmail.com. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<span id='transLangTool'>
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a>
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+			</span>
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/plugin/chinese/chinese.js"></script>
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/plugin/search/search.js"></script>
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
 </script>
 
 
-<script src="../../js/coffee-script.js"></script>
-<script src="../../js/jumly.min.js"></script>
+<!-- love effect -->
 
-<link rel="stylesheet" href="../../css/my.css">
-<link rel="stylesheet" href="../../css/highlight.css">
-<link rel="stylesheet" href="../../styles/default.css">
-<!--<script src="../../js/bootstrap.min.js"></script>-->
-<!--<link rel="stylesheet" href="../../css/bootstrap.css">-->
-<!--<link rel="stylesheet" href="../../css/bootstrap-theme.css">-->
+	<script src="/plugin/love/love.js"></script>
 
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-</body>
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+	</body>	
 </html>

@@ -1,339 +1,1077 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
 <!DOCTYPE html>
-<html>
-<head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  
-  
-  <meta name="description" content="graphite 安装环境
-centos6.5 64
-python: 2.7公司机器: 172.16.60.139
+<html class="html-loading">
+		
 
-参考客户端: graphitesend
-中文文档:https://segmentfault.com/search?q=Graphite+%E7%B3%BB%E5%88%97+%235" />
-  
+<head><meta name="generator" content="Hexo 3.9.0">
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      graphite install on centos | Jack Yang
+    
+  </title>
+  <meta name="author" content="ylkjick532428@gmail.com">
+  <meta name="keywords" content>
+  <meta name="description" content>
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
 
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
   
-  
-  
-  
-  
-  
-  <title>graphite install on centos | Honeybee</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="graphite 安装环境 centos6.5 64 python: 2.7公司机器: 172.16.60.139  参考客户端: graphitesend 中文文档:https://segmentfault.com/search?q=Graphite+%E7%B3%BB%E5%88%97+%235https://lanjingling.github.io/2016/04/04/graphite-">
-<meta name="keywords" content="监控,graphite">
-<meta property="og:type" content="article">
-<meta property="og:title" content="graphite install on centos">
-<meta property="og:url" content="https://qooeo.net//graphite-install-on-centos/index.html">
-<meta property="og:site_name" content="Honeybee">
-<meta property="og:description" content="graphite 安装环境 centos6.5 64 python: 2.7公司机器: 172.16.60.139  参考客户端: graphitesend 中文文档:https://segmentfault.com/search?q=Graphite+%E7%B3%BB%E5%88%97+%235https://lanjingling.github.io/2016/04/04/graphite-">
-<meta property="og:updated_time" content="2017-11-01T05:24:53.751Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="graphite install on centos">
-<meta name="twitter:description" content="graphite 安装环境 centos6.5 64 python: 2.7公司机器: 172.16.60.139  参考客户端: graphitesend 中文文档:https://segmentfault.com/search?q=Graphite+%E7%B3%BB%E5%88%97+%235https://lanjingling.github.io/2016/04/04/graphite-">
-  
-  
-    <link rel="icon" href="/css/images/favicon.ico">
-  
-  <link rel="stylesheet" href="../../css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
+  <!-- jquery -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/lodash.min.js"></script>
+  <script src="/js/coffee-script.js"></script>
+  <script src="/js/raphael.min.js"></script>
+  <script src="/js/diagram-grammar.js"></script>
+  <!-- <script src="/js/jumly.min.js"></script> -->
 
   
+  
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
+	<body>
+		<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Preloader -->
 
-<body class="home blog custom-background custom-font-enabled single-author">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page" class="hfeed site">
-      <header id="masthead" class="site-header" role="banner">
-    <hgroup>
-      <h1 class="site-title">
-        <a href="../" title="Honeybee" rel="home">Honeybee</a>
-      </h1>
-      
-      
-    </hgroup>
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
 
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle">菜单</button>
-            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
-            <div class="menu-main-container">
-                <ul id="menu-main" class="nav-menu">
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../">Home</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../archives">Archives</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="../About/">About</a></li>
-                
-                </ul>
-            </div>
-    </nav>
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="random" data-normal-src="/img/mylove.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">Home</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">Archive</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">Category</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">Tag</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">About</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">Gallery</a>
+		</li>
+	
+		<li class="menu-english">
+			<a href="https://www.qooeo.com/" class="menu-item-english">english</a>
+		</li>
+	
+		<li class="menu-简体">
+			<a href="https://www.qooeo.com/zh-CN" class="menu-item-简体">简体</a>
+		</li>
+	
+		<li class="menu-繁体">
+			<a href="https://www.qooeo.com/zh-TW" class="menu-item-繁体">繁体</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">Search</a>
+		</li>
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+				<script src="//widget.time.is/en.js"></script>
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<!-- <script type="text/javascript" src="https://rf.revolvermaps.com/0/0/5.js?i=5mfy00et1a3&amp;m=0&amp;c=ff0000&amp;cr1=ffffff" async="async"></!--> -->
+
+<style type="text/css">
+  .header-date {
+    font-size: 1.6rem;
+    color: #000000;
+    position: absolute;
+    bottom: 5px;
+    right: 1rem;
+    writing-mode: tb-rl;
+  }
+
+  .header-date a {
+    border-bottom: none;
+  }
+
+  @media only screen and (max-width: 768) {
+    .header-date {
+      font-size: 1rem;
+    }
+  }
+</style>
+<div class="header-date" id="beijingtime">
+  <a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+  <span id="Beijing_z43d"></span>
+</div>
+
+<!-- <script src="//widget.time.is/zh.js"></script>
+<script src="//widget.time.is/en.js"></script> -->
+
+<script>
+  var getPathname = function getPathname() {
+    var reg = /(\w+-\w+)\/(.*)/;
+    var result = [];
+    var tmpPathname = reg.exec(window.location.pathname);
+    tmpPathname && tmpPathname[1]
+      ? result.push(tmpPathname[1])
+      : result.push("en");
+    return result[0];
+  };
+  var currentLang = getPathname();
+  if (currentLang === "en") {
+    time_is_widget.init({
+		Beijing_z43d: {
+        template: "DATE",
+		date_format: "dayname, monthname dnum, year, week",
+      }
+    });
+  } else {
+    time_is_widget.init({
+      Beijing_z43d: {
+		template: "DATE",
+        date_format: "year年 monthname dnum日"
+      }
+    });
+  }
+</script>
+
+<script></script>
+
+			
+
+			
+		</div>
+	</div>
 </header>
 
-      <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-graphite-install-on-centos" class="post-graphite-install-on-centos post type-post status-publish format-standard hentry">
-    <!---->
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
 
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title article-title">
-      graphite install on centos
-    </h1>
-  
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
 
-        
-        <div class="comments-link">
-            
-            <!--<a href="javascript:void(0);" data-url="https://qooeo.net\graphite-install-on-centos/" data-id="cj9gngl800008xdpkqdidn5av" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>-->
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
+	<div class="toc-switch"><span class="switch-button">Catalog</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			Current post&nbsp;:&nbsp;《graphite install on centos》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">Home</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">Archive</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">Category</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">Tag</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">About</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">Gallery</a>
+		</li>
+	
+		<li class="menu-english">
+			<a href="https://www.qooeo.com/" class="menu-item-english">english</a>
+		</li>
+	
+		<li class="menu-简体">
+			<a href="https://www.qooeo.com/zh-CN" class="menu-item-简体">简体</a>
+		</li>
+	
+		<li class="menu-繁体">
+			<a href="https://www.qooeo.com/zh-TW" class="menu-item-繁体">繁体</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">Search</a>
+		</li>
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/ylkjick532428" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://weibo.com/ylkjick532428" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	<a href="/graphite-install-on-centos/" itemprop="url">
+		graphite install on centos
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	Posted on
+
+	<a href="/graphite-install-on-centos/" itemprop="url">
+		<time datetime="2017-03-29T02:04:21.000Z" itemprop="datePublished">
+	  		2017-03-29
+	  </time>
+	</a>
+	&nbsp;
 
 
 
-    <div class="entry-content">
-      
-        
-  <div id="toc" class="toc-article">
-  <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#graphite-安装"><span class="toc-text">graphite 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境"><span class="toc-text">环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装python27"><span class="toc-text">安装python2.7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置环境变量"><span class="toc-text">配置环境变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装graphite"><span class="toc-text">安装graphite</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#批量下载依赖的方法"><span class="toc-text">批量下载依赖的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置graphite"><span class="toc-text">配置graphite</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#storage-schemasconf"><span class="toc-text">storage-schemas.conf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结合nginx-做前置"><span class="toc-text">结合nginx 做前置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动caborn"><span class="toc-text">启动caborn</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开机启动"><span class="toc-text">开机启动</span></a></li></ol></li></ol>
-  </div>
 
 
-        <h1 id="graphite-安装"><a href="#graphite-安装" class="headerlink" title="graphite 安装"></a>graphite 安装</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+			
+
+
+
+
+	Updated on
+
+	<a href="/graphite-install-on-centos/" itemprop="url">
+		<time datetime="2017-03-29T02:04:21.000Z" itemprop="dateUpdated">
+	  		2019-08-15
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+			
+	
+		<a href="/tags/监控/" class=" ">
+			监控
+		</a>
+	
+		<a href="/tags/graphite/" class=" ">
+			graphite
+		</a>
+	
+		
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<h1><span id="graphite-安装">graphite 安装</span></h1><h2><span id="环境">环境</span></h2><ul>
 <li>centos6.5 64</li>
 <li>python: 2.7<br>公司机器: 172.16.60.139</li>
 </ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>客户端: <a href="https://github.com/daniellawrence/graphitesend" target="_blank" rel="external">graphitesend</a></p>
-<p>中文文档:<br><a href="https://segmentfault.com/search?q=Graphite+%E7%B3%BB%E5%88%97+%235" target="_blank" rel="external">https://segmentfault.com/search?q=Graphite+%E7%B3%BB%E5%88%97+%235</a><br><a href="https://lanjingling.github.io/2016/04/04/graphite-1/" target="_blank" rel="external">https://lanjingling.github.io/2016/04/04/graphite-1/</a><br>官网文档: <a href="http://graphite.readthedocs.io/en/latest/" target="_blank" rel="external">graphite</a></p>
-<h2 id="安装python27"><a href="#安装python2-7" class="headerlink" title="安装python2.7"></a>安装python2.7</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div></pre></td><td class="code"><pre><div class="line">echo &quot;配置yum源&quot;</div><div class="line">cd /etc/yum.repos.d/</div><div class="line">rm -rf *</div><div class="line">wget http://172.16.60.100/vastio6.repo</div><div class="line">wget http://172.16.60.100/CentOS6-Base-163.repo</div><div class="line"></div><div class="line">echo &quot;清空yum缓存&quot;</div><div class="line">yum clean all</div><div class="line"></div><div class="line">echo &quot;安装编译环境&quot;</div><div class="line">mkdir /root/software</div><div class="line">cd /root/software</div><div class="line">rm -rf *</div><div class="line">yum -y install libgfortran</div><div class="line">yum -y install gcc-gfortran</div><div class="line">yum -y install gcc gcc-c++</div><div class="line">yum -y install readline-devel</div><div class="line">yum -y install libXt-devel</div><div class="line">yum -y install openssl openssl-devel pcre pcre-devel</div><div class="line"></div><div class="line">#centos6.5 openssl 有bug 升级</div><div class="line">wget http://172.16.60.100/ambari/openssl-1.0.1e-48.el6_8.4.x86_64.rpm</div><div class="line">wget http://172.16.60.100/ambari/openssl-devel-1.0.1e-48.el6_8.4.x86_64.rpm</div><div class="line">yum install openssl* -y</div><div class="line"></div><div class="line">echo &quot;安装oracle client&quot;</div><div class="line">wget http://172.16.60.100/software_new/pps/oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm</div><div class="line">wget http://172.16.60.100/software_new/oracle-instantclient11.2-devel-11.2.0.3.0-1.x86_64.rpm</div><div class="line">wget http://172.16.60.100/software_new/oracle-instantclient11.2-sqlplus-11.2.0.3.0-1.x86_64.rpm</div><div class="line"></div><div class="line">yum -y install oracle-instantclient11.2-*</div><div class="line"></div><div class="line">echo &quot;编译安装 python2.7&quot;</div><div class="line">wget http://172.16.60.100/tools/python/Python-2.7.13.tgz</div><div class="line"></div><div class="line">tar -vxf Python-2.7.13.tgz</div><div class="line">cd Python-2.7.13</div><div class="line">./configure --prefix=/usr/local/python27 --with-ssl --with-ssl-lib</div><div class="line">make &amp;&amp; make install</div><div class="line"></div><div class="line">echo &quot;安装 pip工具&quot;</div><div class="line">wget http://172.16.60.100/pypi/pip-9.0.1.tar.gz</div><div class="line">tar -vxf pip-9.0.1.tar.gz</div><div class="line">cd pip-9.0.1</div><div class="line"></div><div class="line">/usr/local/python27/bin/python2.7 setup.py install</div><div class="line"></div><div class="line">mkdir -p ~/.pip</div><div class="line">echo &quot;pip 源&quot;</div><div class="line">echo &quot;http://pypi.douban.com/simple/  豆瓣</div><div class="line">http://pypi.hustunique.com/simple/  华中理工大学</div><div class="line">http://pypi.sdutlinux.org/simple/  山东理工大学</div><div class="line">http://pypi.mirrors.ustc.edu.cn/simple/  中国科学技术大学</div><div class="line">http://mirrors.aliyun.com/pypi/simple/ 阿里云</div><div class="line">pip3 install -i http://172.16.60.100/pypi/simple/ --trusted-host=172.16.60.100 cx_Oracle</div><div class="line">pip3 install -i http://pypi.douban.com/simple/ --trusted-host=pypi.douban.com xml</div><div class="line">编辑linux ~/.pip/pip.conf</div><div class="line">window ~/.pip/pip.ini</div><div class="line">&quot;</div><div class="line">echo &quot;[global]</div><div class="line">timeout = 60</div><div class="line">#index-url = http://172.16.60.100/pypi/simple/</div><div class="line">index-url = http://mirrors.aliyun.com/pypi/simple/</div><div class="line">#trusted-host = 172.16.60.100</div><div class="line">trusted-host = mirrors.aliyun.com&quot; &gt; ~/.pip/pip.conf</div><div class="line"></div><div class="line">echo &quot;安装python 常用包&quot;</div><div class="line">/usr/local/python27/bin/pip2.7 install CherryPy</div><div class="line">/usr/local/python27/bin/pip2.7 install Mako</div><div class="line">/usr/local/python27/bin/pip2.7 install MarkupSafe</div><div class="line">/usr/local/python27/bin/pip2.7 install PyMySQL</div><div class="line">/usr/local/python27/bin/pip2.7 install PyYAML</div><div class="line">/usr/local/python27/bin/pip2.7 install Routes</div><div class="line">/usr/local/python27/bin/pip2.7 install SOAPpy</div><div class="line">/usr/local/python27/bin/pip2.7 install SQLAlchemy</div><div class="line">/usr/local/python27/bin/pip2.7 install beautifulsoup4</div><div class="line">/usr/local/python27/bin/pip2.7 install cx_Oracle</div><div class="line">/usr/local/python27/bin/pip2.7 install defusedxml</div><div class="line">/usr/local/python27/bin/pip2.7 install elasticsearch</div><div class="line">/usr/local/python27/bin/pip2.7 install get</div><div class="line">/usr/local/python27/bin/pip2.7 install graphite</div><div class="line">/usr/local/python27/bin/pip2.7 install jieba</div><div class="line">/usr/local/python27/bin/pip2.7 install lxml</div><div class="line">/usr/local/python27/bin/pip2.7 install pygrametl</div><div class="line">/usr/local/python27/bin/pip2.7 install pyhs2</div><div class="line">/usr/local/python27/bin/pip2.7 install pyodbc</div><div class="line">/usr/local/python27/bin/pip2.7 install pyodbc</div><div class="line">/usr/local/python27/bin/pip2.7 install repoze.lru</div><div class="line">/usr/local/python27/bin/pip2.7 install requests</div><div class="line">/usr/local/python27/bin/pip2.7 install rinse</div><div class="line">/usr/local/python27/bin/pip2.7 install router</div><div class="line">/usr/local/python27/bin/pip2.7 install rpy2</div><div class="line">/usr/local/python27/bin/pip2.7 install sasl</div><div class="line">/usr/local/python27/bin/pip2.7 install setuptools</div><div class="line">/usr/local/python27/bin/pip2.7 install six</div><div class="line">/usr/local/python27/bin/pip2.7 install structlog</div><div class="line">/usr/local/python27/bin/pip2.7 install thrift</div><div class="line">/usr/local/python27/bin/pip2.7 install thrift</div><div class="line">/usr/local/python27/bin/pip2.7 install tzlocal</div><div class="line">/usr/local/python27/bin/pip2.7 install urllib3</div><div class="line">/usr/local/python27/bin/pip2.7 install uwsgi</div><div class="line">/usr/local/python27/bin/pip2.7 install wstools</div><div class="line">/usr/local/python27/bin/pip2.7 install xmltodict</div><div class="line">/usr/local/python27/bin/pip2.7 install backports_abc</div><div class="line">/usr/local/python27/bin/pip2.7 install certifi</div><div class="line">/usr/local/python27/bin/pip2.7 install docutils</div><div class="line">/usr/local/python27/bin/pip2.7 install lockfile</div><div class="line">/usr/local/python27/bin/pip2.7 install luigi</div><div class="line">/usr/local/python27/bin/pip2.7 install pbr</div><div class="line">/usr/local/python27/bin/pip2.7 install singledispatch</div><div class="line">/usr/local/python27/bin/pip2.7 install tornado</div><div class="line">/usr/local/python27/bin/pip2.7 install graphitesend</div><div class="line">/usr/local/python27/bin/pip2.7 install python-dateutil</div><div class="line">/usr/local/python27/bin/pip2.7 install simplejson</div><div class="line">/usr/local/python27/bin/pip2.7 install argparse</div><div class="line">/usr/local/python27/bin/pip2.7 install cx_Freeze</div></pre></td></tr></table></figure>
-<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p><code>vim /etc/profile</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#PYTHON27 环境变量</div><div class="line">export PYTHON_HOME=/usr/local/python27</div><div class="line">export PATH=PYTHON_HOME/bin:PATH</div><div class="line"></div><div class="line">#oralce client 环境变量</div><div class="line">export ORACLE_SID=orcl</div><div class="line">export ORACLE_HOME=/usr/lib/oracle/11.2/client64</div><div class="line">export TNS_ADMIN=/usr/lib/oracle/11.2/client64</div><div class="line">export NLS_LANG=AMERICAN_AMERICA.AL32UTF8</div><div class="line">export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/lib:/usr/local/lib</div><div class="line">export PATH=$PATH:$ORACLE_HOME/bin:$ORACLE_HOME/lib</div></pre></td></tr></table></figure></p>
+<h2><span id="参考">参考</span></h2><p>客户端: <a href="https://github.com/daniellawrence/graphitesend" target="_blank" rel="noopener">graphitesend</a></p>
+<p>中文文档:<br><a href="https://segmentfault.com/search?q=Graphite+%E7%B3%BB%E5%88%97+%235" target="_blank" rel="noopener">https://segmentfault.com/search?q=Graphite+%E7%B3%BB%E5%88%97+%235</a><br><a href="https://lanjingling.github.io/2016/04/04/graphite-1/" target="_blank" rel="noopener">https://lanjingling.github.io/2016/04/04/graphite-1/</a><br>官网文档: <a href="http://graphite.readthedocs.io/en/latest/" target="_blank" rel="noopener">graphite</a></p>
+<h2><span id="安装python27">安装python2.7</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;配置yum源&quot;</span><br><span class="line">cd /etc/yum.repos.d/</span><br><span class="line">rm -rf *</span><br><span class="line">wget http://172.16.60.100/vastio6.repo</span><br><span class="line">wget http://172.16.60.100/CentOS6-Base-163.repo</span><br><span class="line"></span><br><span class="line">echo &quot;清空yum缓存&quot;</span><br><span class="line">yum clean all</span><br><span class="line"></span><br><span class="line">echo &quot;安装编译环境&quot;</span><br><span class="line">mkdir /root/software</span><br><span class="line">cd /root/software</span><br><span class="line">rm -rf *</span><br><span class="line">yum -y install libgfortran</span><br><span class="line">yum -y install gcc-gfortran</span><br><span class="line">yum -y install gcc gcc-c++</span><br><span class="line">yum -y install readline-devel</span><br><span class="line">yum -y install libXt-devel</span><br><span class="line">yum -y install openssl openssl-devel pcre pcre-devel</span><br><span class="line"></span><br><span class="line">#centos6.5 openssl 有bug 升级</span><br><span class="line">wget http://172.16.60.100/ambari/openssl-1.0.1e-48.el6_8.4.x86_64.rpm</span><br><span class="line">wget http://172.16.60.100/ambari/openssl-devel-1.0.1e-48.el6_8.4.x86_64.rpm</span><br><span class="line">yum install openssl* -y</span><br><span class="line"></span><br><span class="line">echo &quot;安装oracle client&quot;</span><br><span class="line">wget http://172.16.60.100/software_new/pps/oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm</span><br><span class="line">wget http://172.16.60.100/software_new/oracle-instantclient11.2-devel-11.2.0.3.0-1.x86_64.rpm</span><br><span class="line">wget http://172.16.60.100/software_new/oracle-instantclient11.2-sqlplus-11.2.0.3.0-1.x86_64.rpm</span><br><span class="line"></span><br><span class="line">yum -y install oracle-instantclient11.2-*</span><br><span class="line"></span><br><span class="line">echo &quot;编译安装 python2.7&quot;</span><br><span class="line">wget http://172.16.60.100/tools/python/Python-2.7.13.tgz</span><br><span class="line"></span><br><span class="line">tar -vxf Python-2.7.13.tgz</span><br><span class="line">cd Python-2.7.13</span><br><span class="line">./configure --prefix=/usr/local/python27 --with-ssl --with-ssl-lib</span><br><span class="line">make &amp;&amp; make install</span><br><span class="line"></span><br><span class="line">echo &quot;安装 pip工具&quot;</span><br><span class="line">wget http://172.16.60.100/pypi/pip-9.0.1.tar.gz</span><br><span class="line">tar -vxf pip-9.0.1.tar.gz</span><br><span class="line">cd pip-9.0.1</span><br><span class="line"></span><br><span class="line">/usr/local/python27/bin/python2.7 setup.py install</span><br><span class="line"></span><br><span class="line">mkdir -p ~/.pip</span><br><span class="line">echo &quot;pip 源&quot;</span><br><span class="line">echo &quot;http://pypi.douban.com/simple/  豆瓣</span><br><span class="line">http://pypi.hustunique.com/simple/  华中理工大学</span><br><span class="line">http://pypi.sdutlinux.org/simple/  山东理工大学</span><br><span class="line">http://pypi.mirrors.ustc.edu.cn/simple/  中国科学技术大学</span><br><span class="line">http://mirrors.aliyun.com/pypi/simple/ 阿里云</span><br><span class="line">pip3 install -i http://172.16.60.100/pypi/simple/ --trusted-host=172.16.60.100 cx_Oracle</span><br><span class="line">pip3 install -i http://pypi.douban.com/simple/ --trusted-host=pypi.douban.com xml</span><br><span class="line">编辑linux ~/.pip/pip.conf</span><br><span class="line">window ~/.pip/pip.ini</span><br><span class="line">&quot;</span><br><span class="line">echo &quot;[global]</span><br><span class="line">timeout = 60</span><br><span class="line">#index-url = http://172.16.60.100/pypi/simple/</span><br><span class="line">index-url = http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line">#trusted-host = 172.16.60.100</span><br><span class="line">trusted-host = mirrors.aliyun.com&quot; &gt; ~/.pip/pip.conf</span><br><span class="line"></span><br><span class="line">echo &quot;安装python 常用包&quot;</span><br><span class="line">/usr/local/python27/bin/pip2.7 install CherryPy</span><br><span class="line">/usr/local/python27/bin/pip2.7 install Mako</span><br><span class="line">/usr/local/python27/bin/pip2.7 install MarkupSafe</span><br><span class="line">/usr/local/python27/bin/pip2.7 install PyMySQL</span><br><span class="line">/usr/local/python27/bin/pip2.7 install PyYAML</span><br><span class="line">/usr/local/python27/bin/pip2.7 install Routes</span><br><span class="line">/usr/local/python27/bin/pip2.7 install SOAPpy</span><br><span class="line">/usr/local/python27/bin/pip2.7 install SQLAlchemy</span><br><span class="line">/usr/local/python27/bin/pip2.7 install beautifulsoup4</span><br><span class="line">/usr/local/python27/bin/pip2.7 install cx_Oracle</span><br><span class="line">/usr/local/python27/bin/pip2.7 install defusedxml</span><br><span class="line">/usr/local/python27/bin/pip2.7 install elasticsearch</span><br><span class="line">/usr/local/python27/bin/pip2.7 install get</span><br><span class="line">/usr/local/python27/bin/pip2.7 install graphite</span><br><span class="line">/usr/local/python27/bin/pip2.7 install jieba</span><br><span class="line">/usr/local/python27/bin/pip2.7 install lxml</span><br><span class="line">/usr/local/python27/bin/pip2.7 install pygrametl</span><br><span class="line">/usr/local/python27/bin/pip2.7 install pyhs2</span><br><span class="line">/usr/local/python27/bin/pip2.7 install pyodbc</span><br><span class="line">/usr/local/python27/bin/pip2.7 install pyodbc</span><br><span class="line">/usr/local/python27/bin/pip2.7 install repoze.lru</span><br><span class="line">/usr/local/python27/bin/pip2.7 install requests</span><br><span class="line">/usr/local/python27/bin/pip2.7 install rinse</span><br><span class="line">/usr/local/python27/bin/pip2.7 install router</span><br><span class="line">/usr/local/python27/bin/pip2.7 install rpy2</span><br><span class="line">/usr/local/python27/bin/pip2.7 install sasl</span><br><span class="line">/usr/local/python27/bin/pip2.7 install setuptools</span><br><span class="line">/usr/local/python27/bin/pip2.7 install six</span><br><span class="line">/usr/local/python27/bin/pip2.7 install structlog</span><br><span class="line">/usr/local/python27/bin/pip2.7 install thrift</span><br><span class="line">/usr/local/python27/bin/pip2.7 install thrift</span><br><span class="line">/usr/local/python27/bin/pip2.7 install tzlocal</span><br><span class="line">/usr/local/python27/bin/pip2.7 install urllib3</span><br><span class="line">/usr/local/python27/bin/pip2.7 install uwsgi</span><br><span class="line">/usr/local/python27/bin/pip2.7 install wstools</span><br><span class="line">/usr/local/python27/bin/pip2.7 install xmltodict</span><br><span class="line">/usr/local/python27/bin/pip2.7 install backports_abc</span><br><span class="line">/usr/local/python27/bin/pip2.7 install certifi</span><br><span class="line">/usr/local/python27/bin/pip2.7 install docutils</span><br><span class="line">/usr/local/python27/bin/pip2.7 install lockfile</span><br><span class="line">/usr/local/python27/bin/pip2.7 install luigi</span><br><span class="line">/usr/local/python27/bin/pip2.7 install pbr</span><br><span class="line">/usr/local/python27/bin/pip2.7 install singledispatch</span><br><span class="line">/usr/local/python27/bin/pip2.7 install tornado</span><br><span class="line">/usr/local/python27/bin/pip2.7 install graphitesend</span><br><span class="line">/usr/local/python27/bin/pip2.7 install python-dateutil</span><br><span class="line">/usr/local/python27/bin/pip2.7 install simplejson</span><br><span class="line">/usr/local/python27/bin/pip2.7 install argparse</span><br><span class="line">/usr/local/python27/bin/pip2.7 install cx_Freeze</span><br></pre></td></tr></table></figure>
+
+<h3><span id="配置环境变量">配置环境变量</span></h3><p><code>vim /etc/profile</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#PYTHON27 环境变量</span><br><span class="line">export PYTHON_HOME=/usr/local/python27</span><br><span class="line">export PATH=PYTHON_HOME/bin:PATH</span><br><span class="line"></span><br><span class="line">#oralce client 环境变量</span><br><span class="line">export ORACLE_SID=orcl</span><br><span class="line">export ORACLE_HOME=/usr/lib/oracle/11.2/client64</span><br><span class="line">export TNS_ADMIN=/usr/lib/oracle/11.2/client64</span><br><span class="line">export NLS_LANG=AMERICAN_AMERICA.AL32UTF8</span><br><span class="line">export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/lib:/usr/local/lib</span><br><span class="line">export PATH=$PATH:$ORACLE_HOME/bin:$ORACLE_HOME/lib</span><br></pre></td></tr></table></figure>
+
 <p><code>source /etc/profile</code></p>
 <p><code>/usr/local/python27/bin/pip2.7 install cx_Oracle</code></p>
-<h2 id="安装graphite"><a href="#安装graphite" class="headerlink" title="安装graphite"></a>安装graphite</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd ~</div><div class="line">wget http://172.16.60.100/software_new/graphite_git.tar</div><div class="line">tar -vxf graphite_git.tar</div><div class="line">cd graphite_git</div></pre></td></tr></table></figure>
+<h2><span id="安装graphite">安装graphite</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">wget http://172.16.60.100/software_new/graphite_git.tar</span><br><span class="line">tar -vxf graphite_git.tar</span><br><span class="line">cd graphite_git</span><br></pre></td></tr></table></figure>
+
 <p>安装graphite组件, 按顺序安装<br>ceres<br>whisper<br>carbon<br>graphite-web</p>
-<h3 id="批量下载依赖的方法"><a href="#批量下载依赖的方法" class="headerlink" title="批量下载依赖的方法"></a>批量下载依赖的方法</h3><p>cabot 依赖也是同理<br>无法连接互联网需要手动下载依赖,每个组件都有依赖requirements.txt<br>市局的组件依赖可以使用该办法解决<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mkdir require_lib</div><div class="line">cat carbon/requirements.txt &gt; require_lib/requirements.txt</div><div class="line">cat ceres/test_requirements.txt &gt;&gt; require_lib/requirements.txt</div><div class="line">cat whisper/requirements.txt &gt;&gt; require_lib/requirements.txt</div><div class="line">cat graphite-web/requirements.txt &gt;&gt; require_lib/requirements.txt</div><div class="line">cd require_lib</div><div class="line">pip2.7 download -r requirements.txt</div></pre></td></tr></table></figure></p>
-<h2 id="配置graphite"><a href="#配置graphite" class="headerlink" title="配置graphite"></a>配置graphite</h2><p>graphite 安装目录 /opt/graphite<br>graphite 配置目录 /opt/graphite/conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">cd /opt/graphite/conf</div><div class="line">cp aggregation-rules.conf.example aggregation-rules.conf</div><div class="line">cp blacklist.conf.example blacklist.conf</div><div class="line">cp carbon.amqp.conf.example carbon.amqp.conf</div><div class="line">cp carbon.conf.example carbon.conf</div><div class="line">cp dashboard.conf.example dashboard.conf</div><div class="line">cp graphite.wsgi.example graphite.wsgi</div><div class="line">cp graphTemplates.conf.example graphTemplates.conf</div><div class="line">cp relay-rules.conf.example relay-rules.conf</div><div class="line">cp rewrite-rules.conf.example rewrite-rules.conf</div><div class="line">cp storage-aggregation.conf.example storage-aggregation.conf</div><div class="line">cp storage-schemas.conf.example storage-schemas.conf</div><div class="line">cp whitelist.conf.example whitelist.conf</div></pre></td></tr></table></figure>
-<h2 id="storage-schemasconf"><a href="#storage-schemas-conf" class="headerlink" title="storage-schemas.conf"></a>storage-schemas.conf</h2><p>retentions配置先使用whisper-create.py test.wsp 10s:7d 60s:180d 3600s:360d<br>测试否则可能不正确<br>whisper-info.py test.wsp文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[vastio]</div><div class="line">pattern = ^vastio\.</div><div class="line">retentions = 10s:7d,60s:180d,3600s:360d</div></pre></td></tr></table></figure></p>
-<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p><code>vim /opt/graphite/webapp/graphite/settings.py</code><br>主要修改<br>STATIC_ROOT = ‘/opt/graphite/webapp’<br>该目录下有graphite运行的依赖static 或content<br>STATIC_URL = ‘/static/‘<br>TIME_ZONE=’Asia/Shanghai’ 时区</p>
+<h3><span id="批量下载依赖的方法">批量下载依赖的方法</span></h3><p>cabot 依赖也是同理<br>无法连接互联网需要手动下载依赖,每个组件都有依赖requirements.txt<br>市局的组件依赖可以使用该办法解决</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir require_lib</span><br><span class="line">cat carbon/requirements.txt &gt; require_lib/requirements.txt</span><br><span class="line">cat ceres/test_requirements.txt &gt;&gt; require_lib/requirements.txt</span><br><span class="line">cat whisper/requirements.txt &gt;&gt; require_lib/requirements.txt</span><br><span class="line">cat graphite-web/requirements.txt &gt;&gt; require_lib/requirements.txt</span><br><span class="line">cd require_lib</span><br><span class="line">pip2.7 download -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<h2><span id="配置graphite">配置graphite</span></h2><p>graphite 安装目录 /opt/graphite<br>graphite 配置目录 /opt/graphite/conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/graphite/conf</span><br><span class="line">cp aggregation-rules.conf.example aggregation-rules.conf</span><br><span class="line">cp blacklist.conf.example blacklist.conf</span><br><span class="line">cp carbon.amqp.conf.example carbon.amqp.conf</span><br><span class="line">cp carbon.conf.example carbon.conf</span><br><span class="line">cp dashboard.conf.example dashboard.conf</span><br><span class="line">cp graphite.wsgi.example graphite.wsgi</span><br><span class="line">cp graphTemplates.conf.example graphTemplates.conf</span><br><span class="line">cp relay-rules.conf.example relay-rules.conf</span><br><span class="line">cp rewrite-rules.conf.example rewrite-rules.conf</span><br><span class="line">cp storage-aggregation.conf.example storage-aggregation.conf</span><br><span class="line">cp storage-schemas.conf.example storage-schemas.conf</span><br><span class="line">cp whitelist.conf.example whitelist.conf</span><br></pre></td></tr></table></figure>
+
+<h2><span id="storage-schemasconf">storage-schemas.conf</span></h2><p>retentions配置先使用whisper-create.py test.wsp 10s:7d 60s:180d 3600s:360d<br>测试否则可能不正确<br>whisper-info.py test.wsp文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[vastio]</span><br><span class="line">pattern = ^vastio\.</span><br><span class="line">retentions = 10s:7d,60s:180d,3600s:360d</span><br></pre></td></tr></table></figure>
+
+<h2><span id="启动">启动</span></h2><p><code>vim /opt/graphite/webapp/graphite/settings.py</code><br>主要修改<br>STATIC_ROOT = ‘/opt/graphite/webapp’<br>该目录下有graphite运行的依赖static 或content<br>STATIC_URL = ‘/static/‘<br>TIME_ZONE=’Asia/Shanghai’ 时区</p>
 <p>bash /opt/graphite/webapp/start.sh<br>django-admin.py 需要配置在环境变量中,python2 和python3 请注意不要冲突</p>
-<p><code>bash /opt/graphite/webapp/start.sh</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /opt/graphite/webapp</div><div class="line">export PYTHONPATH=/opt/graphite/webapp/</div><div class="line">nohup django-admin.py runserver --settings=graphite.settings 0.0.0.0:8001 &gt; graphite.log &amp;</div></pre></td></tr></table></figure></p>
-<h2 id="结合nginx-做前置"><a href="#结合nginx-做前置" class="headerlink" title="结合nginx 做前置"></a>结合nginx 做前置</h2><p><a href="/linux-install-nginx/">nginx 安装</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">        listen       81;</div><div class="line">        server_name  localhost;</div><div class="line"></div><div class="line">        #charset koi8-r;</div><div class="line"></div><div class="line">        #access_log  logs/host.access.log  main;</div><div class="line"></div><div class="line">        location / &#123;</div><div class="line">            proxy_pass http://127.0.0.1:8001;</div><div class="line">            proxy_redirect off;</div><div class="line">            proxy_set_header HOST $host;</div><div class="line">            proxy_set_header X-Real-IP $remote_addr;</div><div class="line">            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">            client_max_body_size 10m;</div><div class="line">            client_body_buffer_size 128k;</div><div class="line">            proxy_connect_timeout 90;</div><div class="line">            proxy_send_timeout 90;</div><div class="line">            proxy_read_timeout 90;</div><div class="line">            proxy_buffer_size 4k;</div><div class="line">            proxy_buffers 4 32k;</div><div class="line">            proxy_busy_buffers_size 64k;</div><div class="line">            proxy_temp_file_write_size 64k;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        location /static &#123;</div><div class="line">            root /opt/graphite/webapp;</div><div class="line">        &#125;</div><div class="line">     &#125;</div></pre></td></tr></table></figure></p>
-<h2 id="启动caborn"><a href="#启动caborn" class="headerlink" title="启动caborn"></a>启动caborn</h2><p><code>cd /opt/graphite/bin</code><br><code>python2.7 carbon-cache.py start</code></p>
-<p><code>vim /opt/graphite/bin/start.sh</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /opt/graphite/bin</div><div class="line">/usr/local/python27/bin/python2.7 /opt/graphite/bin/carbon-cache.py start</div></pre></td></tr></table></figure></p>
-<h2 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h2><p><code>vim /etc/rc.local</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#启动carbon</div><div class="line">bash /opt/graphite/bin/start.sh</div><div class="line">#启动graphite-web</div><div class="line">bash /opt/graphite/webapp/start.sh</div></pre></td></tr></table></figure></p>
+<p><code>bash /opt/graphite/webapp/start.sh</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/graphite/webapp</span><br><span class="line">export PYTHONPATH=/opt/graphite/webapp/</span><br><span class="line">nohup django-admin.py runserver --settings=graphite.settings 0.0.0.0:8001 &gt; graphite.log &amp;</span><br></pre></td></tr></table></figure>
 
-      
-    </div><!-- .entry-content -->
+<h2><span id="结合nginx-做前置">结合nginx 做前置</span></h2><p><a href="/linux-install-nginx/">nginx 安装</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen       81;</span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass http://127.0.0.1:8001;</span><br><span class="line">            proxy_redirect off;</span><br><span class="line">            proxy_set_header HOST $host;</span><br><span class="line">            proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">            client_max_body_size 10m;</span><br><span class="line">            client_body_buffer_size 128k;</span><br><span class="line">            proxy_connect_timeout 90;</span><br><span class="line">            proxy_send_timeout 90;</span><br><span class="line">            proxy_read_timeout 90;</span><br><span class="line">            proxy_buffer_size 4k;</span><br><span class="line">            proxy_buffers 4 32k;</span><br><span class="line">            proxy_busy_buffers_size 64k;</span><br><span class="line">            proxy_temp_file_write_size 64k;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        location /static &#123;</span><br><span class="line">            root /opt/graphite/webapp;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
 
-    <footer class="entry-meta">
-    <a href="../../\graphite-install-on-centos/">
-    <time datetime="2017-03-29T02:04:21.000Z" class="entry-date">
-        2017-03-29
-    </time>
-</a>
-    
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/graphite/">graphite</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/监控/">监控</a></li></ul>
+<h2><span id="启动caborn">启动caborn</span></h2><p><code>cd /opt/graphite/bin</code><br><code>python2.7 carbon-cache.py start</code></p>
+<p><code>vim /opt/graphite/bin/start.sh</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/graphite/bin</span><br><span class="line">/usr/local/python27/bin/python2.7 /opt/graphite/bin/carbon-cache.py start</span><br></pre></td></tr></table></figure>
 
-    </footer>
-</article>
+<h2><span id="开机启动">开机启动</span></h2><p><code>vim /etc/rc.local</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#启动carbon</span><br><span class="line">bash /opt/graphite/bin/start.sh</span><br><span class="line">#启动graphite-web</span><br><span class="line">bash /opt/graphite/webapp/start.sh</span><br></pre></td></tr></table></figure>
 
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/img/body.jpg"></div>
 
-    
-<nav class="nav-single">
-    <h3 class="assistive-text">文章导航</h3>
-    
-        <span class="nav-previous"><a href="../../\linux-install-nginx/" rel="prev"><span class="meta-nav">←</span> linux install nginx</a></span>
-    
-    
-        <span class="nav-next"><a href="../../\centos-repo/" rel="next">centos repo <span class="meta-nav">→</span></a></span>
-    
-</nav><!-- .nav-single -->
-
-
-
-
-
-
-
-
-
-
-
-
-</div></div>
-        <div id="secondary" class="widget-area" role="complementary">
-  
-    <script type="text/html" id="template-test">
-    
-<li class="item">
-    <a data-link="permalink" class="waves-block waves-effect">
-
-	<div class="title ellipsis" data-title="title" data-content="title"></div>
-	<span data-content="text" data-format="textFormatter"></span>
-	<div class="flex-row flex-middle">
-		<div class="tags ellipsis" data-format="tagsFormatter" data-content="tags">
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">Related post</div>
+				<div>Comment</div>
+				<div>Share</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">To Top</a>
+		
+			<a href="/centos-repo/" title="centos repo" rel="prev">
+				&laquo;Pre post
+			</a>
+		
+		
+			<a href="/linux-install-nginx/" title="linux install nginx" rel="next">
+				Next post&raquo;
+			</a>
 			
+	</span>
+
+
+      		
+			</div>	
 		</div>
-		<time class="flex-col time" data-content="date" data-format="dateFormatter"></time>
-	</div>
-	</a>
-</li>
-</script>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
 
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/cabot-install/" title="cabot install">
+								cabot install			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 29日, 2017				
+							</p>
+							<p class="relate-post-content">
+								cabot 安装环境
+centos6.5 64
+python: 2.7
 
-<script type="text/html" id="template-error">
-<li class="tips"><i class="icon icon-coffee icon-3x"></i><p>没有搜索到结果</p></li>
-</script>
+python2.7 安装参考graphite-install-on-centos
+cabot安装参考https://gist.github.com/Gromph...
+							</p>
+						</div>
 
-
-
-<aside id="search" class="widget widget_search">
-<div role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" url="https://www.google.com/ncr#newwindow=1&safe=strict&q=">
-    <div>
-        <input type="text" value="" name="s" id="search_text" />
-        <search id="search_submit"></search>
-       
-    </div>
-    <div class="widget search-panel in" id="search-panel">
-			<ul class="search-result" id="search-result">
+						<div class="relate-post-cover">
+							<a href="/cabot-install/" title="cabot install">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="cabot install"/>
+							</a>
+						</div>
+					</li>											
 			
 			
-			</ul>
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/luigi-install/" title="luigi install">
+								luigi install			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 29日, 2017				
+							</p>
+							<p class="relate-post-content">
+								luigi 安装官方文档: http://luigi.readthedocs.io/en/latest/中文: https://github.com/17zuoye/luiti/blob/master/README.zh_CN.mar...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/luigi-install/" title="luigi install">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="luigi install"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/hello-world/" title="Hello World">
+								Hello World			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								八月 15日, 2019				
+							</p>
+							<p class="relate-post-content">
+								Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/hello-world/" title="Hello World">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="Hello World"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/install-elasticsearch-on-linux/" title="install elasticsearch on linux">
+								install elasticsearch on linux			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 18日, 2017				
+							</p>
+							<p class="relate-post-content">
+								Linux安装elasticsearch配置参考下载http://172.16.60.100/tools/elasticsearch/
+配置好JAVA_HOME需要jkd1.7以上版本, 配置好JAVA_HOME
+ES 5.3yum安...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/install-elasticsearch-on-linux/" title="install elasticsearch on linux">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="install elasticsearch on linux"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/flowchat/" title="flowchat">
+								flowchat			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 12日, 2017				
+							</p>
+							<p class="relate-post-content">
+								
+
+
+$$E=mc^2$$
+$$\sum_{i=1}^n a_i=0$$$$\sum ^ {j-1}{k=0}{\widehat{\gamma} {kj} z k } $$
+$$\Gamma(z) = \int_0^\infty t^...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/flowchat/" title="flowchat">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="flowchat"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/linux-common-comand/" title="linux-common-comand">
+								linux-common-comand			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 11日, 2017				
+							</p>
+							<p class="relate-post-content">
+								linux 一些命令工具nginx basic 认证文件生成12yum install httpd-toolshtpasswd -c 生成的认证文件名 用户名
+
+字符串搜索12grep -Ril &apos;搜索内容&apos; ./...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/linux-common-comand/" title="linux-common-comand">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="linux-common-comand"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/centos-repo/" title="centos repo">
+								centos repo			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 29日, 2017				
+							</p>
+							<p class="relate-post-content">
+								公司centos源centos源列表(翻墙): https://www.centos.org/download/mirrors/epel源列表(翻墙): https://fedoraproject.org/wiki/EPEL163源:...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/centos-repo/" title="centos repo">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="centos repo"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/linux-install-nginx/" title="linux install nginx">
+								linux install nginx			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 27日, 2017				
+							</p>
+							<p class="relate-post-content">
+								linux 安装nginx一键安装123456789101112wget http://ip/tools/nginx/nginx-1.10.2.tar.gztar -vxf nginx-1.10.2.tar.gz cd nginx-1...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/linux-install-nginx/" title="linux install nginx">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="linux install nginx"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/private-docker-server/" title="private docker server">
+								private docker server			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 27日, 2017				
+							</p>
+							<p class="relate-post-content">
+								搭建docker私有服务器公司: 172.16.60.204系统: centos 7 1611版本python: 系统自带2.7.5docker-registry功能增强: Harbor
+国内镜像使用http://www.cnblog...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/private-docker-server/" title="private docker server">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="private docker server"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/javascript-packages-management/" title="javascript packages management">
+								javascript packages management			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 24日, 2017				
+							</p>
+							<p class="relate-post-content">
+								Brunch + Marionette.js + Babel/ES6 PWAThis is a modern Progressive Web App JS skeleton with Marionette.js for Brunch....
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/javascript-packages-management/" title="javascript packages management">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/body.jpg" alt="javascript packages management"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+		</ul>
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
 	</div>
 </div>
-</aside>
 
 
 
-  
-    
-  
-    
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget-content">
-      <ul>
-        
-          <li>
-            <a href="../../\install-elasticsearch-on-linux/">install elasticsearch on linux</a>
-          </li>
-        
-          <li>
-            <a href="../../\flowchat/">flowchat</a>
-          </li>
-        
-          <li>
-            <a href="../../\linux-common-comand/">linux-common-comand</a>
-          </li>
-        
-          <li>
-            <a href="../../\cabot-install/">cabot install</a>
-          </li>
-        
-          <li>
-            <a href="../../\luigi-install/">luigi install</a>
-          </li>
-        
-      </ul>
-    </div>
-  </aside>
-
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/bower/">bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/cabot/">cabot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/centos/">centos</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/cherrypy/">cherrypy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/elasticsearch/">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/graphite/">graphite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/grunt/">grunt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/linux/">linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/linux常用命令/">linux常用命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/luigi/">luigi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/nginx/">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/npm/">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/oracle/">oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/pydev/">pydev</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/registry/">registry</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/yum/">yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/公式/">公式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/时序图/">时序图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/服务器/">服务器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/流程图/">流程图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/监控/">监控</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/软件/">软件</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </aside>
-
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget-content tagcloud">
-      <a href="../../tags/bower/" style="font-size: 10px;">bower</a> <a href="../../tags/cabot/" style="font-size: 10px;">cabot</a> <a href="../../tags/centos/" style="font-size: 13.33px;">centos</a> <a href="../../tags/cherrypy/" style="font-size: 10px;">cherrypy</a> <a href="../../tags/docker/" style="font-size: 10px;">docker</a> <a href="../../tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="../../tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="../../tags/graphite/" style="font-size: 10px;">graphite</a> <a href="../../tags/grunt/" style="font-size: 10px;">grunt</a> <a href="../../tags/javascript/" style="font-size: 10px;">javascript</a> <a href="../../tags/linux/" style="font-size: 16.67px;">linux</a> <a href="../../tags/linux常用命令/" style="font-size: 10px;">linux常用命令</a> <a href="../../tags/luigi/" style="font-size: 10px;">luigi</a> <a href="../../tags/mysql/" style="font-size: 10px;">mysql</a> <a href="../../tags/nginx/" style="font-size: 10px;">nginx</a> <a href="../../tags/npm/" style="font-size: 10px;">npm</a> <a href="../../tags/oracle/" style="font-size: 20px;">oracle</a> <a href="../../tags/pydev/" style="font-size: 10px;">pydev</a> <a href="../../tags/python/" style="font-size: 13.33px;">python</a> <a href="../../tags/registry/" style="font-size: 10px;">registry</a> <a href="../../tags/yum/" style="font-size: 10px;">yum</a> <a href="../../tags/公式/" style="font-size: 10px;">公式</a> <a href="../../tags/时序图/" style="font-size: 10px;">时序图</a> <a href="../../tags/服务器/" style="font-size: 10px;">服务器</a> <a href="../../tags/流程图/" style="font-size: 10px;">流程图</a> <a href="../../tags/监控/" style="font-size: 16.67px;">监控</a> <a href="../../tags/软件/" style="font-size: 10px;">软件</a>
-    </div>
-  </aside>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">About</h3>
-    <div class="widget">
-      email：<a href="mailto: Yangyuehui <honeybeeyyh@hotmail.com>;">honeybeeyyh@hotmail.com</a></br></br>
-    </div>
-  </div>
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
 
 
-  
-</div>
-      </div>
-      <footer id="colophon" role="contentinfo">
-    <p>&copy; 2017 honeybeeyyh@hotmail.com
-    All rights reserved.</p>
-    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+	
+
+
+<!-- show math formula -->
+
+
+<!-- Chart Render -->
+
+<!-- End Chart Render -->
+
+
+
+	 
+	<script src="/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/ylkjick532428" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://weibo.com/ylkjick532428" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2019, content by ylkjick532428@gmail.com. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<span id='transLangTool'>
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a>
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+			</span>
+		</p>
+	</div>		
 </footer>
-    
+		
+	<!-- set '1' to show motto in all pages! -->
 
-<script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/lib/jquery.loadTemplate.js"></script>
-
-  <link rel="stylesheet" href="../../fancybox/jquery.fancybox.css">
-  <script src="../../fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="../../js/script.js"></script>
-
-
-
-<script src="/js/navigation.js"></script>
-<!--<script src="/js/require.js"></script>-->
-<script src="/lib/python.js"></script>
-<script src="/lib/javascript.js"></script>
-<script src="/lib/highlight.js"></script>
-<script src="/lib/my.js"></script>
-<script src="/lib/hexo-local-search.js"></script>
+	<script src="/plugin/chinese/chinese.js"></script>
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
 
 
 
 
-<div id="bg"></div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
-        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
-        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
-        messageStyle: "none"
-    }); 
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/plugin/search/search.js"></script>
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
-<script src="../../js/coffee-script.js"></script>
-<script src="../../js/jumly.min.js"></script>
+<!-- love effect -->
 
-<link rel="stylesheet" href="../../css/my.css">
-<link rel="stylesheet" href="../../css/highlight.css">
-<link rel="stylesheet" href="../../styles/default.css">
-<!--<script src="../../js/bootstrap.min.js"></script>-->
-<!--<link rel="stylesheet" href="../../css/bootstrap.css">-->
-<!--<link rel="stylesheet" href="../../css/bootstrap-theme.css">-->
+	<script src="/plugin/love/love.js"></script>
 
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-</body>
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+	</body>	
 </html>

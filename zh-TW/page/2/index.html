@@ -1,0 +1,1262 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      Jack Yang
+    
+  </title>
+  <meta name="author" content="ylkjick532428@gmail.com">
+  <meta name="keywords" content>
+  <meta name="description" content>
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/zh-TW/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/zh-TW/css/Annie.css">
+  
+  <!-- jquery -->
+  <script src="/zh-TW/js/jquery.min.js"></script>
+  <script src="/zh-TW/js/lodash.min.js"></script>
+  <script src="/zh-TW/js/coffee-script.js"></script>
+  <script src="/zh-TW/js/raphael.min.js"></script>
+  <script src="/zh-TW/js/diagram-grammar.js"></script>
+  <!-- <script src="/zh-TW/js/jumly.min.js"></script> -->
+
+  
+  
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/zh-TW/js/leancloud.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+	<body>
+		<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="random" data-normal-src="/zh-TW/img/mylove.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/zh-TW/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/zh-TW/" class="menu-item-home">主頁</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/zh-TW/archives" class="menu-item-archive">彙整</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/zh-TW/categories" class="menu-item-categories">分類</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/zh-TW/tags" class="menu-item-tags">標籤</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/zh-TW/about" class="menu-item-about">關於</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/zh-TW/gallery" class="menu-item-gallery">相冊</a>
+		</li>
+	
+		<li class="menu-english">
+			<a href="https://www.qooeo.com/" class="menu-item-english">english</a>
+		</li>
+	
+		<li class="menu-简体">
+			<a href="https://www.qooeo.com/zh-CN" class="menu-item-简体">简体</a>
+		</li>
+	
+		<li class="menu-繁体">
+			<a href="https://www.qooeo.com/zh-TW" class="menu-item-繁体">繁体</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜尋</a>
+		</li>
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+
+			
+				<script src="//widget.time.is/zh.js"></script>
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<!-- <script type="text/javascript" src="https://rf.revolvermaps.com/0/0/5.js?i=5mfy00et1a3&amp;m=0&amp;c=ff0000&amp;cr1=ffffff" async="async"></!--> -->
+
+<style type="text/css">
+  .header-date {
+    font-size: 1.6rem;
+    color: #000000;
+    position: absolute;
+    bottom: 5px;
+    right: 1rem;
+    writing-mode: tb-rl;
+  }
+
+  .header-date a {
+    border-bottom: none;
+  }
+
+  @media only screen and (max-width: 768) {
+    .header-date {
+      font-size: 1rem;
+    }
+  }
+</style>
+<div class="header-date" id="beijingtime">
+  <a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+  <span id="Beijing_z43d"></span>
+</div>
+
+<!-- <script src="//widget.time.is/zh.js"></script>
+<script src="//widget.time.is/en.js"></script> -->
+
+<script>
+  var getPathname = function getPathname() {
+    var reg = /(\w+-\w+)\/(.*)/;
+    var result = [];
+    var tmpPathname = reg.exec(window.location.pathname);
+    tmpPathname && tmpPathname[1]
+      ? result.push(tmpPathname[1])
+      : result.push("en");
+    return result[0];
+  };
+  var currentLang = getPathname();
+  if (currentLang === "en") {
+    time_is_widget.init({
+		Beijing_z43d: {
+        template: "DATE",
+		date_format: "dayname, monthname dnum, year, week",
+      }
+    });
+  } else {
+    time_is_widget.init({
+      Beijing_z43d: {
+		template: "DATE",
+        date_format: "year年 monthname dnum日"
+      }
+    });
+  }
+</script>
+
+<script></script>
+
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目錄</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			主頁
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>導航</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/zh-TW/" class="menu-item-home">主頁</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/zh-TW/archives" class="menu-item-archive">彙整</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/zh-TW/categories" class="menu-item-categories">分類</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/zh-TW/tags" class="menu-item-tags">標籤</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/zh-TW/about" class="menu-item-about">關於</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/zh-TW/gallery" class="menu-item-gallery">相冊</a>
+		</li>
+	
+		<li class="menu-english">
+			<a href="https://www.qooeo.com/" class="menu-item-english">english</a>
+		</li>
+	
+		<li class="menu-简体">
+			<a href="https://www.qooeo.com/zh-CN" class="menu-item-简体">简体</a>
+		</li>
+	
+		<li class="menu-繁体">
+			<a href="https://www.qooeo.com/zh-TW" class="menu-item-繁体">繁体</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜尋</a>
+		</li>
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/ylkjick532428" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://weibo.com/ylkjick532428" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/zh-TW/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			
+
+
+
+	<!--pure style-->
+	<div class="layout-pure">
+	<div id="layout-pure">	
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-TW/javascript-packages-management/" itemprop="url">
+		javascript packages management
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						Brunch + Marionette.js + Babel/ES6 PWAThis is a modern Progressive Web App JS skeleton with Marionette.js for Brunch.
+InstallationClone this repo manually      
+git clone https://github.com/denar90/brunch-with-marionettejs &amp;&amp; cd brunch-with-marionettejs 
+or use 
+brunch new dir -s marionet...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						發佈於
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-TW/javascript-packages-management/" itemprop="url">
+		<time datetime="2017-03-24T09:23:49.000Z" itemprop="datePublished">
+	  		2017-03-24
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-TW/javascript-packages-management/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-TW/mysql-management/" itemprop="url">
+		mysql management
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						mysql 管理linux安装yum install mysql mysql-server mysql-devel mysql-libs
+配置文件/etc/my.ini
+启动service mysqld start|stop|restart
+自动启动chkconfig mysqld on
+管理mysql
+设置数据库引擎[引擎差异](http://www.cnblogs.com/0201zcr/p/5296843.html 引擎差异)默认为MYISAM, 某些情况下需要修改为InnoDBmysql&gt; SET storage_engine=InnoDB;
+创建用户和授权用户名: wei...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						發佈於
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-TW/mysql-management/" itemprop="url">
+		<time datetime="2017-03-24T08:48:27.000Z" itemprop="datePublished">
+	  		2017-03-24
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-TW/mysql-management/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-TW/oracle-management/" itemprop="url">
+		oracle management
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						oracle 常用管理命令环境变量12345export ORACLE_HOME=/opt/oracle/product/11.2.0/dbhome_1export ORACLE_SID=orcl#export NLS_LANG=AMERICAN_AMERICA.AL32UTF8export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/lib:/usr/local/libexport PATH=$PATH:$ORACLE_HOME/bin:$ORACLE_HOME/lib
+
+进入管理员su oraclesqlplus / as sysdba
+密码有效期查看...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						發佈於
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-TW/oracle-management/" itemprop="url">
+		<time datetime="2017-03-23T08:51:24.000Z" itemprop="datePublished">
+	  		2017-03-23
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-TW/oracle-management/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-TW/centos-6-5-install/" itemprop="url">
+		centos 6.5 install
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						centos 6.5 安装核心配置上台集群换成Linux系统版本: centos6.5 64位硬盘分配: /home 50G                Swap  8g                剩余的给分给根目录/组件:最小安装,不要图形界面语言:英文时区:上海
+
+
+
+
+
+
+
+
+
+
+
+无图形界面
+base system
+servers
+system management
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						發佈於
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-TW/centos-6-5-install/" itemprop="url">
+		<time datetime="2017-03-23T08:30:46.000Z" itemprop="datePublished">
+	  		2017-03-23
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-TW/centos-6-5-install/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-TW/pydev-template/" itemprop="url">
+		pydev template
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						pydev 使用模板新建代码新建模板
+
+
+
+使用模板创建文件
+
+
+
+例子:接受命令行参数: my argparse1234567891011121314151617181920212223242526272829303132333435# -*- coding: utf-8 -*-'''$&#123;module&#125; -- $&#123;shortdesc&#125;$&#123;module&#125; -- $&#123;description&#125; @author:    user name@copyright: .com All rights reserved.@c...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						發佈於
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-TW/pydev-template/" itemprop="url">
+		<time datetime="2017-03-10T01:22:05.000Z" itemprop="datePublished">
+	  		2017-03-10
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-TW/pydev-template/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-TW/oracle-install-linux/" itemprop="url">
+		oracle-install-linux
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						linux oracle数据库无图形界面安装1 准备安装路径和用户12345678910111213141516/usr/sbin/groupadd oinstall/usr/sbin/groupadd dba/usr/sbin/useradd -g oinstall -G dba oraclemkdir -p /opt/oraclechown -R oracle:oinstall /opt/oraclechmod -R 775 /opt/oraclemkdir -p /opt/oraInventorychown oracle:oinstall /opt/oraInventorychmo...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						發佈於
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-TW/oracle-install-linux/" itemprop="url">
+		<time datetime="2017-02-15T07:59:14.000Z" itemprop="datePublished">
+	  		2017-02-15
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-TW/oracle-install-linux/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-TW/yuncai-dev-doc/" itemprop="url">
+		yuncai-dev-doc
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						oracle 创建大数据空间
+12345678910111213141516171819202122232425262728293031create BIGFILE tablespace YCDBA logging datafile &apos;/home/oracle/yc/YCDBA&apos; size 512m autoextend on next 512m maxsize unlimitedextent management local;create temporary tablespace TEMP_YCDBAtempfile &apos;TEMP_YCDBA.dbf&apo...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						發佈於
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-TW/yuncai-dev-doc/" itemprop="url">
+		<time datetime="2017-02-15T06:49:25.000Z" itemprop="datePublished">
+	  		2017-02-15
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-TW/yuncai-dev-doc/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-TW/software/" itemprop="url">
+		software
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						1. 准备1. windows推荐装win10 64位 VOL专业版/企业版 系统下载http://msdn.itellyou.cn/ed2k://|file|cn_windows_10_multiple_editions_version_1607_updated_jul_2016_x64_dvd_9056935.iso|4347183104|35EA5DB0F3BB714F5CE0740FB89D82D1|/    2. windows上开发环境推荐使用32位, x86为32位    3. linux系统使用64位,x64为64位
+2. 工具1. xshell ssh工具
+
+    1...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						發佈於
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-TW/software/" itemprop="url">
+		<time datetime="2017-02-13T02:58:55.000Z" itemprop="datePublished">
+	  		2017-02-13
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-TW/software/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-TW/server-install/" itemprop="url">
+		server_install
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						linux123456789101112131415161718192021222324252627282930313233343536373839一 nginx    nginx需要从源码编译    安装目录/usr/local/nginx    cd /root/    wget http://software.vastio.com/nginx-1.7.9.rar    tar -xf nginx-1.7.9.rar    cd nginx    yum -y install gcc pcre-devel openssl openssl-devel    ./configure --...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						發佈於
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-TW/server-install/" itemprop="url">
+		<time datetime="2017-02-06T03:12:37.000Z" itemprop="datePublished">
+	  		2017-02-06
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-TW/server-install/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/zh-TW/data-input/" itemprop="url">
+		data_input
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						<!--没有文章内容-->
+						沒有文章內容...
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						發佈於
+						<i>
+							
+
+
+
+
+
+
+	<a href="/zh-TW/data-input/" itemprop="url">
+		<time datetime="2017-02-06T03:09:50.000Z" itemprop="datePublished">
+	  		2017-02-06
+	  </time>
+	</a> 
+
+						</i>
+					</span>
+					
+					
+
+
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+					
+						<span class="right">      	
+							<a href="/zh-TW/data-input/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+	</div>
+
+	
+	<div id="pagination">
+		
+			<a href="/zh-TW/page/3/" data-title="加載更多" data-status="沒有了">加載更多</a>
+		
+	</div>
+
+	
+
+</div>
+
+
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/ylkjick532428" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://weibo.com/ylkjick532428" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/zh-TW/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2019, content by ylkjick532428@gmail.com. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<span id='transLangTool'>
+
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a>
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+			</span>
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/zh-TW/plugin/chinese/chinese.js"></script>
+	<script src="/zh-TW/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/zh-TW/plugin/search/ziploader.js"></script>
+<script src="/zh-TW/plugin/search/search.js"></script>
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/zh-TW/search.zip',
+		version_Path = '/zh-TW/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+<!-- love effect -->
+
+	<script src="/zh-TW/plugin/love/love.js"></script>
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/zh-TW/plugin/vibrant/vibrant.js"></script>
+<script src="/zh-TW/plugin/chinese/chinese.js"></script>
+<script src="/zh-TW/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/zh-TW/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/zh-TW/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/zh-TW/js/resizediv.js"></script>
+<script src="/zh-TW/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+	</body>	
+</html>
